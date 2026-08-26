@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: fantasy-draft-lab-backend
+    runtime: node
+    plan: free
+    region: oregon
+    rootDir: .
+    buildCommand: npm install && npm install --prefix server && npm run build --prefix server
+    startCommand: npm start --prefix server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: DATA_DIR
+        value: ./data
+      - key: NODE_ENV
+        value: production
