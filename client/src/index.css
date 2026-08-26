@@ -460,6 +460,18 @@ select {
   border-color: rgba(56, 189, 248, 0.35);
 }
 
+.grade-rookie {
+  border-color: rgba(168, 85, 247, 0.55);
+}
+
+.grade-badge.grade-rookie {
+  color: #c4b5fd;
+}
+
+.grade-unknown {
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
 .pick-detail,
 .pick-team,
 .pick-value {

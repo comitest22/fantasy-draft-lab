@@ -6,6 +6,7 @@ const gradeClass: Record<PickGrade, string> = {
   fair: 'grade-fair',
   reach: 'grade-reach',
   bust: 'grade-bust',
+  rookie: 'grade-rookie',
   unknown: 'grade-unknown',
 };
 

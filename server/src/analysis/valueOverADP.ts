@@ -15,6 +15,7 @@ export function gradePick(
     adp != null
       ? adpEntry?.expectedPoints ?? enrichmentStore.getExpectedPointsAtAdp(adp, pick.season)
       : undefined;
+  const isRookie = enrichmentStore.isRookie(pick.playerName, pick.season, pick.position);
 
   let valueScore: number | undefined;
   let grade: PickGrade = 'unknown';
@@ -33,6 +34,11 @@ export function gradePick(
     if (adpDelta <= -STEAL_THRESHOLD && grade !== 'bust') grade = 'steal';
   }
 
+  // If we still can't grade (usually missing ADP), label confirmed rookies
+  if (grade === 'unknown' && isRookie) {
+    grade = 'rookie';
+  }
+
   return {
     ...pick,
     adp,
@@ -41,6 +47,7 @@ export function gradePick(
     valueScore,
     grade,
     isUserPick,
+    isRookie,
   };
 }
 

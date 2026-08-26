@@ -46,6 +46,10 @@ async function readCsv(filePath: string): Promise<string[][]> {
 export class EnrichmentStore {
   private points: PlayerEnrichment[] = [];
   private adp: AdpEntry[] = [];
+  /** normalized player name -> NFL draft year (rookie season) */
+  private draftYearByName = new Map<string, number>();
+  /** normalized player name -> first season with fantasy points (UDFA heuristic) */
+  private firstPointsSeasonByName = new Map<string, number>();
   private loaded = false;
 
   async load(): Promise<void> {
@@ -53,6 +57,7 @@ export class EnrichmentStore {
     const dir = enrichmentDir();
     const pointsRows = await readCsv(path.join(dir, 'fantasy-points.csv'));
     const adpRows = await readCsv(path.join(dir, 'adp.csv'));
+    const draftRows = await readCsv(path.join(dir, 'draft-picks.csv'));
 
     if (pointsRows.length > 1) {
       const headers = pointsRows[0].map((h) => h.toLowerCase());
@@ -64,14 +69,22 @@ export class EnrichmentStore {
       const gpIdx = headers.indexOf('gamesplayed');
 
       for (const row of pointsRows.slice(1)) {
+        const playerName = row[nameIdx];
+        const season = parseInt(row[seasonIdx], 10);
         this.points.push({
-          playerName: row[nameIdx],
-          season: parseInt(row[seasonIdx], 10),
+          playerName,
+          season,
           position: row[posIdx] as Position,
           nflTeam: row[teamIdx] ?? '',
           fantasyPoints: parseFloat(row[ptsIdx]) || 0,
           gamesPlayed: gpIdx >= 0 ? parseInt(row[gpIdx], 10) || undefined : undefined,
         });
+
+        const key = normalizeName(playerName);
+        const prev = this.firstPointsSeasonByName.get(key);
+        if (prev == null || season < prev) {
+          this.firstPointsSeasonByName.set(key, season);
+        }
       }
     }
 
@@ -91,6 +104,24 @@ export class EnrichmentStore {
           adp: parseFloat(row[adpIdx]) || 999,
           expectedPoints: expIdx >= 0 ? parseFloat(row[expIdx]) || undefined : undefined,
         });
+      }
+    }
+
+    if (draftRows.length > 1) {
+      const headers = draftRows[0].map((h) => h.toLowerCase());
+      const nameIdx = headers.indexOf('playername');
+      const yearIdx = headers.indexOf('draftyear');
+
+      for (const row of draftRows.slice(1)) {
+        const playerName = row[nameIdx];
+        const draftYear = parseInt(row[yearIdx], 10);
+        if (!playerName || !Number.isFinite(draftYear)) continue;
+        const key = normalizeName(playerName);
+        const prev = this.draftYearByName.get(key);
+        // Keep earliest draft year if duplicates appear
+        if (prev == null || draftYear < prev) {
+          this.draftYearByName.set(key, draftYear);
+        }
       }
     }
 
@@ -134,6 +165,40 @@ export class EnrichmentStore {
       return nearby[0].expectedPoints;
     }
     return estimateExpectedPoints(adp);
+  }
+
+  getDraftYear(playerName: string): number | undefined {
+    const key = normalizeName(playerName);
+    const exact = this.draftYearByName.get(key);
+    if (exact != null) return exact;
+
+    for (const [name, year] of this.draftYearByName) {
+      if (name.includes(key) || key.includes(name)) return year;
+    }
+    return undefined;
+  }
+
+  /**
+   * Rookie if NFL draft year matches season, else fallback:
+   * first season appearing in fantasy-points equals this season (covers many UDFAs).
+   * D/ST and kickers without draft data are not marked via the points heuristic alone
+   * when the name looks like a team defense.
+   */
+  isRookie(playerName: string, season: number, position?: string): boolean {
+    if (position === 'D/ST') return false;
+
+    const draftYear = this.getDraftYear(playerName);
+    if (draftYear != null) return draftYear === season;
+
+    const firstPoints = this.firstPointsSeasonByName.get(normalizeName(playerName));
+    if (firstPoints != null) return firstPoints === season;
+
+    // Fuzzy first-points lookup
+    const key = normalizeName(playerName);
+    for (const [name, year] of this.firstPointsSeasonByName) {
+      if (name.includes(key) || key.includes(name)) return year === season;
+    }
+    return false;
   }
 }
 

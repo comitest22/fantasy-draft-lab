@@ -55,7 +55,7 @@ export interface AdpEntry {
   expectedPoints?: number;
 }
 
-export type PickGrade = 'hit' | 'fair' | 'bust' | 'reach' | 'steal' | 'unknown';
+export type PickGrade = 'hit' | 'fair' | 'bust' | 'reach' | 'steal' | 'rookie' | 'unknown';
 
 export interface GradedPick extends DraftPick {
   adp?: number;
@@ -64,6 +64,7 @@ export interface GradedPick extends DraftPick {
   valueScore?: number;
   grade: PickGrade;
   isUserPick: boolean;
+  isRookie?: boolean;
 }
 
 export interface SeasonAnalysis {

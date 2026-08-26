@@ -1,5 +1,5 @@
 export type Position = 'QB' | 'RB' | 'WR' | 'TE' | 'K' | 'D/ST';
-export type PickGrade = 'hit' | 'fair' | 'bust' | 'reach' | 'steal' | 'unknown';
+export type PickGrade = 'hit' | 'fair' | 'bust' | 'reach' | 'steal' | 'rookie' | 'unknown';
 
 export interface DraftPick {
   season: number;
@@ -45,6 +45,7 @@ export interface GradedPick extends DraftPick {
   valueScore?: number;
   grade: PickGrade;
   isUserPick: boolean;
+  isRookie?: boolean;
 }
 
 export interface SeasonAnalysis {
