@@ -14,7 +14,8 @@
     "test": "npm run test --prefix server",
     "research:sot": "tsx scripts/research/run.ts",
     "enrichment:refresh": "tsx scripts/enrichment/refresh.ts",
-    "enrichment:import-rankings": "tsx scripts/enrichment/import-rankings.ts"
+    "enrichment:import-rankings": "tsx scripts/enrichment/import-rankings.ts",
+    "enrichment:import-fantasy-points": "tsx scripts/enrichment/import-fantasy-points.ts"
   },
   "devDependencies": {
     "@cursor/sdk": "^1.0.28",

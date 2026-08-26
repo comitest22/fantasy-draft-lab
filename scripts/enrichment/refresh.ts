@@ -1,11 +1,13 @@
 /**
  * Enrichment status / instructions.
  *
- * - adp.csv: pre-draft rankings (imported from "* Rankings.docx")
- * - fantasy-points.csv: actual season fantasy points (NOT in ranking docs)
+ * - adp.csv: pre-draft rankings (from "* Rankings.docx")
+ * - fantasy-points.csv: actual season PPR points (from nflverse)
  *
- * Import rankings:
+ * Commands:
  *   npm run enrichment:import-rankings -- "C:/Users/jrose/Downloads"
+ *   npm run enrichment:import-fantasy-points
+ *   npm run enrichment:import-fantasy-points -- --from 2014 --to 2025
  */
 import fs from 'fs/promises';
 import path from 'path';
@@ -43,17 +45,13 @@ async function main(): Promise<void> {
     `  fantasy-points.csv: ${pointsRows} players across seasons ${[...pointsSeasons].sort().join(', ') || '(none)'}`
   );
   console.log('');
-  console.log('Notes:');
-  console.log('  - Rankings docs update ADP / reach-steal grading.');
-  console.log('  - Hit/bust grading also needs actual fantasy points per season.');
-  console.log('  - Auction $ values in ranking docs are ignored.');
+  console.log('Sources:');
+  console.log('  - ADP: ESPN pre-draft ranking docs (auction $ ignored)');
+  console.log('  - Fantasy points: nflverse fantasy_points_ppr (regular season)');
   console.log('');
-  console.log('Re-import rankings from Downloads:');
+  console.log('Refresh:');
   console.log('  npm run enrichment:import-rankings -- "C:/Users/you/Downloads"');
-  console.log('');
-  console.log('Add actual season points manually:');
-  console.log('  Append rows to data/enrichment/fantasy-points.csv');
-  console.log('  Columns: playerName,season,position,nflTeam,fantasyPoints,gamesPlayed');
+  console.log('  npm run enrichment:import-fantasy-points');
 }
 
 main().catch((err) => {

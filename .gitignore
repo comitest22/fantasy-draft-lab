@@ -9,5 +9,6 @@ build/
 client/dist/
 server/dist/
 uploads/
+.cache/
 
 .vercel
