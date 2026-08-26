@@ -1,0 +1,31 @@
+{
+  "name": "fantasy-draft-lab-server",
+  "version": "1.0.0",
+  "description": "Backend for Fantasy Draft Lab",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "dev": "cross-env TS_NODE_CACHE=0 nodemon -L -e ts,js,json src/index.ts",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "test": "tsx --test src/**/*.test.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "fantasy-draft-lab": "file:..",
+    "mammoth": "^1.9.0",
+    "multer": "^1.4.5-lts.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.15.21",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

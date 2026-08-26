@@ -1,0 +1,60 @@
+{
+  "leagueSize": 10,
+  "scoring": "ppr",
+  "draftType": "snake",
+  "rounds": 13,
+  "goodEraEnd": 2021,
+  "badEraStart": 2022,
+  "seasons": {
+    "2014": {
+      "userTeamName": "Beckham and Brown Show",
+      "finalStanding": 3
+    },
+    "2015": {
+      "userTeamName": "Injured QB Fan Club",
+      "finalStanding": 8
+    },
+    "2016": {
+      "userTeamName": "Buisness Is Boomin",
+      "finalStanding": 5
+    },
+    "2017": {
+      "userTeamName": "Saved by the Bell",
+      "finalStanding": 4
+    },
+    "2018": {
+      "userTeamName": "Game of Jones",
+      "finalStanding": 6
+    },
+    "2019": {
+      "userTeamName": "A Scanner Barkley",
+      "finalStanding": 4
+    },
+    "2020": {
+      "userTeamName": "Orange Sherbert",
+      "finalStanding": 3,
+      "notes": "Tied for best season"
+    },
+    "2021": {
+      "userTeamName": "Fire Sale",
+      "finalStanding": 5
+    },
+    "2022": {
+      "userTeamName": "Long Live The Mullet",
+      "finalStanding": 6
+    },
+    "2023": {
+      "userTeamName": "Long Live The Mullet",
+      "finalStanding": 8
+    },
+    "2024": {
+      "userTeamName": "Long Live The Mullet",
+      "finalStanding": 8
+    },
+    "2025": {
+      "userTeamName": "Tennessee Jets",
+      "finalStanding": 8,
+      "notes": "Worst Season"
+    }
+  }
+}

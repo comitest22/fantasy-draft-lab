@@ -1,0 +1,25 @@
+{
+  "name": "fantasy-draft-lab",
+  "version": "1.0.0",
+  "description": "ESPN fantasy draft analysis and strategy tool",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:client": "npm run dev --prefix client",
+    "dev:server": "npm run dev --prefix server",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "npm run build --prefix client",
+    "build:server": "npm run build --prefix server",
+    "type-check": "npm run type-check --prefix server && npm run type-check --prefix client",
+    "test": "npm run test --prefix server",
+    "research:sot": "tsx scripts/research/run.ts",
+    "enrichment:refresh": "tsx scripts/enrichment/refresh.ts"
+  },
+  "devDependencies": {
+    "@cursor/sdk": "^1.0.28",
+    "concurrently": "^9.1.2",
+    "dotenv": "^16.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
