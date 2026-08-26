@@ -1,7 +1,11 @@
 /**
- * Refresh enrichment CSVs from external sources.
- * For v1, this validates existing files and prints instructions for manual updates.
- * Future: integrate nflverse / FantasyPros exports.
+ * Enrichment status / instructions.
+ *
+ * - adp.csv: pre-draft rankings (imported from "* Rankings.docx")
+ * - fantasy-points.csv: actual season fantasy points (NOT in ranking docs)
+ *
+ * Import rankings:
+ *   npm run enrichment:import-rankings -- "C:/Users/jrose/Downloads"
  */
 import fs from 'fs/promises';
 import path from 'path';
@@ -18,18 +22,38 @@ async function main(): Promise<void> {
   const pointsRows = points.trim().split('\n').length - 1;
   const adpRows = adp.trim().split('\n').length - 1;
 
+  const adpSeasons = new Set(
+    adp
+      .trim()
+      .split('\n')
+      .slice(1)
+      .map((l) => l.split(',')[1])
+  );
+  const pointsSeasons = new Set(
+    points
+      .trim()
+      .split('\n')
+      .slice(1)
+      .map((l) => l.split(',')[1])
+  );
+
   console.log('Enrichment data status:');
-  console.log(`  fantasy-points.csv: ${pointsRows} players`);
-  console.log(`  adp.csv: ${adpRows} players`);
+  console.log(`  adp.csv: ${adpRows} players across seasons ${[...adpSeasons].sort().join(', ')}`);
+  console.log(
+    `  fantasy-points.csv: ${pointsRows} players across seasons ${[...pointsSeasons].sort().join(', ') || '(none)'}`
+  );
   console.log('');
-  console.log('To add a new season:');
-  console.log('  1. Append rows to data/enrichment/fantasy-points.csv');
-  console.log('  2. Append rows to data/enrichment/adp.csv');
-  console.log('  3. Re-run analysis in the dashboard');
+  console.log('Notes:');
+  console.log('  - Rankings docs update ADP / reach-steal grading.');
+  console.log('  - Hit/bust grading also needs actual fantasy points per season.');
+  console.log('  - Auction $ values in ranking docs are ignored.');
   console.log('');
-  console.log('Columns:');
-  console.log('  fantasy-points: playerName,season,position,nflTeam,fantasyPoints,gamesPlayed');
-  console.log('  adp: playerName,season,position,adp,expectedPoints');
+  console.log('Re-import rankings from Downloads:');
+  console.log('  npm run enrichment:import-rankings -- "C:/Users/you/Downloads"');
+  console.log('');
+  console.log('Add actual season points manually:');
+  console.log('  Append rows to data/enrichment/fantasy-points.csv');
+  console.log('  Columns: playerName,season,position,nflTeam,fantasyPoints,gamesPlayed');
 }
 
 main().catch((err) => {

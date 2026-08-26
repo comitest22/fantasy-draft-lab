@@ -13,7 +13,8 @@
     "type-check": "npm run type-check --prefix server && npm run type-check --prefix client",
     "test": "npm run test --prefix server",
     "research:sot": "tsx scripts/research/run.ts",
-    "enrichment:refresh": "tsx scripts/enrichment/refresh.ts"
+    "enrichment:refresh": "tsx scripts/enrichment/refresh.ts",
+    "enrichment:import-rankings": "tsx scripts/enrichment/import-rankings.ts"
   },
   "devDependencies": {
     "@cursor/sdk": "^1.0.28",
