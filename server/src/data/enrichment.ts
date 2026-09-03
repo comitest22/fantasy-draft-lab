@@ -46,6 +46,8 @@ async function readCsv(filePath: string): Promise<string[][]> {
 export class EnrichmentStore {
   private points: PlayerEnrichment[] = [];
   private adp: AdpEntry[] = [];
+  /** `${season}::${normalizedName}` -> overall PPR finish (1 = highest scorer) */
+  private eosRankByKey = new Map<string, number>();
   /** normalized player name -> NFL draft year (rookie season) */
   private draftYearByName = new Map<string, number>();
   /** normalized player name -> first season with fantasy points (UDFA heuristic) */
@@ -85,6 +87,19 @@ export class EnrichmentStore {
         if (prev == null || season < prev) {
           this.firstPointsSeasonByName.set(key, season);
         }
+      }
+
+      const bySeason = new Map<number, PlayerEnrichment[]>();
+      for (const p of this.points) {
+        const list = bySeason.get(p.season) ?? [];
+        list.push(p);
+        bySeason.set(p.season, list);
+      }
+      for (const [season, list] of bySeason) {
+        list.sort((a, b) => b.fantasyPoints - a.fantasyPoints);
+        list.forEach((p, i) => {
+          this.eosRankByKey.set(`${season}::${normalizeName(p.playerName)}`, i + 1);
+        });
       }
     }
 
@@ -128,19 +143,33 @@ export class EnrichmentStore {
     this.loaded = true;
   }
 
-  getFantasyPoints(playerName: string, season: number): number | undefined {
+  private findPoints(playerName: string, season: number): PlayerEnrichment | undefined {
     const key = normalizeName(playerName);
     const match = this.points.find(
       (p) => p.season === season && normalizeName(p.playerName) === key
     );
-    if (match) return match.fantasyPoints;
+    if (match) return match;
 
-    const fuzzy = this.points.find(
+    return this.points.find(
       (p) =>
         p.season === season &&
         (normalizeName(p.playerName).includes(key) || key.includes(normalizeName(p.playerName)))
     );
-    return fuzzy?.fantasyPoints;
+  }
+
+  getFantasyPoints(playerName: string, season: number): number | undefined {
+    return this.findPoints(playerName, season)?.fantasyPoints;
+  }
+
+  /** End-of-season overall PPR rank (1 = highest scorer). */
+  getEosRank(playerName: string, season: number): number | undefined {
+    const key = `${season}::${normalizeName(playerName)}`;
+    const exact = this.eosRankByKey.get(key);
+    if (exact != null) return exact;
+
+    const match = this.findPoints(playerName, season);
+    if (!match) return undefined;
+    return this.eosRankByKey.get(`${season}::${normalizeName(match.playerName)}`);
   }
 
   getAdp(playerName: string, season: number): AdpEntry | undefined {
@@ -155,16 +184,6 @@ export class EnrichmentStore {
         a.season === season &&
         (normalizeName(a.playerName).includes(key) || key.includes(normalizeName(a.playerName)))
     );
-  }
-
-  getExpectedPointsAtAdp(adp: number, season: number): number {
-    const nearby = this.adp
-      .filter((a) => a.season === season && a.expectedPoints != null)
-      .sort((a, b) => Math.abs(a.adp - adp) - Math.abs(b.adp - adp));
-    if (nearby.length > 0 && nearby[0].expectedPoints != null) {
-      return nearby[0].expectedPoints;
-    }
-    return estimateExpectedPoints(adp);
   }
 
   getDraftYear(playerName: string): number | undefined {
@@ -200,16 +219,6 @@ export class EnrichmentStore {
     }
     return false;
   }
-}
-
-function estimateExpectedPoints(adp: number): number {
-  if (adp <= 12) return 220;
-  if (adp <= 24) return 190;
-  if (adp <= 48) return 160;
-  if (adp <= 72) return 130;
-  if (adp <= 96) return 100;
-  if (adp <= 120) return 75;
-  return 50;
 }
 
 export const enrichmentStore = new EnrichmentStore();

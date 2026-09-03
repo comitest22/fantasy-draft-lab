@@ -1,6 +1,10 @@
 /**
  * Import pre-draft ranking .docx files into data/enrichment/adp.csv
  *
+ * Verified ESPN overall boards in data/enrichment/espn-ppr-overall/{year}.csv
+ * replace that season after parsing (docx files often drop rookies / scramble
+ * ranks after the top of the board).
+ *
  * Usage:
  *   npx tsx scripts/enrichment/import-rankings.ts "C:/Users/jrose/Downloads"
  */
@@ -14,6 +18,7 @@ const require = createRequire(__filename);
 const mammoth = require('../../server/node_modules/mammoth') as typeof import('mammoth');
 
 const OUT_PATH = path.resolve(__dirname, '../../data/enrichment/adp.csv');
+const OVERRIDE_DIR = path.resolve(__dirname, '../../data/enrichment/espn-ppr-overall');
 const VALID_POS = new Set(['QB', 'RB', 'WR', 'TE', 'K', 'DST', 'DEF', 'D/ST']);
 
 type AdpRow = {
@@ -21,18 +26,8 @@ type AdpRow = {
   season: number;
   position: string;
   adp: number;
-  expectedPoints: number;
+  expectedPoints?: number;
 };
-
-function estimateExpectedPoints(adp: number): number {
-  if (adp <= 12) return 220;
-  if (adp <= 24) return 190;
-  if (adp <= 48) return 160;
-  if (adp <= 72) return 130;
-  if (adp <= 96) return 100;
-  if (adp <= 120) return 75;
-  return 50;
-}
 
 function normalizePos(raw: string): string | null {
   const p = raw.toUpperCase().replace(/\s+/g, '');
@@ -181,7 +176,6 @@ function parseDoc(text: string, season: number): AdpRow[] {
       season,
       position: pos,
       adp: rank,
-      expectedPoints: estimateExpectedPoints(rank),
     });
   }
 
@@ -219,13 +213,48 @@ async function main(): Promise<void> {
     allRows.push(...rows);
   }
 
+  try {
+    const overrideFiles = (await fs.readdir(OVERRIDE_DIR)).filter((f) =>
+      /^\d{4}\.csv$/i.test(f)
+    );
+    for (const file of overrideFiles) {
+      const season = parseInt(file.slice(0, 4), 10);
+      const raw = await fs.readFile(path.join(OVERRIDE_DIR, file), 'utf-8');
+      const overrideRows: AdpRow[] = raw
+        .trim()
+        .split(/\r?\n/)
+        .slice(1)
+        .filter((l) => l.trim().length > 0)
+        .map((line) => {
+          const cols = line.split(',');
+          return {
+            playerName: cols[0],
+            season: parseInt(cols[1], 10),
+            position: cols[2],
+            adp: parseFloat(cols[3]),
+            expectedPoints: Number.isFinite(parseFloat(cols[4])) ? parseFloat(cols[4]) : undefined,
+          };
+        });
+      const before = allRows.length;
+      const kept = allRows.filter((r) => r.season !== season);
+      allRows.length = 0;
+      allRows.push(...kept, ...overrideRows);
+      console.log(
+        `Override ${file}: ${overrideRows.length} players (dropped ${before - kept.length} parsed ${season} rows)`
+      );
+    }
+  } catch (err) {
+    const code = (err as NodeJS.ErrnoException).code;
+    if (code !== 'ENOENT') throw err;
+  }
+
   allRows.sort((a, b) => a.season - b.season || a.adp - b.adp);
 
   const lines = [
     'playerName,season,position,adp,expectedPoints',
     ...allRows.map(
       (r) =>
-        [r.playerName, r.season, r.position, r.adp, r.expectedPoints].map(csvEscape).join(',')
+        [r.playerName, r.season, r.position, r.adp, r.expectedPoints ?? ''].map(csvEscape).join(',')
     ),
   ];
 

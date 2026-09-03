@@ -42,6 +42,7 @@ export interface GradedPick extends DraftPick {
   adp?: number;
   fantasyPoints?: number;
   expectedPoints?: number;
+  eosRank?: number;
   valueScore?: number;
   grade: PickGrade;
   isUserPick: boolean;

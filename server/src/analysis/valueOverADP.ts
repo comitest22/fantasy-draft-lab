@@ -1,8 +1,26 @@
-import type { DraftPick, GradedPick, PickGrade } from '../types';
+import type { DraftPick, GradedPick, PickGrade, Position } from '../types';
 import { enrichmentStore } from '../data/enrichment';
 
 const REACH_THRESHOLD = 12;
 const STEAL_THRESHOLD = 12;
+const POINTS_HIT = 40;
+const POINTS_BUST = -30;
+const RANK_HIT = 20;
+const RANK_BUST = -20;
+/** Finish used when a skill player has no EOS PPR row (outside the scored board). */
+const UNRANKED_EOS = 301;
+
+function applyOutcomeGrade(valueScore: number, byRank: boolean): PickGrade {
+  const hitAt = byRank ? RANK_HIT : POINTS_HIT;
+  const bustAt = byRank ? RANK_BUST : POINTS_BUST;
+  if (valueScore >= hitAt) return 'hit';
+  if (valueScore <= bustAt) return 'bust';
+  return 'fair';
+}
+
+function canRankGrade(position: Position): boolean {
+  return position !== 'K' && position !== 'D/ST';
+}
 
 export function gradePick(
   pick: DraftPick,
@@ -11,21 +29,23 @@ export function gradePick(
   const adpEntry = enrichmentStore.getAdp(pick.playerName, pick.season);
   const adp = adpEntry?.adp;
   const fantasyPoints = enrichmentStore.getFantasyPoints(pick.playerName, pick.season);
-  const expectedPoints =
-    adp != null
-      ? adpEntry?.expectedPoints ?? enrichmentStore.getExpectedPointsAtAdp(adp, pick.season)
-      : undefined;
+  const expectedPoints = adpEntry?.expectedPoints;
+  const eosRank = enrichmentStore.getEosRank(pick.playerName, pick.season);
   const isRookie = enrichmentStore.isRookie(pick.playerName, pick.season, pick.position);
 
   let valueScore: number | undefined;
   let grade: PickGrade = 'unknown';
+  let finishRank = eosRank;
 
   if (fantasyPoints != null && expectedPoints != null) {
     valueScore = fantasyPoints - expectedPoints;
-    if (valueScore >= 40) grade = 'hit';
-    else if (valueScore >= 10) grade = 'fair';
-    else if (valueScore <= -30) grade = 'bust';
-    else grade = 'fair';
+    grade = applyOutcomeGrade(valueScore, false);
+  } else if (adp != null && canRankGrade(pick.position)) {
+    finishRank = eosRank ?? UNRANKED_EOS;
+    const rankDelta = adp - finishRank;
+    grade = applyOutcomeGrade(rankDelta, true);
+    // Cap so season totals/draft grade stay on a similar scale to PPR value.
+    valueScore = Math.max(-50, Math.min(50, rankDelta));
   }
 
   if (adp != null) {
@@ -34,8 +54,8 @@ export function gradePick(
     if (adpDelta <= -STEAL_THRESHOLD && grade !== 'bust') grade = 'steal';
   }
 
-  // If we still can't grade (usually missing ADP), label confirmed rookies
-  if (grade === 'unknown' && isRookie) {
+  // Rookie badge only when we have no rank to grade against
+  if (grade === 'unknown' && isRookie && adp == null) {
     grade = 'rookie';
   }
 
@@ -44,6 +64,7 @@ export function gradePick(
     adp,
     fantasyPoints,
     expectedPoints,
+    eosRank: finishRank,
     valueScore,
     grade,
     isUserPick,
@@ -97,4 +118,4 @@ export function computeRates(gradedPicks: GradedPick[]): {
   };
 }
 
-export { REACH_THRESHOLD, STEAL_THRESHOLD };
+export { REACH_THRESHOLD, STEAL_THRESHOLD, RANK_HIT, RANK_BUST, UNRANKED_EOS };

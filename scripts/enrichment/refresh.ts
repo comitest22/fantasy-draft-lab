@@ -1,7 +1,7 @@
 /**
  * Enrichment status / instructions.
  *
- * - adp.csv: pre-draft rankings (from "* Rankings.docx")
+ * - adp.csv: pre-draft ESPN PPR ranks + Clay projected PPR (expectedPoints)
  * - fantasy-points.csv: actual season PPR points (from nflverse)
  * - draft-picks.csv: NFL draft year for rookie detection (from nflverse)
  *
@@ -56,12 +56,15 @@ async function main(): Promise<void> {
   console.log(`  draft-picks.csv: ${draftRows} skill-position draftees (rookie detection)`);
   console.log('');
   console.log('Sources:');
-  console.log('  - ADP: ESPN pre-draft ranking docs (auction $ ignored)');
+  console.log('  - ADP: ESPN PPR Top 300 cheat sheets (data/enrichment/espn-ppr-overall/{year}.csv)');
+  console.log('  - Expected points: Mike Clay pre-draft PPR (ESPN projection guide FF Pt)');
   console.log('  - Fantasy points: nflverse fantasy_points_ppr (regular season)');
   console.log('  - Draft picks: nflverse draft_picks (NFL draft year = rookie season)');
   console.log('');
   console.log('Refresh:');
   console.log('  npm run enrichment:import-rankings -- "C:/Users/you/Downloads"');
+  console.log('  npm run enrichment:apply-rankings');
+  console.log('  npm run enrichment:apply-projections');
   console.log('  npm run enrichment:import-fantasy-points');
   console.log('  npm run enrichment:import-draft-picks');
 }
