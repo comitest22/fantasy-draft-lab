@@ -15,6 +15,8 @@
     "research:sot": "tsx scripts/research/run.ts",
     "enrichment:refresh": "tsx scripts/enrichment/refresh.ts",
     "enrichment:import-rankings": "tsx scripts/enrichment/import-rankings.ts",
+    "enrichment:apply-rankings": "tsx scripts/enrichment/apply-overall-rankings.ts",
+    "enrichment:apply-projections": "tsx scripts/enrichment/apply-clay-projections.ts",
     "enrichment:import-fantasy-points": "tsx scripts/enrichment/import-fantasy-points.ts",
     "enrichment:import-draft-picks": "tsx scripts/enrichment/import-draft-picks.ts"
   },
