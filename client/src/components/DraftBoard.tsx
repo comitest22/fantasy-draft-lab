@@ -47,18 +47,24 @@ export default function DraftBoard({ picks, highlightUser = true }: Props) {
                     {pick.position} · {pick.nflTeam}
                   </div>
                   <div className="pick-team">{pick.fantasyTeamName}</div>
-                  {pick.expectedPoints != null && pick.valueScore != null && (
+                  {pick.adp != null && pick.eosRank == null && pick.fantasyPoints == null ? (
+                    <div className="pick-value">
+                      ESPN #{Math.round(pick.adp)}
+                      {pick.overallPick !== Math.round(pick.adp)
+                        ? ` · ${pick.overallPick - pick.adp > 0 ? '+' : ''}${Math.round(pick.overallPick - pick.adp)} vs ADP`
+                        : ''}
+                    </div>
+                  ) : pick.expectedPoints != null && pick.valueScore != null ? (
                     <div className="pick-value">
                       Value: {pick.valueScore > 0 ? '+' : ''}
                       {pick.valueScore.toFixed(0)}
                     </div>
-                  )}
-                  {pick.expectedPoints == null && pick.adp != null && pick.eosRank != null && (
+                  ) : pick.expectedPoints == null && pick.adp != null && pick.eosRank != null ? (
                     <div className="pick-value">
                       Rank {Math.round(pick.adp)} →{' '}
                       {pick.eosRank >= 301 ? 'unranked' : pick.eosRank}
                     </div>
-                  )}
+                  ) : null}
                 </article>
               ))}
             </div>

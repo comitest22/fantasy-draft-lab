@@ -11,5 +11,12 @@ export default defineConfig({
         changeOrigin: true,
       },
     },
+    // Coalesce OneDrive / cloud-sync mtime storms so the page does not full-reload in a loop.
+    watch: {
+      awaitWriteFinish: {
+        stabilityThreshold: 800,
+        pollInterval: 100,
+      },
+    },
   },
 });

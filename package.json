@@ -1,5 +1,5 @@
 {
-  "name": "fantasy-draft-lab",
+  "name": "dontsuckatfantasydrafts",
   "version": "1.0.0",
   "description": "ESPN fantasy draft analysis and strategy tool",
   "private": true,
@@ -14,11 +14,17 @@
     "test": "npm run test --prefix server",
     "research:sot": "tsx scripts/research/run.ts",
     "enrichment:refresh": "tsx scripts/enrichment/refresh.ts",
+    "enrichment:weekly": "tsx scripts/enrichment/weekly.ts",
     "enrichment:import-rankings": "tsx scripts/enrichment/import-rankings.ts",
-    "enrichment:apply-rankings": "tsx scripts/enrichment/apply-overall-rankings.ts",
+    "enrichment:fetch-espn-ranks": "tsx scripts/enrichment/fetch-espn-ranks.ts",
+    "enrichment:fetch-poolgenius": "tsx scripts/enrichment/fetch-poolgenius.ts",
+    "enrichment:fetch-sos-schedule": "tsx scripts/enrichment/fetch-sos-schedule.ts",
+    "enrichment:fetch-game-context": "tsx scripts/enrichment/fetch-game-context.ts",
+    "enrichment:build-consensus": "tsx scripts/enrichment/build-consensus.ts",
     "enrichment:apply-projections": "tsx scripts/enrichment/apply-clay-projections.ts",
     "enrichment:import-fantasy-points": "tsx scripts/enrichment/import-fantasy-points.ts",
-    "enrichment:import-draft-picks": "tsx scripts/enrichment/import-draft-picks.ts"
+    "enrichment:import-draft-picks": "tsx scripts/enrichment/import-draft-picks.ts",
+    "enrichment:build-td-matchups": "tsx scripts/enrichment/build-td-matchups.ts"
   },
   "devDependencies": {
     "@cursor/sdk": "^1.0.28",

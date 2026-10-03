@@ -235,7 +235,7 @@ export default function ImportPage() {
         current.filter((item) => !saved.includes(item.season))
       );
     } else {
-      navigate('/');
+      navigate('/seasons');
     }
 
     setLoading(false);

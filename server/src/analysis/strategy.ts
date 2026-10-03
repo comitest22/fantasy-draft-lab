@@ -1,7 +1,22 @@
 import fs from 'fs/promises';
 import path from 'path';
-import type { StrategyRecommendation, SotDocument, EraComparison, SeasonAnalysis } from '../types';
+import type {
+  StrategyRecommendation,
+  SotDocument,
+  EraComparison,
+  SeasonAnalysis,
+  ContenderPlaybook,
+} from '../types';
 import { sotDir } from '../data/store';
+import { enrichmentStore } from '../data/enrichment';
+import {
+  formatById,
+  formatLearnings,
+  hasSuperflex,
+  isDefaultLeagueFormat,
+  rosterFromFormat,
+} from './leagueFormats';
+import type { RosterSettings } from '../types';
 
 function parseFrontmatter(raw: string): {
   meta: Record<string, string | string[]>;
@@ -43,6 +58,7 @@ export async function loadSotDocuments(): Promise<SotDocument[]> {
   for (const file of files) {
     const raw = await fs.readFile(path.join(dir, file), 'utf-8');
     const { meta, content } = parseFrontmatter(raw);
+    if ((meta.kind as string) === 'app') continue;
     docs.push({
       slug: file.replace('.md', ''),
       title: (meta.title as string) ?? file,
@@ -64,11 +80,49 @@ export async function loadSotDocuments(): Promise<SotDocument[]> {
 export function generateStrategyRecommendations(
   analyses: SeasonAnalysis[],
   eraComparison: EraComparison,
-  sotDocs: SotDocument[]
+  sotDocs: SotDocument[],
+  playbook?: ContenderPlaybook,
+  format?: { teams: number; formatId: string; roster: RosterSettings }
 ): StrategyRecommendation[] {
-  const recs: StrategyRecommendation[] = [];
+  const recs: StrategyRecommendation[] = [...(playbook?.learnings ?? [])];
+  const fromPlaybook = recs.length > 0;
+  const preset = formatById(format?.formatId);
+  const roster = format?.roster ?? rosterFromFormat(preset);
+  const teams = format?.teams ?? 10;
+  const superflex = hasSuperflex(roster);
 
-  if (eraComparison.insights.length > 0) {
+  const consensusRecs = enrichmentStore
+    .listExpertTakeaways()
+    .filter((t) => t.topic === 'strategy')
+    .filter((t) => !(superflex && t.id === 'wait-qb-k-dst-2026'))
+    .map((t) => ({
+      id: t.id,
+      title: t.id === 'hero-rb-2026' ? 'Hero RB, not rigid Zero RB' : t.claim.split('.')[0],
+      detail: t.claim,
+      severity: 'info' as const,
+      sotRefs: ['ppr-10-team-draft-strategy', 'draft-slot-strategy'],
+      sources: t.sources,
+    }));
+  recs.unshift(...consensusRecs);
+
+  if (format && !isDefaultLeagueFormat(teams, preset.id)) {
+    recs.unshift(...formatLearnings(teams, roster, preset.label));
+  }
+
+  const skipIds = new Set<string>();
+  if (roster.wr !== 2 || roster.flex !== 1 || superflex) {
+    skipIds.add('lineup-2rb-2wr');
+    skipIds.add('copy-wr-open');
+  }
+  if (roster.wr >= 3) {
+    skipIds.add('copy-wr-open');
+    skipIds.add('copy-safer-early');
+  }
+  if (superflex) {
+    skipIds.add('copy-wait-qb');
+  }
+
+  if (!fromPlaybook && eraComparison.insights.length > 0) {
     recs.push({
       id: 'era-draft-grade',
       title: 'Draft quality declined in recent years',
@@ -78,10 +132,12 @@ export function generateStrategyRecommendations(
     });
   }
 
+  const recIds = new Set(recs.map((r) => r.id));
+
   const reachInsight = eraComparison.insights.find((i) =>
     i.toLowerCase().includes('reach')
   );
-  if (reachInsight) {
+  if (!fromPlaybook && reachInsight) {
     recs.push({
       id: 'reduce-reaches',
       title: 'Reduce reaches early in the draft',
@@ -92,7 +148,7 @@ export function generateStrategyRecommendations(
   }
 
   const qbInsight = eraComparison.insights.find((i) => i.includes('QB'));
-  if (qbInsight) {
+  if (!fromPlaybook && qbInsight) {
     recs.push({
       id: 'qb-timing',
       title: 'Revisit QB draft timing',
@@ -106,7 +162,7 @@ export function generateStrategyRecommendations(
     eraComparison.badEra.seasons.includes(a.season)
   );
   const highBustSeasons = badEraAnalyses.filter((a) => a.bustRate >= 0.25);
-  if (highBustSeasons.length >= 2) {
+  if (highBustSeasons.length >= 2 && !recIds.has('copy-safer-early') && !recIds.has('bust-rate')) {
     recs.push({
       id: 'bust-rate',
       title: 'High bust rate in recent drafts',
@@ -118,7 +174,7 @@ export function generateStrategyRecommendations(
 
   const rbBad = eraComparison.badEra.positionalTiming.RB;
   const rbGood = eraComparison.goodEra.positionalTiming.RB;
-  if (rbBad != null && rbGood != null && rbBad > rbGood + 0.5) {
+  if (!fromPlaybook && rbBad != null && rbGood != null && rbBad > rbGood + 0.5) {
     recs.push({
       id: 'rb-dead-zone',
       title: 'RB investment shifted later — verify value',
@@ -139,7 +195,7 @@ export function generateStrategyRecommendations(
     });
   }
 
-  return recs.slice(0, 8);
+  return recs.filter((r) => !skipIds.has(r.id)).slice(0, 12);
 }
 
 export function attachSotCitations(

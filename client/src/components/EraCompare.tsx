@@ -2,14 +2,15 @@ import type { EraComparison } from '../types';
 
 interface Props {
   eraComparison: EraComparison;
+  showHeading?: boolean;
 }
 
-export default function EraCompare({ eraComparison }: Props) {
+export default function EraCompare({ eraComparison, showHeading = true }: Props) {
   const { goodEra, badEra, insights } = eraComparison;
 
   return (
     <section className="era-compare">
-      <h2>Era Comparison</h2>
+      {showHeading && <h2>Era</h2>}
       <div className="era-grid">
         <div className="era-card good">
           <h3>{goodEra.label}</h3>

@@ -5,7 +5,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://fantasy-draft-lab-backend.onrender.com/api/:path*"
+      "destination": "https://dontsuckatfantasydrafts-backend.onrender.com/api/:path*"
     }
   ]
 }

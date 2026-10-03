@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ConfirmDialog from '../components/ConfirmDialog';
 import DraftBoard from '../components/DraftBoard';
+import PodiumCompare from '../components/PodiumCompare';
 import { deleteSeason, getDraftSeason } from '../services/api';
 import type { DraftFile, SeasonAnalysis } from '../types';
 
@@ -32,7 +33,7 @@ export default function SeasonDetailPage() {
     setError(null);
     try {
       await deleteSeason(draft.season);
-      navigate('/');
+      navigate('/seasons');
     } catch (err) {
       setError(String(err));
       setConfirmOpen(false);
@@ -51,7 +52,7 @@ export default function SeasonDetailPage() {
     <section className="panel">
       <div className="panel-header">
         <div>
-          <Link to="/" className="back-link">
+          <Link to="/seasons" className="back-link">
             ← All seasons
           </Link>
           <h1>{draft.season} Draft</h1>
@@ -108,6 +109,14 @@ export default function SeasonDetailPage() {
         </ul>
       )}
 
+      <PodiumCompare
+        podium={analysis.podium ?? []}
+        userTeamName={analysis.userTeamName}
+        userDraftSlot={analysis.userDraftSlot}
+        userFirstThree={analysis.userFirstThree}
+        userGrade={analysis.draftGrade}
+      />
+
       <h2>Your picks</h2>
       <DraftBoard picks={userPicks} highlightUser />
 
@@ -117,8 +126,8 @@ export default function SeasonDetailPage() {
           <tr>
             <th>Position</th>
             <th>Your 1st pick</th>
-            <th>League avg</th>
-            <th>Top 3 avg</th>
+            <th>League average</th>
+            <th>Podium average</th>
           </tr>
         </thead>
         <tbody>

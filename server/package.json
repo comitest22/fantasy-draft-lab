@@ -1,11 +1,11 @@
 {
-  "name": "fantasy-draft-lab-server",
+  "name": "dontsuckatfantasydrafts-server",
   "version": "1.0.0",
-  "description": "Backend for Fantasy Draft Lab",
+  "description": "Backend for DontSuckAtFantasyDrafts",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",
-    "dev": "cross-env TS_NODE_CACHE=0 nodemon -L -e ts,js,json src/index.ts",
+    "dev": "cross-env TS_NODE_CACHE=0 nodemon src/index.ts",
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "test": "tsx --test src/**/*.test.ts"
@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
-    "fantasy-draft-lab": "file:..",
+    "dontsuckatfantasydrafts": "file:..",
     "mammoth": "^1.9.0",
     "multer": "^1.4.5-lts.2"
   },

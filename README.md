@@ -1,6 +1,6 @@
-# Fantasy Draft Lab
+# DSAFD
 
-Analyze your ESPN fantasy football draft history, compare good vs bad eras, and build a data-driven draft strategy.
+DontSuckAtFantasyDrafts — analyze your ESPN fantasy football draft history, compare good vs bad eras, and build a data-driven draft strategy.
 
 ## Features
 
@@ -8,6 +8,7 @@ Analyze your ESPN fantasy football draft history, compare good vs bad eras, and 
 - **Grade picks** against historical ADP and fantasy points
 - **Compare eras** (2015–2021 vs 2022+ by default)
 - **Strategy recommendations** backed by SOT research docs
+- **Survivor hubs** for winner knockout, loser knockout, and anytime-TD streak
 - **Research agent** to refresh strategy library via Cursor SDK
 
 ## Quick start
@@ -44,7 +45,7 @@ data/
   drafts/        Parsed draft JSON per season
   enrichment/    Fantasy points + ADP CSVs
   league-config.json
-docs/sot/        Source-of-truth strategy research
+docs/sot/        Strategy research + app-internal SOT (`kind: app` files stay off the Research tab)
 scripts/
   research/      Cursor SDK research runner
   enrichment/    Enrichment data utilities

@@ -15,14 +15,16 @@ app.use(cors());
 app.use(express.json({ limit: '2mb' }));
 
 app.get('/api/health', (_req, res) => {
-  res.json({ status: 'ok', service: 'fantasy-draft-lab' });
+  res.json({ status: 'ok', service: 'dontsuckatfantasydrafts' });
 });
+
 
 app.use('/api/drafts', draftsRouter);
 app.use('/api/analysis', analysisRouter);
 
 app.listen(PORT, () => {
-  console.log(`Fantasy Draft Lab server running on http://localhost:${PORT}`);
+  console.log(`DontSuckAtFantasyDrafts server running on http://localhost:${PORT}`);
 });
+
 
 export default app;

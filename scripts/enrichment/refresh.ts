@@ -62,11 +62,14 @@ async function main(): Promise<void> {
   console.log('  - Draft picks: nflverse draft_picks (NFL draft year = rookie season)');
   console.log('');
   console.log('Refresh:');
-  console.log('  npm run enrichment:import-rankings -- "C:/Users/you/Downloads"');
-  console.log('  npm run enrichment:apply-rankings');
-  console.log('  npm run enrichment:apply-projections');
+  console.log('  npm run enrichment:weekly          # Tuesday after MNF / Friday after TNF');
+  console.log('  npm run enrichment:fetch-espn-ranks');
+  console.log('  npm run enrichment:fetch-sos-schedule');
+  console.log('  npm run enrichment:fetch-poolgenius');
+  console.log('  npm run enrichment:fetch-game-context');
   console.log('  npm run enrichment:import-fantasy-points');
-  console.log('  npm run enrichment:import-draft-picks');
+  console.log('  npm run enrichment:build-td-matchups');
+  console.log('  npm run enrichment:build-consensus');
 }
 
 main().catch((err) => {
