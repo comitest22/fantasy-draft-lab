@@ -14,7 +14,7 @@ type WeekOpt = {
   projPct: number | null;
   opp: string;
   result: 'W' | 'L' | null;
-  score?: string | null;
+  score: string | null;
 };
 
 function formatOpp(opp: string): string {
@@ -517,6 +517,7 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
                           projPct: null,
                           opp: '',
                           result: null,
+                          score: null,
                         });
                       }
                       const selectedOpt = opts.find((opt) => opt.team === selected);
