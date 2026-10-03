@@ -1,0 +1,6184 @@
+{
+  "pulledAt": "2026-09-29T22:00:13.587Z",
+  "lastUpdated": null,
+  "week": 4,
+  "source": "https://poolgenius.teamrankings.com/nfl-survivor-pool-picks/data-grid/",
+  "teams": [
+    {
+      "team": "BAL",
+      "teamName": "Baltimore",
+      "opponent": "TEN",
+      "home": true,
+      "matchupLabel": "vs. TEN",
+      "pgWinPct": 84,
+      "marketWinPct": 86,
+      "moneyline": "-719",
+      "spread": -11.5,
+      "popularityPct": 36,
+      "ev": 1.05,
+      "futureValue": 1.04,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 60,
+          "opp": "@IND",
+          "bye": false,
+          "result": "W",
+          "score": "41-23",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 64,
+          "opp": "NO",
+          "bye": false,
+          "result": "L",
+          "score": "17-24",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 82,
+          "opp": "@DAL",
+          "bye": false,
+          "result": "W",
+          "score": "34-31",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 84,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 70,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 70,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 60,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 39,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 39,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 68,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 63,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 54,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 74,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 62,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 79,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 48,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 48,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "TEN",
+          "home": true,
+          "matchupLabel": "vs. TEN",
+          "pgWinPct": 84,
+          "marketWinPct": 86,
+          "moneyline": "-719",
+          "spread": -11.5,
+          "popularityPct": 36,
+          "ev": 1.05,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "MIN",
+      "teamName": "Minnesota",
+      "opponent": "MIA",
+      "home": true,
+      "matchupLabel": "vs. MIA",
+      "pgWinPct": 81,
+      "marketWinPct": 85,
+      "moneyline": "-649",
+      "spread": -10.5,
+      "popularityPct": 44,
+      "ev": 0.96,
+      "futureValue": 0.99,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 61,
+          "opp": "GB",
+          "bye": false,
+          "result": "W",
+          "score": "39-22",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 49,
+          "opp": "@CHI",
+          "bye": false,
+          "result": "W",
+          "score": "9-3",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 80,
+          "opp": "@TB",
+          "bye": false,
+          "result": "W",
+          "score": "23-16",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 81,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 54,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 67,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 40,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 45,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 45,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 44,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 67,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 67,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 42,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 53,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 64,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 59,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 59,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "MIA",
+          "home": true,
+          "matchupLabel": "vs. MIA",
+          "pgWinPct": 81,
+          "marketWinPct": 85,
+          "moneyline": "-649",
+          "spread": -10.5,
+          "popularityPct": 44,
+          "ev": 0.96,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "SEA",
+      "teamName": "Seattle",
+      "opponent": "LAC",
+      "home": true,
+      "matchupLabel": "vs. LAC",
+      "pgWinPct": 73,
+      "marketWinPct": 75,
+      "moneyline": "-346",
+      "spread": -7,
+      "popularityPct": 5,
+      "ev": 1.05,
+      "futureValue": 1.04,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 58,
+          "opp": "NE",
+          "bye": false,
+          "result": "W",
+          "score": "13-10",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 77,
+          "opp": "@ARI",
+          "bye": false,
+          "result": "W",
+          "score": "31-7",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 70,
+          "opp": "@WAS",
+          "bye": false,
+          "result": "L",
+          "score": "31-33",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 73,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 64,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 51,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 57,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 62,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 79,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 62,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 49,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 67,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 84,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 57,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 52,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 66,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 66,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "LAC",
+          "home": true,
+          "matchupLabel": "vs. LAC",
+          "pgWinPct": 73,
+          "marketWinPct": 75,
+          "moneyline": "-346",
+          "spread": -7,
+          "popularityPct": 5,
+          "ev": 1.05,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "BUF",
+      "teamName": "Buffalo",
+      "opponent": "NE",
+      "home": true,
+      "matchupLabel": "vs. NE",
+      "pgWinPct": 72,
+      "marketWinPct": 74,
+      "moneyline": "-317",
+      "spread": -6.5,
+      "popularityPct": 4,
+      "ev": 1.05,
+      "futureValue": 1.02,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 67,
+          "opp": "@HOU",
+          "bye": false,
+          "result": "W",
+          "score": "36-31",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 75,
+          "opp": "DET",
+          "bye": false,
+          "result": "W",
+          "score": "41-31",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 70,
+          "opp": "LAC",
+          "bye": false,
+          "result": "W",
+          "score": "24-16",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 72,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 46,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 62,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 61,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 55,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 70,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 86,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 58,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 53,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 56,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 62,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 51,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 78,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 78,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "NE",
+          "home": true,
+          "matchupLabel": "vs. NE",
+          "pgWinPct": 72,
+          "marketWinPct": 74,
+          "moneyline": "-317",
+          "spread": -6.5,
+          "popularityPct": 4,
+          "ev": 1.05,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "KC",
+      "teamName": "Kansas City",
+      "opponent": "LV",
+      "home": false,
+      "matchupLabel": "at LV",
+      "pgWinPct": 69,
+      "marketWinPct": 67,
+      "moneyline": "-222",
+      "spread": -4.5,
+      "popularityPct": 1,
+      "ev": 1.02,
+      "futureValue": 0.94,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 71,
+          "opp": "DEN",
+          "bye": false,
+          "result": "W",
+          "score": "31-10",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 84,
+          "opp": "IND",
+          "bye": false,
+          "result": "W",
+          "score": "33-30",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 70,
+          "opp": "@MIA",
+          "bye": false,
+          "result": "W",
+          "score": "24-10",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 69,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 71,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 43,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 50,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 79,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 66,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 79,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 42,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 39,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 49,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 64,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 60,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 58,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 58,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "LV",
+          "home": false,
+          "matchupLabel": "at LV",
+          "pgWinPct": 69,
+          "marketWinPct": 67,
+          "moneyline": "-222",
+          "spread": -4.5,
+          "popularityPct": 1,
+          "ev": 1.02,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "GB",
+      "teamName": "Green Bay",
+      "opponent": "TB",
+      "home": false,
+      "matchupLabel": "at TB",
+      "pgWinPct": 66,
+      "marketWinPct": 64,
+      "moneyline": "-195",
+      "spread": -4,
+      "popularityPct": 2,
+      "ev": 0.96,
+      "futureValue": 0.89,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 66,
+          "opp": "@MIN",
+          "bye": false,
+          "result": "L",
+          "score": "22-39",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 72,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": "W",
+          "score": "20-17",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 51,
+          "opp": "ATL",
+          "bye": false,
+          "result": "L",
+          "score": "14-35",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 66,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 55,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 53,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 35,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 65,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 40,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 55,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 29,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 50,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 44,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 78,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 38,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 57,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 57,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "TB",
+          "home": false,
+          "matchupLabel": "at TB",
+          "pgWinPct": 66,
+          "marketWinPct": 64,
+          "moneyline": "-195",
+          "spread": -4,
+          "popularityPct": 2,
+          "ev": 0.96,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "DET",
+      "teamName": "Detroit",
+      "opponent": "CAR",
+      "home": false,
+      "matchupLabel": "at CAR",
+      "pgWinPct": 64,
+      "marketWinPct": 64,
+      "moneyline": "-191",
+      "spread": -3.5,
+      "popularityPct": 2,
+      "ev": 0.95,
+      "futureValue": 0.88,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 33,
+          "opp": "NO",
+          "bye": false,
+          "result": "W",
+          "score": "31-30",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 68,
+          "opp": "@BUF",
+          "bye": false,
+          "result": "L",
+          "score": "31-41",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 55,
+          "opp": "NYJ",
+          "bye": false,
+          "result": "W",
+          "score": "31-24",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 64,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 69,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 65,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 60,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 72,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 51,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 68,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 55,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 58,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 78,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 47,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 79,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 42,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 42,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "CAR",
+          "home": false,
+          "matchupLabel": "at CAR",
+          "pgWinPct": 64,
+          "marketWinPct": 64,
+          "moneyline": "-191",
+          "spread": -3.5,
+          "popularityPct": 2,
+          "ev": 0.95,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "IND",
+      "teamName": "Indianapolis",
+      "opponent": "WAS (N)",
+      "home": true,
+      "matchupLabel": "vs. WAS (N)",
+      "pgWinPct": 64,
+      "marketWinPct": 64,
+      "moneyline": "-194",
+      "spread": -3.5,
+      "popularityPct": 2,
+      "ev": 0.95,
+      "futureValue": 0.89,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 29,
+          "opp": "BAL",
+          "bye": false,
+          "result": "L",
+          "score": "23-41",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 52,
+          "opp": "@KC",
+          "bye": false,
+          "result": "L",
+          "score": "30-33",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 67,
+          "opp": "HOU",
+          "bye": false,
+          "result": "W",
+          "score": "19-17",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 64,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 48,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 68,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 33,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 33,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 47,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 72,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 36,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 68,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 36,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 56,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 42,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 52,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 52,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "WAS (N)",
+          "home": true,
+          "matchupLabel": "vs. WAS (N)",
+          "pgWinPct": 64,
+          "marketWinPct": 64,
+          "moneyline": "-194",
+          "spread": -3.5,
+          "popularityPct": 2,
+          "ev": 0.95,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "LA",
+      "teamName": "LA Rams",
+      "opponent": "PHI",
+      "home": false,
+      "matchupLabel": "at PHI",
+      "pgWinPct": 63,
+      "marketWinPct": 59,
+      "moneyline": "-160",
+      "spread": -3,
+      "popularityPct": 0,
+      "ev": 0.95,
+      "futureValue": 0.84,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 70,
+          "opp": "SF",
+          "bye": false,
+          "result": "L",
+          "score": "7-27",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 56,
+          "opp": "NYG",
+          "bye": false,
+          "result": "W",
+          "score": "28-6",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 55,
+          "opp": "@DEN",
+          "bye": false,
+          "result": "L",
+          "score": "26-30",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 63,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 54,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 80,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 64,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 72,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 66,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 73,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 71,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 61,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 53,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 70,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 48,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 69,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 69,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "PHI",
+          "home": false,
+          "matchupLabel": "at PHI",
+          "pgWinPct": 63,
+          "marketWinPct": 59,
+          "moneyline": "-160",
+          "spread": -3,
+          "popularityPct": 0,
+          "ev": 0.95,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "CHI",
+      "teamName": "Chicago",
+      "opponent": "NYJ",
+      "home": true,
+      "matchupLabel": "vs. NYJ",
+      "pgWinPct": 61,
+      "marketWinPct": 61,
+      "moneyline": "-174",
+      "spread": -3.5,
+      "popularityPct": 2,
+      "ev": 0.89,
+      "futureValue": 0.85,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 59,
+          "opp": "@CAR",
+          "bye": false,
+          "result": "W",
+          "score": "59-37",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 32,
+          "opp": "MIN",
+          "bye": false,
+          "result": "L",
+          "score": "3-9",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 57,
+          "opp": "PHI",
+          "bye": false,
+          "result": "W",
+          "score": "27-7",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 61,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 45,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 54,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 57,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 38,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 71,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 70,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 45,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 45,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 73,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 38,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 62,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 58,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 58,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "NYJ",
+          "home": true,
+          "matchupLabel": "vs. NYJ",
+          "pgWinPct": 61,
+          "marketWinPct": 61,
+          "moneyline": "-174",
+          "spread": -3.5,
+          "popularityPct": 2,
+          "ev": 0.89,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "SF",
+      "teamName": "San Francisco",
+      "opponent": "DEN",
+      "home": true,
+      "matchupLabel": "vs. DEN",
+      "pgWinPct": 60,
+      "marketWinPct": 58,
+      "moneyline": "-152",
+      "spread": -3,
+      "popularityPct": 0,
+      "ev": 0.89,
+      "futureValue": 0.82,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 42,
+          "opp": "@LA",
+          "bye": false,
+          "result": "W",
+          "score": "27-7",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 75,
+          "opp": "MIA",
+          "bye": false,
+          "result": "W",
+          "score": "35-13",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 56,
+          "opp": "ARI",
+          "bye": false,
+          "result": "W",
+          "score": "36-30",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 60,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 36,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 74,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 61,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 71,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 50,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 56,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 51,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 71,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 47,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 54,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 40,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 64,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 64,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "DEN",
+          "home": true,
+          "matchupLabel": "vs. DEN",
+          "pgWinPct": 60,
+          "marketWinPct": 58,
+          "moneyline": "-152",
+          "spread": -3,
+          "popularityPct": 0,
+          "ev": 0.89,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "HOU",
+      "teamName": "Houston",
+      "opponent": "DAL",
+      "home": true,
+      "matchupLabel": "vs. DAL",
+      "pgWinPct": 55,
+      "marketWinPct": 57,
+      "moneyline": "-143",
+      "spread": -2.5,
+      "popularityPct": 1,
+      "ev": 0.82,
+      "futureValue": 0.8,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 43,
+          "opp": "BUF",
+          "bye": false,
+          "result": "L",
+          "score": "31-36",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 48,
+          "opp": "CIN",
+          "bye": false,
+          "result": "L",
+          "score": "6-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 59,
+          "opp": "@IND",
+          "bye": false,
+          "result": "L",
+          "score": "17-19",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 55,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 72,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 72,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 74,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 46,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 60,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 64,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 46,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 52,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 51,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 51,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 44,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 43,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 43,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "DAL",
+          "home": true,
+          "matchupLabel": "vs. DAL",
+          "pgWinPct": 55,
+          "marketWinPct": 57,
+          "moneyline": "-143",
+          "spread": -2.5,
+          "popularityPct": 1,
+          "ev": 0.82,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "PIT",
+      "teamName": "Pittsburgh",
+      "opponent": "CLE",
+      "home": false,
+      "matchupLabel": "at CLE",
+      "pgWinPct": 55,
+      "marketWinPct": 57,
+      "moneyline": "-145",
+      "spread": -2.5,
+      "popularityPct": 1,
+      "ev": 0.81,
+      "futureValue": 0.8,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 36,
+          "opp": "ATL",
+          "bye": false,
+          "result": "W",
+          "score": "20-13",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 41,
+          "opp": "@NE",
+          "bye": false,
+          "result": "L",
+          "score": "3-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 54,
+          "opp": "CIN",
+          "bye": false,
+          "result": "W",
+          "score": "30-27",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 55,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 52,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 52,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 48,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 63,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 31,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 34,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 43,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 48,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 48,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 38,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 58,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 56,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 56,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "CLE",
+          "home": false,
+          "matchupLabel": "at CLE",
+          "pgWinPct": 55,
+          "marketWinPct": 57,
+          "moneyline": "-145",
+          "spread": -2.5,
+          "popularityPct": 1,
+          "ev": 0.81,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "ARI",
+      "teamName": "Arizona",
+      "opponent": "NYG",
+      "home": false,
+      "matchupLabel": "at NYG",
+      "pgWinPct": 53,
+      "marketWinPct": 53,
+      "moneyline": "-124",
+      "spread": -1.5,
+      "popularityPct": 0,
+      "ev": 0.79,
+      "futureValue": 0.75,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 36,
+          "opp": "@LAC",
+          "bye": false,
+          "result": "W",
+          "score": "26-14",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 25,
+          "opp": "SEA",
+          "bye": false,
+          "result": "L",
+          "score": "7-31",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 47,
+          "opp": "@SF",
+          "bye": false,
+          "result": "L",
+          "score": "30-36",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 53,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 31,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 20,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 37,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 29,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 21,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 27,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 21,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 49,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 42,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 56,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 36,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 48,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 48,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "NYG",
+          "home": false,
+          "matchupLabel": "at NYG",
+          "pgWinPct": 53,
+          "marketWinPct": 53,
+          "moneyline": "-124",
+          "spread": -1.5,
+          "popularityPct": 0,
+          "ev": 0.79,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "NO",
+      "teamName": "New Orleans",
+      "opponent": "ATL",
+      "home": true,
+      "matchupLabel": "vs. ATL",
+      "pgWinPct": 52,
+      "marketWinPct": 58,
+      "moneyline": "-151",
+      "spread": -2.5,
+      "popularityPct": 1,
+      "ev": 0.78,
+      "futureValue": 0.82,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 21,
+          "opp": "@DET",
+          "bye": false,
+          "result": "L",
+          "score": "30-31",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 57,
+          "opp": "@BAL",
+          "bye": false,
+          "result": "W",
+          "score": "24-17",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 62,
+          "opp": "LV",
+          "bye": false,
+          "result": "L",
+          "score": "27-35",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 52,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 46,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 58,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 52,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 68,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 60,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 30,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 32,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 50,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 47,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 47,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 64,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 47,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 47,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "ATL",
+          "home": true,
+          "matchupLabel": "vs. ATL",
+          "pgWinPct": 52,
+          "marketWinPct": 58,
+          "moneyline": "-151",
+          "spread": -2.5,
+          "popularityPct": 1,
+          "ev": 0.78,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "CIN",
+      "teamName": "Cincinnati",
+      "opponent": "JAC",
+      "home": true,
+      "matchupLabel": "vs. JAC",
+      "pgWinPct": 52,
+      "marketWinPct": 56,
+      "moneyline": "-141",
+      "spread": -2.5,
+      "popularityPct": 0,
+      "ev": 0.78,
+      "futureValue": 0.8,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 62,
+          "opp": "TB",
+          "bye": false,
+          "result": "W",
+          "score": "33-27",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 59,
+          "opp": "@HOU",
+          "bye": false,
+          "result": "W",
+          "score": "20-6",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 54,
+          "opp": "@PIT",
+          "bye": false,
+          "result": "L",
+          "score": "27-30",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 54,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 77,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 40,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 79,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 66,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 69,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 57,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 68,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 66,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 51,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 60,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 58,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 52,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 52,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "JAC",
+          "home": true,
+          "matchupLabel": "vs. JAC",
+          "pgWinPct": 52,
+          "marketWinPct": 56,
+          "moneyline": "-141",
+          "spread": -2.5,
+          "popularityPct": 0,
+          "ev": 0.78,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "JAX",
+      "teamName": "Jacksonville",
+      "opponent": "CIN",
+      "home": false,
+      "matchupLabel": "at CIN",
+      "pgWinPct": 48,
+      "marketWinPct": 44,
+      "moneyline": "+119",
+      "spread": 2.5,
+      "popularityPct": 0,
+      "ev": 0.72,
+      "futureValue": 0.62,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 45,
+          "opp": "CLE",
+          "bye": false,
+          "result": "W",
+          "score": "34-10",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 57,
+          "opp": "@DEN",
+          "bye": false,
+          "result": "L",
+          "score": "13-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 46,
+          "opp": "NE",
+          "bye": false,
+          "result": "W",
+          "score": "35-6",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 48,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 51,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 59,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 72,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 41,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 68,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 71,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 80,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 45,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 70,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 51,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 50,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 70,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 70,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "CIN",
+          "home": false,
+          "matchupLabel": "at CIN",
+          "pgWinPct": 48,
+          "marketWinPct": 44,
+          "moneyline": "+119",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.72,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "ATL",
+      "teamName": "Atlanta",
+      "opponent": "NO",
+      "home": false,
+      "matchupLabel": "at NO",
+      "pgWinPct": 48,
+      "marketWinPct": 42,
+      "moneyline": "+127",
+      "spread": 2.5,
+      "popularityPct": 0,
+      "ev": 0.72,
+      "futureValue": 0.6,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 39,
+          "opp": "@PIT",
+          "bye": false,
+          "result": "L",
+          "score": "13-20",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 28,
+          "opp": "CAR",
+          "bye": false,
+          "result": "L",
+          "score": "3-34",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 38,
+          "opp": "@GB",
+          "bye": false,
+          "result": "W",
+          "score": "35-14",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 48,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 30,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 46,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 39,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 46,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 34,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 34,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 33,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 42,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 51,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 41,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 56,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 53,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 53,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "NO",
+          "home": false,
+          "matchupLabel": "at NO",
+          "pgWinPct": 48,
+          "marketWinPct": 42,
+          "moneyline": "+127",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.72,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "NYG",
+      "teamName": "NY Giants",
+      "opponent": "ARI",
+      "home": true,
+      "matchupLabel": "vs. ARI",
+      "pgWinPct": 47,
+      "marketWinPct": 47,
+      "moneyline": "+105",
+      "spread": 1.5,
+      "popularityPct": 0,
+      "ev": 0.71,
+      "futureValue": 0.66,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 36,
+          "opp": "DAL",
+          "bye": false,
+          "result": "W",
+          "score": "28-20",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 50,
+          "opp": "@LA",
+          "bye": false,
+          "result": "L",
+          "score": "6-28",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 53,
+          "opp": "TEN",
+          "bye": false,
+          "result": "W",
+          "score": "12-7",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 47,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 46,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 42,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 26,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 25,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 43,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 43,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 32,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 29,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 16,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 52,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 21,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 24,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 24,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "ARI",
+          "home": true,
+          "matchupLabel": "vs. ARI",
+          "pgWinPct": 47,
+          "marketWinPct": 47,
+          "moneyline": "+105",
+          "spread": 1.5,
+          "popularityPct": 0,
+          "ev": 0.71,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "CLE",
+      "teamName": "Cleveland",
+      "opponent": "PIT",
+      "home": true,
+      "matchupLabel": "vs. PIT",
+      "pgWinPct": 45,
+      "marketWinPct": 43,
+      "moneyline": "+122",
+      "spread": 2.5,
+      "popularityPct": 0,
+      "ev": 0.69,
+      "futureValue": 0.62,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 20,
+          "opp": "@JAX",
+          "bye": false,
+          "result": "L",
+          "score": "10-34",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 45,
+          "opp": "@TB",
+          "bye": false,
+          "result": "W",
+          "score": "23-19",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 46,
+          "opp": "CAR",
+          "bye": false,
+          "result": "W",
+          "score": "21-18",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 45,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 48,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 30,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 48,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 37,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 32,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 40,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 48,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 34,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 49,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 48,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 21,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 48,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 48,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "PIT",
+          "home": true,
+          "matchupLabel": "vs. PIT",
+          "pgWinPct": 45,
+          "marketWinPct": 43,
+          "moneyline": "+122",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.69,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "DAL",
+      "teamName": "Dallas",
+      "opponent": "HOU",
+      "home": false,
+      "matchupLabel": "at HOU",
+      "pgWinPct": 45,
+      "marketWinPct": 43,
+      "moneyline": "+121",
+      "spread": 2.5,
+      "popularityPct": 0,
+      "ev": 0.68,
+      "futureValue": 0.61,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 66,
+          "opp": "@NYG",
+          "bye": false,
+          "result": "L",
+          "score": "20-28",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 36,
+          "opp": "WAS",
+          "bye": false,
+          "result": "W",
+          "score": "37-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 41,
+          "opp": "BAL",
+          "bye": false,
+          "result": "L",
+          "score": "31-34",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 45,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 80,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 47,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 45,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 71,
+          "opp": "ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 53,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 50,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 76,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 58,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 33,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 30,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 30,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 76,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 76,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "HOU",
+          "home": false,
+          "matchupLabel": "at HOU",
+          "pgWinPct": 45,
+          "marketWinPct": 43,
+          "moneyline": "+121",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.68,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "DEN",
+      "teamName": "Denver",
+      "opponent": "SF",
+      "home": false,
+      "matchupLabel": "at SF",
+      "pgWinPct": 40,
+      "marketWinPct": 42,
+      "moneyline": "+127",
+      "spread": 3,
+      "popularityPct": 0,
+      "ev": 0.6,
+      "futureValue": 0.59,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 55,
+          "opp": "@KC",
+          "bye": false,
+          "result": "L",
+          "score": "10-31",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 55,
+          "opp": "JAX",
+          "bye": false,
+          "result": "W",
+          "score": "20-13",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 44,
+          "opp": "LA",
+          "bye": false,
+          "result": "W",
+          "score": "30-26",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 40,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 49,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 49,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 63,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 50,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 59,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 69,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 57,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 82,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 63,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 55,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 49,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 46,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 46,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "SF",
+          "home": false,
+          "matchupLabel": "at SF",
+          "pgWinPct": 40,
+          "marketWinPct": 42,
+          "moneyline": "+127",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.6,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "NYJ",
+      "teamName": "NY Jets",
+      "opponent": "CHI",
+      "home": false,
+      "matchupLabel": "at CHI",
+      "pgWinPct": 39,
+      "marketWinPct": 39,
+      "moneyline": "+146",
+      "spread": 3.5,
+      "popularityPct": 0,
+      "ev": 0.61,
+      "futureValue": 0.56,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 34,
+          "opp": "@TEN",
+          "bye": false,
+          "result": "W",
+          "score": "23-10",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 32,
+          "opp": "GB",
+          "bye": false,
+          "result": "L",
+          "score": "17-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 43,
+          "opp": "@DET",
+          "bye": false,
+          "result": "L",
+          "score": "24-31",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 39,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 52,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 28,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 66,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 48,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 21,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 30,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 33,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 54,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 37,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 44,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 38,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 41,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 41,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "CHI",
+          "home": false,
+          "matchupLabel": "at CHI",
+          "pgWinPct": 39,
+          "marketWinPct": 39,
+          "moneyline": "+146",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.61,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "PHI",
+      "teamName": "Philadelphia",
+      "opponent": "LA",
+      "home": true,
+      "matchupLabel": "vs. LA",
+      "pgWinPct": 37,
+      "marketWinPct": 41,
+      "moneyline": "+135",
+      "spread": 3,
+      "popularityPct": 0,
+      "ev": 0.55,
+      "futureValue": 0.57,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 61,
+          "opp": "WAS",
+          "bye": false,
+          "result": "W",
+          "score": "24-22",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 68,
+          "opp": "@TEN",
+          "bye": false,
+          "result": "W",
+          "score": "24-20",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 45,
+          "opp": "@CHI",
+          "bye": false,
+          "result": "L",
+          "score": "7-27",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 37,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 37,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 64,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 55,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 51,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 75,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 66,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 42,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 58,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 64,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 43,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 56,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 36,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 36,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "LA",
+          "home": true,
+          "matchupLabel": "vs. LA",
+          "pgWinPct": 37,
+          "marketWinPct": 41,
+          "moneyline": "+135",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.55,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "WAS",
+      "teamName": "Washington",
+      "opponent": "IND (N)",
+      "home": true,
+      "matchupLabel": "vs. IND (N)",
+      "pgWinPct": 36,
+      "marketWinPct": 36,
+      "moneyline": "+160",
+      "spread": 3.5,
+      "popularityPct": 0,
+      "ev": 0.55,
+      "futureValue": 0.52,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 34,
+          "opp": "@PHI",
+          "bye": false,
+          "result": "L",
+          "score": "22-24",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 23,
+          "opp": "@DAL",
+          "bye": false,
+          "result": "L",
+          "score": "20-37",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 33,
+          "opp": "SEA",
+          "bye": false,
+          "result": "W",
+          "score": "33-31",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 36,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 54,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 26,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 49,
+          "opp": "PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 34,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 57,
+          "opp": "@NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 43,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 51,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 57,
+          "opp": "@TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 49,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 59,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 36,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 36,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 30,
+          "opp": "DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "IND (N)",
+          "home": true,
+          "matchupLabel": "vs. IND (N)",
+          "pgWinPct": 36,
+          "marketWinPct": 36,
+          "moneyline": "+160",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.55,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "CAR",
+      "teamName": "Carolina",
+      "opponent": "DET",
+      "home": true,
+      "matchupLabel": "vs. DET",
+      "pgWinPct": 36,
+      "marketWinPct": 36,
+      "moneyline": "+160",
+      "spread": 3.5,
+      "popularityPct": 0,
+      "ev": 0.55,
+      "futureValue": 0.53,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 61,
+          "opp": "CHI",
+          "bye": false,
+          "result": "L",
+          "score": "37-59",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 55,
+          "opp": "@ATL",
+          "bye": false,
+          "result": "W",
+          "score": "34-3",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 45,
+          "opp": "@CLE",
+          "bye": false,
+          "result": "L",
+          "score": "18-21",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 36,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 36,
+          "opp": "@PHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 60,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 35,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 41,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 40,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 37,
+          "opp": "BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 44,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 33,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 53,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 40,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 42,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 34,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 34,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "DET",
+          "home": true,
+          "matchupLabel": "vs. DET",
+          "pgWinPct": 36,
+          "marketWinPct": 36,
+          "moneyline": "+160",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.55,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "TB",
+      "teamName": "Tampa Bay",
+      "opponent": "GB",
+      "home": true,
+      "matchupLabel": "vs. GB",
+      "pgWinPct": 34,
+      "marketWinPct": 36,
+      "moneyline": "+162",
+      "spread": 4,
+      "popularityPct": 0,
+      "ev": 0.53,
+      "futureValue": 0.52,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 38,
+          "opp": "@CIN",
+          "bye": false,
+          "result": "L",
+          "score": "27-33",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 51,
+          "opp": "CLE",
+          "bye": false,
+          "result": "L",
+          "score": "19-23",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 49,
+          "opp": "MIN",
+          "bye": false,
+          "result": "L",
+          "score": "16-23",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 34,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 20,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 48,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 40,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 54,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 29,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 32,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 56,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 49,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 26,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 53,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 44,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 31,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 31,
+          "opp": "@NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "GB",
+          "home": true,
+          "matchupLabel": "vs. GB",
+          "pgWinPct": 34,
+          "marketWinPct": 36,
+          "moneyline": "+162",
+          "spread": 4,
+          "popularityPct": 0,
+          "ev": 0.53,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "LV",
+      "teamName": "Las Vegas",
+      "opponent": "KC",
+      "home": true,
+      "matchupLabel": "vs. KC",
+      "pgWinPct": 31,
+      "marketWinPct": 33,
+      "moneyline": "+183",
+      "spread": 4.5,
+      "popularityPct": 0,
+      "ev": 0.48,
+      "futureValue": 0.48,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 28,
+          "opp": "MIA",
+          "bye": false,
+          "result": "W",
+          "score": "27-13",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 43,
+          "opp": "@LAC",
+          "bye": false,
+          "result": "W",
+          "score": "26-14",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 30,
+          "opp": "@NO",
+          "bye": false,
+          "result": "W",
+          "score": "35-27",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 31,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 36,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 38,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 36,
+          "opp": "LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 52,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 29,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 38,
+          "opp": "SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 31,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 52,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 53,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 45,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 70,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 52,
+          "opp": "@ARI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 52,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "KC",
+          "home": true,
+          "matchupLabel": "vs. KC",
+          "pgWinPct": 31,
+          "marketWinPct": 33,
+          "moneyline": "+183",
+          "spread": 4.5,
+          "popularityPct": 0,
+          "ev": 0.48,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "NE",
+      "teamName": "New England",
+      "opponent": "BUF",
+      "home": false,
+      "matchupLabel": "at BUF",
+      "pgWinPct": 28,
+      "marketWinPct": 26,
+      "moneyline": "+256",
+      "spread": 6.5,
+      "popularityPct": 0,
+      "ev": 0.44,
+      "futureValue": 0.39,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 64,
+          "opp": "@SEA",
+          "bye": false,
+          "result": "L",
+          "score": "10-13",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 43,
+          "opp": "PIT",
+          "bye": false,
+          "result": "W",
+          "score": "20-3",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 43,
+          "opp": "@JAX",
+          "bye": false,
+          "result": "L",
+          "score": "6-35",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 28,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 64,
+          "opp": "LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 72,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 43,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 71,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 60,
+          "opp": "GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 49,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 50,
+          "opp": "@LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 47,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 58,
+          "opp": "MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 36,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 62,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 54,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 54,
+          "opp": "MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "BUF",
+          "home": false,
+          "matchupLabel": "at BUF",
+          "pgWinPct": 28,
+          "marketWinPct": 26,
+          "moneyline": "+256",
+          "spread": 6.5,
+          "popularityPct": 0,
+          "ev": 0.44,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "LAC",
+      "teamName": "LA Chargers",
+      "opponent": "SEA",
+      "home": false,
+      "matchupLabel": "at SEA",
+      "pgWinPct": 27,
+      "marketWinPct": 25,
+      "moneyline": "+275",
+      "spread": 7,
+      "popularityPct": 0,
+      "ev": 0.44,
+      "futureValue": 0.38,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 72,
+          "opp": "ARI",
+          "bye": false,
+          "result": "L",
+          "score": "14-26",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 25,
+          "opp": "LV",
+          "bye": false,
+          "result": "L",
+          "score": "14-26",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 30,
+          "opp": "@BUF",
+          "bye": false,
+          "result": "L",
+          "score": "16-24",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 27,
+          "opp": "@SEA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 51,
+          "opp": "DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 29,
+          "opp": "@KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 28,
+          "opp": "@LA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 54,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 32,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 67,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 50,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 51,
+          "opp": "@TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 47,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 46,
+          "opp": "SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 65,
+          "opp": "@MIA",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 42,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 42,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "SEA",
+          "home": false,
+          "matchupLabel": "at SEA",
+          "pgWinPct": 27,
+          "marketWinPct": 25,
+          "moneyline": "+275",
+          "spread": 7,
+          "popularityPct": 0,
+          "ev": 0.44,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "MIA",
+      "teamName": "Miami",
+      "opponent": "MIN",
+      "home": false,
+      "matchupLabel": "at MIN",
+      "pgWinPct": 19,
+      "marketWinPct": 15,
+      "moneyline": "+476",
+      "spread": 10.5,
+      "popularityPct": 0,
+      "ev": 0.53,
+      "futureValue": 0.43,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 15,
+          "opp": "@LV",
+          "bye": false,
+          "result": "L",
+          "score": "13-27",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 16,
+          "opp": "@SF",
+          "bye": false,
+          "result": "L",
+          "score": "13-35",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 20,
+          "opp": "KC",
+          "bye": false,
+          "result": "L",
+          "score": "10-24",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 19,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 23,
+          "opp": "CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 34,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 29,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": 28,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 28,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 14,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 46,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 18,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 27,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 22,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 35,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 22,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 22,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "MIN",
+          "home": false,
+          "matchupLabel": "at MIN",
+          "pgWinPct": 19,
+          "marketWinPct": 15,
+          "moneyline": "+476",
+          "spread": 10.5,
+          "popularityPct": 0,
+          "ev": 0.53,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "TEN",
+      "teamName": "Tennessee",
+      "opponent": "BAL",
+      "home": false,
+      "matchupLabel": "at BAL",
+      "pgWinPct": 16,
+      "marketWinPct": 14,
+      "moneyline": "+509",
+      "spread": 11.5,
+      "popularityPct": 0,
+      "ev": 0.45,
+      "futureValue": 0.38,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 27,
+          "opp": "NYJ",
+          "bye": false,
+          "result": "L",
+          "score": "10-23",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 50,
+          "opp": "PHI",
+          "bye": false,
+          "result": "L",
+          "score": "20-24",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 18,
+          "opp": "@NYG",
+          "bye": false,
+          "result": "L",
+          "score": "7-12",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 16,
+          "opp": "@BAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 5,
+          "winPct": 28,
+          "opp": "HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 6,
+          "winPct": 32,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 52,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 8,
+          "winPct": 21,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 9,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": null,
+          "opp": "JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 24,
+          "opp": "@DAL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 24,
+          "opp": "@JAX",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 43,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 22,
+          "opp": "@DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 44,
+          "opp": "IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 30,
+          "opp": "@LV",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 44,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 44,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "BAL",
+          "home": false,
+          "matchupLabel": "at BAL",
+          "pgWinPct": 16,
+          "marketWinPct": 14,
+          "moneyline": "+509",
+          "spread": 11.5,
+          "popularityPct": 0,
+          "ev": 0.45,
+          "gameNotes": []
+        }
+      }
+    }
+  ]
+}
