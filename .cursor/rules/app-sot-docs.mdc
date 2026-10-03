@@ -1,0 +1,20 @@
+---
+description: Keep app-internal SOT docs in sync after product, data, or analysis changes
+alwaysApply: true
+---
+
+# App-internal SOT docs
+
+After any code, data, UI, or pipeline change, update the matching `kind: app` doc in `docs/sot/` in the same turn. Do not wait to be asked. Skip this only for pure refactors, comments, or formatting with no behavior/data/copy change.
+
+| If you changed… | Update… |
+|-----------------|--------|
+| SOS files, formulas, Tools → SOS, SOS chips/blurbs/scoring, Off/OL unit adj | `docs/sot/strength-of-schedule.md` |
+| Draft routes, openings, path card, seat UI, Values/Landmines, compare dialog | `docs/sot/draft-routes.md` |
+| Tools → Cheat Sheets, scoring overlay, check/highlight persistence | `docs/sot/cheat-sheets.md` |
+| Enrichment files/scripts, nav, pages, tabs, which surfaces use which data | `docs/sot/enrichment-and-surfaces.md` |
+| ECR, consensus SOS/units, expert takeaways, Values sleepers vs ESPN landmines | `docs/sot/expert-consensus.md` |
+
+If a new area is not covered, add a new `docs/sot/*.md` with YAML frontmatter including `kind: app` so `loadSotDocuments` keeps it off Strategy → Research. Cross-link it from `enrichment-and-surfaces.md`.
+
+Keep docs factual to the repo (formulas, files, where it shows). Do not put app internals in the strategy-research SOT files (`ppr-10-team-draft-strategy.md` and the other research topics).

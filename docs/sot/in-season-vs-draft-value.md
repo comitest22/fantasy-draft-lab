@@ -1,6 +1,6 @@
 ---
 title: In-Season vs Draft Value
-source: Fantasy Draft Lab research
+source: DontSuckAtFantasyDrafts research
 date: 2026-08-25
 confidence: high
 tags: [draft-value, season-long, strategy]

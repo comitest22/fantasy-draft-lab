@@ -10,7 +10,7 @@ export default function SeasonsPage() {
   const [error, setError] = useState<string | null>(null);
 
   const sortedAnalyses = useMemo(
-    () => sortSeasonAnalyses(analyses, 'asc'),
+    () => sortSeasonAnalyses(analyses, 'desc'),
     [analyses]
   );
 

@@ -11,6 +11,14 @@ import { computePositionalTiming, comparePositionalTiming } from './positionalTi
 import { computeReachRate } from './reachRate';
 import { enrichmentStore } from '../data/enrichment';
 import { sortBySeason, sortSeasons } from '../utils/sort';
+import { compareUserToTop3 } from './leagueBenchmark';
+import {
+  buildPodiumSnapshot,
+  draftSlotFor,
+  getSeasonStandings,
+  openingPicks,
+  seasonContenderInsights,
+} from './contenderPlaybook';
 
 const SKILL_POSITIONS: Position[] = ['QB', 'RB', 'WR', 'TE'];
 
@@ -20,14 +28,9 @@ function avg(nums: number[]): number {
 }
 
 function getTopTeams(draft: DraftFile, config: LeagueConfig): string[] {
-  const seasonConfig = config.seasons[String(draft.season)];
-  if (seasonConfig?.teamStandings) {
-    return Object.entries(seasonConfig.teamStandings)
-      .filter(([, standing]) => standing <= 3)
-      .sort(([, a], [, b]) => a - b)
-      .map(([team]) => team);
-  }
-  return [];
+  return getSeasonStandings(config, draft.season)
+    .filter((t) => t.standing <= 3)
+    .map((t) => t.teamName);
 }
 
 export async function analyzeSeason(
@@ -52,6 +55,31 @@ export async function analyzeSeason(
   );
 
   const insights: string[] = [];
+  const podium = buildPodiumSnapshot(draft, config);
+  const userDraftSlot = userTeamName ? draftSlotFor(draft, userTeamName) : undefined;
+  const userFirstThree = userTeamName ? openingPicks(draft, userTeamName, 3) : [];
+
+  insights.push(
+    ...seasonContenderInsights(
+      draft,
+      config,
+      userTeamName,
+      userDraftSlot,
+      userFirstThree,
+      podium
+    )
+  );
+
+  if (!enrichmentStore.hasSeasonPoints(draft.season)) {
+    insights.unshift(
+      `${draft.season} is in progress — pick badges are steal/reach vs ESPN PPR rank, not end-of-season hits and busts.`
+    );
+    if (userDraftSlot != null && userFirstThree.length > 0) {
+      insights.push(
+        `You opened ${userFirstThree.map((p) => p.position).join('-')} from slot ${userDraftSlot}: ${userFirstThree.map((p) => p.playerName).join(', ')}.`
+      );
+    }
+  }
 
   if (userTeamName) {
     const reaches = gradedPicks.filter(
@@ -59,23 +87,18 @@ export async function analyzeSeason(
     );
     if (reaches.length >= 3) {
       insights.push(
-        `You reached on ${reaches.length} picks in ${draft.season} — consider sticking closer to ADP.`
+        `You reached on ${reaches.length} picks in ${draft.season} — podium teams in this league stay closer to ADP early.`
       );
-    }
-
-    for (const pt of positionalTiming) {
-      if (pt.userRound != null && pt.userRound < pt.leagueAvgRound - 1) {
-        insights.push(
-          `You took your first ${pt.position} in round ${pt.userRound}, earlier than league avg (${pt.leagueAvgRound.toFixed(1)}).`
-        );
-      }
     }
   }
 
-  return {
+  const analysis: SeasonAnalysis = {
     season: draft.season,
     userTeamName,
     finalStanding: seasonConfig.finalStanding,
+    userDraftSlot,
+    userFirstThree,
+    podium,
     draftGrade: computeDraftGrade(gradedPicks),
     totalValue: rates.totalValue,
     hitRate: rates.hitRate,
@@ -85,6 +108,11 @@ export async function analyzeSeason(
     positionalTiming,
     insights,
   };
+
+  analysis.insights.push(...compareUserToTop3(analysis));
+  analysis.insights = analysis.insights.slice(0, 6);
+
+  return analysis;
 }
 
 function buildEraStats(
@@ -111,7 +139,7 @@ function buildEraStats(
 
   return {
     label,
-    seasons: sortSeasons(seasons, 'asc'),
+    seasons: sortSeasons(seasons, 'desc'),
     avgDraftGrade: avg(analyses.map((a) => a.draftGrade)),
     avgHitRate: avg(analyses.map((a) => a.hitRate)),
     avgBustRate: avg(analyses.map((a) => a.bustRate)),
@@ -122,19 +150,26 @@ function buildEraStats(
 
 export async function compareEras(
   drafts: DraftFile[],
-  config: LeagueConfig
+  config: LeagueConfig,
+  precomputed?: SeasonAnalysis[]
 ): Promise<EraComparison> {
-  const analyses: SeasonAnalysis[] = [];
-  for (const draft of drafts) {
-    analyses.push(await analyzeSeason(draft, config));
+  await enrichmentStore.load();
+
+  const analyses: SeasonAnalysis[] =
+    precomputed && precomputed.length > 0 ? precomputed : [];
+  if (analyses.length === 0) {
+    for (const draft of drafts) {
+      analyses.push(await analyzeSeason(draft, config));
+    }
   }
 
+  const scored = analyses.filter((a) => enrichmentStore.hasSeasonPoints(a.season));
   const goodAnalyses = sortBySeason(
-    analyses.filter((a) => a.season <= config.goodEraEnd),
+    scored.filter((a) => a.season <= config.goodEraEnd),
     'asc'
   );
   const badAnalyses = sortBySeason(
-    analyses.filter((a) => a.season >= config.badEraStart),
+    scored.filter((a) => a.season >= config.badEraStart),
     'asc'
   );
 

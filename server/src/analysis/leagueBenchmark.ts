@@ -19,13 +19,11 @@ export function benchmarkTeams(
   return teams.map((teamName) => {
     const graded = gradeDraftPicks(draft.picks, teamName);
     const rates = computeRates(graded);
-    const standingEntry = Object.values(config.seasons).find(
-      (s) => s.userTeamName === teamName
-    );
+    const standing = config.seasons[String(draft.season)]?.teamStandings?.[teamName];
 
     return {
       fantasyTeamName: teamName,
-      finalStanding: standingEntry?.finalStanding,
+      finalStanding: standing,
       draftGrade: computeDraftGrade(graded),
       totalValue: rates.totalValue,
       hitRate: rates.hitRate,
@@ -34,30 +32,17 @@ export function benchmarkTeams(
   });
 }
 
-export function compareUserToTop3(
-  analysis: SeasonAnalysis,
-  draft: DraftFile,
-  config: LeagueConfig
-): string[] {
+export function compareUserToTop3(analysis: SeasonAnalysis): string[] {
   const insights: string[] = [];
-  const benchmarks = benchmarkTeams(draft, config);
-  const top3 = benchmarks
-    .filter((b) => b.finalStanding != null && b.finalStanding <= 3)
-    .sort((a, b) => (a.finalStanding ?? 99) - (b.finalStanding ?? 99));
+  if (analysis.podium.length === 0 || !analysis.userTeamName) return insights;
 
-  if (top3.length === 0 || !analysis.userTeamName) return insights;
-
-  const userBench = benchmarks.find(
-    (b) => b.fantasyTeamName === analysis.userTeamName
-  );
-  if (!userBench) return insights;
-
-  const top3AvgGrade = top3.reduce((s, t) => s + t.draftGrade, 0) / top3.length;
-  const gradeGap = top3AvgGrade - userBench.draftGrade;
+  const top3AvgGrade =
+    analysis.podium.reduce((s, t) => s + t.draftGrade, 0) / analysis.podium.length;
+  const gradeGap = top3AvgGrade - analysis.draftGrade;
 
   if (gradeGap >= 10) {
     insights.push(
-      `In ${draft.season}, top-3 teams averaged a ${top3AvgGrade.toFixed(0)} draft grade vs your ${userBench.draftGrade}.`
+      `In ${analysis.season}, top-3 teams averaged a ${top3AvgGrade.toFixed(0)} draft grade vs your ${analysis.draftGrade}.`
     );
   }
 

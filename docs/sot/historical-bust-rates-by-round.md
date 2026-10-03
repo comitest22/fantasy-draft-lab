@@ -1,6 +1,6 @@
 ---
 title: Historical Bust Rates by Round
-source: Fantasy Draft Lab research
+source: DontSuckAtFantasyDrafts research
 date: 2026-08-25
 confidence: medium
 tags: [bust-rates, risk, draft-strategy]

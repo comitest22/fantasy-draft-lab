@@ -2,59 +2,218 @@
   "leagueSize": 10,
   "scoring": "ppr",
   "draftType": "snake",
-  "rounds": 13,
+  "rounds": 14,
+  "roster": {
+    "qb": 1,
+    "rb": 2,
+    "wr": 2,
+    "te": 1,
+    "flex": 1,
+    "dst": 1,
+    "k": 1,
+    "bench": 5
+  },
   "goodEraEnd": 2021,
   "badEraStart": 2022,
+  "upcomingDraftSlot": 8,
   "seasons": {
     "2014": {
       "userTeamName": "Beckham and Brown Show",
-      "finalStanding": 3
+      "finalStanding": 3,
+      "teamStandings": {
+        "Driller and Spiller": 1,
+        "CarlosHydeYoWif HydeYoKids": 2,
+        "Beckham and Brown Show": 3,
+        "Dude, shoot me in the dick": 4,
+        "Team Hart": 5,
+        "Monkey looking for a wet mouth": 6,
+        "I suck monkey Dick": 7,
+        "The James Gang": 8,
+        "Fariss Wheelin'": 9,
+        "For The Love of Wallace": 10
+      }
     },
     "2015": {
       "userTeamName": "Injured QB Fan Club",
-      "finalStanding": 8
+      "finalStanding": 8,
+      "teamStandings": {
+        "Second place Isn't so bad": 1,
+        "L.A Will to Win": 2,
+        "I love Blaine Gabbert": 3,
+        "CarlosHydeYoWif HydeYoKids": 4,
+        "Texans for super bowl": 5,
+        "Juggernaut Joe porter": 6,
+        "Just Give MeThe Fucking Sign": 7,
+        "Injured QB Fan Club": 8,
+        "Driller and Spiller": 9,
+        "Not first Your last": 10
+      }
     },
     "2016": {
       "userTeamName": "Buisness Is Boomin",
-      "finalStanding": 5
+      "finalStanding": 5,
+      "teamStandings": {
+        "Going Down in Flames": 1,
+        "Ill take A jack n coke": 2,
+        "Fariss Wheelin'": 3,
+        "Brad is Ashley' s bitch": 4,
+        "Buisness Is Boomin": 5,
+        "Juggernaut Joe porter": 6,
+        "juggernaut my butthole": 7,
+        "Here To Fuck Up Your Season": 8,
+        "Driller and Spiller": 9,
+        "SC Wil Lace Out": 10
+      }
     },
     "2017": {
       "userTeamName": "Saved by the Bell",
-      "finalStanding": 4
+      "finalStanding": 4,
+      "teamStandings": {
+        "Ashley is my Spirit Animal": 1,
+        "Going Down in Flames": 2,
+        "Juggernaut Joe porter": 3,
+        "Saved by the Bell": 4,
+        "Give Me The Fucking Sign": 5,
+        "In Trubisky I trust": 6,
+        "Fariss Wheelin'": 7,
+        "Im here to ruin your season": 8,
+        "Driller and Spiller": 9,
+        "Thank you David": 10
+      }
     },
     "2018": {
       "userTeamName": "Game of Jones",
-      "finalStanding": 6
+      "finalStanding": 6,
+      "teamStandings": {
+        "Driller and Spiller": 1,
+        "Fariss Wheelin'": 2,
+        "Juggernaut Joe porter": 3,
+        "Going Down in Flames": 4,
+        "In Trubisky I trust": 5,
+        "Game of Jones": 6,
+        "Thank you David": 7,
+        "Laces Out Motherfuckers!!": 8,
+        "Ashley is my Spirit Animal": 9,
+        "Remember the Titans": 10
+      }
     },
     "2019": {
       "userTeamName": "A Scanner Barkley",
-      "finalStanding": 4
+      "finalStanding": 4,
+      "teamStandings": {
+        "Juggernaut Joe porter": 1,
+        "I Still Need To Hold My Sign": 2,
+        "Driller and Spiller": 3,
+        "A Scanner Barkley": 4,
+        "Thomas the Tank Engine": 5,
+        "Fariss Wheelin'": 6,
+        "Going Down in Flames": 7,
+        "In Trubisky I trust": 8,
+        "This shit is Stupid": 9,
+        "So Let’s Dance": 10
+      }
     },
     "2020": {
       "userTeamName": "Orange Sherbert",
       "finalStanding": 3,
-      "notes": "Tied for best season"
+      "notes": "Tied for best season",
+      "teamStandings": {
+        "Juggernaut Joe porter": 1,
+        "So Let’s Dance": 2,
+        "Orange Sherbert": 3,
+        "Driller and Spiller": 4,
+        "I Still Need To Hold My Sign": 5,
+        "Gould Johnson": 6,
+        "Fariss Wheelin'": 7,
+        "Mexigarian 😉": 8,
+        "See You Next Year!! ✌️🖕": 9,
+        "Going Down in Flames": 10
+      }
     },
     "2021": {
       "userTeamName": "Fire Sale",
-      "finalStanding": 5
+      "finalStanding": 5,
+      "teamStandings": {
+        "So Let’s Dance": 1,
+        "Your Royal Tenderness": 2,
+        "Mexigarian 😉": 3,
+        "Going Down in Flames": 4,
+        "Fire Sale": 5,
+        "Ingrates and Bastards": 6,
+        "Driller and Spiller": 7,
+        "Fariss Wheelin'": 8,
+        "Juggernaut Joe porter": 9,
+        "I Still Need To Hold My Sign": 10
+      }
     },
     "2022": {
       "userTeamName": "Long Live The Mullet",
-      "finalStanding": 6
+      "finalStanding": 6,
+      "teamStandings": {
+        "Still Need To Watch My Beer M": 1,
+        "Your Royal Tenderness": 2,
+        "Juggernaut Joe porter": 3,
+        "Driller and Spiller": 4,
+        "Team Doody": 5,
+        "Long Live The Mullet": 6,
+        "I have no idea Whats going on": 7,
+        "Fariss Wheelin'": 8,
+        "Show us Mitch Vomityou coward": 9,
+        "Mexigarian 😉": 10
+      }
     },
     "2023": {
       "userTeamName": "Long Live The Mullet",
-      "finalStanding": 8
+      "finalStanding": 8,
+      "teamStandings": {
+        "Driller and Spiller": 1,
+        "This is a Travisty": 2,
+        "My least favorite hobby": 3,
+        "Kupp deez Nuts": 4,
+        "Well We're Waiting": 5,
+        "Mexigarian 😉": 6,
+        "Fariss Wheelin'": 7,
+        "Long Live The Mullet": 8,
+        "Fighting for 9th": 9,
+        "Juggernaut Joe porter": 10
+      }
     },
     "2024": {
       "userTeamName": "Long Live The Mullet",
-      "finalStanding": 8
+      "finalStanding": 8,
+      "teamStandings": {
+        "Fariss Wheelin'": 1,
+        "Kamara Harris": 2,
+        "He's dead, Jim": 3,
+        "My least favorite hobby": 4,
+        "Juggernaut Joe porter": 5,
+        "Turd Ferguson": 6,
+        "Mexigarian 😉": 7,
+        "Long Live The Mullet": 8,
+        "Well We're Waiting": 9,
+        "Driller and Spiller": 10
+      }
     },
     "2025": {
       "userTeamName": "Tennessee Jets",
       "finalStanding": 8,
-      "notes": "Worst Season"
+      "notes": "Worst Season",
+      "teamStandings": {
+        "Juggernaut Joe porter": 1,
+        "Driller and Spiller": 2,
+        "Fariss Wheelin'": 3,
+        "There's always next year": 4,
+        "Struggle Bus": 5,
+        "All Barkley no Bite": 6,
+        "Well We're Waiting": 7,
+        "Tennessee Jets": 8,
+        "Bower's Big Swingin Baby Arm": 9,
+        "Mexigarian 😉": 10
+      }
+    },
+    "2026": {
+      "userTeamName": "Drake 'n Bake",
+      "notes": "In-season — grades vs ESPN ADP until EOS PPR lands"
     }
   }
 }

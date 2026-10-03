@@ -1,25 +1,36 @@
 import { useEffect, useMemo, useState } from 'react';
+import ContenderPlaybookView from '../components/ContenderPlaybookView';
 import EraCompare from '../components/EraCompare';
+import KeyTakeaways from '../components/KeyTakeaways';
+import PageTabs from '../components/PageTabs';
 import { getTrends } from '../services/api';
-import type { EraComparison, SeasonAnalysis } from '../types';
+import type { ContenderPlaybook, EraComparison, SeasonAnalysis } from '../types';
 import { sortSeasonAnalyses } from '../utils/sort';
+
+const tabs = [
+  { id: 'podium', label: 'Podium' },
+  { id: 'takeaways', label: 'Takeaways' },
+  { id: 'era', label: 'Era' },
+  { id: 'grades', label: 'Grades' },
+  { id: 'rates', label: 'Rates' },
+];
 
 export default function TrendsPage() {
   const [analyses, setAnalyses] = useState<SeasonAnalysis[]>([]);
   const [eraComparison, setEraComparison] = useState<EraComparison | null>(null);
+  const [playbook, setPlaybook] = useState<ContenderPlaybook | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [tab, setTab] = useState('podium');
 
-  const sortedAnalyses = useMemo(
-    () => sortSeasonAnalyses(analyses, 'asc'),
-    [analyses]
-  );
+  const sortedAnalyses = useMemo(() => sortSeasonAnalyses(analyses, 'desc'), [analyses]);
 
   useEffect(() => {
     getTrends()
       .then((data) => {
         setAnalyses(data.analyses);
         setEraComparison(data.eraComparison);
+        setPlaybook(data.playbook);
       })
       .catch((err) => setError(String(err)))
       .finally(() => setLoading(false));
@@ -30,13 +41,27 @@ export default function TrendsPage() {
 
   return (
     <section className="panel">
-      <h1>Draft Trends</h1>
-      {eraComparison && <EraCompare eraComparison={eraComparison} />}
+      <div className="page-intro">
+        <h1>Draft Trends</h1>
+        <p className="subtitle">
+          How podium teams draft in this league, and how your seasons compare.
+        </p>
+      </div>
+      <PageTabs tabs={tabs} active={tab} onChange={setTab} label="Trends sections" />
 
-      <h2>Draft grade by season</h2>
-      <div className="bar-chart">
-        {sortedAnalyses.map((a) => (
-          <div key={a.season} className="bar-row">
+      {tab === 'takeaways' && (
+        <KeyTakeaways takes={playbook?.timingAdvice ?? []} showHeading={false} />
+      )}
+      {tab === 'podium' && playbook && (
+        <ContenderPlaybookView playbook={playbook} showHeading={false} showAdvice={false} />
+      )}
+      {tab === 'era' && eraComparison && (
+        <EraCompare eraComparison={eraComparison} showHeading={false} />
+      )}
+      {tab === 'grades' && (
+        <div className="bar-chart">
+          {sortedAnalyses.map((a) => (
+            <div key={a.season} className="bar-row">
               <span className="bar-label">{a.season}</span>
               <div className="bar-track">
                 <div
@@ -48,21 +73,21 @@ export default function TrendsPage() {
               <span className="bar-value">{a.draftGrade}</span>
             </div>
           ))}
-      </div>
-
-      <h2>Hit / bust / reach rates</h2>
-      <table className="data-table">
-        <thead>
-          <tr>
-            <th>Season</th>
-            <th>Hit rate</th>
-            <th>Bust rate</th>
-            <th>Reach rate</th>
-            <th>Total value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {sortedAnalyses.map((a) => (
+        </div>
+      )}
+      {tab === 'rates' && (
+        <table className="data-table">
+          <thead>
+            <tr>
+              <th>Season</th>
+              <th>Hit rate</th>
+              <th>Bust rate</th>
+              <th>Reach rate</th>
+              <th>Total value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedAnalyses.map((a) => (
               <tr key={a.season}>
                 <td>{a.season}</td>
                 <td>{(a.hitRate * 100).toFixed(0)}%</td>
@@ -71,8 +96,9 @@ export default function TrendsPage() {
                 <td>{a.totalValue.toFixed(0)}</td>
               </tr>
             ))}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      )}
     </section>
   );
 }

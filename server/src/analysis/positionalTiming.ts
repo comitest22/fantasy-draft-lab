@@ -1,15 +1,24 @@
 import type { DraftFile, GradedPick, Position, PositionalTimingEntry } from '../types';
 import { POSITIONS } from '../parsers/espnDocxParser';
 
+export function getNthRoundForPosition(
+  picks: GradedPick[],
+  teamName: string,
+  position: Position,
+  n: number
+): number | null {
+  const teamPicks = picks
+    .filter((p) => p.fantasyTeamName === teamName && p.position === position)
+    .sort((a, b) => a.round - b.round || a.overallPick - b.overallPick);
+  return teamPicks.length >= n ? teamPicks[n - 1].round : null;
+}
+
 export function getFirstRoundForPosition(
   picks: GradedPick[],
   teamName: string,
   position: Position
 ): number | null {
-  const teamPicks = picks
-    .filter((p) => p.fantasyTeamName === teamName && p.position === position)
-    .sort((a, b) => a.round - b.round);
-  return teamPicks.length > 0 ? teamPicks[0].round : null;
+  return getNthRoundForPosition(picks, teamName, position, 1);
 }
 
 export function avgFirstRoundForPosition(

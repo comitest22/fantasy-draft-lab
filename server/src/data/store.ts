@@ -91,9 +91,11 @@ export async function readLeagueConfig(): Promise<LeagueConfig> {
     leagueSize: 10,
     scoring: 'ppr',
     draftType: 'snake',
-    rounds: 13,
+    rounds: 14,
+    roster: { qb: 1, rb: 2, wr: 2, te: 1, flex: 1, dst: 1, k: 1, bench: 5 },
     goodEraEnd: 2021,
     badEraStart: 2022,
+    upcomingDraftSlot: 8,
     seasons: {},
   });
 }

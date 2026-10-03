@@ -1,0 +1,101 @@
+[
+  {
+    "id": "hero-rb-2026",
+    "topic": "strategy",
+    "claim": "Leave rounds 1–3 with at least one RB. 2026 expert consensus is Hero RB, not rigid Zero RB — workhorse backs are scarce.",
+    "sources": ["FantasyPros", "Fantasy Six Pack", "FanDuel Research", "Draft Sharks"],
+    "players": [],
+    "positions": ["RB"],
+    "rounds": [1, 2, 3]
+  },
+  {
+    "id": "wr-first-floor-2026",
+    "topic": "strategy",
+    "claim": "WR-first is a floor build in 10-team PPR; an elite RB in the first three is the ceiling build.",
+    "sources": ["FantasyPros", "Draft Sharks"],
+    "players": [],
+    "positions": ["WR", "RB"],
+    "rounds": [1, 2, 3]
+  },
+  {
+    "id": "wait-qb-k-dst-2026",
+    "topic": "strategy",
+    "claim": "Wait on QB, K, and D/ST in a 10-team PPR. Streaming and late-round talent are deep enough that early spend is a tax.",
+    "sources": ["FantasyPros", "Draft Sharks"],
+    "players": [],
+    "positions": ["QB", "K", "D/ST"],
+    "rounds": [1, 2, 3, 4, 5]
+  },
+  {
+    "id": "ol-consensus-2026",
+    "topic": "units",
+    "claim": "O-line consensus: Denver, Philadelphia, Tampa Bay, and Buffalo are the top units; Cleveland, Miami, Tennessee, and Houston sit at the bottom.",
+    "sources": ["PFF", "Sharp Football", "Action Network"],
+    "players": [],
+    "positions": [],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-marshawn-lloyd-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Packers RB with a path to early work if the committee breaks. Ranked well ahead of his ADP on expert boards.",
+    "sources": ["FantasyPros", "PFF", "4for4"],
+    "players": ["MarShawn Lloyd"],
+    "positions": ["RB"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-jonah-coleman-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Broncos rookie RB behind a top O-line. Late-round stash if the workload opens.",
+    "sources": ["FantasyPros", "PFF"],
+    "players": ["Jonah Coleman"],
+    "positions": ["RB"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-parker-washington-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Jaguars WR who keeps showing up on value lists when the room is slower than experts.",
+    "sources": ["FantasyPros", "4for4"],
+    "players": ["Parker Washington"],
+    "positions": ["WR"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-jonathon-brooks-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Panthers RB coming back from injury. Experts still rank him as a mid-round value if the role is there.",
+    "sources": ["FantasyPros", "PFF"],
+    "players": ["Jonathon Brooks"],
+    "positions": ["RB"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-josh-downs-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Colts slot WR. PPR volume is the pitch; ADP often lags expert ranks.",
+    "sources": ["FantasyPros", "4for4"],
+    "players": ["Josh Downs"],
+    "positions": ["WR"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-jayden-reed-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Packers WR whose expert rank is typically ahead of ESPN ADP.",
+    "sources": ["FantasyPros", "PFF"],
+    "players": ["Jayden Reed"],
+    "positions": ["WR"],
+    "rounds": []
+  },
+  {
+    "id": "sleeper-tucker-kraft-2026",
+    "topic": "sleeper",
+    "claim": "Industry sleeper vs ADP: Packers TE with every-week usage. Often cheaper in this room than on expert boards.",
+    "sources": ["FantasyPros", "4for4"],
+    "players": ["Tucker Kraft"],
+    "positions": ["TE"],
+    "rounds": []
+  }
+]

@@ -1,6 +1,6 @@
 ---
 title: Positional Scarcity and Runs
-source: Fantasy Draft Lab research
+source: DontSuckAtFantasyDrafts research
 date: 2026-08-25
 confidence: high
 tags: [scarcity, runs, draft-strategy]

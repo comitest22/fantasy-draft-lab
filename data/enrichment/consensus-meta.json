@@ -1,0 +1,28 @@
+{
+  "season": 2026,
+  "builtAt": "2026-09-29T17:20:33.944Z",
+  "ranks": {
+    "file": "consensus-ranks-2026.csv",
+    "source": "Seeded from site-ranks-espn-ppr-2026.csv FantasyPros column (drop a FantasyPros ECR CSV in consensus/raw to replace)",
+    "count": 200
+  },
+  "sos": {
+    "file": "consensus-sos-2026.csv",
+    "sources": [
+      "DraftEdge remaining-slate 1–5 (sos-2026.csv)",
+      "FPA 1–32 board mapped to 1–5 (consensus/raw/sos-fpa-2026.csv)"
+    ]
+  },
+  "units": {
+    "file": "consensus-units-2026.csv",
+    "sources": [
+      "Action Network offense/OL (team-ranks-2026.csv)",
+      "PFF OL (consensus/raw/pff-oline-2026.csv)",
+      "Sharp OL (consensus/raw/sharp-oline-2026.csv)",
+      "Public offense ranks (consensus/raw/public-offense-2026.csv)",
+      "D-line ranks (consensus/raw/dline-2026.csv)",
+      "Power: ESPN / CBS / NFL.com 1–32 averages"
+    ]
+  },
+  "rawDir": "data/enrichment/consensus/raw"
+}

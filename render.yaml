@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: fantasy-draft-lab-backend
+    name: dontsuckatfantasydrafts-backend
     runtime: node
     plan: free
     region: oregon
