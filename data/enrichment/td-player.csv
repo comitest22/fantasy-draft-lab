@@ -617,8 +617,8 @@ Zamir White,2025,RB,LV,5,0,56,0,6,1,1:0|2:0|3:0|17:0|18:0
 Zay Jones,2025,WR,ARI,6,0,183,0,14,4,1:0|3:0|5:0|6:0|7:0|10:0
 Derrick Henry,2026,RB,BAL,4,7,418,4,14,7,1:3|2:1|3:2|4:1
 Jahmyr Gibbs,2026,RB,DET,4,7,540,4,14,7,1:2|2:1|3:3|4:1
+Javonte Williams,2026,RB,DAL,5,7,370,4,16,7,1:2|2:0|3:1|4:3|5:1
 Josh Allen,2026,QB,BUF,4,7,118,4,16,7,1:2|2:2|3:2|4:1
-Javonte Williams,2026,RB,DAL,4,6,308,3,14,6,1:2|2:0|3:1|4:3
 Jaxon Smith-Njigba,2026,WR,SEA,4,6,481,3,13,9,1:1|2:3|3:2|4:0
 Jonathan Taylor,2026,RB,IND,4,6,422,3,10,6,1:2|2:2|3:0|4:2
 Kenneth Walker III,2026,RB,KC,4,6,621,3,14,6,1:2|2:0|3:2|4:2
@@ -626,11 +626,12 @@ Amon-Ra St. Brown,2026,WR,DET,4,5,303,3,14,5,1:2|2:2|3:1|4:0
 Bijan Robinson,2026,RB,ATL,4,5,614,3,11,9,1:1|2:0|3:2|4:2
 Chuba Hubbard,2026,RB,CAR,4,5,390,3,13,5,1:2|2:1|3:0|4:2
 Brian Robinson,2026,RB,ATL,4,4,215,2,11,9,1:0|2:0|3:1|4:3
-CeeDee Lamb,2026,WR,DAL,4,4,492,3,14,5,1:1|2:2|3:0|4:1
+CeeDee Lamb,2026,WR,DAL,5,4,501,3,16,6,1:1|2:2|3:0|4:1|5:0
 Christian McCaffrey,2026,RB,SF,4,4,340,3,16,5,1:0|2:2|3:1|4:1
 Christian Watson,2026,WR,GB,4,4,331,3,8,6,1:2|2:1|3:1|4:0
 George Kittle,2026,TE,SF,4,4,244,3,16,4,1:0|2:1|3:2|4:1
 Kyren Williams,2026,RB,LA,4,4,467,3,10,4,1:1|2:1|3:0|4:2
+Bucky Irving,2026,RB,TB,5,3,477,2,9,5,1:1|2:0|3:0|4:0|5:2
 Cody White,2026,WR,LV,4,3,64,2,12,5,1:0|2:2|3:1|4:0
 D'Andre Swift,2026,RB,CHI,4,3,395,1,13,6,1:3|2:0|3:0|4:0
 Darius Cooper,2026,WR,PHI,4,3,59,2,9,5,1:0|2:1|3:0|4:2
@@ -638,7 +639,7 @@ David Montgomery,2026,RB,HOU,4,3,194,1,9,5,1:3|2:0|3:0|4:0
 Deebo Samuel Sr.,2026,WR,SF,4,3,259,3,16,6,1:1|2:0|3:1|4:1
 Harold Fannin Jr.,2026,TE,CLE,4,3,153,2,8,4,1:0|2:0|3:2|4:1
 Ja'Marr Chase,2026,WR,CIN,4,3,212,2,9,4,1:0|2:2|3:1|4:0
-Jake Ferguson,2026,TE,DAL,4,3,83,2,14,3,1:0|2:2|3:1|4:0
+Jake Ferguson,2026,TE,DAL,5,3,102,2,16,3,1:0|2:2|3:1|4:0|5:0
 James Cook,2026,RB,BUF,4,3,445,3,16,3,1:0|2:1|3:1|4:1
 Juwan Johnson,2026,TE,NO,4,3,232,2,13,6,1:1|2:0|3:2|4:0
 Kyle Monangai,2026,RB,CHI,4,3,363,2,13,6,1:1|2:0|3:0|4:2
@@ -660,6 +661,7 @@ Davante Adams,2026,WR,LA,4,2,390,1,10,4,1:0|2:2|3:0|4:0
 Denzel Boston,2026,WR,CLE,4,2,284,2,8,2,1:1|2:1|3:0|4:0
 Devaughn Vele,2026,WR,NO,4,2,226,2,13,3,1:1|2:0|3:0|4:1
 Emanuel Wilson,2026,RB,SEA,4,2,229,1,13,2,1:0|2:0|3:0|4:2
+Emeka Egbuka,2026,WR,TB,5,2,203,2,9,3,1:0|2:1|3:0|4:0|5:1
 Garrett Wilson,2026,WR,NYJ,4,2,270,2,8,3,1:0|2:1|3:1|4:0
 Isaiah Likely,2026,TE,NYG,4,2,190,1,7,3,1:2|2:0|3:0|4:0
 Jakobi Meyers,2026,WR,JAX,4,2,167,2,12,7,1:1|2:0|3:1|4:0
@@ -701,7 +703,6 @@ Brenton Strange,2026,TE,JAX,4,1,167,1,12,1,1:1|2:0|3:0|4:0
 Brian Thomas Jr.,2026,WR,JAX,4,1,105,1,12,7,1:0|2:0|3:0|4:1
 Brock Purdy,2026,QB,SF,4,1,122,1,16,1,1:0|2:1|3:0|4:0
 Bryce Young,2026,QB,CAR,4,1,19,1,13,1,1:1|2:0|3:0|4:0
-Bucky Irving,2026,RB,TB,4,1,302,1,6,3,1:1|2:0|3:0|4:0
 Cam Skattebo,2026,RB,NYG,4,1,302,1,7,2,1:1|2:0|3:0|4:0
 Case Keenum,2026,QB,CHI,1,1,6,1,3,1,3:1
 Chase Brown,2026,RB,CIN,4,1,310,1,9,1,1:1|2:0|3:0|4:0
@@ -723,10 +724,10 @@ Efton Chism III,2026,WR,NE,3,1,41,1,5,3,2:0|3:0|4:1
 Eli Raridon,2026,TE,NE,3,1,44,1,6,1,1:1|2:0|4:0
 Elic Ayomanor,2026,WR,TEN,4,1,113,1,6,3,1:1|2:0|3:0|4:0
 Elijah Higgins,2026,TE,ARI,3,1,39,1,7,2,2:0|3:0|4:1
-Emeka Egbuka,2026,WR,TB,4,1,151,1,6,2,1:0|2:1|3:0|4:0
 Eric Saubert,2026,TE,SEA,4,1,3,1,13,2,1:0|2:0|3:1|4:0
 Evan Engram,2026,TE,DEN,4,1,66,1,7,3,1:1|2:0|3:0|4:0
 Foster Moreau,2026,TE,HOU,4,1,57,1,9,1,1:0|2:0|3:1|4:0
+George Pickens,2026,WR,DAL,5,1,355,1,16,6,1:0|2:0|3:0|4:0|5:1
 Ian Thomas,2026,TE,LV,2,1,43,1,5,2,2:0|4:1
 Isaiah Williams,2026,WR,NYJ,4,1,149,1,8,3,1:0|2:0|3:0|4:1
 Jack Bech,2026,WR,LV,2,1,48,1,6,4,1:1|2:0
@@ -745,11 +746,11 @@ Jonah Coleman,2026,RB,DEN,2,1,58,1,3,1,1:0|2:1
 Jordan Addison,2026,WR,MIN,4,1,162,1,6,3,1:0|2:0|3:1|4:0
 Jordan Mason,2026,RB,MIN,1,1,59,1,5,2,1:1
 Kalif Raymond,2026,WR,CHI,4,1,220,1,13,3,1:0|2:0|3:1|4:0
-KaVontae Turpin,2026,WR,DAL,4,1,27,1,14,5,1:0|2:0|3:1|4:0
+KaVontae Turpin,2026,WR,DAL,5,1,49,1,16,6,1:0|2:0|3:1|4:0|5:0
 Keaton Mitchell,2026,RB,LAC,4,1,158,1,7,5,1:0|2:0|3:1|4:0
 Keenan Allen,2026,WR,IND,3,1,100,1,7,1,1:0|2:0|3:1
 Kendre Miller,2026,RB,NO,3,1,68,1,11,3,1:1|3:0|4:0
-Kenny Gainwell,2026,RB,TB,4,1,70,1,6,3,1:0|2:0|3:0|4:1
+Kenny Gainwell,2026,RB,TB,5,1,98,1,9,5,1:0|2:0|3:0|4:1|5:0
 Keon Coleman,2026,WR,BUF,4,1,217,1,16,4,1:0|2:0|3:0|4:1
 Kimani Vidal,2026,RB,LAC,3,1,56,1,5,4,2:0|3:0|4:1
 Konata Mumpfield,2026,WR,LA,4,1,112,1,10,4,1:0|2:0|3:1|4:0
@@ -778,7 +779,7 @@ Rashid Shaheed,2026,WR,SEA,4,1,110,1,13,9,1:0|2:0|3:0|4:1
 Rashod Bateman,2026,WR,BAL,4,1,171,1,14,4,1:0|2:1|3:0|4:0
 Rhamondre Stevenson,2026,RB,NE,4,1,253,1,6,2,1:0|2:0|3:0|4:1
 Ryan Miller,2026,WR,MIA,3,1,92,1,3,1,2:1|3:0|4:0
-Sean Tucker,2026,RB,TB,1,1,10,1,2,2,4:1
+Sean Tucker,2026,RB,TB,2,1,28,1,5,4,4:1|5:0
 T.J. Hockenson,2026,TE,MIN,4,1,195,1,6,1,1:1|2:0|3:0|4:0
 Tank Bigsby,2026,RB,PHI,4,1,101,1,9,1,1:0|2:1|3:0|4:0
 Ted Hurst III,2026,WR,TB,4,1,128,1,6,2,1:0|2:0|3:1|4:0
@@ -817,7 +818,7 @@ Athan Kaliakmanis,2026,QB,WAS,1,0,16,0,1,0,4:0
 Austin Ekeler,2026,RB,WAS,1,0,40,0,1,0,4:0
 Bam Knight,2026,RB,ARI,1,0,24,0,1,0,2:0
 Barion Brown,2026,WR,NO,3,0,-2,0,9,3,1:0|2:0|4:0
-Bauer Sharp,2026,TE,TB,3,0,0,0,5,0,1:0|3:0|4:0
+Bauer Sharp,2026,TE,TB,4,0,0,0,8,0,1:0|3:0|4:0|5:0
 Ben Sinnott,2026,TE,WAS,2,0,6,0,5,0,2:0|3:0
 Ben VanSumeren,2026,RB,KC,2,0,0,0,7,4,1:0|3:0
 Blake Corum,2026,RB,LA,4,0,182,0,10,4,1:0|2:0|3:0|4:0
@@ -829,14 +830,14 @@ Braxton Berrios,2026,WR,NYG,4,0,0,0,7,2,1:0|2:0|3:0|4:0
 Brayden Willis,2026,TE,SF,3,0,0,0,13,4,2:0|3:0|4:0
 Brenen Thompson,2026,WR,LAC,1,0,13,0,2,0,2:0
 Brevin Jordan,2026,TE,HOU,1,0,13,0,3,0,4:0
-Brevyn Spann-Ford,2026,TE,DAL,4,0,33,0,14,3,1:0|2:0|3:0|4:0
+Brevyn Spann-Ford,2026,TE,DAL,5,0,33,0,16,3,1:0|2:0|3:0|4:0|5:0
 Britain Covey,2026,WR,PHI,4,0,0,0,9,5,1:0|2:0|3:0|4:0
 British Brooks,2026,RB,HOU,1,0,0,0,0,0,2:0
 Brock Wright,2026,TE,DET,4,0,20,0,14,2,1:0|2:0|3:0|4:0
 Bryce Lance,2026,WR,NO,4,0,57,0,13,3,1:0|2:0|3:0|4:0
 Brycen Tremayne,2026,WR,CAR,4,0,115,0,13,5,1:0|2:0|3:0|4:0
 C.J. Stroud,2026,QB,HOU,4,0,66,0,9,0,1:0|2:0|3:0|4:0
-Cade Otton,2026,TE,TB,4,0,157,0,6,0,1:0|2:0|3:0|4:0
+Cade Otton,2026,TE,TB,5,0,182,0,9,0,1:0|2:0|3:0|4:0|5:0
 Cade Stover,2026,TE,HOU,2,0,18,0,7,0,1:0|4:0
 Caleb Douglas,2026,WR,MIA,2,0,113,0,2,1,1:0|2:0
 Calvin Ridley,2026,WR,TEN,3,0,48,0,5,2,2:0|3:0|4:0
@@ -852,7 +853,7 @@ Chimere Dike,2026,WR,TEN,4,0,25,0,6,3,1:0|2:0|3:0|4:0
 Chris Bell,2026,WR,MIA,4,0,92,0,4,1,1:0|2:0|3:0|4:0
 Chris Blair,2026,WR,ATL,4,0,6,0,11,1,1:0|2:0|3:0|4:0
 Chris Brooks,2026,RB,GB,4,0,94,0,8,1,1:0|2:0|3:0|4:0
-Chris Godwin Jr.,2026,WR,TB,4,0,157,0,6,2,1:0|2:0|3:0|4:0
+Chris Godwin Jr.,2026,WR,TB,5,0,197,0,9,3,1:0|2:0|3:0|4:0|5:0
 Chris Manhertz,2026,TE,NYG,1,0,0,0,3,1,4:0
 CJ Donaldson,2026,RB,NO,4,0,32,0,13,3,1:0|2:0|3:0|4:0
 Colbie Young,2026,WR,CIN,2,0,9,0,5,4,2:0|3:0
@@ -865,7 +866,7 @@ Corey Kiner,2026,RB,NE,4,0,38,0,6,2,1:0|2:0|3:0|4:0
 Courtland Sutton,2026,WR,DEN,4,0,86,0,7,2,1:0|2:0|3:0|4:0
 Craig Reynolds,2026,RB,WAS,1,0,4,0,1,0,4:0
 Cyrus Allen,2026,WR,KC,2,0,0,0,8,3,1:0|4:0
-Dak Prescott,2026,QB,DAL,4,0,66,0,14,0,1:0|2:0|3:0|4:0
+Dak Prescott,2026,QB,DAL,5,0,66,0,16,0,1:0|2:0|3:0|4:0|5:0
 Dalton Schultz,2026,TE,HOU,4,0,214,0,9,1,1:0|2:0|3:0|4:0
 Daniel Bellinger,2026,TE,TEN,4,0,25,0,6,0,1:0|2:0|3:0|4:0
 Dareke Young,2026,WR,LV,4,0,36,0,12,5,1:0|2:0|3:0|4:0
@@ -905,7 +906,6 @@ Frank Gore Jr.,2026,RB,BUF,1,0,3,0,4,0,1:0
 Gavin Bartholomew,2026,TE,MIN,1,0,4,0,0,0,4:0
 Geno Smith,2026,QB,NYJ,4,0,36,0,8,0,1:0|2:0|3:0|4:0
 George Holani,2026,RB,SEA,4,0,122,0,13,2,1:0|2:0|3:0|4:0
-George Pickens,2026,WR,DAL,4,0,225,0,14,5,1:0|2:0|3:0|4:0
 Germie Bernard,2026,WR,PIT,3,0,60,0,6,4,2:0|3:0|4:0
 Greg Dortch,2026,WR,BUF,4,0,0,0,16,4,1:0|2:0|3:0|4:0
 Greg Dulcich,2026,TE,MIA,3,0,90,0,3,0,1:0|2:0|3:0
@@ -913,7 +913,7 @@ Gunnar Helm,2026,TE,TEN,4,0,60,0,6,0,1:0|2:0|3:0|4:0
 Hayden Rucci,2026,TE,LAC,1,0,0,0,1,0,3:0
 Hunter Henry,2026,TE,NE,4,0,133,0,6,1,1:0|2:0|3:0|4:0
 Hunter Long,2026,TE,ARI,4,0,15,0,9,3,1:0|2:0|3:0|4:0
-Hunter Luepke,2026,RB,DAL,3,0,10,0,11,5,1:0|2:0|4:0
+Hunter Luepke,2026,RB,DAL,4,0,15,0,13,6,1:0|2:0|4:0|5:0
 Isaac TeSlaa,2026,WR,DET,4,0,187,0,14,5,1:0|2:0|3:0|4:0
 Isaiah Bond,2026,WR,CLE,2,0,12,0,5,1,2:0|4:0
 Isaiah Davis,2026,RB,NYJ,3,0,0,0,6,1,2:0|3:0|4:0
@@ -933,7 +933,7 @@ Jalen Cropper,2026,WR,NO,1,0,0,0,4,0,3:0
 Jalen McMillan,2026,WR,TB,1,0,0,0,1,1,3:0
 Jalen Nailor,2026,WR,LV,3,0,52,0,10,5,1:0|2:0|3:0
 Jalen Tolbert,2026,WR,MIA,1,0,0,0,1,0,4:0
-Jalon Daniels,2026,QB,TB,2,0,64,0,3,0,3:0|4:0
+Jalon Daniels,2026,QB,TB,3,0,87,0,6,0,3:0|4:0|5:0
 Jamaal Pritchett,2026,WR,NYJ,1,0,0,0,3,1,3:0
 Jameis Winston,2026,QB,NYG,3,0,15,0,3,0,2:0|3:0|4:0
 Jameson Williams,2026,WR,DET,4,0,229,0,14,5,1:0|2:0|3:0|4:0
@@ -953,7 +953,7 @@ Jeshaun Jones,2026,WR,MIN,1,0,0,0,0,0,4:0
 Jimmy Horn Jr.,2026,WR,CAR,1,0,0,0,5,2,1:0
 John Bates,2026,TE,WAS,2,0,22,0,6,0,1:0|3:0
 Johnny Mundt,2026,TE,PHI,3,0,12,0,6,0,2:0|3:0|4:0
-Jonathan Mingo,2026,WR,DAL,2,0,10,0,7,2,1:0|4:0
+Jonathan Mingo,2026,WR,DAL,3,0,30,0,9,3,1:0|4:0|5:0
 Jonathon Brooks,2026,RB,CAR,2,0,73,0,8,3,1:0|2:0
 Jonnu Smith,2026,TE,GB,3,0,85,0,6,1,1:0|3:0|4:0
 Jordan James,2026,RB,SF,1,0,15,0,5,3,2:0
@@ -971,7 +971,7 @@ Kaden Davis,2026,WR,CHI,1,0,0,0,8,1,1:0
 Kaden Wetjen,2026,WR,PIT,4,0,0,0,7,4,1:0|2:0|3:0|4:0
 Kaelon Black,2026,RB,SF,4,0,125,0,16,5,1:0|2:0|3:0|4:0
 Kaleb Johnson,2026,RB,GB,4,0,90,0,8,1,1:0|2:0|3:0|4:0
-Kameron Johnson,2026,WR,TB,4,0,3,0,6,2,1:0|2:0|3:0|4:0
+Kameron Johnson,2026,WR,TB,5,0,3,0,9,3,1:0|2:0|3:0|4:0|5:0
 Kayshon Boutte,2026,WR,HOU,4,0,115,0,9,3,1:0|2:0|3:0|4:0
 Kaytron Allen,2026,RB,WAS,3,0,41,0,6,1,1:0|2:0|4:0
 KC Concepcion,2026,WR,CLE,4,0,153,0,8,2,1:0|2:0|3:0|4:0
@@ -999,7 +999,7 @@ Lewis Bond,2026,WR,HOU,1,0,0,0,2,0,3:0
 Lil'Jordan Humphrey,2026,WR,DEN,1,0,0,0,2,0,2:0
 Luke Farrell,2026,TE,SF,4,0,19,0,16,4,1:0|2:0|3:0|4:0
 Luke McCaffrey,2026,WR,WAS,1,0,0,0,3,2,3:0
-Luke Schoonmaker,2026,TE,DAL,2,0,21,0,6,1,1:0|3:0
+Luke Schoonmaker,2026,TE,DAL,3,0,30,0,8,1,1:0|3:0|5:0
 Mac Jones,2026,QB,SF,1,0,-2,0,5,1,2:0
 Mack Hollins,2026,WR,NE,4,0,209,0,6,3,1:0|2:0|3:0|4:0
 Makai Lemon,2026,WR,PHI,4,0,60,0,9,5,1:0|2:0|3:0|4:0
@@ -1039,7 +1039,7 @@ Omar Cooper Jr.,2026,WR,NYJ,1,0,30,0,2,0,1:0
 Oscar Delp,2026,TE,NO,2,0,8,0,5,0,2:0|4:0
 Patrick Herbert,2026,TE,LAC,1,0,0,0,2,0,4:0
 Patrick Ricard,2026,RB,NYG,2,0,1,0,7,2,1:0|4:0
-Payne Durham,2026,TE,TB,1,0,0,0,1,0,3:0
+Payne Durham,2026,TE,TB,2,0,5,0,4,0,3:0|5:0
 Quentin Johnston,2026,WR,LAC,4,0,111,0,7,1,1:0|2:0|3:0|4:0
 Quintin Morris,2026,TE,JAX,3,0,7,0,7,1,1:0|2:0|4:0
 Raheim Sanders,2026,RB,CLE,4,0,104,0,8,2,1:0|2:0|3:0|4:0
@@ -1053,7 +1053,7 @@ Robert Tonyan,2026,TE,PIT,1,0,2,0,3,0,3:0
 Rome Odunze,2026,WR,CHI,4,0,233,0,13,3,1:0|2:0|3:0|4:0
 Ronnie Rivers,2026,RB,LA,1,0,24,0,1,1,1:0
 Roschon Johnson,2026,RB,CHI,2,0,23,0,10,6,1:0|4:0
-Ryan Flournoy,2026,WR,DAL,4,0,104,0,14,5,1:0|2:0|3:0|4:0
+Ryan Flournoy,2026,WR,DAL,5,0,194,0,16,6,1:0|2:0|3:0|4:0|5:0
 Sam Darnold,2026,QB,SEA,3,0,11,0,9,0,1:0|3:0|4:0
 Sam Roush,2026,TE,CHI,3,0,33,0,5,0,2:0|3:0|4:0
 Samaje Perine,2026,RB,CIN,4,0,93,0,9,1,1:0|2:0|3:0|4:0
@@ -1069,7 +1069,7 @@ Tahj Brooks,2026,RB,CIN,2,0,0,0,5,1,1:0|3:0
 Tai Felton,2026,WR,MIN,2,0,14,0,1,1,3:0|4:0
 Tanner Hudson,2026,TE,CIN,3,0,19,0,7,3,1:0|3:0|4:0
 Tay Martin,2026,WR,DET,3,0,0,0,10,4,1:0|2:0|4:0
-Tez Johnson,2026,WR,TB,4,0,80,0,6,2,1:0|2:0|3:0|4:0
+Tez Johnson,2026,WR,TB,5,0,144,0,9,3,1:0|2:0|3:0|4:0|5:0
 Tom Kennedy,2026,WR,DET,4,0,0,0,14,5,1:0|2:0|3:0|4:0
 Tommy DeVito,2026,QB,NE,1,0,2,0,0,0,3:0
 Tommy Tremble,2026,TE,CAR,4,0,82,0,13,2,1:0|2:0|3:0|4:0
