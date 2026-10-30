@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-10-27T19:56:39.878Z",
+  "pulledAt": "2026-10-30T19:46:48.729Z",
   "season": 2026,
   "currentWeek": 8,
   "teams": {
@@ -135,27 +135,27 @@
   "forecasts": {
     "8:BUF": {
       "outdoor": true,
-      "tempF": 65.2,
+      "tempF": 64.8,
       "precipIn": 0,
-      "windMph": 10.4
+      "windMph": 6.7
     },
     "8:BAL": {
       "outdoor": true,
-      "tempF": 65.2,
+      "tempF": 64.8,
       "precipIn": 0,
-      "windMph": 10.4
+      "windMph": 6.7
     },
     "8:CIN": {
       "outdoor": true,
-      "tempF": 61.9,
-      "precipIn": 0.996,
-      "windMph": 9.9
+      "tempF": 63.6,
+      "precipIn": 0.555,
+      "windMph": 8.5
     },
     "8:TEN": {
       "outdoor": true,
-      "tempF": 61.9,
-      "precipIn": 0.996,
-      "windMph": 9.9
+      "tempF": 63.6,
+      "precipIn": 0.555,
+      "windMph": 8.5
     },
     "8:DAL": {
       "outdoor": false
@@ -165,15 +165,15 @@
     },
     "8:DEN": {
       "outdoor": true,
-      "tempF": 62.2,
+      "tempF": 65.6,
       "precipIn": 0,
-      "windMph": 6.5
+      "windMph": 7.2
     },
     "8:KC": {
       "outdoor": true,
-      "tempF": 62.2,
+      "tempF": 65.6,
       "precipIn": 0,
-      "windMph": 6.5
+      "windMph": 7.2
     },
     "8:DET": {
       "outdoor": false
@@ -183,27 +183,27 @@
     },
     "8:GB": {
       "outdoor": true,
-      "tempF": 55,
+      "tempF": 55.9,
       "precipIn": 0,
-      "windMph": 7.5
+      "windMph": 5.1
     },
     "8:CAR": {
       "outdoor": true,
-      "tempF": 55,
+      "tempF": 55.9,
       "precipIn": 0,
-      "windMph": 7.5
+      "windMph": 5.1
     },
     "8:JAX": {
       "outdoor": true,
-      "tempF": 81.7,
-      "precipIn": 0.795,
-      "windMph": 15
+      "tempF": 79,
+      "precipIn": 1.098,
+      "windMph": 13.7
     },
     "8:IND": {
       "outdoor": true,
-      "tempF": 81.7,
-      "precipIn": 0.795,
-      "windMph": 15
+      "tempF": 79,
+      "precipIn": 1.098,
+      "windMph": 13.7
     },
     "8:LA": {
       "outdoor": false
@@ -213,75 +213,75 @@
     },
     "8:MIA": {
       "outdoor": true,
-      "tempF": 85.5,
-      "precipIn": 0.39,
-      "windMph": 16.1
+      "tempF": 83.3,
+      "precipIn": 0.521,
+      "windMph": 18.4
     },
     "8:NE": {
       "outdoor": true,
-      "tempF": 85.5,
-      "precipIn": 0.39,
-      "windMph": 16.1
+      "tempF": 83.3,
+      "precipIn": 0.521,
+      "windMph": 18.4
     },
     "8:NYJ": {
       "outdoor": true,
-      "tempF": 61.8,
+      "tempF": 61,
       "precipIn": 0,
-      "windMph": 6.3
+      "windMph": 5.3
     },
     "8:LV": {
       "outdoor": true,
-      "tempF": 61.8,
+      "tempF": 61,
       "precipIn": 0,
-      "windMph": 6.3
+      "windMph": 5.3
     },
     "8:PIT": {
       "outdoor": true,
-      "tempF": 65.5,
-      "precipIn": 0.106,
-      "windMph": 6.6
+      "tempF": 66.8,
+      "precipIn": 0,
+      "windMph": 7
     },
     "8:CLE": {
       "outdoor": true,
-      "tempF": 65.5,
-      "precipIn": 0.106,
-      "windMph": 6.6
+      "tempF": 66.8,
+      "precipIn": 0,
+      "windMph": 7
     },
     "8:SEA": {
       "outdoor": true,
-      "tempF": 55.3,
+      "tempF": 57.5,
       "precipIn": 0,
-      "windMph": 3.3
+      "windMph": 4.7
     },
     "8:CHI": {
       "outdoor": true,
-      "tempF": 55.3,
+      "tempF": 57.5,
       "precipIn": 0,
-      "windMph": 3.3
+      "windMph": 4.7
     },
     "8:TB": {
       "outdoor": true,
-      "tempF": 82.6,
-      "precipIn": 0.402,
-      "windMph": 13.9
+      "tempF": 81.4,
+      "precipIn": 2.097,
+      "windMph": 16.3
     },
     "8:ATL": {
       "outdoor": true,
-      "tempF": 82.6,
-      "precipIn": 0.402,
-      "windMph": 13.9
+      "tempF": 81.4,
+      "precipIn": 2.097,
+      "windMph": 16.3
     },
     "8:WAS": {
       "outdoor": true,
-      "tempF": 60.8,
-      "precipIn": 0.13,
-      "windMph": 6.9
+      "tempF": 61.6,
+      "precipIn": 0,
+      "windMph": 5.6
     },
     "8:PHI": {
       "outdoor": true,
-      "tempF": 60.8,
-      "precipIn": 0.13,
-      "windMph": 6.9
+      "tempF": 61.6,
+      "precipIn": 0,
+      "windMph": 5.6
     }
   }
 }
