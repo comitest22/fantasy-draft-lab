@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import draftsRouter from './routes/drafts';
 import analysisRouter from './routes/analysis';
+import teamRouter from './routes/team';
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 dotenv.config();
@@ -21,9 +22,10 @@ app.get('/api/health', (_req, res) => {
 
 app.use('/api/drafts', draftsRouter);
 app.use('/api/analysis', analysisRouter);
+app.use('/api/team', teamRouter);
 
 app.listen(PORT, () => {
-  console.log(`DontSuckAtFantasyDrafts server running on http://localhost:${PORT}`);
+  console.log(`BLITZ server running on http://localhost:${PORT}`);
 });
 
 

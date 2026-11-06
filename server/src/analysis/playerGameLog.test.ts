@@ -1,6 +1,17 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
-import { insertByeWeeks, pprPoints, resolveGameLogSeason, sosPosKey, statMap } from './playerGameLog';
+import {
+  cellsFromDstFantasyStats,
+  cellsFromStats,
+  dstFantasyEspnId,
+  expandMadeAttemptPairs,
+  insertByeWeeks,
+  mergeLogWithSchedule,
+  pprPoints,
+  resolveGameLogSeason,
+  sosPosKey,
+  statMap,
+} from './playerGameLog';
 
 describe('pprPoints', () => {
   it('scores a PPR RB week', () => {
@@ -31,6 +42,48 @@ describe('pprPoints', () => {
     );
     assert.equal(pts, 18);
   });
+
+  it('scores a kicker week from totalKickingPoints or FG/XP', () => {
+    assert.equal(pprPoints({ totalKickingPoints: 14 }, 'K'), 14);
+    assert.equal(
+      pprPoints({ fieldGoalsMade: 4, extraPointsMade: 2 }, 'K'),
+      14
+    );
+    assert.equal(pprPoints({ fieldGoalsMade: 0, extraPointsMade: 3 }, 'K'), 3);
+  });
+});
+
+describe('statMap kicker pairs', () => {
+  it('splits ESPN made-attempt compound keys', () => {
+    const names = [
+      'fieldGoalsMade-fieldGoalAttempts',
+      'extraPointsMade-extraPointAttempts',
+      'totalKickingPoints',
+    ];
+    const stats = ['4-5', '2-2', '14'];
+    const mapped = statMap(names, stats);
+    assert.equal(mapped.fieldGoalsMade, 4);
+    assert.equal(mapped.fieldGoalAttempts, 5);
+    assert.equal(mapped.extraPointsMade, 2);
+    assert.equal(mapped.extraPointAttempts, 2);
+    assert.equal(mapped.totalKickingPoints, 14);
+
+    const fpts = pprPoints(mapped, 'K');
+    assert.deepEqual(cellsFromStats(mapped, 'K', fpts), {
+      fg: 4,
+      fga: 5,
+      xp: 2,
+      xpa: 2,
+      fpts: 14,
+    });
+  });
+
+  it('expandMadeAttemptPairs is a no-op for plain numeric cols', () => {
+    const names = ['passingYards'];
+    const stats = ['250'];
+    const base = { passingYards: 250 };
+    assert.deepEqual(expandMadeAttemptPairs(names, stats, base), base);
+  });
 });
 
 describe('insertByeWeeks', () => {
@@ -44,6 +97,32 @@ describe('insertByeWeeks', () => {
       ['1:@ARI', '2:BYE', '3:SEA']
     );
     assert.equal(rows[1]?.bye, true);
+  });
+});
+
+describe('mergeLogWithSchedule', () => {
+  it('keeps played weeks and pads upcoming opponents with empty cells', () => {
+    const rows = mergeLogWithSchedule(
+      [{ week: 1, opp: 'CLE', cells: { rec: 4, fpts: 12 }, fpts: 12 }],
+      [
+        { week: 1, opponent: 'CLE', home: true },
+        { week: 2, opponent: 'DEN', home: false },
+        { week: 3, bye: true },
+        { week: 4, opponent: 'CIN', home: false },
+      ]
+    );
+    assert.equal(rows.length, 18);
+    assert.deepEqual(rows[0], {
+      week: 1,
+      opp: 'CLE',
+      cells: { rec: 4, fpts: 12 },
+      fpts: 12,
+    });
+    assert.deepEqual(rows[1], { week: 2, opp: '@DEN', bye: false, cells: {} });
+    assert.deepEqual(rows[2], { week: 3, opp: 'BYE', bye: true, cells: {} });
+    assert.deepEqual(rows[3], { week: 4, opp: '@CIN', bye: false, cells: {} });
+    assert.equal(rows[17]?.week, 18);
+    assert.equal(rows[17]?.bye, true);
   });
 });
 
@@ -75,5 +154,37 @@ describe('resolveGameLogSeason', () => {
     assert.equal(resolveGameLogSeason(2026, 2025), 2025);
     assert.equal(resolveGameLogSeason(2026, 2021), 2022);
     assert.equal(resolveGameLogSeason(2026, 2030), 2026);
+  });
+});
+
+describe('dstFantasyEspnId', () => {
+  it('maps team abbr to negative fantasy D/ST ids', () => {
+    assert.equal(dstFantasyEspnId('JAX'), -16030);
+    assert.equal(dstFantasyEspnId('GB'), -16009);
+  });
+});
+
+describe('cellsFromDstFantasyStats', () => {
+  it('reads ESPN fantasy D/ST week stats', () => {
+    const cells = cellsFromDstFantasyStats(
+      {
+        '95': 1,
+        '96': 1,
+        '97': 0,
+        '98': 0,
+        '99': 5,
+        '105': 0,
+        '120': 10,
+        '127': 272,
+        '187': 10,
+      },
+      14
+    );
+    assert.equal(cells.int, 1);
+    assert.equal(cells.fr, 1);
+    assert.equal(cells.sck, 5);
+    assert.equal(cells.pa, 10);
+    assert.equal(cells.ya, 272);
+    assert.equal(cells.fpts, 14);
   });
 });

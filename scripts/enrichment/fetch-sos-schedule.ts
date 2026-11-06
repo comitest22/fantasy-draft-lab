@@ -207,7 +207,13 @@ async function fetchSeasonStats(season: number): Promise<{ defense: DefStats[]; 
       const key = canon(team);
       const oppPass = row.categories?.find((c) => c.name === 'passing' && c.splitId === '900');
       const oppRush = row.categories?.find((c) => c.name === 'rushing' && c.splitId === '900');
-      if (oppPass?.values?.[0] != null) pass.set(key, oppPass.values[0]);
+      // Opponent passing: values[0] is gross yards (inflated); values[7] is net
+      // passing yards (matches nflverse / site “pass yds allowed”). Prefer net.
+      const passYds =
+        oppPass?.values?.[7] != null && Number.isFinite(oppPass.values[7])
+          ? oppPass.values[7]
+          : oppPass?.values?.[0];
+      if (passYds != null) pass.set(key, passYds);
       if (oppRush?.values?.[0] != null) rush.set(key, oppRush.values[0]);
     }
   } catch (err) {

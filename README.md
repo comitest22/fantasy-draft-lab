@@ -1,6 +1,6 @@
-# DSAFD
+# BLITZ
 
-DontSuckAtFantasyDrafts — analyze your ESPN fantasy football draft history, compare good vs bad eras, and build a data-driven draft strategy.
+**BLITZ** (*Boards, Lineups, Insights, Tools, & Zero-suck*) — analyze your ESPN fantasy football draft history, manage in-season lineups and matchups, and build a data-driven strategy across drafts and pools.
 
 ## Features
 

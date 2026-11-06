@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getPlayerNews, getPlayerNewsArticle } from '../services/api';
 import type { PlayerNewsArticle, PlayerNewsItem } from '../types';
+import { useBioPlayerLoad } from './BioPlayerLoadGate';
 
 const PAYWALL_HOSTS = [
   'nypost.com',
@@ -65,31 +66,42 @@ export default function PlayerNews({
   onOpenArticle: (item: PlayerNewsItem) => void;
   onBackToResults: () => void;
 }) {
-  const [items, setItems] = useState<PlayerNewsItem[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const gate = useBioPlayerLoad();
+  const gated = gate != null;
+  const [itemsOwn, setItemsOwn] = useState<PlayerNewsItem[]>([]);
+  const [loadingOwn, setLoadingOwn] = useState(true);
+  const [errorOwn, setErrorOwn] = useState<string | null>(null);
   const [article, setArticle] = useState<PlayerNewsArticle | null>(null);
   const [articleLoading, setArticleLoading] = useState(false);
   const [articleError, setArticleError] = useState<string | null>(null);
 
+  const items = gated ? gate.newsItems : itemsOwn;
+  const loading = gated ? gate.loading : loadingOwn;
+  const error = gated ? gate.newsError : errorOwn;
+
   useEffect(() => {
+    if (gated) return;
     let cancelled = false;
-    setLoading(true);
-    setError(null);
+    setLoadingOwn(true);
+    setErrorOwn(null);
+    setItemsOwn([]);
     getPlayerNews(name)
       .then((data) => {
-        if (!cancelled) setItems(data.items);
+        if (!cancelled) setItemsOwn(data.items);
       })
       .catch((err) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : 'Could not load news.');
+        if (!cancelled) {
+          setItemsOwn([]);
+          setErrorOwn(err instanceof Error ? err.message : 'Could not load news.');
+        }
       })
       .finally(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setLoadingOwn(false);
       });
     return () => {
       cancelled = true;
     };
-  }, [name]);
+  }, [name, gated]);
 
   const reading = articleUrl && isHttpUrl(articleUrl) ? articleUrl : null;
   const selected = reading ? items.find((item) => item.url === reading) : undefined;
@@ -216,8 +228,9 @@ export default function PlayerNews({
   return (
     <aside className="player-news" aria-label={`Latest news for ${name}`}>
       <h2>Latest news</h2>
-      <p className="subtitle">Recent headlines for {name}.</p>
-      {loading && <p className="status">Loading headlines…</p>}
+      {loading && items.length === 0 && !gated && (
+        <p className="status">Loading headlines…</p>
+      )}
       {error && <p className="error">{error}</p>}
       {!loading && !error && items.length === 0 && (
         <p className="player-news-empty">No headlines found.</p>

@@ -10,6 +10,8 @@ import type {
   OpeningPattern,
   DepthChartPlayer,
   PlayerCompare,
+  PlayerPlatformRatings,
+  PlayerWeekMatchup,
   Position,
   RankedPlayer,
   RosterSettings,
@@ -19,11 +21,25 @@ import type {
   SlotOutcome,
   SlotRoutePlan,
 } from '../types';
-import { canonicalTeam, enrichmentStore, normalizeName } from '../data/enrichment';
+import {
+  canonicalTeam,
+  dstNickFromTeam,
+  dstTeamFromName,
+  enrichmentStore,
+  normalizeName,
+} from '../data/enrichment';
 import { enrichmentDir } from '../data/store';
 import fs from 'fs/promises';
 import path from 'path';
 import { hasSuperflex } from './leagueFormats';
+import { buildPlayerPlatformRatings } from '../services/platformPlayerRanks';
+import { fetchEspnPublicWeekProjection } from '../services/espnWeekScoring';
+import {
+  espnOprkAverageFor,
+  espnOprkFor,
+  readCommittedEspnOprkBundle,
+} from '../services/espnOprk';
+import { dstFantasyEspnId } from './playerGameLog';
 import {
   draftSlotFor,
   getSeasonStandings,
@@ -198,7 +214,10 @@ function toPlayer(entry: AdpEntry): RankedPlayer {
     espnMinusSleeper: siteAdp?.espnMinusSleeper,
     espnMinusUnderdog: siteAdp?.espnMinusUnderdog,
     sos,
-    sosRank: enrichmentStore.getSosRank(nflTeam, entry.position),
+    sosRank:
+      entry.position === 'D/ST'
+        ? enrichmentStore.getDstSosRank(nflTeam)
+        : enrichmentStore.getSosRank(nflTeam, entry.position),
     adp: rank?.adp ?? siteAdp?.espnAdp,
     posRank: enrichmentStore.getEspnPosRank(entry.playerName, entry.position),
     byeWeek: rank?.bye ?? enrichmentStore.getByeWeek(nflTeam),
@@ -216,11 +235,20 @@ function toPlayer(entry: AdpEntry): RankedPlayer {
 }
 
 function slimBoard(board: RankedPlayer[]): RouteBoardPlayer[] {
-  return board.map((p) => ({
-    playerName: p.playerName,
-    position: p.position,
-    rank: p.rank,
-  }));
+  return board.map((p) => {
+    const nflTeam =
+      canonicalTeam(p.nflTeam) && canonicalTeam(p.nflTeam) !== 'FA'
+        ? canonicalTeam(p.nflTeam)
+        : p.position === 'D/ST'
+          ? dstTeamFromName(p.playerName)
+          : undefined;
+    return {
+      playerName: p.playerName,
+      position: p.position,
+      rank: p.rank,
+      ...(nflTeam ? { nflTeam } : {}),
+    };
+  });
 }
 
 function patternOf(positions: Position[]): string {
@@ -1233,10 +1261,17 @@ export async function listSearchBoard(): Promise<RouteBoardPlayer[]> {
     const key = normalizeName(d.playerName);
     if (seen.has(key)) continue;
     seen.add(key);
+    const nflTeam =
+      canonicalTeam(d.nflTeam) && canonicalTeam(d.nflTeam) !== 'FA'
+        ? canonicalTeam(d.nflTeam)
+        : d.position === 'D/ST'
+          ? dstTeamFromName(d.playerName)
+          : undefined;
     extras.push({
       playerName: d.playerName,
       position: d.position,
       rank: d.espnRank && d.espnRank > 0 ? d.espnRank : nextRank++,
+      ...(nflTeam ? { nflTeam } : {}),
     });
   }
 
@@ -1249,6 +1284,23 @@ export async function listSearchBoard(): Promise<RouteBoardPlayer[]> {
       playerName: p.playerName,
       position: p.position,
       rank: nextRank++,
+      ...(p.nflTeam && p.nflTeam !== 'FA' ? { nflTeam: canonicalTeam(p.nflTeam) } : {}),
+    });
+  }
+
+  // Ensure every NFL D/ST is searchable (ADP/depth often omit some).
+  for (const team of enrichmentStore.listScheduleTeams()) {
+    const nick = dstNickFromTeam(team);
+    if (!nick) continue;
+    const playerName = `${nick} D/ST`;
+    const key = normalizeName(playerName);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    extras.push({
+      playerName,
+      position: 'D/ST',
+      rank: nextRank++,
+      nflTeam: team,
     });
   }
 
@@ -1260,15 +1312,103 @@ export async function listSearchBoard(): Promise<RouteBoardPlayer[]> {
 
 /** Same team as the compare card — ranks / roster resolution, not stale site ADP alone. */
 function boardTeam(player: RankedPlayer): string | undefined {
-  return canonicalTeam(player.nflTeam);
+  const listed = canonicalTeam(player.nflTeam);
+  if (listed && listed !== 'FA') return listed;
+  if (player.position === 'D/ST') return dstTeamFromName(player.playerName);
+  return listed;
+}
+
+async function buildPlatformRatings(
+  playerName: string,
+  nflTeam: string | undefined,
+  position: Position,
+  season: number
+): Promise<PlayerPlatformRatings> {
+  return buildPlayerPlatformRatings(playerName, nflTeam, position, season);
+}
+
+async function buildWeekProjectedPoints(
+  player: RankedPlayer,
+  season: number
+): Promise<number | undefined> {
+  const week = enrichmentStore.currentWeek();
+  const team = boardTeam(player);
+  const espnId =
+    player.position === 'D/ST'
+      ? dstFantasyEspnId(team ?? player.nflTeam)
+      : enrichmentStore.getEspnAthleteId(player.playerName, season);
+  if (espnId == null) return undefined;
+  return fetchEspnPublicWeekProjection(espnId, season, week);
+}
+
+async function buildWeekMatchup(
+  player: RankedPlayer,
+  season: number
+): Promise<PlayerWeekMatchup> {
+  const week = enrichmentStore.currentWeek();
+  const team = boardTeam(player);
+  const game = enrichmentStore.getScheduleGame(team, week);
+  const base: PlayerWeekMatchup = {
+    week,
+    position: player.position,
+    bye: Boolean(game?.bye) || !game?.opponent,
+    opponent: game?.opponent,
+    home: game?.home,
+  };
+  if (base.bye || !base.opponent) return base;
+  const bundle = await readCommittedEspnOprkBundle(season);
+  if (!bundle) return base;
+  return {
+    ...base,
+    oprkRank: espnOprkFor(bundle.ranks, player.position, base.opponent),
+    fpAllowedPerGame: espnOprkAverageFor(bundle.averages, player.position, base.opponent),
+  };
 }
 
 function buildDepthChart(board: RankedPlayer[], player: RankedPlayer): DepthChartPlayer[] {
   const team = boardTeam(player);
-  if (!team || team === 'FA') return [];
   const season = enrichmentStore.latestRankingSeason();
   type Row = DepthChartPlayer & { sortRank: number };
   const byName = new Map<string, Row>();
+
+  // D/ST is a single unit per club — always surface the opened defense even when
+  // board team is missing/FA (common on ADP stubs).
+  if (player.position === 'D/ST') {
+    byName.set(normalizeName(player.playerName), {
+      playerName: player.playerName,
+      depth: 0,
+      rank: player.rank,
+      posRank: player.posRank,
+      status: player.status,
+      sortRank: player.rank,
+    });
+    if (team && team !== 'FA') {
+      for (const p of board) {
+        if (p.position !== 'D/ST' || boardTeam(p) !== team) continue;
+        const key = normalizeName(p.playerName);
+        if (byName.has(key)) continue;
+        byName.set(key, {
+          playerName: p.playerName,
+          depth: 0,
+          rank: p.rank,
+          posRank: p.posRank,
+          status: p.status,
+          sortRank: p.rank,
+        });
+      }
+    }
+    return [...byName.values()]
+      .sort((a, b) => a.sortRank - b.sortRank || a.playerName.localeCompare(b.playerName))
+      .map((p) => ({
+        playerName: p.playerName,
+        depth: 0, // UI shows "DST" (no depth index)
+        rank: p.rank,
+        posRank: p.posRank,
+        status: p.status,
+      }));
+  }
+
+  if (!team || team === 'FA') return [];
 
   for (const p of board) {
     if (boardTeam(p) !== team || p.position !== player.position) continue;
@@ -1290,6 +1430,8 @@ function buildDepthChart(board: RankedPlayer[], player: RankedPlayer): DepthChar
       if (d.espnRank == null && (d.percentOwned == null || d.percentOwned <= 0)) {
         continue;
       }
+      // Depth file is roster-filtered at fetch time; still skip FA-tagged leftovers.
+      if (!d.nflTeam || d.nflTeam === 'FA') continue;
       const key = normalizeName(d.playerName);
       const existing = byName.get(key);
       if (existing) {
@@ -1318,11 +1460,106 @@ function buildDepthChart(board: RankedPlayer[], player: RankedPlayer): DepthChar
     }));
 }
 
-export async function buildPlayerCompare(playerName: string): Promise<PlayerCompare | null> {
-  await enrichmentStore.load();
-  const season = enrichmentStore.latestRankingSeason();
-  if (season == null) return null;
-  const board = routeEngine?.board ?? enrichmentStore.getAdpBoard(season).map(toPlayer);
+type DstCounting = { team: string; sacks: number; turnovers: number; fpts: number };
+
+let dstCountingCache: { season: number; at: number; byTeam: Map<string, DstCounting> } | null =
+  null;
+const DST_COUNT_TTL_MS = 10 * 60 * 1000;
+
+function denseRankHigherBetter(
+  rows: Array<{ team: string; value: number }>,
+  team: string
+): number | undefined {
+  const sorted = [...rows].sort((a, b) => b.value - a.value || a.team.localeCompare(b.team));
+  const idx = sorted.findIndex((row) => row.team === team);
+  return idx >= 0 ? idx + 1 : undefined;
+}
+
+async function loadDstCountingByTeam(season: number): Promise<Map<string, DstCounting>> {
+  if (
+    dstCountingCache &&
+    dstCountingCache.season === season &&
+    Date.now() - dstCountingCache.at < DST_COUNT_TTL_MS
+  ) {
+    return dstCountingCache.byTeam;
+  }
+  const { buildPlayerGameLog } = await import('./playerGameLog');
+  const byTeam = new Map<string, DstCounting>();
+  await Promise.all(
+    enrichmentStore.listScheduleTeams().map(async (team) => {
+      const nick = dstNickFromTeam(team);
+      if (!nick) return;
+      const log = await buildPlayerGameLog(`${nick} D/ST`, season);
+      let sacks = 0;
+      let turnovers = 0;
+      let fpts = 0;
+      for (const row of log?.rows ?? []) {
+        if (row.bye) continue;
+        const sck = row.cells.sck;
+        const int = row.cells.int;
+        const fr = row.cells.fr;
+        if (typeof sck === 'number' && Number.isFinite(sck)) sacks += sck;
+        if (typeof int === 'number' && Number.isFinite(int)) turnovers += int;
+        if (typeof fr === 'number' && Number.isFinite(fr)) turnovers += fr;
+        if (typeof row.fpts === 'number' && Number.isFinite(row.fpts)) fpts += row.fpts;
+      }
+      byTeam.set(team, { team, sacks, turnovers, fpts });
+    })
+  );
+  dstCountingCache = { season, at: Date.now(), byTeam };
+  return byTeam;
+}
+
+async function buildDstSeasonExtras(
+  nflTeam: string | undefined,
+  season: number
+): Promise<{
+  defPassStopRank?: number;
+  defRushStopRank?: number;
+  defPassYdsAvg?: number;
+  defRushYdsAvg?: number;
+  dstFptsRank?: number;
+  dstSacks?: number;
+  dstSacksRank?: number;
+  dstTurnovers?: number;
+  dstTurnoversRank?: number;
+}> {
+  const team = canonicalTeam(nflTeam);
+  const defPassStopRank = enrichmentStore.getDefensePassStopRank(team, season);
+  const defRushStopRank = enrichmentStore.getDefenseRushStopRank(team, season);
+  const defPassYdsAvg = enrichmentStore.getDefenseYardsAllowedAvg(team, season, 'oppPass');
+  const defRushYdsAvg = enrichmentStore.getDefenseYardsAllowedAvg(team, season, 'oppRush');
+  if (!team) {
+    return { defPassStopRank, defRushStopRank, defPassYdsAvg, defRushYdsAvg };
+  }
+  const byTeam = await loadDstCountingByTeam(season);
+  const mine = byTeam.get(team);
+  if (!mine) {
+    return { defPassStopRank, defRushStopRank, defPassYdsAvg, defRushYdsAvg };
+  }
+  const sackRows = [...byTeam.values()].map((row) => ({ team: row.team, value: row.sacks }));
+  const toRows = [...byTeam.values()].map((row) => ({ team: row.team, value: row.turnovers }));
+  const fptsRows = [...byTeam.values()].map((row) => ({ team: row.team, value: row.fpts }));
+  return {
+    defPassStopRank,
+    defRushStopRank,
+    defPassYdsAvg,
+    defRushYdsAvg,
+    // Same ordering as My Team / FA PRK (ESPN season positional ≈ YTD FPTS).
+    dstFptsRank: denseRankHigherBetter(fptsRows, team),
+    dstSacks: mine.sacks,
+    dstSacksRank: denseRankHigherBetter(sackRows, team),
+    dstTurnovers: mine.turnovers,
+    dstTurnoversRank: denseRankHigherBetter(toRows, team),
+  };
+}
+
+async function resolveComparePlayer(
+  playerName: string,
+  season: number
+): Promise<RankedPlayer | null> {
+  // Prefer full ADP board for bios — routeEngine board can lag a reload.
+  const board = enrichmentStore.getAdpBoard(season).map(toPlayer);
   const key = normalizeName(playerName);
   let player =
     board.find((p) => normalizeName(p.playerName) === key) ??
@@ -1330,7 +1567,19 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
       (p) =>
         key.length >= 3 &&
         (normalizeName(p.playerName).includes(key) || key.includes(normalizeName(p.playerName)))
-    );
+    ) ??
+    null;
+
+  if (!player && routeEngine?.board?.length) {
+    player =
+      routeEngine.board.find((p) => normalizeName(p.playerName) === key) ??
+      routeEngine.board.find(
+        (p) =>
+          key.length >= 3 &&
+          (normalizeName(p.playerName).includes(key) || key.includes(normalizeName(p.playerName)))
+      ) ??
+      null;
+  }
 
   if (!player) {
     const depth = enrichmentStore.getDepthPlayer(playerName, season);
@@ -1346,25 +1595,105 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
       points?.position ??
       site?.position ??
       ecr?.position) as Position | undefined;
-    if (!name || !position || !SEARCH_POS.has(position)) return null;
-    player = toPlayer({
-      playerName: name,
-      season,
-      position,
-      adp: depth?.espnRank ?? site?.espnRank ?? 9999,
-      expectedPoints: undefined,
-    });
-    if (!player.nflTeam) {
-      player = {
-        ...player,
-        nflTeam:
-          depth?.nflTeam ??
-          points?.nflTeam ??
-          site?.nflTeam ??
-          ecr?.nflTeam ??
-          player.nflTeam,
-      };
+    if (name && position && SEARCH_POS.has(position)) {
+      player = toPlayer({
+        playerName: name,
+        season,
+        position,
+        adp: depth?.espnRank ?? site?.espnRank ?? 9999,
+        expectedPoints: undefined,
+      });
+      if (!player.nflTeam) {
+        player = {
+          ...player,
+          nflTeam:
+            depth?.nflTeam ??
+            points?.nflTeam ??
+            site?.nflTeam ??
+            ecr?.nflTeam ??
+            player.nflTeam,
+        };
+      }
     }
+  }
+
+  // ESPN PPR board often omits deep D/ST; header search synthesizes all 32 — match that for bios.
+  if (!player) {
+    const dstTeam = /D\/ST$/i.test(playerName.trim())
+      ? dstTeamFromName(playerName)
+      : undefined;
+    const nick = dstTeam ? dstNickFromTeam(dstTeam) : undefined;
+    if (dstTeam && nick) {
+      player = toPlayer({
+        playerName: `${nick} D/ST`,
+        season,
+        position: 'D/ST',
+        adp: 9999,
+        expectedPoints: undefined,
+      });
+      player = { ...player, nflTeam: dstTeam };
+    }
+  }
+
+  if (!player) {
+    const searchBoard = await listSearchBoard();
+    const hit =
+      searchBoard.find((p) => normalizeName(p.playerName) === key) ??
+      searchBoard.find(
+        (p) =>
+          key.length >= 3 &&
+          (normalizeName(p.playerName).includes(key) || key.includes(normalizeName(p.playerName)))
+      );
+    if (hit && SEARCH_POS.has(hit.position)) {
+      player = toPlayer({
+        playerName: hit.playerName,
+        season,
+        position: hit.position,
+        adp: hit.rank,
+        expectedPoints: undefined,
+      });
+      if (hit.nflTeam) player = { ...player, nflTeam: hit.nflTeam };
+    }
+  }
+
+  return player;
+}
+
+export async function buildPlayerCompare(playerName: string): Promise<PlayerCompare | null> {
+  await enrichmentStore.load();
+  let season = enrichmentStore.latestRankingSeason();
+  if (season == null) {
+    // Mid-reload can briefly clear season — wait for any in-flight load and retry once.
+    await enrichmentStore.load();
+    season = enrichmentStore.latestRankingSeason();
+  }
+  if (season == null) return null;
+
+  let player = await resolveComparePlayer(playerName, season);
+  if (!player) {
+    await enrichmentStore.load();
+    season = enrichmentStore.latestRankingSeason();
+    if (season == null) return null;
+    player = await resolveComparePlayer(playerName, season);
+  }
+  if (!player) return null;
+
+  const adpBoard = enrichmentStore.getAdpBoard(season).map(toPlayer);
+  const board = adpBoard.length > 0 ? adpBoard : (routeEngine?.board ?? []);
+
+  const resolvedTeam = boardTeam(player);
+  if (resolvedTeam && resolvedTeam !== player.nflTeam) {
+    player = { ...player, nflTeam: resolvedTeam };
+  }
+  if (player.position === 'D/ST') {
+    const dstTeam = canonicalTeam(player.nflTeam) ?? dstTeamFromName(player.playerName);
+    player = {
+      ...player,
+      nflTeam: dstTeam ?? player.nflTeam,
+      // ADP stubs often lack team → bye was empty; refresh once D/ST team is known.
+      byeWeek: enrichmentStore.getByeWeek(dstTeam ?? player.nflTeam) ?? player.byeWeek,
+      sosRank: enrichmentStore.getDstSosRank(dstTeam ?? player.nflTeam),
+    };
   }
 
   const lastSeason = season - 1;
@@ -1378,7 +1707,7 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
   const qb = enrichmentStore.getTeamQb(player.nflTeam);
   const team = enrichmentStore.getTeamRanks(player.nflTeam, season);
   const teamPrev = enrichmentStore.getTeamRanks(player.nflTeam, lastSeason);
-  const posRank =
+  const draftPosRank =
     board
       .filter((p) => p.position === player.position)
       .sort((a, b) => a.rank - b.rank)
@@ -1386,10 +1715,19 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
   const qbRank = qb
     ? enrichmentStore.getEspnPosRank(qb.playerName, 'QB')
     : undefined;
+  const dstSeason =
+    player.position === 'D/ST' ? await buildDstSeasonExtras(player.nflTeam, season) : undefined;
+  // Season Pos rank = YTD at the position (matches My Team / FA PRK), not draft board / ROS proj.
+  const seasonPosRank =
+    (player.position === 'D/ST' ? dstSeason?.dstFptsRank : undefined) ??
+    enrichmentStore.getPositionalEosRank(player.playerName, season) ??
+    (draftPosRank > 0
+      ? draftPosRank
+      : enrichmentStore.getEspnPosRank(player.playerName, player.position));
 
   return {
     player,
-    posRank: posRank > 0 ? posRank : enrichmentStore.getEspnPosRank(player.playerName, player.position),
+    posRank: seasonPosRank,
     qbName: qb?.playerName,
     qbRank,
     yearsWithQb:
@@ -1400,6 +1738,17 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
     offenseRankPrev: teamPrev?.offenseRank,
     olineRank: team?.olineRank,
     olineRankPrev: teamPrev?.olineRank,
+    offenseRankSeason: enrichmentStore.getThroughWeekOffenseRank(player.nflTeam, season),
+    offenseRankSeasonPrev: enrichmentStore.getThroughWeekOffenseRank(player.nflTeam, lastSeason),
+    olineRankSeason: enrichmentStore.getThroughWeekOlineRank(player.nflTeam, season),
+    defPassStopRank: dstSeason?.defPassStopRank,
+    defRushStopRank: dstSeason?.defRushStopRank,
+    defPassYdsAvg: dstSeason?.defPassYdsAvg,
+    defRushYdsAvg: dstSeason?.defRushYdsAvg,
+    dstSacks: dstSeason?.dstSacks,
+    dstSacksRank: dstSeason?.dstSacksRank,
+    dstTurnovers: dstSeason?.dstTurnovers,
+    dstTurnoversRank: dstSeason?.dstTurnoversRank,
     lastSeason,
     lastYearPoints: last?.fantasyPoints,
     lastYearRank: last ? enrichmentStore.getEosRank(player.playerName, lastSeason) : undefined,
@@ -1425,6 +1774,14 @@ export async function buildPlayerCompare(playerName: string): Promise<PlayerComp
     takeaways: enrichmentStore.takeawaysForPlayer(player.playerName),
     depthChart: buildDepthChart(board, player),
     depthChartTeam: boardTeam(player),
+    platformRatings: await buildPlatformRatings(
+      player.playerName,
+      player.nflTeam,
+      player.position,
+      season
+    ),
+    weekProjectedPoints: await buildWeekProjectedPoints(player, season),
+    weekMatchup: await buildWeekMatchup(player, season),
   };
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "dontsuckatfantasydrafts-server",
   "version": "1.0.0",
-  "description": "Backend for DontSuckAtFantasyDrafts",
+  "description": "Backend for BLITZ",
   "main": "dist/index.js",
   "scripts": {
     "start": "node dist/index.js",

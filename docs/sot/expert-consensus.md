@@ -1,6 +1,6 @@
 ---
 title: Expert Consensus
-source: DSAFD app internals
+source: BLITZ app internals
 date: 2026-09-07
 confidence: high
 kind: app
@@ -67,7 +67,7 @@ Steal/reach **labels** stay ESPN rank vs overall pick.
 | Strategy → Draft → Landmines | ESPN-room landmines (`landmine ≥ 6.2` or `espnMinusEcr ≤ −8`) plus ADP landmines. |
 | Compare / Home card | ECR, ESPN−ECR, sleeper gap, consensus SOS rank, consensus OL (2025 AN in parentheses). Team positional depth (ESPN order among teammates) under the stats. Player takeaways whose `players[]` match. |
 | Tools → Cheat Sheets modal | Same compare card as Home/Routes (solo dialog) plus current-season Game Log (year dropdown) and positional SOS week row. No news. |
-| Home columns / Strategy → Draft → Learnings | Strategy-topic takeaways mixed in, tagged with `sources`. |
+| Insights → Draft Learnings | Strategy-topic takeaways mixed in, tagged with `sources`. |
 | Tools → SOS → List | Consensus remaining-slate ranks; subtitle notes DraftEdge + FPA. Defense tab shows consensus D-line rank as extra. |
 
 Google News stays Home-only.

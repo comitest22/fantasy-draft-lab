@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import ContenderPlaybookView from '../components/ContenderPlaybookView';
 import DraftRoutesView, { MarketPanel } from '../components/DraftRoutesView';
 import EraCompare from '../components/EraCompare';
-import KeyTakeaways from '../components/KeyTakeaways';
-import LearningsList from '../components/LearningsList';
+import PageLoading from '../components/PageLoading';
 import PageTabs from '../components/PageTabs';
+import PageTitle from '../components/PageTitle';
+import { draftIcon } from '../nav/toolsMode';
 import { getStrategy } from '../services/api';
 import type {
   ContenderPlaybook,
   DraftRouteBook,
   EraComparison,
   SotDocument,
-  StrategyRecommendation,
 } from '../types';
 import {
   DEFAULT_FORMAT_ID,
@@ -26,13 +26,11 @@ const tabs = [
   { id: 'values', label: 'Values' },
   { id: 'landmines', label: 'Landmines' },
   { id: 'podium', label: 'Podium' },
-  { id: 'learnings', label: 'Learnings' },
   { id: 'era', label: 'Era' },
   { id: 'research', label: 'Research' },
 ];
 
 export default function StrategyPage() {
-  const [recommendations, setRecommendations] = useState<StrategyRecommendation[]>([]);
   const [eraComparison, setEraComparison] = useState<EraComparison | null>(null);
   const [playbook, setPlaybook] = useState<ContenderPlaybook | null>(null);
   const [routes, setRoutes] = useState<DraftRouteBook | null>(null);
@@ -50,7 +48,6 @@ export default function StrategyPage() {
     getStrategy(teams, formatId)
       .then((data) => {
         if (cancelled) return;
-        setRecommendations(data.recommendations);
         setEraComparison(data.eraComparison);
         setPlaybook(data.playbook);
         setRoutes(data.routes);
@@ -70,7 +67,7 @@ export default function StrategyPage() {
     };
   }, [teams, formatId]);
 
-  if (loading) return <p className="status">Loading strategy...</p>;
+  if (loading) return <PageLoading label="Drawing up the play…" />;
   if (error && !routes) return <p className="error">{error}</p>;
 
   const formatLabel = LEAGUE_FORMATS.find((f) => f.id === formatId)?.label ?? formatId;
@@ -78,10 +75,12 @@ export default function StrategyPage() {
   return (
     <section className="panel">
       <div className="page-intro">
-        <Link to="/strategy" className="back-link">
-          ← Strategy
-        </Link>
-        <h1>Draft Strategy</h1>
+        <p className="crumb">
+          <Link to="/strategy">Strategy</Link>
+          <span aria-hidden="true"> › </span>
+          Draft Strategy
+        </p>
+        <PageTitle badge={draftIcon(20)}>Draft Strategy</PageTitle>
         <p className="subtitle">
           {routes
             ? `${routes.season} pick-by-pick path for a ${teams}-team ${formatLabel} league.`
@@ -146,19 +145,6 @@ export default function StrategyPage() {
 
       {tab === 'podium' && playbook && (
         <ContenderPlaybookView playbook={playbook} showHeading={false} showAdvice={false} />
-      )}
-
-      {tab === 'learnings' && (
-        <div className="insight-columns">
-          <section>
-            <h2>Learnings</h2>
-            <LearningsList recommendations={recommendations} />
-          </section>
-          <section>
-            <h2>Takeaways</h2>
-            <KeyTakeaways takes={playbook?.timingAdvice ?? []} showHeading={false} />
-          </section>
-        </div>
       )}
 
       {tab === 'era' && eraComparison && (

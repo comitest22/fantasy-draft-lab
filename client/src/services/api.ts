@@ -19,6 +19,11 @@ import type {
   SurvivorBoard,
   SurvivorMode,
   TdStreakBoard,
+  MyTeamRosterView,
+  FreeAgentsView,
+  LeaguePlayerAvailability,
+  EspnTeamSummary,
+  MyTeamPlayer,
 } from '../types';
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL ?? '';
@@ -28,13 +33,20 @@ function isGet(init?: RequestInit): boolean {
   return method === 'GET' || method === 'HEAD';
 }
 
-function shouldRetry(err: unknown): boolean {
+function isNetworkError(err: unknown): boolean {
   if (err instanceof TypeError) return true;
+  if (!(err instanceof Error)) return false;
+  return /failed to fetch|networkerror|load failed|API restarting/i.test(err.message);
+}
+
+function shouldRetry(err: unknown): boolean {
+  if (isNetworkError(err)) return true;
   return err instanceof Error && /^Request failed: 50[0234]$/.test(err.message);
 }
 
 async function fetchJson<T>(url: string, init?: RequestInit, timeoutMs = 20000): Promise<T> {
-  const attempts = isGet(init) ? 4 : 1;
+  // Longer gaps on network errors so nodemon restarts (~2–4s) can finish without a request storm.
+  const attempts = isGet(init) ? 3 : 1;
   let last: unknown;
   for (let attempt = 0; attempt < attempts; attempt++) {
     const controller = new AbortController();
@@ -52,7 +64,8 @@ async function fetchJson<T>(url: string, init?: RequestInit, timeoutMs = 20000):
         throw new Error('The server took too long to respond. Refresh and try again.');
       }
       if (attempt === attempts - 1 || !shouldRetry(err)) throw err;
-      await new Promise((r) => setTimeout(r, 400 * (attempt + 1)));
+      const delayMs = isNetworkError(err) ? 1500 * (attempt + 1) : 400 * (attempt + 1);
+      await new Promise((r) => setTimeout(r, delayMs));
     } finally {
       window.clearTimeout(timer);
     }
@@ -203,5 +216,95 @@ export function updateLeagueConfig(config: LeagueConfig): Promise<{ ok: boolean 
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(config),
+  });
+}
+
+export function getMyTeam(
+  season?: number,
+  opts?: { stats?: boolean }
+): Promise<MyTeamRosterView> {
+  const params = new URLSearchParams();
+  if (season != null) params.set('season', String(season));
+  if (opts?.stats) params.set('stats', '1');
+  const qs = params.toString() ? `?${params}` : '';
+  return fetchJson(`/api/team${qs}`);
+}
+
+export function getFreeAgents(
+  season?: number,
+  opts?: { position?: string; limit?: number; includeSos?: boolean }
+): Promise<FreeAgentsView> {
+  const params = new URLSearchParams();
+  if (season != null) params.set('season', String(season));
+  if (opts?.position && opts.position !== 'ALL') params.set('position', opts.position);
+  if (opts?.limit != null) params.set('limit', String(opts.limit));
+  if (opts?.includeSos) params.set('includeSos', '1');
+  const qs = params.toString() ? `?${params}` : '';
+  return fetchJson(`/api/team/free-agents${qs}`);
+}
+
+export function getLeaguePlayerAvailability(
+  name: string,
+  season?: number
+): Promise<LeaguePlayerAvailability> {
+  const params = new URLSearchParams({ name });
+  if (season != null) params.set('season', String(season));
+  return fetchJson(`/api/team/availability?${params}`);
+}
+
+export function getEspnTeamDefaults(): Promise<{
+  leagueId: number;
+  season: number;
+  preferredTeamName: string | null;
+  hasSavedAuth: boolean;
+}> {
+  return fetchJson('/api/team/defaults');
+}
+
+export function previewEspnTeam(payload: {
+  leagueId: number;
+  season: number;
+  teamId?: number;
+  espnS2?: string;
+  swid?: string;
+}): Promise<{
+  leagueId: number;
+  season: number;
+  teams: EspnTeamSummary[];
+  suggestedTeamId: number | null;
+  selectedTeamId: number | null;
+  roster: MyTeamPlayer[];
+  teamName: string | null;
+}> {
+  return fetchJson('/api/team/espn/preview', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+}
+
+export function confirmEspnTeam(payload: {
+  leagueId: number;
+  season: number;
+  teamId: number;
+  espnS2?: string;
+  swid?: string;
+}): Promise<MyTeamRosterView> {
+  return fetchJson('/api/team/espn/confirm', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+}
+
+export function refreshEspnTeam(payload?: {
+  season?: number;
+  espnS2?: string;
+  swid?: string;
+}): Promise<MyTeamRosterView> {
+  return fetchJson('/api/team/espn/refresh', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload ?? {}),
   });
 }

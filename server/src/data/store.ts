@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs/promises';
-import type { DraftFile, LeagueConfig } from '../types';
+import type { DraftFile, LeagueConfig, MyTeamFile } from '../types';
 import { sortBySeason } from '../utils/sort';
 
 const DEFAULT_DATA_DIR = path.resolve(__dirname, '../../../data');
@@ -17,6 +17,18 @@ export function draftsDir(): string {
 
 export function enrichmentDir(): string {
   return path.join(getDataDir(), 'enrichment');
+}
+
+export function myTeamDir(): string {
+  return path.join(getDataDir(), 'my-team');
+}
+
+export function secretsDir(): string {
+  return path.join(getDataDir(), 'secrets');
+}
+
+export function espnAuthPath(): string {
+  return path.join(secretsDir(), 'espn-auth.json');
 }
 
 export function leagueConfigPath(): string {
@@ -112,4 +124,52 @@ export async function readAllDrafts(): Promise<DraftFile[]> {
     if (draft) drafts.push(draft);
   }
   return sortBySeason(drafts, 'asc');
+}
+
+export async function readMyTeam(season: number): Promise<MyTeamFile | null> {
+  const filePath = path.join(myTeamDir(), `${season}.json`);
+  try {
+    const raw = await fs.readFile(filePath, 'utf-8');
+    const data = JSON.parse(raw) as MyTeamFile;
+    if (!data.platform) data.platform = 'espn';
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+export async function writeMyTeam(team: MyTeamFile): Promise<void> {
+  const filePath = path.join(myTeamDir(), `${team.season}.json`);
+  await writeJsonFile(filePath, team);
+}
+
+export async function listMyTeamSeasons(): Promise<number[]> {
+  const dir = myTeamDir();
+  await ensureDir(dir);
+  const files = await fs.readdir(dir);
+  return files
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => parseInt(f.replace('.json', ''), 10))
+    .filter((n) => !Number.isNaN(n))
+    .sort((a, b) => b - a);
+}
+
+export interface EspnAuthSecrets {
+  espnS2: string;
+  swid: string;
+}
+
+export async function readEspnAuth(): Promise<EspnAuthSecrets | null> {
+  try {
+    const raw = await fs.readFile(espnAuthPath(), 'utf-8');
+    const data = JSON.parse(raw) as Partial<EspnAuthSecrets>;
+    if (!data.espnS2 || !data.swid) return null;
+    return { espnS2: data.espnS2, swid: data.swid };
+  } catch {
+    return null;
+  }
+}
+
+export async function writeEspnAuth(auth: EspnAuthSecrets): Promise<void> {
+  await writeJsonFile(espnAuthPath(), auth);
 }

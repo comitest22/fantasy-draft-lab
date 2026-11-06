@@ -3,14 +3,15 @@ import fs from 'fs/promises';
 import type { AdpEntry, DepthRosterEntry, PlayerEnrichment, Position } from '../types';
 import { enrichmentDir } from '../data/store';
 import {
-  blendDefStats,
-  blendOffStats,
+  blendDefStatsRates,
+  blendOffStatsRates,
   currentSeasonWeight,
   mixScore,
   priorFade,
   ranksFromDefStats,
   ranksFromOffStats,
   rankToSosScore,
+  softAnchorDefRanks,
   type DefStats as BlendDefStats,
   type OffStats as BlendOffStats,
 } from '../analysis/sosBlend';
@@ -136,6 +137,23 @@ export interface OffStats {
   pointsFor: number;
 }
 
+/** nflverse usage metrics for My Team Stats (snap / air yards / YAC / aDOT / shares). */
+export interface PlayerUsageEntry {
+  playerName: string;
+  season: number;
+  position?: string;
+  nflTeam?: string;
+  snapPct?: number;
+  airYards?: number;
+  yac?: number;
+  adot?: number;
+  targetShare?: number;
+  carryShare?: number;
+  routePct?: number;
+  targets?: number;
+  carries?: number;
+}
+
 interface UnitAdj {
   offense?: number;
   oline?: number;
@@ -167,6 +185,62 @@ export function canonicalTeam(team?: string): string | undefined {
   const key = team.toUpperCase().replace(/[^A-Z]/g, '');
   if (!key) return undefined;
   return TEAM_ALIASES[key] ?? key;
+}
+
+/** NFL nicknames → abbr (D/ST names like "Jaguars D/ST"). */
+const NICK_TO_ABBR: Record<string, string> = {
+  Cardinals: 'ARI',
+  Falcons: 'ATL',
+  Ravens: 'BAL',
+  Bills: 'BUF',
+  Panthers: 'CAR',
+  Bears: 'CHI',
+  Bengals: 'CIN',
+  Browns: 'CLE',
+  Cowboys: 'DAL',
+  Broncos: 'DEN',
+  Lions: 'DET',
+  Packers: 'GB',
+  Texans: 'HOU',
+  Colts: 'IND',
+  Jaguars: 'JAX',
+  Chiefs: 'KC',
+  Raiders: 'LV',
+  Chargers: 'LAC',
+  Rams: 'LA',
+  Dolphins: 'MIA',
+  Vikings: 'MIN',
+  Patriots: 'NE',
+  Saints: 'NO',
+  Giants: 'NYG',
+  Jets: 'NYJ',
+  Eagles: 'PHI',
+  Steelers: 'PIT',
+  '49ers': 'SF',
+  Seahawks: 'SEA',
+  Buccaneers: 'TB',
+  Titans: 'TEN',
+  Commanders: 'WAS',
+};
+
+const ABBR_TO_NICK: Record<string, string> = Object.fromEntries(
+  Object.entries(NICK_TO_ABBR).map(([nick, abbr]) => [abbr, nick])
+);
+
+/** Resolve NFL team from a D/ST display name ("Jaguars D/ST" → JAX). */
+export function dstTeamFromName(name?: string): string | undefined {
+  if (!name) return undefined;
+  const cleaned = name.replace(/\s+D\/ST$/i, '').trim();
+  const parts = cleaned.split(/\s+/);
+  const nick = parts[parts.length - 1] ?? cleaned;
+  return NICK_TO_ABBR[nick] ?? canonicalTeam(nick);
+}
+
+/** Abbr → nickname for D/ST display ("JAX" → "Jaguars"). */
+export function dstNickFromTeam(team?: string): string | undefined {
+  const abbr = canonicalTeam(team);
+  if (!abbr) return undefined;
+  return ABBR_TO_NICK[abbr];
 }
 
 function normalizeName(name: string): string {
@@ -281,10 +355,16 @@ export class EnrichmentStore {
   private offenseStatsBySeason = new Map<number, Map<string, BlendOffStats>>();
   private defenseRanksBySeason = new Map<number, Map<string, DefenseRankEntry>>();
   private offenseRanksBySeason = new Map<number, Map<string, OffenseRankEntry>>();
+  /** Through-week O-line ranks from PBP sack rate (1 = lowest sack rate). */
+  private olineRanksBySeason = new Map<number, Map<string, number>>();
   private dstRankByTeam = new Map<string, number>();
   private playerStatusByName = new Map<string, string>();
   /** season → depth-chart extras (not on the ranked ADP board) */
   private depthBySeason = new Map<number, DepthRosterEntry[]>();
+  /** `${season}::${normalizeName}` → usage (snap / air / YAC / shares) */
+  private usageByKey = new Map<string, PlayerUsageEntry>();
+  /** season → all usage rows (for positional rank pools) */
+  private usageBySeason = new Map<number, PlayerUsageEntry[]>();
   /** season → normalizeName → ESPN athlete id for game logs */
   private espnIdsBySeason = new Map<number, Map<string, number>>();
   private scheduleWeeks = 18;
@@ -309,9 +389,12 @@ export class EnrichmentStore {
   private dataMtime = 0;
 
   async load(): Promise<void> {
-    const mtime = await this.watchMtime();
-    if (this.loaded && mtime === this.dataMtime) return;
+    // Join an in-flight reload before (and after) the mtime check so a concurrent
+    // reset cannot empty the store under a caller that already returned from load().
     if (this.loading) return this.loading;
+    const mtime = await this.watchMtime();
+    if (this.loading) return this.loading;
+    if (this.loaded && mtime === this.dataMtime) return;
     this.loaded = false;
     this.loading = this.loadNow(mtime).finally(() => {
       this.loading = null;
@@ -334,6 +417,7 @@ export class EnrichmentStore {
       'espn-depth-2026.csv',
       'espn-ids-2026.csv',
       'espn-ppr-overall/2026.csv',
+      'player-usage-2026.csv',
     ];
     let max = 0;
     for (const file of files) {
@@ -369,9 +453,12 @@ export class EnrichmentStore {
     this.offenseStatsBySeason.clear();
     this.defenseRanksBySeason.clear();
     this.offenseRanksBySeason.clear();
+    this.olineRanksBySeason.clear();
     this.dstRankByTeam.clear();
     this.playerStatusByName.clear();
     this.depthBySeason.clear();
+    this.usageByKey.clear();
+    this.usageBySeason.clear();
     this.espnIdsBySeason.clear();
     this.scheduleWeeks = 18;
     this.seasonState = undefined;
@@ -679,6 +766,26 @@ export class EnrichmentStore {
         continue;
       }
 
+      const olineMatch = /^oline-ranks-(\d{4})\.csv$/i.exec(file);
+      if (olineMatch) {
+        const season = Number(olineMatch[1]);
+        const olRows = await readCsv(path.join(dir, file));
+        if (olRows.length < 2) continue;
+        const headers = olRows[0];
+        const teamIdx = colIndex(headers, 'team');
+        const overallIdx = colIndex(headers, 'overall', 'rank');
+        if (teamIdx < 0 || overallIdx < 0) continue;
+        const byTeam = this.olineRanksBySeason.get(season) ?? new Map<string, number>();
+        for (const row of olRows.slice(1)) {
+          const team = canonicalTeam(row[teamIdx]);
+          const overall = num(row[overallIdx]);
+          if (!team || overall == null) continue;
+          byTeam.set(team, overall);
+        }
+        this.olineRanksBySeason.set(season, byTeam);
+        continue;
+      }
+
       const statusMatch = /^player-status-(\d{4})\.csv$/i.exec(file);
       if (statusMatch) {
         const statusRows = await readCsv(path.join(dir, file));
@@ -728,6 +835,51 @@ export class EnrichmentStore {
           });
         }
         this.depthBySeason.set(season, list);
+        continue;
+      }
+
+      const usageMatch = /^player-usage-(\d{4})\.csv$/i.exec(file);
+      if (usageMatch) {
+        const season = Number(usageMatch[1]);
+        const usageRows = await readCsv(path.join(dir, file));
+        if (usageRows.length < 2) continue;
+        const headers = usageRows[0];
+        const nameIdx = colIndex(headers, 'playername', 'name', 'player');
+        const posIdx = colIndex(headers, 'position', 'pos');
+        const teamIdx = colIndex(headers, 'nflteam', 'team');
+        const snapIdx = colIndex(headers, 'snappct', 'snap');
+        const airIdx = colIndex(headers, 'airyards', 'air');
+        const yacIdx = colIndex(headers, 'yac');
+        const adotIdx = colIndex(headers, 'adot');
+        const tgtShareIdx = colIndex(headers, 'targetshare');
+        const carryShareIdx = colIndex(headers, 'carryshare');
+        const routeIdx = colIndex(headers, 'routepct', 'route');
+        const targetsIdx = colIndex(headers, 'targets');
+        const carriesIdx = colIndex(headers, 'carries');
+        if (nameIdx < 0) continue;
+        for (const row of usageRows.slice(1)) {
+          const playerName = row[nameIdx]?.replace(/^"+|"+$/g, '').trim();
+          if (!playerName) continue;
+          const entry: PlayerUsageEntry = {
+            playerName,
+            season,
+            position: posIdx >= 0 ? row[posIdx]?.trim() || undefined : undefined,
+            nflTeam: teamIdx >= 0 ? canonicalTeam(row[teamIdx]) : undefined,
+            snapPct: snapIdx >= 0 ? num(row[snapIdx]) : undefined,
+            airYards: airIdx >= 0 ? num(row[airIdx]) : undefined,
+            yac: yacIdx >= 0 ? num(row[yacIdx]) : undefined,
+            adot: adotIdx >= 0 ? num(row[adotIdx]) : undefined,
+            targetShare: tgtShareIdx >= 0 ? num(row[tgtShareIdx]) : undefined,
+            carryShare: carryShareIdx >= 0 ? num(row[carryShareIdx]) : undefined,
+            routePct: routeIdx >= 0 ? num(row[routeIdx]) : undefined,
+            targets: targetsIdx >= 0 ? num(row[targetsIdx]) : undefined,
+            carries: carriesIdx >= 0 ? num(row[carriesIdx]) : undefined,
+          };
+          this.usageByKey.set(`${season}::${normalizeName(playerName)}`, entry);
+          const usageList = this.usageBySeason.get(season) ?? [];
+          usageList.push(entry);
+          this.usageBySeason.set(season, usageList);
+        }
         continue;
       }
 
@@ -801,7 +953,7 @@ export class EnrichmentStore {
 
     this.buildTeamQbs();
     this.buildUnitAdj();
-    this.buildBlendedRanks();
+    await this.buildBlendedRanks();
     this.mixRemainingSos();
     this.buildSosRanks();
     this.buildDstRanks();
@@ -996,6 +1148,99 @@ export class EnrichmentStore {
     return undefined;
   }
 
+  getPlayerUsage(playerName: string, season: number): PlayerUsageEntry | undefined {
+    return this.usageByKey.get(`${season}::${normalizeName(playerName)}`);
+  }
+
+  /** All usage rows for a season (positional rank pools). */
+  listPlayerUsage(season: number): PlayerUsageEntry[] {
+    return [...(this.usageBySeason.get(season) ?? [])];
+  }
+
+  /** Team defense PA/YA for a season (D/ST rank pools). */
+  listDefenseSeasonStats(season: number): Array<[string, { pa: number; ya: number }]> {
+    const out: Array<[string, { pa: number; ya: number }]> = [];
+    for (const [team, row] of this.defenseStatsBySeason.get(season) ?? []) {
+      out.push([team, { pa: row.pa, ya: row.oppPass + row.oppRush }]);
+    }
+    return out;
+  }
+
+  /** NFL teams present on the loaded schedule (for D/ST pools). */
+  listScheduleTeams(): string[] {
+    return [...this.scheduleByTeam.keys()].sort();
+  }
+
+  /**
+   * D/ST remaining-slate SOS rank (1 = easiest = opponents who score fewest).
+   * Distinct from skill-position Source A SOS.
+   */
+  getDstSosRank(nflTeam: string | undefined): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    return this.dstRankByTeam.get(team);
+  }
+
+  /**
+   * Through-week defense rank vs the pass / run (1 = fewest yards allowed).
+   * From `defense-stats-{season}.csv` oppPass / oppRush.
+   */
+  getDefensePassStopRank(nflTeam: string | undefined, season?: number): number | undefined {
+    return this.defenseYardsAllowedRank(nflTeam, season, 'oppPass');
+  }
+
+  getDefenseRushStopRank(nflTeam: string | undefined, season?: number): number | undefined {
+    return this.defenseYardsAllowedRank(nflTeam, season, 'oppRush');
+  }
+
+  /** Pass/rush yards allowed per game through completed weeks (bye weeks excluded). */
+  getDefenseYardsAllowedAvg(
+    nflTeam: string | undefined,
+    season: number | undefined,
+    field: 'oppPass' | 'oppRush'
+  ): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const year =
+      season ??
+      [...this.defenseStatsBySeason.keys()].sort((a, b) => b - a)[0];
+    if (year == null) return undefined;
+    const total = this.defenseStatsBySeason.get(year)?.get(team)?.[field];
+    if (total == null || !Number.isFinite(total)) return undefined;
+    const games = this.teamGamesPlayedThrough(team);
+    if (games <= 0) return undefined;
+    return Math.round((total / games) * 10) / 10;
+  }
+
+  /** Non-bye games on the schedule through `completedWeeks`. */
+  teamGamesPlayedThrough(nflTeam: string | undefined): number {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return 0;
+    const done = this.completedWeeks();
+    if (done <= 0) return 0;
+    return (this.scheduleByTeam.get(team) ?? []).filter((g) => !g.bye && g.week <= done).length;
+  }
+
+  private defenseYardsAllowedRank(
+    nflTeam: string | undefined,
+    season: number | undefined,
+    field: 'oppPass' | 'oppRush'
+  ): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const year =
+      season ??
+      [...this.defenseStatsBySeason.keys()].sort((a, b) => b - a)[0];
+    if (year == null) return undefined;
+    const map = this.defenseStatsBySeason.get(year);
+    if (!map?.has(team)) return undefined;
+    const ranked = [...map.entries()]
+      .map(([t, row]) => ({ team: t, value: row[field] }))
+      .sort((a, b) => a.value - b.value || a.team.localeCompare(b.team));
+    const idx = ranked.findIndex((row) => row.team === team);
+    return idx >= 0 ? idx + 1 : undefined;
+  }
+
   /** ESPN athlete id from the weekly ranks/depth sweep (for game logs past the top board). */
   getEspnAthleteId(playerName: string, season?: number): number | undefined {
     const key = normalizeName(playerName);
@@ -1014,6 +1259,106 @@ export class EnrichmentStore {
   /** Skill-position YTD scorers for a season (search fallback when ESPN drops a name). */
   listSeasonPoints(season: number): PlayerEnrichment[] {
     return [...(this.pointsBySeason.get(season) ?? [])];
+  }
+
+  /** Career games with fantasy-points rows (all seasons). */
+  getCareerGames(playerName: string): number {
+    const key = normalizeName(playerName);
+    let games = 0;
+    for (const list of this.pointsBySeason.values()) {
+      const hit = list.find((p) => normalizeName(p.playerName) === key);
+      if (hit?.gamesPlayed != null) games += hit.gamesPlayed;
+    }
+    return games;
+  }
+
+  /**
+   * QB / RB / WR candidates for a team this season (injury + usage overlay).
+   * Merges YTD points, usage snaps/shares, site rank, and injury status.
+   */
+  listTeamSkillPlayers(
+    nflTeam: string | undefined,
+    season: number
+  ): Array<{
+    playerName: string;
+    position: 'QB' | 'RB' | 'WR';
+    status?: string;
+    fantasyPoints?: number;
+    games?: number;
+    snapPct?: number;
+    sharePct?: number;
+    rank?: number;
+    rookie?: boolean;
+    careerGames?: number;
+  }> {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return [];
+    const byName = new Map<
+      string,
+      {
+        playerName: string;
+        position: 'QB' | 'RB' | 'WR';
+        status?: string;
+        fantasyPoints?: number;
+        games?: number;
+        snapPct?: number;
+        sharePct?: number;
+        rank?: number;
+        rookie?: boolean;
+        careerGames?: number;
+      }
+    >();
+
+    const upsert = (
+      playerName: string,
+      position: 'QB' | 'RB' | 'WR',
+      patch: Partial<{
+        fantasyPoints: number;
+        games: number;
+        snapPct: number;
+        sharePct: number;
+        rank: number;
+      }>
+    ) => {
+      const key = normalizeName(playerName);
+      const cur = byName.get(key) ?? {
+        playerName,
+        position,
+        status: this.getPlayerStatus(playerName),
+        rookie: this.isRookie(playerName, season, position),
+        careerGames: this.getCareerGames(playerName),
+      };
+      byName.set(key, { ...cur, position, ...patch, playerName: cur.playerName || playerName });
+    };
+
+    for (const p of this.pointsBySeason.get(season) ?? []) {
+      if (p.position !== 'QB' && p.position !== 'RB' && p.position !== 'WR') continue;
+      if (canonicalTeam(p.nflTeam) !== team) continue;
+      upsert(p.playerName, p.position, {
+        fantasyPoints: p.fantasyPoints,
+        games: p.gamesPlayed,
+      });
+    }
+
+    for (const u of this.usageBySeason.get(season) ?? []) {
+      const pos = u.position;
+      if (pos !== 'QB' && pos !== 'RB' && pos !== 'WR') continue;
+      if (canonicalTeam(u.nflTeam) !== team) continue;
+      upsert(u.playerName, pos, {
+        snapPct: u.snapPct,
+        sharePct: pos === 'RB' ? u.carryShare : pos === 'WR' ? u.targetShare : undefined,
+      });
+    }
+
+    for (const entry of this.siteRankByName.values()) {
+      if (entry.position !== 'QB' && entry.position !== 'RB' && entry.position !== 'WR') continue;
+      if (canonicalTeam(entry.nflTeam) !== team) continue;
+      upsert(entry.playerName, entry.position as 'QB' | 'RB' | 'WR', {
+        rank: entry.espnRank,
+      });
+    }
+
+    return [...byName.values()];
   }
 
   getSiteRank(playerName: string): SiteRankEntry | undefined {
@@ -1242,6 +1587,7 @@ export class EnrichmentStore {
     season: number;
     weeks: number;
     currentWeek: number;
+    completedWeeks: number;
     unitSeasons?: { latest: number; prior: number };
     sourceNote?: string;
     teams: Array<{
@@ -1324,20 +1670,27 @@ export class EnrichmentStore {
         dline: this.consensusUnitsByTeam.get(team)?.dline,
         defense: defenseQuality.get(team),
         offense: this.consensusUnitsByTeam.get(team)?.offense ?? this.getTeamRanks(team)?.offenseRank,
+        // Off/OL Δ only matters while the early-season prior is still fading (gone by week 4).
         unitChange:
-          adj && (adj.offense != null || adj.oline != null)
+          priorFade(this.completedWeeks()) > 0 &&
+          adj &&
+          (adj.offense != null || adj.oline != null)
             ? { offense: adj.offense, oline: adj.oline }
             : undefined,
         games,
       };
     });
     teams.sort((a, b) => (a.overall.rank ?? 99) - (b.overall.rank ?? 99) || a.team.localeCompare(b.team));
+    const fadedIn = priorFade(this.completedWeeks()) <= 0;
     return {
       season,
       weeks,
       currentWeek: this.currentWeek(),
-      unitSeasons: this.unitSeasons,
-      sourceNote: this.sosSourceNote,
+      completedWeeks: this.completedWeeks(),
+      unitSeasons: fadedIn ? undefined : this.unitSeasons,
+      sourceNote: fadedIn
+        ? 'List ranks use remaining 2026 matchups (current-season opponent rates).'
+        : this.sosSourceNote,
       teams,
     };
   }
@@ -1388,7 +1741,8 @@ export class EnrichmentStore {
     const parts = [adj.offense, adj.oline].filter((n): n is number => n != null);
     if (parts.length === 0) return 0;
     const avg = parts.reduce((sum, n) => sum + n, 0) / parts.length;
-    return clamp(avg / 20, -0.9, 0.9);
+    // Same calendar as Source A DraftEdge/FPA prior: full preseason → 0 by week 4.
+    return clamp(avg / 20, -0.9, 0.9) * priorFade(this.completedWeeks());
   }
 
   private adjustedMatchup(team: string, defRank?: number): number | undefined {
@@ -1398,7 +1752,8 @@ export class EnrichmentStore {
     const parts = [adj.offense, adj.oline].filter((n): n is number => n != null);
     if (parts.length === 0) return defRank;
     const avg = parts.reduce((sum, n) => sum + n, 0) / parts.length;
-    const shift = clamp(Math.round(-avg / 4), -6, 6);
+    const fade = priorFade(this.completedWeeks());
+    const shift = clamp(Math.round((-avg / 4) * fade), -6, 6);
     return clamp(defRank + shift, 1, 32);
   }
 
@@ -1595,6 +1950,27 @@ export class EnrichmentStore {
     return this.getConsensusUnits(nflTeam)?.oline ?? this.getTeamRanks(nflTeam)?.olineRank;
   }
 
+  /**
+   * Through-week team offense rank from ESPN points-for (`offense-ranks`).
+   * File polarity is 1 = fewest PF; this returns 1 = most PF (best scoring offense).
+   */
+  getThroughWeekOffenseRank(nflTeam: string | undefined, season?: number): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const year = season ?? this.seasonState?.season ?? 2026;
+    const overall = this.offenseRanksBySeason.get(year)?.get(team)?.overall;
+    if (overall == null || overall < 1 || overall > 32) return undefined;
+    return 33 - overall;
+  }
+
+  /** Through-week O-line rank from nflverse PBP sack rate (1 = lowest sack rate). */
+  getThroughWeekOlineRank(nflTeam: string | undefined, season?: number): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const year = season ?? this.seasonState?.season ?? 2026;
+    return this.olineRanksBySeason.get(year)?.get(team);
+  }
+
   getOppPosDefenseRank(nflTeam: string | undefined, week: number, position: string): number | undefined {
     const team = canonicalTeam(nflTeam);
     const pos = asTdPos(position);
@@ -1606,6 +1982,31 @@ export class EnrichmentStore {
     if (pos === 'RB') return def.rb;
     if (pos === 'WR') return def.wr;
     return def.te;
+  }
+
+  /** Opponent offense points-scored rank for D/ST (1 = fewest points / easiest). */
+  getOppOffenseRank(nflTeam: string | undefined, week: number): number | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const game = this.getScheduleGame(team, week);
+    if (!game || game.bye || !game.opponent) return undefined;
+    return this.matchupOffense(week, false, game.opponent)?.overall;
+  }
+
+  /** Team defense YTD points/yards allowed for D/ST Stats view. */
+  getDefenseSeasonStats(
+    nflTeam: string | undefined,
+    season?: number
+  ): { pa: number; ya: number } | undefined {
+    const team = canonicalTeam(nflTeam);
+    if (!team) return undefined;
+    const year =
+      season ??
+      [...this.defenseStatsBySeason.keys()].sort((a, b) => b - a)[0];
+    if (year == null) return undefined;
+    const row = this.defenseStatsBySeason.get(year)?.get(team);
+    if (!row) return undefined;
+    return { pa: row.pa, ya: row.oppPass + row.oppRush };
   }
 
   private remainingGames(team: string): ScheduleGame[] {
@@ -1632,7 +2033,23 @@ export class EnrichmentStore {
     return map.get(opponent);
   }
 
-  private buildBlendedRanks(): void {
+  private async loadEspnOprkRatings(
+    season: number
+  ): Promise<Record<string, Record<string, number>> | null> {
+    try {
+      const raw = await fs.readFile(
+        path.join(enrichmentDir(), `espn-oprk-${season}.json`),
+        'utf-8'
+      );
+      const data = JSON.parse(raw) as { ratings?: Record<string, Record<string, number>> };
+      if (!data.ratings || Object.keys(data.ratings).length === 0) return null;
+      return data.ratings;
+    } catch {
+      return null;
+    }
+  }
+
+  private async buildBlendedRanks(): Promise<void> {
     this.defenseByTeam.clear();
     this.offenseByTeam.clear();
     this.currentDefenseByTeam.clear();
@@ -1643,7 +2060,9 @@ export class EnrichmentStore {
     );
     const currentYear = years[0] ?? this.latestRankingSeason() ?? new Date().getFullYear();
     const priorYear = years.find((y) => y < currentYear) ?? currentYear - 1;
-    const weight = currentSeasonWeight(this.completedWeeks());
+    const completed = this.completedWeeks();
+    const weight = currentSeasonWeight(completed);
+    const currentGames = Math.max(1, completed);
 
     const currentDefStats = this.defenseStatsBySeason.get(currentYear);
     const priorDefStats = this.defenseStatsBySeason.get(priorYear);
@@ -1654,10 +2073,18 @@ export class EnrichmentStore {
       ]);
       const blended = new Map<string, BlendDefStats>();
       for (const team of teams) {
-        const mixed = blendDefStats(currentDefStats?.get(team), priorDefStats?.get(team), weight);
+        const mixed = blendDefStatsRates(
+          currentDefStats?.get(team),
+          priorDefStats?.get(team),
+          weight,
+          currentGames
+        );
         if (mixed) blended.set(team, mixed);
       }
-      for (const [team, ranks] of ranksFromDefStats(blended)) {
+      let ranked = ranksFromDefStats(blended);
+      const espnOprk = await this.loadEspnOprkRatings(currentYear);
+      ranked = softAnchorDefRanks(ranked, espnOprk);
+      for (const [team, ranks] of ranked) {
         this.defenseByTeam.set(team, { team, ...ranks });
       }
     } else {
@@ -1677,7 +2104,12 @@ export class EnrichmentStore {
       ]);
       const blended = new Map<string, BlendOffStats>();
       for (const team of teams) {
-        const mixed = blendOffStats(currentOffStats?.get(team), priorOffStats?.get(team), weight);
+        const mixed = blendOffStatsRates(
+          currentOffStats?.get(team),
+          priorOffStats?.get(team),
+          weight,
+          currentGames
+        );
         if (mixed) blended.set(team, mixed);
       }
       for (const [team, overall] of ranksFromOffStats(blended)) {

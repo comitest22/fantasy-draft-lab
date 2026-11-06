@@ -1,8 +1,24 @@
-import { useEffect, useMemo, useState } from 'react';
-import { getPlayerCompare } from '../services/api';
-import type { PlayerCompare, Position, RouteBoardPlayer } from '../types';
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { getLeaguePlayerAvailability, getPlayerCompare } from '../services/api';
+import type {
+  LeaguePlayerAvailability,
+  PlayerCompare,
+  PlatformRatingCell,
+  PlayerPlatformRatings,
+  PlayerWeekMatchup,
+  Position,
+  RouteBoardPlayer,
+} from '../types';
+import { oprkHeatClass, positionalRankHeat } from '../utils/heatScale';
+import { useBioPlayerLoad } from './BioPlayerLoadGate';
 import PlayerGameLog from './PlayerGameLog';
 import { statusBadge } from '../utils/valueChips';
+
+const EMPTY_PLATFORM_RATINGS: PlayerPlatformRatings = {
+  currentWeek: 0,
+  week: {},
+  ros: {},
+};
 
 const POS_ORDER: Position[] = ['WR', 'RB', 'TE', 'QB', 'D/ST', 'K'];
 
@@ -62,7 +78,11 @@ type MetricKey =
   | 'lyPos'
   | 'lyAvg'
   | 'tyPts'
-  | 'tyAvg';
+  | 'tyAvg'
+  | 'defRush'
+  | 'defPass'
+  | 'sacks'
+  | 'turnovers';
 
 const QUALITY: Record<MetricKey, { prefer: 'high' | 'low'; good: number; bad: number }> = {
   rank: { prefer: 'low', good: 12, bad: 48 },
@@ -84,6 +104,11 @@ const QUALITY: Record<MetricKey, { prefer: 'high' | 'low'; good: number; bad: nu
   lyAvg: { prefer: 'high', good: 16, bad: 11 },
   tyPts: { prefer: 'high', good: 18, bad: 6 },
   tyAvg: { prefer: 'high', good: 16, bad: 11 },
+  defRush: { prefer: 'low', good: 10, bad: 23 },
+  defPass: { prefer: 'low', good: 10, bad: 23 },
+  // Color by NFL rank among 32 (1 = most), same band as vs Run/Pass — not raw counts.
+  sacks: { prefer: 'low', good: 10, bad: 23 },
+  turnovers: { prefer: 'low', good: 10, bad: 23 },
 };
 
 function tone(left?: number, right?: number, prefer: 'high' | 'low' = 'high'): Tone {
@@ -117,6 +142,7 @@ function quality(key: MetricKey, n: number | undefined, pos?: Position): Tone {
 
 interface Row {
   label: string;
+  tab: 'draft' | 'season';
   left: CellVal;
   right: CellVal;
   leftTone: Tone;
@@ -137,16 +163,41 @@ function ValueCell({ val, tone }: { val: CellVal; tone: Tone }) {
   );
 }
 
+function StatValue({ val, tone }: { val: CellVal; tone: Tone }) {
+  return (
+    <span className={`compare-val ${tone}`}>
+      {val.main}
+      {val.prior && (
+        <span className="compare-prior" data-hint={val.hint}>
+          {' '}
+          ({val.prior})
+        </span>
+      )}
+    </span>
+  );
+}
+
+function fmtCountRank(count?: number, rank?: number): string {
+  if (count == null || !Number.isFinite(count)) return '—';
+  const n = Number.isInteger(count) ? String(count) : count.toFixed(1);
+  return rank != null ? `${n} (#${rank})` : n;
+}
+
 function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
   const p = left.player;
   const q = right?.player;
+  // Season Pos rank is YTD at the position (same idea as My Team / FA PRK).
+  const leftSeasonPos = left.posRank;
+  const rightSeasonPos = right?.posRank;
   const lastY = left.lastSeason ?? right?.lastSeason;
   const priorY = left.priorSeason ?? right?.priorSeason;
   const lastHint = lastY != null ? String(lastY) : 'Last year';
   const twoBackHint = priorY != null ? String(priorY) : 'Two years back';
+  const dstSeason = p.position === 'D/ST';
   const pair = (
     label: string,
     key: MetricKey,
+    tab: 'draft' | 'season',
     lv: CellVal,
     rv: CellVal,
     ln?: number,
@@ -155,10 +206,11 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
   ): Row => {
     if (right) {
       const leftTone = tone(ln, rn, prefer);
-      return { label, left: lv, right: rv, leftTone, rightTone: other(leftTone) };
+      return { label, tab, left: lv, right: rv, leftTone, rightTone: other(leftTone) };
     }
     return {
       label,
+      tab,
       left: lv,
       right: rv,
       leftTone: quality(key, ln, p.position),
@@ -166,62 +218,158 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     };
   };
 
+  const seasonTail: Row[] = dstSeason
+    ? [
+        pair(
+          'SOS',
+          'sos',
+          'season',
+          cell(p.sosRank != null ? `#${p.sosRank}` : '—'),
+          cell(q?.sosRank != null ? `#${q.sosRank}` : '—'),
+          p.sosRank,
+          q?.sosRank,
+          'low'
+        ),
+        pair(
+          'vs Run',
+          'defRush',
+          'season',
+          cell(fmtCountRank(left.defRushYdsAvg, left.defRushStopRank)),
+          cell(fmtCountRank(right?.defRushYdsAvg, right?.defRushStopRank)),
+          left.defRushStopRank,
+          right?.defRushStopRank,
+          'low'
+        ),
+        pair(
+          'vs Pass',
+          'defPass',
+          'season',
+          cell(fmtCountRank(left.defPassYdsAvg, left.defPassStopRank)),
+          cell(fmtCountRank(right?.defPassYdsAvg, right?.defPassStopRank)),
+          left.defPassStopRank,
+          right?.defPassStopRank,
+          'low'
+        ),
+        pair(
+          'Sacks',
+          'sacks',
+          'season',
+          cell(fmtCountRank(left.dstSacks, left.dstSacksRank)),
+          cell(fmtCountRank(right?.dstSacks, right?.dstSacksRank)),
+          left.dstSacksRank,
+          right?.dstSacksRank,
+          'low'
+        ),
+        pair(
+          'Turnovers',
+          'turnovers',
+          'season',
+          cell(fmtCountRank(left.dstTurnovers, left.dstTurnoversRank)),
+          cell(fmtCountRank(right?.dstTurnovers, right?.dstTurnoversRank)),
+          left.dstTurnoversRank,
+          right?.dstTurnoversRank,
+          'low'
+        ),
+      ]
+    : [
+        pair(
+          'SOS',
+          'sos',
+          'season',
+          cell(p.sosRank != null ? `#${p.sosRank}` : '—'),
+          cell(q?.sosRank != null ? `#${q.sosRank}` : '—'),
+          p.sosRank,
+          q?.sosRank,
+          'low'
+        ),
+        pair(
+          'QB',
+          'qb',
+          'season',
+          cell(left.qbName ? `${left.qbName}${left.qbRank != null ? ` · QB${left.qbRank}` : ''}` : '—'),
+          cell(right?.qbName ? `${right.qbName}${right.qbRank != null ? ` · QB${right.qbRank}` : ''}` : '—'),
+          left.qbRank,
+          right?.qbRank,
+          'low'
+        ),
+        pair(
+          'Offense (YTD PF)',
+          'offense',
+          'season',
+          cell(fmtRank(left.offenseRankSeason)),
+          cell(fmtRank(right?.offenseRankSeason)),
+          left.offenseRankSeason,
+          right?.offenseRankSeason,
+          'low'
+        ),
+        pair(
+          'O-line (sack %)',
+          'oline',
+          'season',
+          cell(fmtRank(left.olineRankSeason)),
+          cell(fmtRank(right?.olineRankSeason)),
+          left.olineRankSeason,
+          right?.olineRankSeason,
+          'low'
+        ),
+        pair(
+          left.thisSeason ? `${left.thisSeason} YTD PPR` : 'This year PPR',
+          'tyPts',
+          'season',
+          cell(fmtNum(left.thisYearPoints, 1)),
+          cell(fmtNum(right?.thisYearPoints, 1)),
+          left.thisYearPoints,
+          right?.thisYearPoints,
+          'high'
+        ),
+        pair(
+          left.thisSeason ? `${left.thisSeason} YTD PPR avg/g` : 'This year PPR avg/g',
+          'tyAvg',
+          'season',
+          cell(fmtNum(left.thisYearAvg, 1)),
+          cell(fmtNum(right?.thisYearAvg, 1)),
+          left.thisYearAvg,
+          right?.thisYearAvg,
+          'high'
+        ),
+      ];
+
   return [
     pair(
-      'ESPN rank',
+      'ESPN Current Rank',
       'rank',
-      withPrior(
-        fmtRank(p.rank),
-        left.lastYearRank != null ? `#${left.lastYearRank}` : undefined,
-        `${lastHint} overall PPR finish`
-      ),
-      withPrior(
-        fmtRank(q?.rank),
-        right?.lastYearRank != null ? `#${right.lastYearRank}` : undefined,
-        `${lastHint} overall PPR finish`
-      ),
+      'season',
+      cell(fmtRank(p.rank)),
+      cell(fmtRank(q?.rank)),
       p.rank,
       q?.rank,
       'low'
     ),
     pair(
-      'Pos rank',
+      'Current Pos. Rank',
       'pos',
-      withPrior(
-        fmtPos(p.position, left.posRank),
-        left.lastYearPosRank != null ? `#${left.lastYearPosRank}` : undefined,
-        `${lastHint} positional PPR finish`
-      ),
-      withPrior(
-        fmtPos(q?.position, right?.posRank),
-        right?.lastYearPosRank != null ? `#${right.lastYearPosRank}` : undefined,
-        `${lastHint} positional PPR finish`
-      ),
-      left.posRank,
-      right?.posRank,
+      'season',
+      cell(fmtPos(p.position, leftSeasonPos)),
+      cell(fmtPos(q?.position, rightSeasonPos)),
+      leftSeasonPos,
+      rightSeasonPos,
       'low'
     ),
     pair(
       'Proj',
       'proj',
+      'draft',
       cell(p.expectedPoints != null ? String(Math.round(p.expectedPoints)) : '—'),
       cell(q?.expectedPoints != null ? String(Math.round(q.expectedPoints)) : '—'),
       p.expectedPoints,
       q?.expectedPoints,
       'high'
     ),
-    pair(
-      'SOS',
-      'sos',
-      cell(p.sosRank != null ? `#${p.sosRank}` : '—'),
-      cell(q?.sosRank != null ? `#${q.sosRank}` : '—'),
-      p.sosRank,
-      q?.sosRank,
-      'low'
-    ),
+    ...seasonTail,
     pair(
       'ECR',
       'ecr',
+      'draft',
       cell(p.ecr != null ? String(p.ecr) : '—'),
       cell(q?.ecr != null ? String(q.ecr) : '—'),
       p.ecr,
@@ -231,6 +379,7 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     pair(
       'ESPN − ECR',
       'espnMinusEcr',
+      'draft',
       cell(p.espnMinusEcr == null ? '—' : `${p.espnMinusEcr > 0 ? '+' : ''}${p.espnMinusEcr.toFixed(1)}`),
       cell(q?.espnMinusEcr == null ? '—' : `${q.espnMinusEcr > 0 ? '+' : ''}${q.espnMinusEcr.toFixed(1)}`),
       p.espnMinusEcr,
@@ -240,16 +389,27 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     pair(
       'Sleeper gap',
       'sleeperGap',
+      'draft',
       cell(p.ecrMinusAdp == null ? '—' : `${p.ecrMinusAdp > 0 ? '+' : ''}${p.ecrMinusAdp.toFixed(1)}`),
       cell(q?.ecrMinusAdp == null ? '—' : `${q.ecrMinusAdp > 0 ? '+' : ''}${q.ecrMinusAdp.toFixed(1)}`),
       p.ecrMinusAdp,
       q?.ecrMinusAdp,
       'low'
     ),
-    pair('Landmine', 'landmine', cell(fmtNum(p.landmine)), cell(fmtNum(q?.landmine)), p.landmine, q?.landmine, 'low'),
+    pair(
+      'Landmine',
+      'landmine',
+      'draft',
+      cell(fmtNum(p.landmine)),
+      cell(fmtNum(q?.landmine)),
+      p.landmine,
+      q?.landmine,
+      'low'
+    ),
     pair(
       'ESPN ADP vs Sleeper',
       'adpGap',
+      'draft',
       cell(p.espnMinusSleeper == null ? '—' : `${p.espnMinusSleeper > 0 ? '+' : ''}${p.espnMinusSleeper.toFixed(0)}`),
       cell(q?.espnMinusSleeper == null ? '—' : `${q.espnMinusSleeper > 0 ? '+' : ''}${q.espnMinusSleeper.toFixed(0)}`),
       p.espnMinusSleeper,
@@ -257,17 +417,9 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
       'high'
     ),
     pair(
-      'QB',
-      'qb',
-      cell(left.qbName ? `${left.qbName}${left.qbRank != null ? ` · QB${left.qbRank}` : ''}` : '—'),
-      cell(right?.qbName ? `${right.qbName}${right.qbRank != null ? ` · QB${right.qbRank}` : ''}` : '—'),
-      left.qbRank,
-      right?.qbRank,
-      'low'
-    ),
-    pair(
       'Years with QB',
       'yearsQb',
+      'draft',
       cell(left.yearsWithQb != null ? `${left.yearsWithQb}` : '—'),
       cell(right?.yearsWithQb != null ? `${right.yearsWithQb}` : '—'),
       left.yearsWithQb,
@@ -277,6 +429,7 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     pair(
       'Offense rank',
       'offense',
+      'draft',
       withPrior(
         fmtRank(left.offenseRank),
         left.offenseRankPrev != null ? `#${left.offenseRankPrev}` : undefined,
@@ -294,6 +447,7 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     pair(
       'O-line rank',
       'oline',
+      'draft',
       withPrior(
         fmtRank(left.olineRank),
         left.olineRankPrev != null ? `#${left.olineRankPrev}` : undefined,
@@ -309,26 +463,9 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
       'low'
     ),
     pair(
-      left.thisSeason ? `${left.thisSeason} YTD PPR` : 'This year PPR',
-      'tyPts',
-      cell(fmtNum(left.thisYearPoints, 1)),
-      cell(fmtNum(right?.thisYearPoints, 1)),
-      left.thisYearPoints,
-      right?.thisYearPoints,
-      'high'
-    ),
-    pair(
-      left.thisSeason ? `${left.thisSeason} YTD avg/g` : 'This year avg/g',
-      'tyAvg',
-      cell(fmtNum(left.thisYearAvg, 1)),
-      cell(fmtNum(right?.thisYearAvg, 1)),
-      left.thisYearAvg,
-      right?.thisYearAvg,
-      'high'
-    ),
-    pair(
       left.lastSeason ? `${left.lastSeason} PPR pts` : 'Last year PPR',
       'lyPts',
+      'draft',
       withPrior(
         fmtNum(left.lastYearPoints, 1),
         left.priorYearPoints != null ? fmtNum(left.priorYearPoints, 1) : undefined,
@@ -346,6 +483,7 @@ function rowsFor(left: PlayerCompare, right: PlayerCompare | null): Row[] {
     pair(
       left.lastSeason ? `${left.lastSeason} avg/g` : 'Last year avg/g',
       'lyAvg',
+      'draft',
       withPrior(
         fmtNum(left.lastYearAvg, 1),
         left.priorYearAvg != null ? fmtNum(left.priorYearAvg, 1) : undefined,
@@ -371,51 +509,451 @@ interface Props {
   solo?: boolean;
   board?: RouteBoardPlayer[];
   boardLoading?: boolean;
-  variant?: 'dialog' | 'page';
+  variant?: 'dialog' | 'page' | 'roster';
+  /** News column for `roster` layout (My Team bio modal). */
+  news?: ReactNode;
+  /** When set (My Team), head ranks use only this import host. */
+  ratingsPlatform?: 'espn' | 'sleeper' | 'cbs';
+  /**
+   * Optional override for WEEK PROJECTION (e.g. roster mRoster proj).
+   * When omitted, uses compare payload `weekProjectedPoints` (any player).
+   */
+  weekProjectedPoints?: number;
+  /** NFL week for WK{#} PROJ label (My Team). */
+  currentWeek?: number;
+  /** Depth-chart name click (My Team bio) — swap the open player. */
+  onSelectPlayer?: (name: string) => void;
+  /** Roster position hint so game-log pills can render before compare/log load. */
+  playerPosition?: Position;
+  /** Roster injury status override (My Team); falls back to compare `player.status`. */
+  playerStatus?: string;
+  /** Roster name → injury status (My Team) so depth-chart mates use live import status. */
+  rosterStatusByName?: Record<string, string | undefined>;
+  /** Season for league FA/waiver/owned lookup (My Team bio). */
+  availabilitySeason?: number;
+}
+
+function RatingsValue({
+  cell,
+  posLabel,
+  scopeLabel,
+}: {
+  cell?: PlatformRatingCell;
+  posLabel: string;
+  scopeLabel: string;
+}) {
+  const rank = cell?.rank;
+  if (rank == null) {
+    return <span className="roster-bio-ratings-value is-empty">—</span>;
+  }
+  const shown = posLabel !== '—' ? `${posLabel}${rank}` : String(rank);
+  return (
+    <span
+      className="roster-bio-ratings-value is-heat"
+      style={positionalRankHeat(rank, posLabel !== '—' ? posLabel : undefined)}
+      title={`${scopeLabel} · ${shown} (1 = best at position)`}
+    >
+      {shown}
+    </span>
+  );
+}
+
+function platformCells(
+  ratings: PlayerPlatformRatings,
+  platform?: 'espn' | 'sleeper' | 'cbs'
+): { week?: PlatformRatingCell; ros?: PlatformRatingCell } {
+  const id = platform ?? 'espn';
+  return { week: ratings.week[id], ros: ratings.ros[id] };
+}
+
+/** Week / ROS positional ranks — right side of the name card. */
+function RosterBioHeadRanks({
+  ratings,
+  position,
+  platform,
+  onBye,
+}: {
+  ratings: PlayerPlatformRatings;
+  position?: Position;
+  platform?: 'espn' | 'sleeper' | 'cbs';
+  /** Current NFL week is this player's bye — show BYE instead of week rank. */
+  onBye?: boolean;
+}) {
+  const posLabel =
+    position === 'QB' ||
+    position === 'RB' ||
+    position === 'WR' ||
+    position === 'TE' ||
+    position === 'K'
+      ? position
+      : position === 'D/ST'
+        ? 'DST'
+        : '—';
+  const { week, ros } = platformCells(ratings, platform);
+
+  return (
+    <div className="roster-bio-head-ranks" aria-label="Positional rankings">
+      <div className="roster-bio-head-rank-col">
+        {onBye ? (
+          <span
+            className="roster-bio-ratings-value is-bye"
+            title={`Week ${ratings.currentWeek} · bye`}
+          >
+            BYE
+          </span>
+        ) : (
+          <RatingsValue
+            cell={week}
+            posLabel={posLabel}
+            scopeLabel={`Week ${ratings.currentWeek}`}
+          />
+        )}
+        <span className="roster-bio-head-rank-label">WEEK {ratings.currentWeek}</span>
+      </div>
+      <div className="roster-bio-head-rank-col">
+        <RatingsValue cell={ros} posLabel={posLabel} scopeLabel="ROS rank" />
+        <span className="roster-bio-head-rank-label roster-bio-head-rank-label-stack">
+          <span>ROS</span>
+          <span>RANK</span>
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function posShort(position: Position | undefined): string {
+  if (position === 'D/ST') return 'DST';
+  return position ?? '—';
+}
+
+/** Former ratings slot — current-week projected points + opp matchup. */
+function RosterBioWeekProj({
+  week,
+  points,
+  onBye,
+  matchup,
+}: {
+  week: number;
+  points?: number;
+  onBye?: boolean;
+  matchup?: PlayerWeekMatchup;
+}) {
+  const shown = onBye
+    ? 'BYE'
+    : points != null && Number.isFinite(points)
+      ? points.toFixed(1)
+      : '—';
+  const opp = matchup?.opponent;
+  const pos = posShort(matchup?.position);
+  const vsLabel = opp ? `${opp} vs ${pos}:` : `Opp vs ${pos}:`;
+  const fpLabel = opp ? `${opp} FPA to ${pos}:` : `Opp FPA to ${pos}:`;
+  const vsValue = onBye
+    ? 'BYE'
+    : matchup?.oprkRank != null
+      ? `#${matchup.oprkRank}`
+      : '—';
+  const fpValue = onBye
+    ? 'BYE'
+    : matchup?.fpAllowedPerGame != null
+      ? matchup.fpAllowedPerGame.toFixed(1)
+      : '—';
+  return (
+    <div className="roster-bio-week-proj" aria-label={`Week ${week} projection`}>
+      <div className="roster-bio-week-proj-metric">
+        <div
+          className="roster-bio-week-proj-label"
+          title="ESPN PPR projection for this week"
+        >
+          WEEK {week} PROJECTION:
+        </div>
+        <div
+          className={`roster-bio-week-proj-value${onBye || points == null ? ' is-empty' : ''}${onBye ? ' is-bye' : ''}`}
+        >
+          {shown}
+        </div>
+      </div>
+      <div className="roster-bio-week-proj-metric">
+        <div
+          className="roster-bio-week-proj-label"
+          title="ESPN opponent rank vs this position (1 = toughest)"
+        >
+          {vsLabel}
+        </div>
+        <div
+          className={[
+            'roster-bio-week-proj-value',
+            'is-matchup',
+            onBye || matchup?.oprkRank == null ? 'is-empty' : '',
+            onBye ? 'is-bye' : '',
+            onBye ? '' : oprkHeatClass(matchup?.oprkRank),
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          {vsValue}
+        </div>
+      </div>
+      <div className="roster-bio-week-proj-metric">
+        <div
+          className="roster-bio-week-proj-label"
+          title="Fantasy points allowed per game to this position"
+        >
+          {fpLabel}
+        </div>
+        <div
+          className={`roster-bio-week-proj-value is-matchup${onBye || matchup?.fpAllowedPerGame == null ? ' is-empty' : ''}${onBye ? ' is-bye' : ''}`}
+        >
+          {fpValue}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RosterBioStats({
+  rows,
+  takeaways,
+}: {
+  rows: Row[];
+  takeaways?: PlayerCompare['takeaways'];
+}) {
+  const [tab, setTab] = useState<'draft' | 'season'>('season');
+  const shown = rows.filter((row) => row.tab === tab);
+  return (
+    <div className={`roster-bio-stats-panel is-${tab}`}>
+      <div className="roster-bio-stats-head">
+        <div className="player-gamelog-pills" role="tablist" aria-label="Player stats">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'draft'}
+            className={`player-gamelog-pill${tab === 'draft' ? ' active' : ''}`}
+            onClick={() => setTab('draft')}
+          >
+            Draft
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={tab === 'season'}
+            className={`player-gamelog-pill${tab === 'season' ? ' active' : ''}`}
+            onClick={() => setTab('season')}
+          >
+            Season
+          </button>
+        </div>
+      </div>
+      <div
+        className={`roster-bio-stats-grid is-${tab}`}
+        role="tabpanel"
+      >
+        {shown.map((row) => (
+          <div key={row.label} className="roster-bio-stat">
+            <span className="roster-bio-stat-label">{row.label}</span>
+            <StatValue val={row.left} tone={row.leftTone} />
+          </div>
+        ))}
+      </div>
+      {tab === 'draft' && takeaways && takeaways.length > 0 && (
+        <div className="player-takeaways">
+          <h3>Expert takeaways</h3>
+          {takeaways.map((t) => (
+            <p key={t.id}>
+              {t.claim}
+              {t.sources.length > 0 && (
+                <span className="player-takeaway-src">{t.sources.join(', ')}</span>
+              )}
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/** Season-tab labels — same copy/geometry as loaded stats so the shell doesn’t grow. */
+const STATS_PLACEHOLDER_LABELS = [
+  'ESPN Current Rank',
+  'Current Pos. Rank',
+  'SOS',
+  'QB',
+  'Offense (YTD PF)',
+  'O-line (sack %)',
+  'YTD PPR',
+  'YTD PPR avg/g',
+] as const;
+
+/** Keeps the stats panel grid ratio while the gated player load is in flight. */
+function RosterBioStatsPlaceholder() {
+  return (
+    <div className="roster-bio-stats-panel is-season" aria-hidden>
+      <div className="roster-bio-stats-head">
+        <div className="player-gamelog-pills" role="presentation">
+          <button type="button" className="player-gamelog-pill" tabIndex={-1} disabled>
+            Draft
+          </button>
+          <button type="button" className="player-gamelog-pill active" tabIndex={-1} disabled>
+            Season
+          </button>
+        </div>
+      </div>
+      <div className="roster-bio-stats-grid is-season">
+        {STATS_PLACEHOLDER_LABELS.map((label) => (
+          <div key={label} className="roster-bio-stat">
+            <span className="roster-bio-stat-label">{label}</span>
+            <span className="compare-val">—</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function depthPillLabel(pos: string, depth: number, solo: boolean): string {
+  const base = pos === 'D/ST' || pos === 'DST' ? 'DST' : pos;
+  return solo ? base : `${base}${depth}`;
+}
+
+function DepthChartRow({
+  entry,
+  card,
+  pos,
+  posClass,
+  solo,
+  onSelect,
+  statusOverride,
+}: {
+  entry: NonNullable<PlayerCompare['depthChart']>[number];
+  card: PlayerCompare;
+  pos: string;
+  posClass: string;
+  /** One name at the position → pill is `K` / `DST` with no depth digit. */
+  solo: boolean;
+  onSelect?: (name: string) => void;
+  statusOverride?: string;
+}) {
+  const badge = statusBadge(statusOverride ?? entry.status);
+  const self = entry.playerName === card.player.playerName;
+  const pillLabel = depthPillLabel(pos, entry.depth, solo);
+  const body = (
+    <>
+      <span className={`pos-pill ${posClass}`}>{pillLabel}</span>
+      <span className="depth-chart-who">
+        <span className="depth-chart-name">{entry.playerName}</span>
+        {badge && (
+          <span className={`status-badge status-badge-${badge.tone}`} title={badge.title}>
+            {badge.label}
+          </span>
+        )}
+      </span>
+      <span className="depth-chart-meta">
+        <span className="depth-chart-rank">#{entry.rank}</span>
+      </span>
+    </>
+  );
+  return (
+    <li>
+      {onSelect ? (
+        <button
+          type="button"
+          className={`depth-chart-row${self ? ' is-self' : ''} is-clickable`}
+          onClick={() => onSelect(entry.playerName)}
+        >
+          {body}
+        </button>
+      ) : (
+        <div className={`depth-chart-row${self ? ' is-self' : ''}`}>{body}</div>
+      )}
+    </li>
+  );
 }
 
 function DepthChart({
   card,
+  split = false,
+  onSelectPlayer,
+  statusByName,
 }: {
   card: PlayerCompare;
+  /**
+   * When true (My Team bio), chunk into columns that fit the stretched box height;
+   * more than two columns scroll horizontally.
+   */
+  split?: boolean;
+  onSelectPlayer?: (name: string) => void;
+  statusByName?: Record<string, string | undefined>;
 }) {
   const chart = card.depthChart ?? [];
+  const rootRef = useRef<HTMLDivElement>(null);
+  const colsRef = useRef<HTMLDivElement>(null);
+  const [perColumn, setPerColumn] = useState(4);
+
+  useEffect(() => {
+    if (!split || chart.length === 0) return;
+    const root = rootRef.current;
+    const cols = colsRef.current;
+    if (!root || !cols) return;
+
+    const measure = () => {
+      const row = cols.querySelector('.depth-chart-row') as HTMLElement | null;
+      if (!row) return;
+      const rowH = row.getBoundingClientRect().height;
+      const available = cols.clientHeight;
+      if (rowH <= 0 || available <= 0) return;
+      const next = Math.max(1, Math.floor(available / rowH));
+      setPerColumn((prev) => (prev === next ? prev : next));
+    };
+
+    const ro = new ResizeObserver(() => {
+      measure();
+    });
+    ro.observe(root);
+    ro.observe(cols);
+    measure();
+    return () => ro.disconnect();
+  }, [split, chart.length]);
+
   if (chart.length === 0) return null;
   const team = card.depthChartTeam ?? card.player.nflTeam ?? '';
   const pos = card.player.position;
   const posClass = `pos-${pos.replace('/', '')}`;
+  const solo = chart.length === 1;
+  const columns: Array<NonNullable<PlayerCompare['depthChart']>> = [];
+  if (split) {
+    const size = Math.max(1, perColumn);
+    for (let i = 0; i < chart.length; i += size) {
+      columns.push(chart.slice(i, i + size));
+    }
+  } else {
+    columns.push(chart);
+  }
+  const useSplit = split && columns.length > 1;
   return (
-    <div className="depth-chart">
+    <div
+      ref={rootRef}
+      className={`depth-chart${split ? ' depth-chart-inline' : ''}${useSplit ? ' is-split' : ''}`}
+    >
       <h3>
-        {team} {pos} depth
+        {team} {pos} Depth Chart
       </h3>
-      <p className="depth-chart-note">ESPN rank order on this roster</p>
-      <ol>
-        {chart.map((entry) => {
-          const badge = statusBadge(entry.status);
-          const self = entry.playerName === card.player.playerName;
-          return (
-            <li
-              key={entry.playerName}
-              className={`depth-chart-row${self ? ' is-self' : ''}`}
-            >
-              <span className={`pos-pill ${posClass}`}>
-                {pos}
-                {entry.depth}
-              </span>
-              <span className="depth-chart-name">{entry.playerName}</span>
-              <span className="depth-chart-meta">
-                {badge && (
-                  <span className="status-badge" title={badge.title}>
-                    {badge.label}
-                  </span>
-                )}
-                <span className="depth-chart-rank">#{entry.rank}</span>
-              </span>
-            </li>
-          );
-        })}
-      </ol>
+      <div ref={colsRef} className="depth-chart-cols">
+        {columns.map((col, colIdx) => (
+          <ol key={colIdx}>
+            {col.map((entry) => (
+              <DepthChartRow
+                key={entry.playerName}
+                entry={entry}
+                card={card}
+                pos={pos}
+                posClass={posClass}
+                solo={solo}
+                onSelect={onSelectPlayer}
+                statusOverride={statusByName?.[entry.playerName]}
+              />
+            ))}
+          </ol>
+        ))}
+      </div>
     </div>
   );
 }
@@ -429,31 +967,74 @@ export default function PlayerCompareDialog({
   board = [],
   boardLoading = false,
   variant = 'dialog',
+  news,
+  ratingsPlatform,
+  weekProjectedPoints,
+  currentWeek,
+  onSelectPlayer,
+  playerPosition,
+  playerStatus,
+  rosterStatusByName,
+  availabilitySeason,
 }: Props) {
-  const [left, setLeft] = useState<PlayerCompare | null>(null);
+  const gate = useBioPlayerLoad();
+  const gated = gate != null;
+  const [leftOwn, setLeftOwn] = useState<PlayerCompare | null>(null);
   const [right, setRight] = useState<PlayerCompare | null>(null);
   const [query, setQuery] = useState('');
   const [pickName, setPickName] = useState('');
-  const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [busyOwn, setBusyOwn] = useState(false);
+  const [errorOwn, setErrorOwn] = useState<string | null>(null);
+  const [leagueAvail, setLeagueAvail] = useState<LeaguePlayerAvailability | null>(null);
+
+  const left = gated ? gate.compare : leftOwn;
+  const busy = gated ? gate.loading : busyOwn;
+  const error = gated ? gate.compareError : errorOwn;
 
   useEffect(() => {
+    // Roster bio uses BioPlayerLoadProvider (compare + log + news, atomic reveal).
+    if (gated) return;
     let cancelled = false;
-    setBusy(true);
+    setBusyOwn(true);
+    setErrorOwn(null);
+    setLeftOwn(null);
     getPlayerCompare(leftName)
       .then((data) => {
-        if (!cancelled) setLeft(data.card);
+        if (cancelled) return;
+        setLeftOwn(data.card);
+        setErrorOwn(null);
       })
       .catch((err) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : 'Could not load that player.');
+        if (cancelled) return;
+        setLeftOwn(null);
+        setErrorOwn(err instanceof Error ? err.message : 'Could not load that player.');
       })
       .finally(() => {
-        if (!cancelled) setBusy(false);
+        if (!cancelled) setBusyOwn(false);
       });
     return () => {
       cancelled = true;
     };
-  }, [leftName]);
+  }, [leftName, gated]);
+
+  useEffect(() => {
+    if (variant !== 'roster') {
+      setLeagueAvail(null);
+      return;
+    }
+    let cancelled = false;
+    setLeagueAvail(null);
+    getLeaguePlayerAvailability(leftName, availabilitySeason)
+      .then((row) => {
+        if (!cancelled) setLeagueAvail(row);
+      })
+      .catch(() => {
+        if (!cancelled) setLeagueAvail(null);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [variant, leftName, availabilitySeason]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -485,33 +1066,190 @@ export default function PlayerCompareDialog({
 
   async function confirmRight() {
     if (!pickName) return;
-    setBusy(true);
-    setError(null);
+    setBusyOwn(true);
+    setErrorOwn(null);
     try {
       const data = await getPlayerCompare(pickName);
       setRight(data.card);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not load that player.');
+      setErrorOwn(err instanceof Error ? err.message : 'Could not load that player.');
     } finally {
-      setBusy(false);
+      setBusyOwn(false);
     }
   }
 
   function changePlayer() {
     setRight(null);
     setQuery('');
-    setError(null);
+    setErrorOwn(null);
   }
 
   const rows = left ? rowsFor(left, right) : [];
   const page = variant === 'page';
-  const dismiss = closeLabel ?? (page ? 'Back to search' : 'Close');
+  const roster = variant === 'roster';
+  const dismiss = closeLabel ?? (page || roster ? 'Back to search' : 'Close');
   const title = solo ? (left?.player.playerName ?? leftName) : `Compare R${round} pick`;
   const subtitle = solo
     ? round != null
       ? `R${round} pick.`
       : ''
     : `${leftName} on the left. Search anyone on the board for the right side.`;
+
+  const statsTable = left && (
+    <div className="compare-split-stats">
+      <table className="compare-table">
+        <tbody>
+          {rows.map((row) => (
+            <tr key={row.label}>
+              <th scope="row">{row.label}</th>
+              <ValueCell val={row.left} tone={row.leftTone} />
+              {!solo && <ValueCell val={row.right} tone={row.rightTone} />}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {!roster && (
+        <div className={`depth-charts${right ? ' pair' : ''}`}>
+          <DepthChart card={left} />
+          {right && <DepthChart card={right} />}
+        </div>
+      )}
+      {left.takeaways && left.takeaways.length > 0 && (
+        <div className="player-takeaways">
+          <h3>Expert takeaways</h3>
+          {left.takeaways.map((t) => (
+            <p key={t.id}>
+              {t.claim}
+              {t.sources.length > 0 && (
+                <span className="player-takeaway-src">{t.sources.join(', ')}</span>
+              )}
+            </p>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
+  if (roster) {
+    const gateLoading = Boolean(gate?.loading);
+    const weekNum =
+      currentWeek ?? left?.platformRatings?.currentWeek ?? EMPTY_PLATFORM_RATINGS.currentWeek;
+    const onBye =
+      !gateLoading &&
+      left != null &&
+      weekNum > 0 &&
+      ((left.player.byeWeek != null && left.player.byeWeek === weekNum) ||
+        Boolean(left.weekMatchup?.bye));
+    const injury = !gateLoading
+      ? statusBadge(playerStatus ?? left?.player.status)
+      : null;
+    const headRatings = left?.platformRatings
+      ? left.platformRatings
+      : { ...EMPTY_PLATFORM_RATINGS, currentWeek: weekNum || currentWeek || 0 };
+    return (
+      <section
+        className="compare-dialog solo compare-page roster-bio"
+        aria-label={title}
+        aria-busy={gateLoading || busy}
+      >
+        <div className="roster-bio-top">
+          <div className="compare-head roster-bio-head">
+            <div className="roster-bio-head-id">
+              <strong>
+                {leftName}
+                {injury && (
+                  <span
+                    className={`status-badge status-badge-${injury.tone} roster-bio-injury`}
+                    title={injury.title}
+                  >
+                    {injury.label}
+                  </span>
+                )}
+                {leagueAvail && leagueAvail.pool !== 'UNKNOWN' && (
+                  <span
+                    className={`roster-bio-pool roster-bio-pool-${
+                      leagueAvail.mine ? 'mine' : leagueAvail.pool.toLowerCase()
+                    }`}
+                    title={
+                      leagueAvail.mine
+                        ? 'On your imported team'
+                        : leagueAvail.pool === 'FREEAGENT'
+                          ? 'Free agent in your league'
+                          : leagueAvail.pool === 'WAIVERS'
+                            ? 'On waivers in your league'
+                            : 'Rostered by another team in your league'
+                    }
+                  >
+                    {leagueAvail.mine ? 'Owned by you' : leagueAvail.poolLabel}
+                  </span>
+                )}
+              </strong>
+              <span>
+                {gateLoading || !left
+                  ? '\u00a0'
+                  : `${left.player.position} · ${left.player.nflTeam ?? 'FA'} · ESPN #${left.player.rank}`}
+              </span>
+            </div>
+            <RosterBioHeadRanks
+              ratings={headRatings}
+              position={gateLoading ? playerPosition : left?.player.position}
+              platform={ratingsPlatform}
+              onBye={onBye}
+            />
+          </div>
+        </div>
+        {weekNum > 0 && (
+          <RosterBioWeekProj
+            week={weekNum}
+            points={
+              gateLoading
+                ? undefined
+                : (weekProjectedPoints ?? left?.weekProjectedPoints)
+            }
+            onBye={onBye}
+            matchup={
+              gateLoading
+                ? playerPosition
+                  ? { week: weekNum, position: playerPosition }
+                  : undefined
+                : left?.weekMatchup
+            }
+          />
+        )}
+        <div className="roster-bio-depth">
+          {left && !gateLoading ? (
+            <DepthChart
+              card={left}
+              split
+              onSelectPlayer={onSelectPlayer}
+              statusByName={rosterStatusByName}
+            />
+          ) : (
+            <div className="depth-chart is-split" aria-hidden>
+              <h3>Depth Chart</h3>
+              <div className="depth-chart-cols" />
+            </div>
+          )}
+        </div>
+        {news && <div className="roster-bio-news">{news}</div>}
+        <PlayerGameLog
+          name={leftName}
+          layout="roster"
+          position={playerPosition ?? left?.player.position}
+        />
+        <div className="roster-bio-stats">
+          {left && !gateLoading ? (
+            <RosterBioStats rows={rows} takeaways={left.takeaways} />
+          ) : (
+            <RosterBioStatsPlaceholder />
+          )}
+        </div>
+        {error && !left && !gateLoading && (
+          <p className="swap-error roster-bio-error">{error}</p>
+        )}
+      </section>
+    );
+  }
 
   const body = (
     <>
@@ -599,41 +1337,12 @@ export default function PlayerCompareDialog({
 
         {left && (
           <div className={`compare-split${solo ? ' solo' : ''}`}>
-            <div className="compare-split-stats">
-              <table className="compare-table">
-                <tbody>
-                  {rows.map((row) => (
-                    <tr key={row.label}>
-                      <th scope="row">{row.label}</th>
-                      <ValueCell val={row.left} tone={row.leftTone} />
-                      {!solo && <ValueCell val={row.right} tone={row.rightTone} />}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className={`depth-charts${right ? ' pair' : ''}`}>
-                <DepthChart card={left} />
-                {right && <DepthChart card={right} />}
-              </div>
-              {left.takeaways && left.takeaways.length > 0 && (
-                <div className="player-takeaways">
-                  <h3>Expert takeaways</h3>
-                  {left.takeaways.map((t) => (
-                    <p key={t.id}>
-                      {t.claim}
-                      {t.sources.length > 0 && (
-                        <span className="player-takeaway-src">{t.sources.join(', ')}</span>
-                      )}
-                    </p>
-                  ))}
-                </div>
-              )}
-            </div>
+            {statsTable}
             {solo && <PlayerGameLog name={leftName} />}
           </div>
         )}
 
-        {(solo || right) && error && <p className="swap-error">{error}</p>}
+        {(solo || right) && error && !left && <p className="swap-error">{error}</p>}
         {!page && (
           <div className="dialog-actions">
             <button type="button" className="button secondary" onClick={onClose} disabled={busy}>

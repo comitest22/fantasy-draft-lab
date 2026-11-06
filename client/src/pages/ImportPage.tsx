@@ -1,14 +1,27 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import DraftBoard from '../components/DraftBoard';
-import { getLeagueConfig, previewImport } from '../services/api';
+import PageTitle from '../components/PageTitle';
+import {
+  confirmEspnTeam,
+  getEspnTeamDefaults,
+  getLeagueConfig,
+  previewEspnTeam,
+  previewImport,
+} from '../services/api';
 import { confirmImportBatch } from '../services/importBatch';
-import type { DraftFile, LeagueConfig } from '../types';
+import type {
+  DraftFile,
+  EspnTeamSummary,
+  LeagueConfig,
+  MyTeamPlayer,
+} from '../types';
 import {
   createImportId,
   getSeasonOptions,
   guessSeasonFromFilename,
 } from '../utils/import';
+import { statusBadge } from '../utils/valueChips';
 
 type ImportStatus = 'pending' | 'previewing' | 'ready' | 'error';
 
@@ -98,6 +111,32 @@ function duplicateSeasons(items: ImportItem[]): number[] {
     .map(([season]) => season);
 }
 
+function LeagueRosterRow({
+  player,
+  slotLabel,
+}: {
+  player: MyTeamPlayer;
+  slotLabel: string;
+}) {
+  const badge = statusBadge(player.status);
+  return (
+    <li>
+      <span className={`pos-pill pos-${player.position.replace('/', '')}`}>
+        {slotLabel}
+      </span>
+      <span className="espn-roster-player">
+        {player.name}
+        {player.nflTeam ? ` · ${player.nflTeam}` : ''}
+        {badge && (
+          <span className={`status-text status-text-${badge.tone}`} title={badge.title}>
+            {badge.label}
+          </span>
+        )}
+      </span>
+    </li>
+  );
+}
+
 export default function ImportPage() {
   const navigate = useNavigate();
   const [items, setItems] = useState<ImportItem[]>([]);
@@ -105,10 +144,37 @@ export default function ImportPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
 
+  const [leagueId, setLeagueId] = useState('1735901');
+  const [leagueSeason, setLeagueSeason] = useState(defaultSeason);
+  const [espnS2, setEspnS2] = useState('');
+  const [swid, setSwid] = useState('');
+  const [hasSavedAuth, setHasSavedAuth] = useState(false);
+  const [leagueLoading, setLeagueLoading] = useState(false);
+  const [leagueMessage, setLeagueMessage] = useState<string | null>(null);
+  const [espnTeams, setEspnTeams] = useState<EspnTeamSummary[]>([]);
+  const [espnTeamId, setEspnTeamId] = useState<number | null>(null);
+  const [rosterPreview, setRosterPreview] = useState<MyTeamPlayer[]>([]);
+  const [previewTeamName, setPreviewTeamName] = useState<string | null>(null);
+
   useEffect(() => {
     getLeagueConfig()
       .then(setLeagueConfig)
       .catch(() => setLeagueConfig(null));
+    getEspnTeamDefaults()
+      .then((defaults) => {
+        setLeagueId(String(defaults.leagueId));
+        setLeagueSeason(defaults.season);
+        setHasSavedAuth(defaults.hasSavedAuth);
+      })
+      .catch(() => {
+        /* keep local defaults */
+      });
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash === '#import-league') {
+      document.getElementById('import-league')?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, []);
 
   function updateItem(id: string, patch: Partial<ImportItem>) {
@@ -248,9 +314,97 @@ export default function ImportPage() {
   const dupes = duplicateSeasons(items);
   const hasPreviewed = items.some((item) => item.draft != null);
 
+  function resetLeaguePreview() {
+    setEspnTeams([]);
+    setEspnTeamId(null);
+    setRosterPreview([]);
+    setPreviewTeamName(null);
+  }
+
+  async function handleLeaguePreview() {
+    const id = parseInt(leagueId, 10);
+    if (Number.isNaN(id)) {
+      setLeagueMessage('Enter a valid ESPN league ID.');
+      return;
+    }
+    setLeagueLoading(true);
+    setLeagueMessage(null);
+    try {
+      const result = await previewEspnTeam({
+        leagueId: id,
+        season: leagueSeason,
+        teamId: espnTeamId ?? undefined,
+        espnS2: espnS2 || undefined,
+        swid: swid || undefined,
+      });
+      setEspnTeams(result.teams);
+      const nextId = result.selectedTeamId ?? result.suggestedTeamId;
+      setEspnTeamId(nextId);
+      setRosterPreview(result.roster);
+      setPreviewTeamName(result.teamName);
+      if (!nextId) {
+        setLeagueMessage('League loaded. Pick your team, then import.');
+      }
+    } catch (err) {
+      setLeagueMessage(err instanceof Error ? err.message : String(err));
+      resetLeaguePreview();
+    } finally {
+      setLeagueLoading(false);
+    }
+  }
+
+  async function handleLeagueTeamChange(teamId: number) {
+    setEspnTeamId(teamId);
+    const id = parseInt(leagueId, 10);
+    if (Number.isNaN(id)) return;
+    setLeagueLoading(true);
+    setLeagueMessage(null);
+    try {
+      const result = await previewEspnTeam({
+        leagueId: id,
+        season: leagueSeason,
+        teamId,
+        espnS2: espnS2 || undefined,
+        swid: swid || undefined,
+      });
+      setEspnTeams(result.teams);
+      setEspnTeamId(result.selectedTeamId ?? teamId);
+      setRosterPreview(result.roster);
+      setPreviewTeamName(result.teamName);
+    } catch (err) {
+      setLeagueMessage(err instanceof Error ? err.message : String(err));
+    } finally {
+      setLeagueLoading(false);
+    }
+  }
+
+  async function handleLeagueImport() {
+    const id = parseInt(leagueId, 10);
+    if (Number.isNaN(id) || espnTeamId == null) {
+      setLeagueMessage('Preview the league and select your team first.');
+      return;
+    }
+    setLeagueLoading(true);
+    setLeagueMessage(null);
+    try {
+      await confirmEspnTeam({
+        leagueId: id,
+        season: leagueSeason,
+        teamId: espnTeamId,
+        espnS2: espnS2 || undefined,
+        swid: swid || undefined,
+      });
+      navigate('/my-team');
+    } catch (err) {
+      setLeagueMessage(err instanceof Error ? err.message : String(err));
+    } finally {
+      setLeagueLoading(false);
+    }
+  }
+
   return (
     <section className="panel">
-      <h1>Import ESPN Drafts</h1>
+      <PageTitle>Import ESPN Drafts</PageTitle>
       <p className="subtitle">
         Upload one or more .docx exports from ESPN (Round / NO. / Player / Team
         format). Assign season, your team, and optional place finished for each
@@ -498,6 +652,191 @@ export default function ImportPage() {
           to auto-select the season.
         </p>
       )}
+
+      <div id="import-league" className="import-league-section">
+        <h2>Import League</h2>
+        <p className="subtitle">
+          Connect your ESPN fantasy league once. The roster appears under{' '}
+          <strong>My Team</strong>; use Sync there to refresh. Private leagues need{' '}
+          <code>espn_s2</code> and <code>SWID</code> cookies (or{' '}
+          <code>ESPN_S2</code> / <code>ESPN_SWID</code> in <code>.env</code>).
+        </p>
+
+        <details className="espn-cookie-help">
+          <summary>How to get espn_s2 and SWID</summary>
+          <ol>
+            <li>
+              Log into{' '}
+              <a href="https://fantasy.espn.com" target="_blank" rel="noreferrer">
+                fantasy.espn.com
+              </a>
+              .
+            </li>
+            <li>
+              Open DevTools (F12) → <strong>Application</strong> → Cookies →
+              fantasy.espn.com
+            </li>
+            <li>
+              Copy <code>espn_s2</code> and <code>SWID</code> into the fields below.
+            </li>
+          </ol>
+        </details>
+
+        <div className="form-grid">
+          <label>
+            League ID
+            <input
+              type="text"
+              value={leagueId}
+              onChange={(e) => {
+                setLeagueId(e.target.value);
+                resetLeaguePreview();
+              }}
+              inputMode="numeric"
+            />
+          </label>
+          <label>
+            Season
+            <select
+              value={leagueSeason}
+              onChange={(e) => {
+                setLeagueSeason(parseInt(e.target.value, 10));
+                resetLeaguePreview();
+              }}
+            >
+              {seasonOptions.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="full-width">
+            espn_s2{hasSavedAuth ? ' (optional — saved cookies available)' : ''}
+            <input
+              type="password"
+              value={espnS2}
+              onChange={(e) => setEspnS2(e.target.value)}
+              autoComplete="off"
+              placeholder={hasSavedAuth ? 'Leave blank to reuse saved cookies' : ''}
+            />
+          </label>
+          <label className="full-width">
+            SWID{hasSavedAuth ? ' (optional — saved cookies available)' : ''}
+            <input
+              type="password"
+              value={swid}
+              onChange={(e) => setSwid(e.target.value)}
+              autoComplete="off"
+              placeholder={hasSavedAuth ? 'Leave blank to reuse saved cookies' : '{…}'}
+            />
+          </label>
+        </div>
+
+        <div className="import-actions">
+          <button
+            type="button"
+            className="button"
+            onClick={handleLeaguePreview}
+            disabled={leagueLoading}
+          >
+            {leagueLoading ? 'Loading…' : 'Preview league'}
+          </button>
+        </div>
+
+        {leagueMessage && <p className="error">{leagueMessage}</p>}
+
+        {espnTeams.length > 0 && (
+          <>
+            <div className="form-grid" style={{ marginTop: '1rem' }}>
+              <label className="espn-team-field">
+                Your team
+                <span className="espn-team-select-wrap">
+                  <select
+                    className="espn-team-select"
+                    value={espnTeamId ?? ''}
+                    onChange={(e) => {
+                      const id = parseInt(e.target.value, 10);
+                      if (!Number.isNaN(id)) void handleLeagueTeamChange(id);
+                    }}
+                  >
+                    <option value="" disabled>
+                      Select team…
+                    </option>
+                    {espnTeams.map((team) => (
+                      <option key={team.teamId} value={team.teamId}>
+                        {team.name}
+                        {team.abbrev ? ` (${team.abbrev})` : ''} · {team.playerCount}{' '}
+                        players
+                      </option>
+                    ))}
+                  </select>
+                </span>
+              </label>
+            </div>
+
+            {rosterPreview.length > 0 && (
+              <div className="espn-roster-preview">
+                <h3>
+                  Roster preview
+                  {previewTeamName ? ` · ${previewTeamName}` : ''}
+                </h3>
+                <div className="espn-roster-columns">
+                  <div className="espn-roster-col">
+                    <h4>Starters</h4>
+                    <ul className="espn-roster-list">
+                      {rosterPreview
+                        .filter((p) => p.lineupSlot !== 'BE' && p.lineupSlot !== 'IR')
+                        .map((p) => (
+                          <LeagueRosterRow
+                            key={`${p.espnId}-${p.lineupSlotId}`}
+                            player={p}
+                            slotLabel={p.lineupSlot}
+                          />
+                        ))}
+                    </ul>
+                  </div>
+                  <div className="espn-roster-col">
+                    <h4>Bench</h4>
+                    <ul className="espn-roster-list">
+                      {rosterPreview
+                        .filter((p) => p.lineupSlot === 'BE' || p.lineupSlot === 'IR')
+                        .map((p) => (
+                          <LeagueRosterRow
+                            key={`${p.espnId}-${p.lineupSlotId}`}
+                            player={p}
+                            slotLabel={p.lineupSlot === 'IR' ? 'IR' : p.position}
+                          />
+                        ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {espnTeamId != null && (
+              <div className="import-submit-bar import-league-submit">
+                <div>
+                  <strong>Ready to import into My Team</strong>
+                  <p className="import-submit-hint">
+                    {rosterPreview.length > 0
+                      ? `${rosterPreview.length} players · cookies stay off committed data.`
+                      : 'Team selected. Import saves the connection for Sync on My Team.'}
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="button import-submit-button"
+                  onClick={handleLeagueImport}
+                  disabled={leagueLoading}
+                >
+                  {leagueLoading ? 'Importing…' : 'Import to My Team'}
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </div>
     </section>
   );
 }

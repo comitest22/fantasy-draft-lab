@@ -75,13 +75,24 @@ export function valueChips(
   return chips.slice(0, limit);
 }
 
-export function statusBadge(status?: string): { label: string; title: string } | null {
-  const raw = (status ?? '').trim().toUpperCase();
+export function statusBadge(
+  status?: string
+): { label: string; title: string; tone: 'bad' | 'warn' } | null {
+  const raw = (status ?? '').trim().toUpperCase().replace(/\s+/g, '_');
   if (!raw || raw === 'ACTIVE' || raw === 'HEALTHY') return null;
-  if (/SUSPEND/.test(raw)) return { label: 'SUS', title: 'Suspended' };
-  if (raw === 'IR' || raw === 'INJURY_RESERVE' || raw.includes('INJURY RESERVE')) {
-    return { label: 'IR', title: 'Injured reserve' };
+  if (/SUSPEND/.test(raw)) return { label: 'SUS', title: 'Suspended', tone: 'bad' };
+  if (raw === 'OUT') return { label: 'OUT', title: 'Out', tone: 'bad' };
+  if (raw === 'IR' || raw === 'INJURY_RESERVE') {
+    return { label: 'IR', title: 'Injured reserve', tone: 'bad' };
   }
-  if (/EXEMPT|NFI|PUP/.test(raw)) return { label: 'Exempt', title: raw.replace(/_/g, ' ') };
-  return null;
+  if (raw === 'DOUBTFUL') return { label: 'D', title: 'Doubtful', tone: 'warn' };
+  if (raw === 'QUESTIONABLE') return { label: 'Q', title: 'Questionable', tone: 'warn' };
+  if (raw === 'DAY_TO_DAY' || raw === 'DTD') {
+    return { label: 'DTD', title: 'Day to day', tone: 'warn' };
+  }
+  if (raw === 'PROBABLE') return { label: 'P', title: 'Probable', tone: 'warn' };
+  if (/EXEMPT|NFI|PUP/.test(raw)) {
+    return { label: 'Exempt', title: raw.replace(/_/g, ' '), tone: 'warn' };
+  }
+  return { label: raw.slice(0, 6), title: raw.replace(/_/g, ' '), tone: 'warn' };
 }

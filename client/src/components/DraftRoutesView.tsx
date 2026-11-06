@@ -657,7 +657,7 @@ export default function DraftRoutesView({
                         <strong>
                           {pick.player.playerName}
                           {badge && (
-                            <span className="status-badge" title={badge.title}>
+                            <span className={`status-badge status-badge-${badge.tone}`} title={badge.title}>
                               {badge.label}
                             </span>
                           )}

@@ -1,74 +1,74 @@
 {
-  "pulledAt": "2026-09-29T17:20:33.919Z",
+  "pulledAt": "2026-11-06T20:20:30.533Z",
   "season": 2026,
-  "currentWeek": 4,
+  "currentWeek": 9,
   "teams": {
     "ARI": {
-      "roadWinPct": 0.2,
-      "roadGames": 25
-    },
-    "ATL": {
-      "roadWinPct": 0.36,
-      "roadGames": 25
-    },
-    "BAL": {
-      "roadWinPct": 0.5,
-      "roadGames": 26
-    },
-    "BUF": {
-      "roadWinPct": 0.4230769230769231,
-      "roadGames": 26
-    },
-    "CAR": {
-      "roadWinPct": 0.24,
-      "roadGames": 25
-    },
-    "CHI": {
       "roadWinPct": 0.28,
       "roadGames": 25
     },
+    "ATL": {
+      "roadWinPct": 0.4,
+      "roadGames": 25
+    },
+    "BAL": {
+      "roadWinPct": 0.5384615384615384,
+      "roadGames": 26
+    },
+    "BUF": {
+      "roadWinPct": 0.5,
+      "roadGames": 26
+    },
+    "CAR": {
+      "roadWinPct": 0.28,
+      "roadGames": 25
+    },
+    "CHI": {
+      "roadWinPct": 0.36,
+      "roadGames": 25
+    },
     "CIN": {
-      "roadWinPct": 0.38461538461538464,
+      "roadWinPct": 0.46153846153846156,
       "roadGames": 26
     },
     "CLE": {
-      "roadWinPct": 0.15384615384615385,
-      "roadGames": 26
-    },
-    "DAL": {
-      "roadWinPct": 0.32,
-      "roadGames": 25
-    },
-    "DEN": {
-      "roadWinPct": 0.38461538461538464,
-      "roadGames": 26
-    },
-    "DET": {
-      "roadWinPct": 0.48,
-      "roadGames": 25
-    },
-    "GB": {
-      "roadWinPct": 0.4,
-      "roadGames": 25
-    },
-    "HOU": {
-      "roadWinPct": 0.38461538461538464,
-      "roadGames": 26
-    },
-    "IND": {
       "roadWinPct": 0.19230769230769232,
       "roadGames": 26
     },
-    "JAX": {
-      "roadWinPct": 0.2692307692307692,
+    "DAL": {
+      "roadWinPct": 0.4,
+      "roadGames": 25
+    },
+    "DEN": {
+      "roadWinPct": 0.46153846153846156,
       "roadGames": 26
     },
-    "KC": {
+    "DET": {
+      "roadWinPct": 0.52,
+      "roadGames": 25
+    },
+    "GB": {
+      "roadWinPct": 0.44,
+      "roadGames": 25
+    },
+    "HOU": {
+      "roadWinPct": 0.46153846153846156,
+      "roadGames": 26
+    },
+    "IND": {
+      "roadWinPct": 0.23076923076923078,
+      "roadGames": 26
+    },
+    "JAX": {
       "roadWinPct": 0.34615384615384615,
       "roadGames": 26
     },
+    "KC": {
+      "roadWinPct": 0.38461538461538464,
+      "roadGames": 26
+    },
     "LA": {
-      "roadWinPct": 0.4,
+      "roadWinPct": 0.48,
       "roadGames": 25
     },
     "LAC": {
@@ -76,27 +76,27 @@
       "roadGames": 26
     },
     "LV": {
-      "roadWinPct": 0.19230769230769232,
+      "roadWinPct": 0.23076923076923078,
       "roadGames": 26
     },
     "MIA": {
-      "roadWinPct": 0.19230769230769232,
+      "roadWinPct": 0.23076923076923078,
       "roadGames": 26
     },
     "MIN": {
-      "roadWinPct": 0.52,
+      "roadWinPct": 0.56,
       "roadGames": 25
     },
     "NE": {
-      "roadWinPct": 0.38461538461538464,
+      "roadWinPct": 0.46153846153846156,
       "roadGames": 26
     },
     "NO": {
-      "roadWinPct": 0.24,
+      "roadWinPct": 0.28,
       "roadGames": 25
     },
     "NYG": {
-      "roadWinPct": 0.12,
+      "roadWinPct": 0.16,
       "roadGames": 25
     },
     "NYJ": {
@@ -108,7 +108,7 @@
       "roadGames": 25
     },
     "PIT": {
-      "roadWinPct": 0.34615384615384615,
+      "roadWinPct": 0.4230769230769231,
       "roadGames": 26
     },
     "SEA": {
@@ -116,15 +116,15 @@
       "roadGames": 25
     },
     "SF": {
-      "roadWinPct": 0.4,
+      "roadWinPct": 0.44,
       "roadGames": 25
     },
     "TB": {
-      "roadWinPct": 0.36,
+      "roadWinPct": 0.44,
       "roadGames": 25
     },
     "TEN": {
-      "roadWinPct": 0.15384615384615385,
+      "roadWinPct": 0.19230769230769232,
       "roadGames": 26
     },
     "WAS": {
@@ -133,173 +133,155 @@
     }
   },
   "forecasts": {
-    "4:BAL": {
-      "outdoor": true,
-      "tempF": 63.1,
-      "precipIn": 0.882,
-      "windMph": 8
-    },
-    "4:TEN": {
-      "outdoor": true,
-      "tempF": 63.1,
-      "precipIn": 0.882,
-      "windMph": 8
-    },
-    "4:BUF": {
-      "outdoor": true,
-      "tempF": 64.1,
-      "precipIn": 0,
-      "windMph": 10.9
-    },
-    "4:NE": {
-      "outdoor": true,
-      "tempF": 64.1,
-      "precipIn": 0,
-      "windMph": 10.9
-    },
-    "4:CAR": {
-      "outdoor": true,
-      "tempF": 74.5,
-      "precipIn": 0,
-      "windMph": 9.1
-    },
-    "4:DET": {
-      "outdoor": true,
-      "tempF": 74.5,
-      "precipIn": 0,
-      "windMph": 9.1
-    },
-    "4:CHI": {
-      "outdoor": true,
-      "tempF": 65.2,
-      "precipIn": 0.024,
-      "windMph": 11.9
-    },
-    "4:NYJ": {
-      "outdoor": true,
-      "tempF": 65.2,
-      "precipIn": 0.024,
-      "windMph": 11.9
-    },
-    "4:CIN": {
-      "outdoor": true,
-      "tempF": 74.2,
-      "precipIn": 0.012,
-      "windMph": 7.8
-    },
-    "4:JAX": {
-      "outdoor": true,
-      "tempF": 74.2,
-      "precipIn": 0.012,
-      "windMph": 7.8
-    },
-    "4:CLE": {
-      "outdoor": true,
-      "tempF": 73.9,
-      "precipIn": 0.335,
-      "windMph": 19.6
-    },
-    "4:PIT": {
-      "outdoor": true,
-      "tempF": 73.9,
-      "precipIn": 0.335,
-      "windMph": 19.6
-    },
-    "4:HOU": {
+    "9:ATL": {
       "outdoor": false
     },
-    "4:DAL": {
+    "9:CIN": {
       "outdoor": false
     },
-    "4:LV": {
-      "outdoor": false
-    },
-    "4:KC": {
-      "outdoor": false
-    },
-    "4:MIN": {
-      "outdoor": false
-    },
-    "4:MIA": {
-      "outdoor": false
-    },
-    "4:NO": {
-      "outdoor": false
-    },
-    "4:ATL": {
-      "outdoor": false
-    },
-    "4:NYG": {
+    "9:BAL": {
       "outdoor": true,
-      "tempF": 64,
-      "precipIn": 0.591,
-      "windMph": 9.7
-    },
-    "4:ARI": {
-      "outdoor": true,
-      "tempF": 64,
-      "precipIn": 0.591,
-      "windMph": 9.7
-    },
-    "4:PHI": {
-      "outdoor": true,
-      "tempF": 63.5,
-      "precipIn": 0.697,
-      "windMph": 9.1
-    },
-    "4:LA": {
-      "outdoor": true,
-      "tempF": 63.5,
-      "precipIn": 0.697,
-      "windMph": 9.1
-    },
-    "4:SEA": {
-      "outdoor": true,
-      "tempF": 68.3,
-      "precipIn": 0,
-      "windMph": 8.1
-    },
-    "4:LAC": {
-      "outdoor": true,
-      "tempF": 68.3,
-      "precipIn": 0,
-      "windMph": 8.1
-    },
-    "4:SF": {
-      "outdoor": true,
-      "tempF": 92.1,
-      "precipIn": 0,
-      "windMph": 8.2
-    },
-    "4:DEN": {
-      "outdoor": true,
-      "tempF": 92.1,
-      "precipIn": 0,
-      "windMph": 8.2
-    },
-    "4:TB": {
-      "outdoor": true,
-      "tempF": 93,
-      "precipIn": 0.059,
+      "tempF": 67.6,
+      "precipIn": 1.748,
       "windMph": 7.6
     },
-    "4:GB": {
+    "9:JAX": {
       "outdoor": true,
-      "tempF": 93,
-      "precipIn": 0.059,
+      "tempF": 67.6,
+      "precipIn": 1.748,
       "windMph": 7.6
     },
-    "4:WAS": {
+    "9:CAR": {
       "outdoor": true,
-      "tempF": 62.5,
-      "precipIn": 0.827,
+      "tempF": 65,
+      "precipIn": 0,
       "windMph": 6.7
     },
-    "4:IND": {
+    "9:DEN": {
       "outdoor": true,
-      "tempF": 62.5,
-      "precipIn": 0.827,
+      "tempF": 65,
+      "precipIn": 0,
       "windMph": 6.7
+    },
+    "9:CHI": {
+      "outdoor": true,
+      "tempF": 61,
+      "precipIn": 0,
+      "windMph": 13.8
+    },
+    "9:TB": {
+      "outdoor": true,
+      "tempF": 61,
+      "precipIn": 0,
+      "windMph": 13.8
+    },
+    "9:IND": {
+      "outdoor": false
+    },
+    "9:DAL": {
+      "outdoor": false
+    },
+    "9:KC": {
+      "outdoor": true,
+      "tempF": 66.4,
+      "precipIn": 0,
+      "windMph": 8.9
+    },
+    "9:NYJ": {
+      "outdoor": true,
+      "tempF": 66.4,
+      "precipIn": 0,
+      "windMph": 8.9
+    },
+    "9:LAC": {
+      "outdoor": false
+    },
+    "9:HOU": {
+      "outdoor": false
+    },
+    "9:MIA": {
+      "outdoor": true,
+      "tempF": 83.5,
+      "precipIn": 0.008,
+      "windMph": 12.5
+    },
+    "9:DET": {
+      "outdoor": true,
+      "tempF": 83.5,
+      "precipIn": 0.008,
+      "windMph": 12.5
+    },
+    "9:MIN": {
+      "outdoor": false
+    },
+    "9:BUF": {
+      "outdoor": false
+    },
+    "9:NE": {
+      "outdoor": true,
+      "tempF": 57.5,
+      "precipIn": 0,
+      "windMph": 14.1
+    },
+    "9:GB": {
+      "outdoor": true,
+      "tempF": 57.5,
+      "precipIn": 0,
+      "windMph": 14.1
+    },
+    "9:NO": {
+      "outdoor": false
+    },
+    "9:CLE": {
+      "outdoor": false
+    },
+    "9:PHI": {
+      "outdoor": true,
+      "tempF": 62.9,
+      "precipIn": 0,
+      "windMph": 12.7
+    },
+    "9:NYG": {
+      "outdoor": true,
+      "tempF": 62.9,
+      "precipIn": 0,
+      "windMph": 12.7
+    },
+    "9:SEA": {
+      "outdoor": true,
+      "tempF": 54.8,
+      "precipIn": 0.201,
+      "windMph": 19.3
+    },
+    "9:ARI": {
+      "outdoor": true,
+      "tempF": 54.8,
+      "precipIn": 0.201,
+      "windMph": 19.3
+    },
+    "9:SF": {
+      "outdoor": true,
+      "tempF": 73,
+      "precipIn": 0,
+      "windMph": 7.6
+    },
+    "9:LV": {
+      "outdoor": true,
+      "tempF": 73,
+      "precipIn": 0,
+      "windMph": 7.6
+    },
+    "9:WAS": {
+      "outdoor": true,
+      "tempF": 63.1,
+      "precipIn": 0,
+      "windMph": 11.6
+    },
+    "9:LA": {
+      "outdoor": true,
+      "tempF": 63.1,
+      "precipIn": 0,
+      "windMph": 11.6
     }
   }
 }

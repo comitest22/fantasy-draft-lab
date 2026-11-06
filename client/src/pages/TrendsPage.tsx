@@ -1,15 +1,17 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ContenderPlaybookView from '../components/ContenderPlaybookView';
 import EraCompare from '../components/EraCompare';
-import KeyTakeaways from '../components/KeyTakeaways';
+import PageLoading from '../components/PageLoading';
 import PageTabs from '../components/PageTabs';
+import PageTitle from '../components/PageTitle';
+import { draftIcon } from '../nav/toolsMode';
 import { getTrends } from '../services/api';
 import type { ContenderPlaybook, EraComparison, SeasonAnalysis } from '../types';
 import { sortSeasonAnalyses } from '../utils/sort';
 
 const tabs = [
   { id: 'podium', label: 'Podium' },
-  { id: 'takeaways', label: 'Takeaways' },
   { id: 'era', label: 'Era' },
   { id: 'grades', label: 'Grades' },
   { id: 'rates', label: 'Rates' },
@@ -36,22 +38,26 @@ export default function TrendsPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="status">Loading trends...</p>;
+  if (loading) return <PageLoading label="Reading the tape…" />;
   if (error) return <p className="error">{error}</p>;
 
   return (
     <section className="panel">
       <div className="page-intro">
-        <h1>Draft Trends</h1>
+        <p className="crumb">
+          <Link to="/tools">Tools</Link>
+          <span aria-hidden="true"> › </span>
+          <Link to="/tools?toolkit=draft">Draft</Link>
+          <span aria-hidden="true"> › </span>
+          Draft Trends
+        </p>
+        <PageTitle badge={draftIcon(20)}>Draft Trends</PageTitle>
         <p className="subtitle">
           How podium teams draft in this league, and how your seasons compare.
         </p>
       </div>
       <PageTabs tabs={tabs} active={tab} onChange={setTab} label="Trends sections" />
 
-      {tab === 'takeaways' && (
-        <KeyTakeaways takes={playbook?.timingAdvice ?? []} showHeading={false} />
-      )}
       {tab === 'podium' && playbook && (
         <ContenderPlaybookView playbook={playbook} showHeading={false} showAdvice={false} />
       )}
