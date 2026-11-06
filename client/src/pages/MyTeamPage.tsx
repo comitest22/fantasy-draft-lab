@@ -57,12 +57,10 @@ function faPosFromPlayer(position: Position): FreeAgentPosFilter {
   return 'ALL';
 }
 
-const STARTER_SLOTS: LineupSlot[] = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'D/ST', 'K'];
+type StarterSlot = Exclude<LineupSlot, 'BE' | 'IR' | 'UNKNOWN'>;
+const STARTER_SLOTS: StarterSlot[] = ['QB', 'RB', 'WR', 'TE', 'FLEX', 'D/ST', 'K'];
 /** Default ESPN starter counts (empty slots are omitted from mRoster). */
-const DEFAULT_STARTER_COUNTS: Record<
-  Exclude<LineupSlot, 'BE' | 'IR' | 'UNKNOWN'>,
-  number
-> = {
+const DEFAULT_STARTER_COUNTS: Record<StarterSlot, number> = {
   QB: 1,
   RB: 2,
   WR: 2,
@@ -800,7 +798,7 @@ function emptySlotLineupId(slot: LineupSlot): number {
   }
 }
 
-function emptyStarterPlaceholder(slot: LineupSlot, index: number): MyTeamRosterPlayer {
+function emptyStarterPlaceholder(slot: StarterSlot, index: number): MyTeamRosterPlayer {
   const slotIndex = STARTER_SLOTS.indexOf(slot);
   return {
     espnId: EMPTY_SLOT_ESPN_BASE - slotIndex * 10 - index,
@@ -839,7 +837,7 @@ function byPositions(
 ): MyTeamRosterPlayer[] {
   const posOrder = new Map(positions.map((p, i) => [p, i]));
   const slotRank = (slot: LineupSlot): number => {
-    if (STARTER_SLOTS.includes(slot)) return 0;
+    if ((STARTER_SLOTS as readonly LineupSlot[]).includes(slot)) return 0;
     if (IR_SLOTS.includes(slot)) return 2;
     return 1;
   };
@@ -3683,27 +3681,24 @@ export default function MyTeamPage() {
                           rosterHit?.position ??
                           inspectFa?.position ??
                           inspectRoster?.position;
-                        const faPlayer =
-                          bioRailMode === 'available'
-                            ? knownFa ??
+                        // When knownFa is missing, seed from roster fields only
+                        // (knownFa is narrowed away on the ?? RHS).
+                        const faPlayer: FreeAgentPlayer | undefined =
+                          bioRailMode !== 'available'
+                            ? undefined
+                            : knownFa ??
                               (pos
                                 ? {
-                                    espnId: rosterHit?.espnId ?? knownFa?.espnId ?? 0,
+                                    espnId: rosterHit?.espnId ?? 0,
                                     name,
-                                    nflTeam:
-                                      rosterHit?.nflTeam ??
-                                      knownFa?.nflTeam ??
-                                      '',
+                                    nflTeam: rosterHit?.nflTeam ?? '',
                                     position: pos,
-                                    status: rosterHit?.status ?? knownFa?.status,
-                                    availability: 'FREEAGENT' as const,
+                                    status: rosterHit?.status,
+                                    availability: 'FREEAGENT',
                                     typeLabel: 'FA',
-                                    projectedPoints:
-                                      rosterHit?.projectedPoints ??
-                                      knownFa?.projectedPoints,
+                                    projectedPoints: rosterHit?.projectedPoints,
                                   }
-                                : undefined)
-                            : undefined;
+                                : undefined);
                         openBio(name, {
                           from: bioRailMode,
                           position: bioRailPos,
@@ -3752,8 +3747,8 @@ export default function MyTeamPage() {
                     faPlayer:
                       bioRailMode === 'available'
                         ? bioAvailablePlayers.find((p) => p.name === name) ??
-                          (bioSeedFa?.name === name ? bioSeedFa : null)
-                        : null,
+                          (bioSeedFa?.name === name ? bioSeedFa : undefined)
+                        : undefined,
                   })
                 }
                 mode={bioRailMode}
