@@ -1,5 +1,5 @@
 playerName,status
-A.J. Brown,QUESTIONABLE
+A.J. Brown,OUT
 A.J. Cann,ACTIVE
 A.J. Green,ACTIVE
 A.J. Green III,ACTIVE
@@ -67,7 +67,7 @@ Adedayo Odeleye,ACTIVE
 Adetokunbo Ogundeji,ACTIVE
 Adetomiwa Adebawore,ACTIVE
 Adin Huntington,ACTIVE
-Adisa Isaac,ACTIVE
+Adisa Isaac,QUESTIONABLE
 Adonai Mitchell,ACTIVE
 Adonis Alexander,ACTIVE
 Adoree' Jackson,ACTIVE
@@ -78,7 +78,7 @@ Adrian Frye,ACTIVE
 Adrian Martinez,ACTIVE
 Adrian Peterson,ACTIVE
 Adrian Phillips,ACTIVE
-Aeneas Peebles,ACTIVE
+Aeneas Peebles,OUT
 Ahkello Witherspoon,ACTIVE
 Ahmad Gooden,ACTIVE
 Ahmad Thomas,ACTIVE
@@ -105,7 +105,7 @@ AJ Parker,ACTIVE
 Ajani Carter,ACTIVE
 Ajou Ajou,ACTIVE
 Akayleb Evans,INJURY_RESERVE
-Akeem Davis-Gaither,ACTIVE
+Akeem Davis-Gaither,OUT
 Akeem Dent,ACTIVE
 Akeem King,ACTIVE
 Akeem Spence,ACTIVE
@@ -171,7 +171,7 @@ Ali Fayad,ACTIVE
 Ali Gaye,INJURY_RESERVE
 Alijah Clark,ACTIVE
 Alijah Holder,ACTIVE
-Alijah Huzzie,ACTIVE
+Alijah Huzzie,OUT
 Alim McNeill,ACTIVE
 Alize Mack,ACTIVE
 Allan George,ACTIVE
@@ -205,7 +205,7 @@ Ameer Abdullah,ACTIVE
 Ameer Speed,ACTIVE
 Amen Ogbongbemiga,ACTIVE
 Amik Robertson,ACTIVE
-Amon-Ra St. Brown,ACTIVE
+Amon-Ra St. Brown,QUESTIONABLE
 Anders Carlson,ACTIVE
 Anderson Castle,ACTIVE
 Andre Anthony,ACTIVE
@@ -243,7 +243,7 @@ Andrew Parker Jr.,ACTIVE
 Andrew Peasley,ACTIVE
 Andrew Sendejo,ACTIVE
 Andrew Soroh,ACTIVE
-Andrew Van Ginkel,ACTIVE
+Andrew Van Ginkel,QUESTIONABLE
 Andrew Vollert,ACTIVE
 Andrew Whitaker,ACTIVE
 Andrew Wingard,ACTIVE
@@ -273,7 +273,7 @@ Anthony Dunn Jr.,ACTIVE
 Anthony Firkser,QUESTIONABLE
 Anthony Goodlow,ACTIVE
 Anthony Gordon,ACTIVE
-Anthony Gould,QUESTIONABLE
+Anthony Gould,ACTIVE
 Anthony Hankerson,ACTIVE
 Anthony Harris,ACTIVE
 Anthony Hill,ACTIVE
@@ -315,7 +315,7 @@ Antonio Callaway,ACTIVE
 Antonio Gibson,QUESTIONABLE
 Antonio Grier Jr.,ACTIVE
 Antonio Hamilton Sr.,ACTIVE
-Antonio Johnson,QUESTIONABLE
+Antonio Johnson,ACTIVE
 Antonio Moultrie,ACTIVE
 Antonio Nunn,ACTIVE
 Antonio Phillips,ACTIVE
@@ -419,7 +419,7 @@ B.W. Webb,ACTIVE
 Bailey Gaither,ACTIVE
 Bailey Zappe,ACTIVE
 Baker Mayfield,ACTIVE
-Bam Knight,QUESTIONABLE
+Bam Knight,OUT
 Bam Martin-Scott,ACTIVE
 Bangally Kamara,ACTIVE
 Barika Kpeenu,ACTIVE
@@ -481,7 +481,7 @@ Benson Mayowa,ACTIVE
 Benton Whitley,ACTIVE
 Bernard Gooden,ACTIVE
 Bernhard Seikovits,ACTIVE
-Bhayshul Tuten,QUESTIONABLE
+Bhayshul Tuten,ACTIVE
 Big Kat Bryant,ACTIVE
 Bijan Robinson,ACTIVE
 Bilal Nichols,QUESTIONABLE
@@ -489,7 +489,7 @@ Bilal Powell,ACTIVE
 Bilhal Kone,INJURY_RESERVE
 Bill Murray,ACTIVE
 Bill Norton,ACTIVE
-Billy Bowman Jr.,QUESTIONABLE
+Billy Bowman Jr.,ACTIVE
 Billy Brown,ACTIVE
 Billy Price,ACTIVE
 Billy Turner,ACTIVE
@@ -529,13 +529,13 @@ Bo Melton,ACTIVE
 Bo Nix,ACTIVE
 Bo Richter,ACTIVE
 Bo Scarbrough,ACTIVE
-Bobby Brown III,QUESTIONABLE
+Bobby Brown III,ACTIVE
 Bobby Hart,ACTIVE
 Bobby Holly,ACTIVE
 Bobby Jamison-Travis,ACTIVE
 Bobby Massie,ACTIVE
 Bobby McCain,ACTIVE
-Bobby Okereke,ACTIVE
+Bobby Okereke,QUESTIONABLE
 Bobby Price,ACTIVE
 Bobby Wagner,ACTIVE
 Boogie Basham,ACTIVE
@@ -615,7 +615,7 @@ Brandon Williams,ACTIVE
 Brandon Wilson,ACTIVE
 Brandon Wright,ACTIVE
 Brandon Zylstra,ACTIVE
-Branson Combs,QUESTIONABLE
+Branson Combs,ACTIVE
 Branson Deen,ACTIVE
 Brashard Smith,INJURY_RESERVE
 Bravvion Roy,ACTIVE
@@ -629,15 +629,15 @@ Brayden Thomas,ACTIVE
 Brayden Willis,ACTIVE
 Braydon Johnson,ACTIVE
 Braylon Sanders,ACTIVE
-Breece Hall,QUESTIONABLE
+Breece Hall,ACTIVE
 Breeland Speaks,ACTIVE
 Breiden Fehoko,ACTIVE
 Brenden Bates,ACTIVE
 Brenden Knox,ACTIVE
 Brenden Rice,ACTIVE
-Brenden Schooler,ACTIVE
+Brenden Schooler,QUESTIONABLE
 Brendon White,ACTIVE
-Brenen Thompson,QUESTIONABLE
+Brenen Thompson,DOUBTFUL
 Brennan Eagles,ACTIVE
 Brennan Jackson,INJURY_RESERVE
 Brennan Presley,ACTIVE
@@ -674,7 +674,7 @@ Brian Lewerke,ACTIVE
 Brian O'Neill,ACTIVE
 Brian Peters,ACTIVE
 Brian Poole,ACTIVE
-Brian Robinson Jr.,QUESTIONABLE
+Brian Robinson Jr.,OUT
 Brian Thomas Jr.,ACTIVE
 Brian Walker,ACTIVE
 Brian Winters,ACTIVE
@@ -722,7 +722,7 @@ Bryan Witzmann,ACTIVE
 Bryan Wright,ACTIVE
 Bryant Mitchell,ACTIVE
 Bryce Baringer,ACTIVE
-Bryce Boettcher,QUESTIONABLE
+Bryce Boettcher,ACTIVE
 Bryce Callahan,ACTIVE
 Bryce Cosby,ACTIVE
 Bryce Ford-Wheaton,QUESTIONABLE
@@ -808,7 +808,7 @@ Caleb Banks,ACTIVE
 Caleb Benenoch,ACTIVE
 Caleb Biggers,ACTIVE
 Caleb Douglas,ACTIVE
-Caleb Downs,QUESTIONABLE
+Caleb Downs,ACTIVE
 Caleb Farley,ACTIVE
 Caleb Huntley,ACTIVE
 Caleb Johnson,ACTIVE
@@ -862,7 +862,7 @@ Cam Smith,ACTIVE
 Cam Sutton,ACTIVE
 Cam Taylor-Britt,INJURY_RESERVE
 Cam Ward,ACTIVE
-Cam'Ron Silmon-Craig,ACTIVE
+Cam'Ron Silmon-Craig,OUT
 Cam'Ron Stewart,ACTIVE
 Camden Brown,ACTIVE
 Cameron Ball,ACTIVE
@@ -909,7 +909,7 @@ Carlos Davis,ACTIVE
 Carlos Dunlap,ACTIVE
 Carlos Washington Jr.,ACTIVE
 Carlos Watkins,ACTIVE
-Carlton Davis III,ACTIVE
+Carlton Davis III,QUESTIONABLE
 Carlton Johnson,ACTIVE
 Carnell Tate,OUT
 Carrington Valentine,ACTIVE
@@ -926,9 +926,9 @@ Carson Towt,INJURY_RESERVE
 Carson Wells,ACTIVE
 Carson Wentz,ACTIVE
 Carson Williams,ACTIVE
-Carter Bradley,QUESTIONABLE
+Carter Bradley,ACTIVE
 Carter Coughlin,ACTIVE
-Carter Runyon,INJURY_RESERVE
+Carter Runyon,ACTIVE
 Cary Angeline,ACTIVE
 Case Cookus,ACTIVE
 Case Keenum,ACTIVE
@@ -998,7 +998,7 @@ Charles Washington,ACTIVE
 Charles Woods,ACTIVE
 Charleston Rambo,ACTIVE
 Charley Hughlett,ACTIVE
-Charlie Jones,ACTIVE
+Charlie Jones,QUESTIONABLE
 Charlie Kolar,ACTIVE
 Charlie Smyth,ACTIVE
 Charlie Taumoepeau,ACTIVE
@@ -1010,7 +1010,7 @@ Chase Allen,ACTIVE
 Chase Brown,ACTIVE
 Chase Claypool,ACTIVE
 Chase Cota,ACTIVE
-Chase Curtis,QUESTIONABLE
+Chase Curtis,ACTIVE
 Chase Daniel,ACTIVE
 Chase Edmonds,ACTIVE
 Chase Garbers,ACTIVE
@@ -1040,7 +1040,7 @@ Chig Okonkwo,ACTIVE
 Chigozie Anusiem,INJURY_RESERVE
 Chimere Dike,ACTIVE
 Chip Trayanum,INJURY_RESERVE
-Chop Robinson,ACTIVE
+Chop Robinson,QUESTIONABLE
 Chris Banjo,ACTIVE
 Chris Bell,ACTIVE
 Chris Blair,ACTIVE
@@ -1088,7 +1088,7 @@ Chris Paul Jr.,ACTIVE
 Chris Peace,ACTIVE
 Chris Pierce Jr.,ACTIVE
 Chris Reed,ACTIVE
-Chris Rodriguez Jr.,QUESTIONABLE
+Chris Rodriguez Jr.,ACTIVE
 Chris Roland-Wallace,ACTIVE
 Chris Rowland,ACTIVE
 Chris Rumph II,ACTIVE
@@ -1124,7 +1124,7 @@ Christian Harris,ACTIVE
 Christian Holmes,ACTIVE
 Christian Izien,ACTIVE
 Christian Jones,ACTIVE
-Christian Kirk,ACTIVE
+Christian Kirk,QUESTIONABLE
 Christian Kirksey,ACTIVE
 Christian Kuntz,ACTIVE
 Christian Matthew,ACTIVE
@@ -1161,12 +1161,12 @@ CJ Allen,ACTIVE
 CJ Brewer,ACTIVE
 CJ Daniels,ACTIVE
 CJ Dippre,ACTIVE
-CJ Donaldson,QUESTIONABLE
+CJ Donaldson,OUT
 CJ Marable,ACTIVE
 CJ Nunnally IV,ACTIVE
 CJ Okoye,ACTIVE
 CJ Verdell,ACTIVE
-CJ Williams,ACTIVE
+CJ Williams,OUT
 Clarence Hicks,ACTIVE
 Clarence Lewis,ACTIVE
 Clark Harris,ACTIVE
@@ -1257,7 +1257,7 @@ Connor Hamlett,ACTIVE
 Connor Heyward,ACTIVE
 Connor Hulstein,QUESTIONABLE
 Connor McGovern,ACTIVE
-Connor O'Toole,ACTIVE
+Connor O'Toole,QUESTIONABLE
 Connor Slomka,ACTIVE
 Connor Strachan,ACTIVE
 Connor Wedington,ACTIVE
@@ -1280,7 +1280,7 @@ Corey Levin,ACTIVE
 Corey Liuget,ACTIVE
 Corey Mayfield Jr.,ACTIVE
 Corey Nelson,ACTIVE
-Corey Rucker,QUESTIONABLE
+Corey Rucker,ACTIVE
 Corey Straughter,ACTIVE
 Corey Taylor,ACTIVE
 Corey Thompson,ACTIVE
@@ -1384,7 +1384,7 @@ Dallin Leavitt,ACTIVE
 Dallis Flowers,INJURY_RESERVE
 Dalton Johnson,ACTIVE
 Dalton Keene,ACTIVE
-Dalton Kincaid,ACTIVE
+Dalton Kincaid,QUESTIONABLE
 Dalton Schoen,ACTIVE
 Dalton Schultz,ACTIVE
 Dalvin Cook,ACTIVE
@@ -1476,7 +1476,7 @@ Dante Miller,ACTIVE
 Dante Olson,ACTIVE
 Dante Pettis,QUESTIONABLE
 Dante Stills,ACTIVE
-Dante Trader Jr.,ACTIVE
+Dante Trader Jr.,QUESTIONABLE
 DaQuan Jones,ACTIVE
 Dare Ogunbowale,ACTIVE
 Darece Roberson,ACTIVE
@@ -1486,7 +1486,7 @@ Darian Stewart,ACTIVE
 Darian Thompson,ACTIVE
 Darien Porter,QUESTIONABLE
 Darion Clark,ACTIVE
-Darius Alexander,ACTIVE
+Darius Alexander,QUESTIONABLE
 Darius Anderson,ACTIVE
 Darius Bradwell,ACTIVE
 Darius Clark,ACTIVE
@@ -1514,7 +1514,7 @@ Darnell Savage,ACTIVE
 Darnell Washington,ACTIVE
 DaRon Bland,ACTIVE
 DaRon Gilbert,ACTIVE
-Daron Payne,OUT
+Daron Payne,INJURY_RESERVE
 Darqueze Dennard,ACTIVE
 Darrel Williams,ACTIVE
 Darrell Baker Jr.,OUT
@@ -1555,7 +1555,7 @@ Davante Adams,ACTIVE
 Daveren Rayner,ACTIVE
 David Anenih,ACTIVE
 David Bada,ACTIVE
-David Bailey,QUESTIONABLE
+David Bailey,ACTIVE
 David Bakhtiari,ACTIVE
 David Blay Jr.,ACTIVE
 David Blough,ACTIVE
@@ -1573,7 +1573,7 @@ David Long Jr.,ACTIVE
 David Martin-Robinson,ACTIVE
 David Mayo,ACTIVE
 David Moa,ACTIVE
-David Montgomery,QUESTIONABLE
+David Montgomery,OUT
 David Moore,ACTIVE
 David Njoku,INJURY_RESERVE
 David Ojabo,ACTIVE
@@ -1601,7 +1601,7 @@ Davison Igbinosun,ACTIVE
 Daviyon Nixon,ACTIVE
 Davon Booth,ACTIVE
 Davon Godchaux,ACTIVE
-DaVon Hamilton,OUT
+DaVon Hamilton,INJURY_RESERVE
 Davontae Harris,ACTIVE
 DaVonte Lambert,ACTIVE
 Dawson Knox,ACTIVE
@@ -1635,7 +1635,7 @@ De'Zhaun-Ryan Stribling,ACTIVE
 Deadrin Senat,ACTIVE
 Deamonte Trayanum,ACTIVE
 Dean Clark,ACTIVE
-Dean Connors,QUESTIONABLE
+Dean Connors,INJURY_RESERVE
 Dean Lowry,ACTIVE
 Dean Marlowe,ACTIVE
 Dean Patterson,ACTIVE
@@ -1662,13 +1662,13 @@ Decarius Hawthorne,ACTIVE
 DeCarlos Nicholson,ACTIVE
 Dede Westbrook,ACTIVE
 Dedrick Mills,ACTIVE
-Dee Alford,QUESTIONABLE
+Dee Alford,ACTIVE
 Dee Delaney,ACTIVE
 Dee Eskridge,ACTIVE
 Dee Ford,ACTIVE
 Dee Virgin,ACTIVE
 Dee Williams,ACTIVE
-Dee Winters,QUESTIONABLE
+Dee Winters,ACTIVE
 Deebo Samuel Sr.,QUESTIONABLE
 DeeJay Dallas,ACTIVE
 DeForest Buckner,ACTIVE
@@ -1698,7 +1698,7 @@ DeMario Douglas,ACTIVE
 DeMarkus Acy,ACTIVE
 DeMarquis Gates,ACTIVE
 DeMarvin Leal,ACTIVE
-DeMarvion Overshown,ACTIVE
+DeMarvion Overshown,QUESTIONABLE
 Demeco Roland,ACTIVE
 Demeer Blankumsee,ACTIVE
 Demetric Felton,ACTIVE
@@ -1708,7 +1708,7 @@ Demetrius Harris,ACTIVE
 Demetrius Knight Jr.,ACTIVE
 Demetrius Taylor,ACTIVE
 DeMichael Harris,ACTIVE
-Demond Claiborne,ACTIVE
+Demond Claiborne,QUESTIONABLE
 Demone Harris,ACTIVE
 DeMonte Capehart,ACTIVE
 Deneric Prince,ACTIVE
@@ -1747,7 +1747,7 @@ Derek Stingley Jr.,ACTIVE
 Derek Watt,ACTIVE
 Derek Wolfe,ACTIVE
 Derek Wright,ACTIVE
-Derick Hall,ACTIVE
+Derick Hall,QUESTIONABLE
 Derick Roberson,ACTIVE
 Derion Kendrick,ACTIVE
 Derius Davis,ACTIVE
@@ -1774,7 +1774,7 @@ Derrius Guice,ACTIVE
 Derwin James Jr.,INJURY_RESERVE
 DeSean Jackson,ACTIVE
 Deshaun Fenwick,ACTIVE
-Deshaun Watson,ACTIVE
+Deshaun Watson,QUESTIONABLE
 DeShawn Gaddie Jr.,ACTIVE
 Deshawn McKnight,QUESTIONABLE
 DeShawn Williams,ACTIVE
@@ -1873,7 +1873,7 @@ Dillon Mitchell,ACTIVE
 Dillon Stoner,ACTIVE
 Dillon Thieneman,ACTIVE
 Dimitri Stanley,ACTIVE
-Dion Dawkins,ACTIVE
+Dion Dawkins,QUESTIONABLE
 Dion Jordan,ACTIVE
 Dion Lewis,ACTIVE
 Dion Novil,ACTIVE
@@ -1900,7 +1900,7 @@ DJ Rogers,QUESTIONABLE
 DJ Stirgus,ACTIVE
 DJ Thomas-Jones,ACTIVE
 DJ Turner,QUESTIONABLE
-DJ Turner II,QUESTIONABLE
+DJ Turner II,ACTIVE
 DJ Uiagalelei,ACTIVE
 DJ Wonnum,QUESTIONABLE
 DK Kaufman,ACTIVE
@@ -1952,7 +1952,7 @@ Donovan Stiner,ACTIVE
 Donovan Wilson,ACTIVE
 Dont'a Hightower,ACTIVE
 Dont'e Deayon,ACTIVE
-Dont'e Thornton Jr.,ACTIVE
+Dont'e Thornton Jr.,QUESTIONABLE
 Dontae Fleming,ACTIVE
 Dontae Johnson,ACTIVE
 Dontae Manning,ACTIVE
@@ -1996,7 +1996,7 @@ Dravon Askew-Henry,ACTIVE
 Dre Greenlaw,ACTIVE
 Dre Kirkpatrick,ACTIVE
 Dre Miller,ACTIVE
-Dre'Mont Jones,ACTIVE
+Dre'Mont Jones,QUESTIONABLE
 Dresser Winn,ACTIVE
 Drew Allar,ACTIVE
 Drew Anderson,ACTIVE
@@ -2040,7 +2040,7 @@ Dwayne Harris,ACTIVE
 Dwayne Johnson Jr.,ACTIVE
 Dwayne Washington,ACTIVE
 Dwight McGlothern Jr.,ACTIVE
-Dyami Brown,ACTIVE
+Dyami Brown,QUESTIONABLE
 Dylan Cantrell,ACTIVE
 Dylan Cole,ACTIVE
 Dylan Drummond,ACTIVE
@@ -2127,7 +2127,7 @@ Elijah Ponder,ACTIVE
 Elijah Qualls,ACTIVE
 Elijah Riley,ACTIVE
 Elijah Roberts,ACTIVE
-Elijah Sarratt,ACTIVE
+Elijah Sarratt,OUT
 Elijah Simmons,ACTIVE
 Elijah Sullivan,ACTIVE
 Elijah Tau-Tolliver,ACTIVE
@@ -2178,7 +2178,7 @@ Eric Gregory,ACTIVE
 Eric Johnson II,ACTIVE
 Eric Kendricks,ACTIVE
 Eric Kush,ACTIVE
-Eric Murray,OUT
+Eric Murray,INJURY_RESERVE
 Eric O'Neill,ACTIVE
 Eric Reid,ACTIVE
 Eric Rivers Jr.,ACTIVE
@@ -2200,7 +2200,7 @@ Erik Harris,ACTIVE
 Erik Krommenhoek,ACTIVE
 Erik Magnuson,ACTIVE
 Erik Swoope,ACTIVE
-Ernest Jones IV,ACTIVE
+Ernest Jones IV,QUESTIONABLE
 Erroll Thompson,ACTIVE
 Esezi Otomewo,ACTIVE
 Essang Bassey,ACTIVE
@@ -2228,7 +2228,7 @@ Evan Svoboda,ACTIVE
 Evan Weaver,ACTIVE
 Evan Williams,ACTIVE
 Everson Griffen,ACTIVE
-Eyioma Uwazurike,ACTIVE
+Eyioma Uwazurike,QUESTIONABLE
 Ezekiel Ansah,ACTIVE
 Ezekiel Elliott,ACTIVE
 Ezekiel Turner,ACTIVE
@@ -2301,7 +2301,7 @@ Garrett Nussmeier,ACTIVE
 Garrett Taylor,ACTIVE
 Garrett Walston,ACTIVE
 Garrett Williams,ACTIVE
-Garrett Wilson,ACTIVE
+Garrett Wilson,OUT
 Garrison Sanborn,ACTIVE
 Gary Brightwell,ACTIVE
 Gary Jennings,ACTIVE
@@ -2331,7 +2331,7 @@ George Karlaftis,ACTIVE
 George Kittle,ACTIVE
 George Obinna,ACTIVE
 George Odum,ACTIVE
-George Pickens,ACTIVE
+George Pickens,QUESTIONABLE
 George Silvanic,ACTIVE
 George Tarlas,ACTIVE
 Gerald Everett,ACTIVE
@@ -2356,7 +2356,7 @@ Glendon Miller,ACTIVE
 Godwin Igwebuike,ACTIVE
 Golden Tate,ACTIVE
 Gracen Halton,ACTIVE
-Grady Jarrett,QUESTIONABLE
+Grady Jarrett,ACTIVE
 Graham Adomitis,ACTIVE
 Graham Gano,QUESTIONABLE
 Graham Glasgow,ACTIVE
@@ -2381,7 +2381,7 @@ Greg Gaines,QUESTIONABLE
 Greg Joseph,ACTIVE
 Greg Mabin,ACTIVE
 Greg Mancz,ACTIVE
-Greg Newsome II,QUESTIONABLE
+Greg Newsome II,ACTIVE
 Greg Roberts,ACTIVE
 Greg Robinson,ACTIVE
 Greg Rousseau,ACTIVE
@@ -2418,7 +2418,7 @@ Harrison Bryant,QUESTIONABLE
 Harrison Butker,ACTIVE
 Harrison Hand,ACTIVE
 Harrison Mevis,ACTIVE
-Harrison Phillips,ACTIVE
+Harrison Phillips,QUESTIONABLE
 Harrison Smith,ACTIVE
 Harrison Wallace,ACTIVE
 Harrison Wallace III,ACTIVE
@@ -2530,7 +2530,7 @@ Isaiah Oliver,ACTIVE
 Isaiah Pola-Mao,ACTIVE
 Isaiah Pryor,ACTIVE
 Isaiah Raikes,ACTIVE
-Isaiah Rodgers,ACTIVE
+Isaiah Rodgers,QUESTIONABLE
 Isaiah Simmons,ACTIVE
 Isaiah Smith,ACTIVE
 Isaiah Spiller,ACTIVE
@@ -2736,12 +2736,12 @@ Jake Camarda,ACTIVE
 Jake Carlock,ACTIVE
 Jake Chaney,ACTIVE
 Jake Dolegala,ACTIVE
-Jake Elliott,ACTIVE
+Jake Elliott,QUESTIONABLE
 Jake Ferguson,QUESTIONABLE
 Jake Fromm,ACTIVE
 Jake Funk,ACTIVE
 Jake Gervase,ACTIVE
-Jake Golday,ACTIVE
+Jake Golday,QUESTIONABLE
 Jake Haener,ACTIVE
 Jake Hansen,ACTIVE
 Jake Hausmann,ACTIVE
@@ -2762,9 +2762,9 @@ Jakeem Grant Sr.,ACTIVE
 Jakob Johnson,ACTIVE
 Jakob Robinson,ACTIVE
 Jakobe Thomas,ACTIVE
-Jakobi Meyers,QUESTIONABLE
+Jakobi Meyers,ACTIVE
 Jakobie Keeney-James,ACTIVE
-Jakorian Bennett,INJURY_RESERVE
+Jakorian Bennett,ACTIVE
 Jalan Gaines,ACTIVE
 Jaleel Johnson,ACTIVE
 Jaleel McLaughlin,ACTIVE
@@ -2797,7 +2797,7 @@ Jalen Milroe,ACTIVE
 Jalen Moreno-Cropper,ACTIVE
 Jalen Morton,ACTIVE
 Jalen Nailor,ACTIVE
-Jalen Pitre,QUESTIONABLE
+Jalen Pitre,ACTIVE
 Jalen Ramsey,ACTIVE
 Jalen Reagor,ACTIVE
 Jalen Redmond,ACTIVE
@@ -2822,7 +2822,7 @@ Jalon Walker,INJURY_RESERVE
 Jalyn Armour-Davis,ACTIVE
 Jalyn Holmes,ACTIVE
 Jalyn Phillips,ACTIVE
-Jalyx Hunt,ACTIVE
+Jalyx Hunt,QUESTIONABLE
 Jam Miller,ACTIVE
 Jamaal Pritchett,ACTIVE
 Jamaal Williams,ACTIVE
@@ -2868,7 +2868,7 @@ James Mitchell,ACTIVE
 James Morgan,ACTIVE
 James Nyamwaya,ACTIVE
 James O'Shaughnessy,ACTIVE
-James Pearce Jr.,ACTIVE
+James Pearce Jr.,QUESTIONABLE
 James Pierre,ACTIVE
 James Proche II,ACTIVE
 James Robinson,ACTIVE
@@ -2945,7 +2945,7 @@ Jarran Reed,ACTIVE
 Jarren Williams,ACTIVE
 Jarrett Guarantano,ACTIVE
 Jarrett Stidham,ACTIVE
-Jarrian Jones,QUESTIONABLE
+Jarrian Jones,ACTIVE
 Jarrick Bernard-Converse,INJURY_RESERVE
 Jarrod Hewitt,ACTIVE
 Jarrod Wilson,ACTIVE
@@ -2978,7 +2978,7 @@ Jason Strowbridge,ACTIVE
 Jason Taylor II,ACTIVE
 Jason Vander Laan,ACTIVE
 JaTravis Broughton,ACTIVE
-Jauan Jennings,ACTIVE
+Jauan Jennings,QUESTIONABLE
 Javelin Guidry,ACTIVE
 Javian Hawkins,ACTIVE
 Javien Elliott,ACTIVE
@@ -2988,7 +2988,7 @@ Javon Baker,ACTIVE
 Javon Bullard,ACTIVE
 Javon Hagan,ACTIVE
 Javon Hargrave,INJURY_RESERVE
-Javon Kinlaw,QUESTIONABLE
+Javon Kinlaw,INJURY_RESERVE
 Javon Leake,ACTIVE
 Javon McKinley,ACTIVE
 Javon Solomon,ACTIVE
@@ -3007,7 +3007,7 @@ Jay Higgins IV,ACTIVE
 Jay Person,ACTIVE
 Jay Toia,ACTIVE
 Jay Tufele,ACTIVE
-Jay Ward,ACTIVE
+Jay Ward,QUESTIONABLE
 Jay-Tee Tiuli,ACTIVE
 Jay'viar Suggs,ACTIVE
 Jaycee Horn,INJURY_RESERVE
@@ -3038,14 +3038,14 @@ Jaylen Twyman,ACTIVE
 Jaylen Waddle,ACTIVE
 Jaylen Warren,ACTIVE
 Jaylen Watkins,ACTIVE
-Jaylen Watson,QUESTIONABLE
-Jaylen Wright,ACTIVE
+Jaylen Watson,OUT
+Jaylen Wright,QUESTIONABLE
 Jaylin Lane,INJURY_RESERVE
 Jaylin Noel,INJURY_RESERVE
 Jaylin Simpson,ACTIVE
 Jaylin Smith,INJURY_RESERVE
 Jaylin Williams,ACTIVE
-Jaylinn Hawkins,QUESTIONABLE
+Jaylinn Hawkins,OUT
 Jaylon Allen,ACTIVE
 Jaylon Carlies,ACTIVE
 Jaylon Guilbeau,ACTIVE
@@ -3113,7 +3113,7 @@ Jeremiah Trotter Jr.,ACTIVE
 Jeremiah Valoaga,ACTIVE
 Jeremiah Walker,ACTIVE
 Jeremiah Webb,QUESTIONABLE
-Jeremiyah Love,OUT
+Jeremiyah Love,INJURY_RESERVE
 Jeremy Banks,ACTIVE
 Jeremy Boykins,ACTIVE
 Jeremy Chinn,ACTIVE
@@ -3121,7 +3121,7 @@ Jeremy Clark,ACTIVE
 Jeremy Crawshaw,ACTIVE
 Jeremy Hill,ACTIVE
 Jeremy Lucien,ACTIVE
-Jeremy McNichols,DOUBTFUL
+Jeremy McNichols,INJURY_RESERVE
 Jeremy Reaves,ACTIVE
 Jeremy Ruckert,ACTIVE
 Jeremy Sprinkle,ACTIVE
@@ -3130,14 +3130,14 @@ Jerick McKinnon,ACTIVE
 Jerjuan Newton,ACTIVE
 Jermaine Burton,ACTIVE
 Jermaine Carter,ACTIVE
-Jermaine Eluemunor,ACTIVE
+Jermaine Eluemunor,QUESTIONABLE
 Jermaine Grace,ACTIVE
 Jermaine Jackson,ACTIVE
 Jermaine Johnson II,ACTIVE
 Jermaine Kearse,ACTIVE
 Jermaine Kelly Jr.,ACTIVE
 Jermaine Terry II,ACTIVE
-Jermar Jefferson,QUESTIONABLE
+Jermar Jefferson,ACTIVE
 Jermari Harris,ACTIVE
 Jermiah Braswell,ACTIVE
 Jermod McCoy,ACTIVE
@@ -3166,7 +3166,7 @@ Jesse Matthews,ACTIVE
 Jessie Bates III,ACTIVE
 Jessie Lemonier,ACTIVE
 Jester Weah,ACTIVE
-Jevon Holland,QUESTIONABLE
+Jevon Holland,ACTIVE
 Jha'Quan Jackson,ACTIVE
 Jhamon Ausbon,ACTIVE
 Jhurell Pressley,ACTIVE
@@ -3184,7 +3184,7 @@ Jimmy Kibble,QUESTIONABLE
 Jimmy Moreland,ACTIVE
 Jimmy Murray,ACTIVE
 Jimmy Phillips Jr.,ACTIVE
-Jimmy Rolder,OUT
+Jimmy Rolder,INJURY_RESERVE
 JJ Galbreath,ACTIVE
 JJ Howland,ACTIVE
 JJ Jansen,ACTIVE
@@ -3203,7 +3203,7 @@ Joe Cardona,QUESTIONABLE
 Joe Dahl,ACTIVE
 Joe Doyle,ACTIVE
 Joe Evans,ACTIVE
-Joe Fagnano,QUESTIONABLE
+Joe Fagnano,ACTIVE
 Joe Flacco,ACTIVE
 Joe Gaziano,ACTIVE
 Joe Giles-Harris,ACTIVE
@@ -3234,10 +3234,10 @@ Joey Blount,INJURY_RESERVE
 Joey Bosa,ACTIVE
 Joey Hunt,ACTIVE
 Joey Ivie,ACTIVE
-Joey Porter Jr.,ACTIVE
+Joey Porter Jr.,QUESTIONABLE
 Joey Slye,ACTIVE
 John Atkins,ACTIVE
-John Bates,ACTIVE
+John Bates,QUESTIONABLE
 John Battle,ACTIVE
 John Brannon,ACTIVE
 John Brown,ACTIVE
@@ -3255,7 +3255,7 @@ John Hoyland,ACTIVE
 John Humphrey,ACTIVE
 John Hurst,ACTIVE
 John Jackson,ACTIVE
-John Jenkins,QUESTIONABLE
+John Jenkins,ACTIVE
 John Jiles,QUESTIONABLE
 John Johnson III,ACTIVE
 John Kelly Jr.,ACTIVE
@@ -3328,7 +3328,7 @@ Jonathan Duhart,ACTIVE
 Jonathan Ford,INJURY_RESERVE
 Jonathan Garibay,ACTIVE
 Jonathan Garvin,QUESTIONABLE
-Jonathan Greenard,ACTIVE
+Jonathan Greenard,QUESTIONABLE
 Jonathan Harris,ACTIVE
 Jonathan Hilliman,ACTIVE
 Jonathan Jones,QUESTIONABLE
@@ -3418,7 +3418,7 @@ Jordan Washington,ACTIVE
 Jordan Waters,ACTIVE
 Jordan Watkins,ACTIVE
 Jordan Whitehead,ACTIVE
-Jordan Whittington,ACTIVE
+Jordan Whittington,QUESTIONABLE
 Jordan Wilkins,ACTIVE
 Jordan Williams,ACTIVE
 Jordan Willis,ACTIVE
@@ -3509,7 +3509,7 @@ Josh Vann,ACTIVE
 Josh Wallace,ACTIVE
 Josh Watson,ACTIVE
 Josh Wells,ACTIVE
-Josh Whyle,ACTIVE
+Josh Whyle,QUESTIONABLE
 Josh Williams,ACTIVE
 Josh Woodrum,ACTIVE
 Josh Woods,ACTIVE
@@ -3578,7 +3578,7 @@ Junior Colson,ACTIVE
 Junior Faulk,ACTIVE
 Junior Tafuna,ACTIVE
 Jurrell Casey,ACTIVE
-Justice Hill,QUESTIONABLE
+Justice Hill,ACTIVE
 Justice Shelton-Mosley,ACTIVE
 Justin Barron,ACTIVE
 Justin Bethel,ACTIVE
@@ -3617,7 +3617,7 @@ Justin Shorter,ACTIVE
 Justin Simmons,ACTIVE
 Justin Strnad,ACTIVE
 Justin Tucker,ACTIVE
-Justin Walley,QUESTIONABLE
+Justin Walley,OUT
 Justin Watson,ACTIVE
 Justin Zimmer,ACTIVE
 Juston Burris,ACTIVE
@@ -3686,7 +3686,7 @@ Kalil Pimpleton,ACTIVE
 Kalon Barnes,ACTIVE
 Kam Alexander,ACTIVE
 Kam Arnold,ACTIVE
-Kam Curl,ACTIVE
+Kam Curl,QUESTIONABLE
 Kamal Hadden,ACTIVE
 Kamal Martin,ACTIVE
 Kamalei Correa,ACTIVE
@@ -3714,14 +3714,14 @@ Karon Prunty,ACTIVE
 Karson Sharar,ACTIVE
 Kary Vincent Jr.,ACTIVE
 Kavon Frazier,ACTIVE
-KaVontae Turpin,QUESTIONABLE
+KaVontae Turpin,OUT
 Kawaan Baker,ACTIVE
 Kawann Short,ACTIVE
 Kay'Ron Lynch-Adams,ACTIVE
 Kayden McDonald,ACTIVE
 Kaylon Geiger,ACTIVE
 Kayshon Boutte,ACTIVE
-Kaytron Allen,ACTIVE
+Kaytron Allen,QUESTIONABLE
 Kayvon Thibodeaux,ACTIVE
 Kayvon Webster,ACTIVE
 Kazmeir Allen,ACTIVE
@@ -3736,7 +3736,7 @@ Keaontay Ingram,ACTIVE
 Kearis Jackson,ACTIVE
 Keaton Ellis,ACTIVE
 Keaton Mitchell,ACTIVE
-Kedon Slovis,ACTIVE
+Kedon Slovis,OUT
 Kedrick Whitehead,ACTIVE
 Keeanu Benton,ACTIVE
 Keelan Cole Sr.,ACTIVE
@@ -3757,7 +3757,7 @@ Keion White,ACTIVE
 Keionta Davis,ACTIVE
 Keionte Scott,ACTIVE
 Keir Thomas II,QUESTIONABLE
-Keisean Nixon,ACTIVE
+Keisean Nixon,QUESTIONABLE
 Keishawn Bierria,ACTIVE
 Keith Abney,ACTIVE
 Keith Abney II,ACTIVE
@@ -3808,13 +3808,13 @@ Kendall Lamm,ACTIVE
 Kendall Milton,ACTIVE
 Kendall Sheffield,QUESTIONABLE
 Kendall Smith,ACTIVE
-Kendall Williamson,ACTIVE
+Kendall Williamson,QUESTIONABLE
 Kendell Beckwith,ACTIVE
 Kendell Brooks,INJURY_RESERVE
 Kendre Miller,ACTIVE
 Kendric Pryor,ACTIVE
 Kendrick Blackshire,ACTIVE
-Kendrick Bourne,OUT
+Kendrick Bourne,INJURY_RESERVE
 Kendrick Law,INJURY_RESERVE
 Kendrick Norton,ACTIVE
 Kene Nwangwu,ACTIVE
@@ -3847,14 +3847,14 @@ Kenny Stills,ACTIVE
 Kenny Vaccaro,ACTIVE
 Kenny Wiggins,ACTIVE
 Kenny Willekes,ACTIVE
-Kenny Yeboah,ACTIVE
+Kenny Yeboah,OUT
 Kenny Young,ACTIVE
-Kentavius Street,QUESTIONABLE
+Kentavius Street,INJURY_RESERVE
 Kentrel Bullock,ACTIVE
 Kentrell Brothers,ACTIVE
 Kenyan Drake,ACTIVE
 Kenyon Sadiq,ACTIVE
-Keon Coleman,ACTIVE
+Keon Coleman,QUESTIONABLE
 Keon Hatcher,ACTIVE
 Keondre Coburn,ACTIVE
 Keondre Jackson,ACTIVE
@@ -3873,7 +3873,7 @@ Ketron Jackson Jr.,ACTIVE
 Keveion'ta Spears,ACTIVE
 Kevin Atkins,ACTIVE
 Kevin Austin Jr.,ACTIVE
-Kevin Byard,ACTIVE
+Kevin Byard,QUESTIONABLE
 Kevin Coleman Jr.,ACTIVE
 Kevin Davidson,ACTIVE
 Kevin Foelsch,ACTIVE
@@ -3991,10 +3991,10 @@ Kylan Guidry,ACTIVE
 Kylan Johnson,ACTIVE
 Kyle Allen,ACTIVE
 Kyle Dixon,ACTIVE
-Kyle Dugger,QUESTIONABLE
+Kyle Dugger,OUT
 Kyle Emanuel,ACTIVE
 Kyle Fuller,ACTIVE
-Kyle Hamilton,ACTIVE
+Kyle Hamilton,QUESTIONABLE
 Kyle Juszczyk,ACTIVE
 Kyle Kalis,ACTIVE
 Kyle Kennard,ACTIVE
@@ -4257,7 +4257,7 @@ Makinton Dorleant,ACTIVE
 Malachi Carter,ACTIVE
 Malachi Corley,ACTIVE
 Malachi Fields,ACTIVE
-Malachi Lawrence,QUESTIONABLE
+Malachi Lawrence,OUT
 Malachi Moore,ACTIVE
 Malakai Williams,ACTIVE
 Malaki Starks,ACTIVE
@@ -4274,7 +4274,7 @@ Malcolm Rodriguez,ACTIVE
 Malcolm Smith,ACTIVE
 Malcom Brown,ACTIVE
 Malick Meiga,ACTIVE
-Maliek Collins,ACTIVE
+Maliek Collins,OUT
 Malik Benson,ACTIVE
 Malik Carney,ACTIVE
 Malik Cunningham,ACTIVE
@@ -4296,7 +4296,7 @@ Malik McClain,ACTIVE
 Malik McDowell,ACTIVE
 Malik Muhammad II,QUESTIONABLE
 Malik Mustapha,ACTIVE
-Malik Nabers,ACTIVE
+Malik Nabers,QUESTIONABLE
 Malik Reed,ACTIVE
 Malik Rutherford,ACTIVE
 Malik Spencer,ACTIVE
@@ -4310,7 +4310,7 @@ Manasseh Bailey,ACTIVE
 Mani Powell,ACTIVE
 Manny Patterson,ACTIVE
 Manny Wilkins,ACTIVE
-Mansoor Delane,QUESTIONABLE
+Mansoor Delane,OUT
 Mante Morrow,ACTIVE
 Manti Te'o,ACTIVE
 Mapalo Mwansa,ACTIVE
@@ -4337,7 +4337,7 @@ Marcus Harris,QUESTIONABLE
 Marcus Harrison,ACTIVE
 Marcus Haynes,ACTIVE
 Marcus Johnson,ACTIVE
-Marcus Jones,ACTIVE
+Marcus Jones,QUESTIONABLE
 Marcus Kemp,ACTIVE
 Marcus Major Jr.,ACTIVE
 Marcus Mariota,ACTIVE
@@ -4414,13 +4414,13 @@ Marquise Robinson,ACTIVE
 Marquiss Spencer,ACTIVE
 Marshall Lang,ACTIVE
 Marshall Newhouse,ACTIVE
-MarShawn Lloyd,ACTIVE
+MarShawn Lloyd,QUESTIONABLE
 Marshawn Lynch,ACTIVE
 Marshon Lattimore,QUESTIONABLE
 Martavis Bryant,ACTIVE
 Marte Mapu,ACTIVE
 Martez Manuel,ACTIVE
-Martin Emerson Jr.,ACTIVE
+Martin Emerson Jr.,QUESTIONABLE
 Martinas Rankin,ACTIVE
 Martrell Spaight,ACTIVE
 Marvell Tell III,ACTIVE
@@ -4496,7 +4496,7 @@ Matthew Jackson,ACTIVE
 Matthew Jester,ACTIVE
 Matthew Judon,ACTIVE
 Matthew McDoom,ACTIVE
-Matthew Stafford,QUESTIONABLE
+Matthew Stafford,ACTIVE
 Matthew Trickett,ACTIVE
 Matthew Wright,ACTIVE
 Matthias Farley,ACTIVE
@@ -4514,7 +4514,7 @@ Max Garcia,ACTIVE
 Max Hurleman,OUT
 Max Klare,ACTIVE
 Max Llewellyn,ACTIVE
-Max Melton,ACTIVE
+Max Melton,QUESTIONABLE
 Max Richardson,ACTIVE
 Max Tomczak,ACTIVE
 Max Tooley,ACTIVE
@@ -4590,7 +4590,7 @@ Michael Pratt,ACTIVE
 Michael Roberts,ACTIVE
 Michael Schofield III,ACTIVE
 Michael Strachan,ACTIVE
-Michael Taaffe,ACTIVE
+Michael Taaffe,QUESTIONABLE
 Michael Thomas,ACTIVE
 Michael Trigg,ACTIVE
 Michael Turk,ACTIVE
@@ -4699,7 +4699,7 @@ Moose Muhammad III,ACTIVE
 Morgan Burnett,ACTIVE
 Morgan Cox,ACTIVE
 Morgan Fox,ACTIVE
-Morgan Moses,ACTIVE
+Morgan Moses,QUESTIONABLE
 Morice Norris,QUESTIONABLE
 Moro Ojomo,ACTIVE
 Morrell Osling III,ACTIVE
@@ -4732,7 +4732,7 @@ Myron Mitchell,ACTIVE
 Myron Tagovailoa-Amosa,ACTIVE
 N'Keal Harry,ACTIVE
 Nadame Tucker,ACTIVE
-Nahshon Wright,ACTIVE
+Nahshon Wright,QUESTIONABLE
 Najee Goode,ACTIVE
 Najee Harris,ACTIVE
 NaJee Thompson,ACTIVE
@@ -4770,7 +4770,7 @@ Nate Sudfeld,ACTIVE
 Nate Valcarcel,ACTIVE
 Nate Wieland,ACTIVE
 Nate Wieting,ACTIVE
-Nate Wiggins,ACTIVE
+Nate Wiggins,OUT
 Nathan Carter,ACTIVE
 Nathan Cottrell,ACTIVE
 Nathan East,ACTIVE
@@ -4779,7 +4779,7 @@ Nathan Meadors,ACTIVE
 Nathan Peterman,ACTIVE
 Nathan Pickering,ACTIVE
 Nathan Rourke,ACTIVE
-Nathan Shepherd,QUESTIONABLE
+Nathan Shepherd,ACTIVE
 Nathan Voorhis,ACTIVE
 Nathaniel Peat,ACTIVE
 Nathaniel Watson,OUT
@@ -4963,7 +4963,7 @@ Owen Carney,ACTIVE
 Owen Pappoe,ACTIVE
 Owen Porter,ACTIVE
 Owen Wright,ACTIVE
-P.J. Locke,QUESTIONABLE
+P.J. Locke,ACTIVE
 P.J. Williams,ACTIVE
 Paddy Fisher,ACTIVE
 Paris Ford,ACTIVE
@@ -5033,7 +5033,7 @@ Pete Werner,ACTIVE
 Peter Kalambayi,ACTIVE
 Peter LeBlanc,ACTIVE
 Peter Manuma,ACTIVE
-Peter Woods,QUESTIONABLE
+Peter Woods,OUT
 Peyton Barber,ACTIVE
 Peyton Hendershot,ACTIVE
 Phalen Sanford,ACTIVE
@@ -5091,7 +5091,7 @@ Quentin Moore,INJURY_RESERVE
 Quentin Poling,ACTIVE
 Quentin Skinner,ACTIVE
 Quenton Meeks,ACTIVE
-Quenton Nelson,ACTIVE
+Quenton Nelson,QUESTIONABLE
 Quez Watkins,ACTIVE
 Quin Blanding,ACTIVE
 Quincy Adeboyejo,ACTIVE
@@ -5257,7 +5257,7 @@ Riley Sharp,ACTIVE
 Riley Wilson,ACTIVE
 Riq Woolen,ACTIVE
 Rivaldo Fairweather,ACTIVE
-River Cracraft,QUESTIONABLE
+River Cracraft,ACTIVE
 RJ Delancy III,ACTIVE
 RJ Harvey,INJURY_RESERVE
 RJ Maryland,QUESTIONABLE
@@ -5351,7 +5351,7 @@ Ronnie Rivers,INJURY_RESERVE
 Ronnie Stanley,ACTIVE
 Rontez Miles,ACTIVE
 Roosevelt Nix,ACTIVE
-Roquan Smith,QUESTIONABLE
+Roquan Smith,ACTIVE
 Rory Starkey,ACTIVE
 Roschon Johnson,ACTIVE
 Ross Blacklock,ACTIVE
@@ -5424,7 +5424,7 @@ Salvon Ahmed,ACTIVE
 Sam Acho,ACTIVE
 Sam Beal,ACTIVE
 Sam Brown Jr.,ACTIVE
-Sam Darnold,ACTIVE
+Sam Darnold,OUT
 Sam Eguavoen,ACTIVE
 Sam Ehlinger,ACTIVE
 Sam Ficken,ACTIVE
@@ -5455,14 +5455,14 @@ Sammie Coates,ACTIVE
 Sammis Reyes,ACTIVE
 Sammy Watkins,ACTIVE
 Samori Toure,ACTIVE
-Samson Ebukam,OUT
+Samson Ebukam,INJURY_RESERVE
 Samson Nacua,ACTIVE
 Samuel Scott,ACTIVE
 Samuel Womack III,ACTIVE
 Sandro Platzgummer,ACTIVE
 Sanoussi Kane,ACTIVE
 Saquan Hampton,ACTIVE
-Saquon Barkley,ACTIVE
+Saquon Barkley,QUESTIONABLE
 SaRodorick Thompson Jr.,ACTIVE
 Sauce Gardner,ACTIVE
 Savion Jackson,ACTIVE
@@ -5582,7 +5582,7 @@ Shilo Sanders,ACTIVE
 Shon Coleman,ACTIVE
 Shon Stephens,ACTIVE
 ShunDerrick Powell,ACTIVE
-Shy Tuttle,ACTIVE
+Shy Tuttle,QUESTIONABLE
 Shyheim Carter,ACTIVE
 Siaki Ika,ACTIVE
 Siaosi Mariner,ACTIVE
@@ -5598,7 +5598,7 @@ Sincere McCormick,ACTIVE
 Sione Takitaki,QUESTIONABLE
 Sione Teuhema,ACTIVE
 Sione Vaki,ACTIVE
-Siran Neal,ACTIVE
+Siran Neal,QUESTIONABLE
 Sirgeo Hoffman,ACTIVE
 SirVocea Dennis,ACTIVE
 Skai Moore,ACTIVE
@@ -5742,7 +5742,7 @@ Tanner Ingle,ACTIVE
 Tanner Knue,ACTIVE
 Tanner Koziol,ACTIVE
 Tanner McCalister,ACTIVE
-Tanner McKee,ACTIVE
+Tanner McKee,QUESTIONABLE
 Tanner McLachlan,QUESTIONABLE
 Tanner Mordecai,ACTIVE
 Tanner Morgan,ACTIVE
@@ -5856,10 +5856,10 @@ Thaddeus Dixon,INJURY_RESERVE
 Thaddeus Moss,ACTIVE
 Thayer Thomas,ACTIVE
 Theo Jackson,QUESTIONABLE
-Theo Johnson,QUESTIONABLE
+Theo Johnson,ACTIVE
 Theo Wease Jr.,ACTIVE
 Theron Gaines,ACTIVE
-Thomas Booker IV,ACTIVE
+Thomas Booker IV,QUESTIONABLE
 Thomas Fidone II,ACTIVE
 Thomas Gordon,ACTIVE
 Thomas Graham Jr.,ACTIVE
@@ -5986,7 +5986,7 @@ Travis Shaw,ACTIVE
 Travis Toivonen,ACTIVE
 Travis Vokolek,ACTIVE
 Travon Fuller,ACTIVE
-Travon Walker,QUESTIONABLE
+Travon Walker,ACTIVE
 Tray Matthews,ACTIVE
 Trayveon Williams,ACTIVE
 Trayvon Henderson,ACTIVE
@@ -5994,7 +5994,7 @@ Trayvon Mullen,ACTIVE
 Trayvon Rudolph,ACTIVE
 Tre Avery,ACTIVE
 Tre Boston,ACTIVE
-Tre Brown,INJURY_RESERVE
+Tre Brown,QUESTIONABLE
 Tre Flowers,ACTIVE
 Tre Harbison,ACTIVE
 Tre Hawkins III,ACTIVE
@@ -6045,9 +6045,9 @@ Tress Way,ACTIVE
 Trestan Ebner,ACTIVE
 Treston Decoud,ACTIVE
 Treven Ma'ae,ACTIVE
-TreVeyon Henderson,QUESTIONABLE
+TreVeyon Henderson,OUT
 Trevian Thomas,ACTIVE
-Trevin Wallace,ACTIVE
+Trevin Wallace,OUT
 Trevion Thompson,ACTIVE
 Trevis Gipson,ACTIVE
 Trevon Bradford,ACTIVE
@@ -6077,7 +6077,7 @@ Trey Dean III,QUESTIONABLE
 Trey Dishon,ACTIVE
 Trey Edmunds,ACTIVE
 Trey Flowers,ACTIVE
-Trey Hendrickson,QUESTIONABLE
+Trey Hendrickson,ACTIVE
 Trey Hopkins,ACTIVE
 Trey Kiser,ACTIVE
 Trey Knox,ACTIVE
@@ -6096,7 +6096,7 @@ Trey Vaval,ACTIVE
 Trey Washington,ACTIVE
 Trey Wolff,ACTIVE
 Treydan Stukes,ACTIVE
-Treylon Burks,ACTIVE
+Treylon Burks,QUESTIONABLE
 Treyton Welch,ACTIVE
 Treyvhon Saunders,ACTIVE
 Treyvon Hester,ACTIVE
@@ -6138,7 +6138,7 @@ Ty Chandler,INJURY_RESERVE
 Ty Fryfogle,ACTIVE
 Ty Hamilton,ACTIVE
 Ty James,ACTIVE
-Ty Johnson,ACTIVE
+Ty Johnson,QUESTIONABLE
 Ty Long,ACTIVE
 Ty Montgomery II,ACTIVE
 Ty Nsekhe,ACTIVE
@@ -6183,7 +6183,7 @@ Tyler Harrell,ACTIVE
 Tyler Higbee,ACTIVE
 Tyler Hoosman,ACTIVE
 Tyler Hudson,ACTIVE
-Tyler Huntley,DOUBTFUL
+Tyler Huntley,INJURY_RESERVE
 Tyler Johnson,ACTIVE
 Tyler Kahmann,ACTIVE
 Tyler Kroft,ACTIVE
@@ -6191,7 +6191,7 @@ Tyler Lacy,ACTIVE
 Tyler Lancaster,ACTIVE
 Tyler Larsen,ACTIVE
 Tyler Lockett,ACTIVE
-Tyler Loop,DOUBTFUL
+Tyler Loop,INJURY_RESERVE
 Tyler Mabry,QUESTIONABLE
 Tyler Manoa,ACTIVE
 Tyler Marz,ACTIVE
@@ -6243,7 +6243,7 @@ Tyrice Knight,ACTIVE
 Tyrie Cleveland,ACTIVE
 Tyrion Davis-Price,ACTIVE
 Tyrion Ingram-Dawkins,ACTIVE
-Tyrique Stevenson Sr.,ACTIVE
+Tyrique Stevenson Sr.,QUESTIONABLE
 Tyrod Taylor,ACTIVE
 Tyron Billy-Johnson,ACTIVE
 Tyron Herring,QUESTIONABLE
@@ -6324,7 +6324,7 @@ Wes Pahl,ACTIVE
 Wesley Bailey,ACTIVE
 Wesley Bissainthe,ACTIVE
 Wesley Grimes,ACTIVE
-Wesley Williams,ACTIVE
+Wesley Williams,OUT
 Wesley Woodyard,ACTIVE
 West Weeks,ACTIVE
 Whitney Mercilus,ACTIVE
@@ -6345,7 +6345,7 @@ Will Hernandez,ACTIVE
 Will Holden,ACTIVE
 Will Howard,ACTIVE
 Will Johnson,INJURY_RESERVE
-Will Kacmarek,ACTIVE
+Will Kacmarek,QUESTIONABLE
 Will Lee,ACTIVE
 Will Lee III,QUESTIONABLE
 Will Levis,ACTIVE
@@ -6449,7 +6449,7 @@ Zach McCloud,ACTIVE
 Zach Morton,ACTIVE
 Zach Ojile,ACTIVE
 Zach Pascal,ACTIVE
-Zach Sieler,ACTIVE
+Zach Sieler,QUESTIONABLE
 Zach Triner,ACTIVE
 Zach VanValkenburg,ACTIVE
 Zach Von Rosenberg,ACTIVE
@@ -6478,7 +6478,7 @@ Zane Gonzalez,ACTIVE
 Zane Lewis,ACTIVE
 ZaQuandre White,ACTIVE
 Zaven Collins,ACTIVE
-Zavier Scott,ACTIVE
+Zavier Scott,INJURY_RESERVE
 Zavion Thomas,ACTIVE
 Zay Flowers,ACTIVE
 Zay Jones,ACTIVE
