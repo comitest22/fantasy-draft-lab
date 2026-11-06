@@ -30,6 +30,9 @@ jobs:
         env:
           POOLGENIUS_USERNAME: ${{ secrets.POOLGENIUS_USERNAME }}
           POOLGENIUS_PASSWORD: ${{ secrets.POOLGENIUS_PASSWORD }}
+          ESPN_S2: ${{ secrets.ESPN_S2 }}
+          ESPN_SWID: ${{ secrets.ESPN_SWID }}
+          ESPN_LEAGUE_ID: ${{ secrets.ESPN_LEAGUE_ID }}
         run: npm run enrichment:weekly
 
       - name: Commit data if changed

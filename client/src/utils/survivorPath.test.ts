@@ -1,7 +1,14 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import type { SurvivorSeasonRow } from '../types';
-import { minCostAssignment, optimizePath, formatRelative, buildEntryPaths, bpaLocks } from './survivorPath';
+import {
+  minCostAssignment,
+  optimizePath,
+  formatRelative,
+  buildEntryPaths,
+  bpaLocks,
+  SKIP_WEEK_LOCK,
+} from './survivorPath';
 
 describe('minCostAssignment', () => {
   it('solves a 2x2 min-cost matrix', () => {
@@ -39,6 +46,27 @@ describe('optimizePath', () => {
     assert.equal(path.slots[0]?.team, 'BBB');
     assert.equal(path.slots[1]?.team, 'AAA');
     assert.equal(path.survive, 0.8 * 0.9);
+  });
+
+  it('skips weeks before startWeek for a mid-season entry', () => {
+    const rows: SurvivorSeasonRow[] = ['AAA', 'BBB', 'CCC'].map((code, i) => ({
+      team: code,
+      teamName: code,
+      futureValue: 1,
+      cells: [
+        { week: 1, winPct: 90 - i * 10, losePct: 10 + i * 10, opp: 'X', bye: false },
+        { week: 2, winPct: 80 - i * 10, losePct: 20 + i * 10, opp: 'Y', bye: false },
+        { week: 3, winPct: 70 - i * 5, losePct: 30 + i * 5, opp: 'Z', bye: false },
+      ],
+    }));
+    const locks = bpaLocks([], 0, rows, 3, 3);
+    assert.equal(locks[0], SKIP_WEEK_LOCK);
+    assert.equal(locks[1], SKIP_WEEK_LOCK);
+    assert.equal(locks[2], null);
+    const path = optimizePath(rows, false, null, locks);
+    assert.equal(path.slots[0], null);
+    assert.equal(path.slots[1], null);
+    assert.ok(path.slots[2]?.team);
   });
 
   it('keeps a locked week-1 team and still maxes the rest', () => {
@@ -261,6 +289,51 @@ describe('bpaLocks', () => {
     for (const key of later(paths[1])) {
       assert.equal(a.has(key), false);
     }
+  });
+
+  it('keeps sparse locked weeks without requiring a contiguous prefix', () => {
+    const rows = [
+      {
+        team: 'AAA',
+        teamName: 'A',
+        futureValue: 1,
+        cells: [
+          { week: 1, winPct: 90, losePct: 10, opp: 'X', bye: false },
+          { week: 2, winPct: 50, losePct: 50, opp: 'Y', bye: false },
+          { week: 3, winPct: 50, losePct: 50, opp: 'Z', bye: false },
+        ],
+      },
+      {
+        team: 'BBB',
+        teamName: 'B',
+        futureValue: 1,
+        cells: [
+          { week: 1, winPct: 40, losePct: 60, opp: 'X', bye: false },
+          { week: 2, winPct: 80, losePct: 20, opp: 'Y', bye: false },
+          { week: 3, winPct: 75, losePct: 25, opp: 'Z', bye: false },
+        ],
+      },
+      {
+        team: 'CCC',
+        teamName: 'C',
+        futureValue: 1,
+        cells: [
+          { week: 1, winPct: 40, losePct: 60, opp: 'X', bye: false },
+          { week: 2, winPct: 70, losePct: 30, opp: 'Y', bye: false },
+          { week: 3, winPct: 85, losePct: 15, opp: 'Z', bye: false },
+        ],
+      },
+    ];
+    const locks = bpaLocks(['AAA', 'BBB', 'CCC'], [3], rows, 1);
+    assert.equal(locks[0], null);
+    assert.equal(locks[1], null);
+    assert.equal(locks[2], 'CCC');
+    const path = optimizePath(rows, false, null, locks);
+    assert.equal(path.slots[2]?.team, 'CCC');
+    assert.ok(path.slots[0]?.team);
+    assert.ok(path.slots[1]?.team);
+    assert.notEqual(path.slots[0]?.team, 'CCC');
+    assert.notEqual(path.slots[1]?.team, 'CCC');
   });
 
   it('does not keep a current-week leftover just because that game already has W/L', () => {

@@ -1,6 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { Link } from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
 import PageTabs from '../components/PageTabs';
+import PageTitle from '../components/PageTitle';
+import { inSeasonIcon } from '../nav/toolsMode';
 import { getSosBoard } from '../services/api';
 import type { SosBoard, SosPosStat, SosTeamRow, SosUnitChange, SosWeekCell } from '../types';
 import { rankHeat } from '../utils/heatScale';
@@ -409,15 +412,22 @@ export default function SosPage() {
     setWeekWindow(from, to, false);
   }
 
-  if (loading) return <p className="status">Loading strength of schedule...</p>;
+  if (loading) return <PageLoading label="Ranking the slate…" />;
   if (error) return <p className="error">{error}</p>;
   if (!board || board.teams.length === 0) {
     return (
       <section className="panel">
+        <div className="page-intro">
+          <p className="crumb">
+            <Link to="/tools">Tools</Link>
+            <span aria-hidden="true"> › </span>
+            <Link to="/tools?toolkit=in-season">In Season</Link>
+            <span aria-hidden="true"> › </span>
+            Strength of Schedule
+          </p>
+          <PageTitle badge={inSeasonIcon(20)}>Strength of Schedule</PageTitle>
+        </div>
         <p>No SOS data loaded for this year.</p>
-        <Link to="/tools" className="back-link">
-          ← Tools
-        </Link>
       </section>
     );
   }
@@ -433,23 +443,43 @@ export default function SosPage() {
   ];
   const weeks = board.weeks ?? board.teams[0]?.games?.length ?? 18;
   const currentWeek = Math.min(weeks, Math.max(1, board.currentWeek ?? 1));
+  const completedWeeks =
+    board.completedWeeks ?? Math.max(0, currentWeek - 1);
+  /** Early-season prior + Off/OL Δ are gone once four weeks are complete. */
+  const priorActive = completedWeeks < 4;
   const hasChart = board.teams.some((t) => (t.games?.length ?? 0) > 0);
   const chartView = view === 'offense' || view === 'defense';
   const orderLabel = chartOrderOptions.find((o) => o.id === chartOrder)?.label ?? 'ROS';
 
+  const offenseIntro = priorActive
+    ? `Teams down the left, weeks across the top. Remaining boxes use this year’s opponent D, mixed with last year only until four weeks are in (then 100% ${board.season}). Played weeks use this year’s ranks. Color and number 1 (easiest) to 32 (toughest), then shifted by this team’s ${board.unitSeasons ? `${board.unitSeasons.latest} vs ${board.unitSeasons.prior}` : 'latest vs prior'} offense and O-line — that Off/OL nudge fades out by week 4 (same calendar as the List preseason prior). Position pills sit above the chart; Filter sorts by positional ROS (recalculated for the applied week window), top-ranked offenses, or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule.`
+    : `Teams down the left, weeks across the top. Remaining boxes use this year’s opponent D ranks (100% ${board.season}). Played weeks use this year’s ranks. Color and number 1 (easiest) to 32 (toughest). Position pills sit above the chart; Filter sorts by positional ROS (recalculated for the applied week window), top-ranked offenses, or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule.`;
+
+  const defenseIntro = priorActive
+    ? 'Fantasy D/ST remaining slate by week. #1 is the easiest opposing offenses. Cells use this year’s points-scored ranks, mixed with last year only until four weeks are in. Played weeks use this year’s ranks. Offense and O-line are not applied here. Filter sorts by D/ST ROS (recalculated for the applied week window), top defenses by through-week points allowed (1 = fewest), or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule. Remaining-slate D/ST ranks and D-line also live on the List tab.'
+    : `Fantasy D/ST remaining slate by week. #1 is the easiest opposing offenses. Cells use this year’s points-scored ranks (100% ${board.season}). Played weeks use this year’s ranks. Offense and O-line are not applied here. Filter sorts by D/ST ROS (recalculated for the applied week window), top defenses by through-week points allowed (1 = fewest), or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule. Remaining-slate D/ST ranks and D-line also live on the List tab.`;
+
+  const listIntro = priorActive
+    ? `${board.sourceNote ? `${board.sourceNote}. ` : ''}Remaining-schedule ranks for every NFL team. ${board.unitSeasons ? `${board.unitSeasons.latest} vs ${board.unitSeasons.prior}` : 'Year-over-year'} offense and O-line are baked in early, then fade out by week 4 (same schedule as the DraftEdge/FPA prior). #1 is the easiest slate, #32 is the toughest. D/ST is remaining opposing offenses (no Off/OL). D-line under the name is consensus pass-rush (1 = best). Hover a rank for the score and unit change. Click a column to sort.`
+    : `${board.sourceNote ? `${board.sourceNote}. ` : ''}Remaining-schedule ranks for every NFL team from current-season matchups. #1 is the easiest slate, #32 is the toughest. D/ST is remaining opposing offenses. D-line under the name is consensus pass-rush (1 = best). Hover a rank for the score. Click a column to sort.`;
+
   return (
     <section className="panel">
       <div className="page-intro">
-        <Link to="/tools" className="back-link">
-          ← Tools
-        </Link>
-        <h1>{board.season} Strength of Schedule</h1>
+        <p className="crumb">
+          <Link to="/tools">Tools</Link>
+          <span aria-hidden="true"> › </span>
+          <Link to="/tools?toolkit=in-season">In Season</Link>
+          <span aria-hidden="true"> › </span>
+          Strength of Schedule
+        </p>
+        <PageTitle badge={inSeasonIcon(20)}>{board.season} Strength of Schedule</PageTitle>
         <p className="subtitle">
           {view === 'offense'
-            ? `Teams down the left, weeks across the top. Remaining boxes use this year’s opponent D, mixed with last year only until four weeks are in (then 100% 2026). Played weeks use this year’s ranks. Color and number 1 (easiest) to 32 (toughest), then shifted by this team’s ${board.unitSeasons ? `${board.unitSeasons.latest} vs ${board.unitSeasons.prior}` : 'latest vs prior'} offense and O-line. Position pills sit above the chart; Filter sorts by positional ROS (recalculated for the applied week window), top-ranked offenses, or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule.`
+            ? offenseIntro
             : view === 'defense'
-              ? 'Fantasy D/ST remaining slate by week. #1 is the easiest opposing offenses. Cells use this year’s points-scored ranks, mixed with last year only until four weeks are in. Played weeks use this year’s ranks. Offense and O-line are not applied here. Filter sorts by D/ST ROS (recalculated for the applied week window), top defenses by through-week points allowed (1 = fewest), or A–Z / Z–A. Click a week number to sort that column easiest first, click again to reverse, and click a third time to restore the chart order. Click a team name to select rows. Narrow weeks with Showing Week … to … Apply, or Remaining Schedule. Remaining-slate D/ST ranks and D-line also live on the List tab.'
-              : `${board.sourceNote ? `${board.sourceNote}. ` : ''}Remaining-schedule ranks for every NFL team, with ${board.unitSeasons ? `${board.unitSeasons.latest} vs ${board.unitSeasons.prior}` : 'year-over-year'} offense and O-line baked in. #1 is the easiest slate, #32 is the toughest. D/ST is remaining opposing offenses (no Off/OL). D-line under the name is consensus pass-rush (1 = best). Hover a rank for the score and unit change. Click a column to sort.`}
+              ? defenseIntro
+              : listIntro}
         </p>
       </div>
       <div className="sos-tabs-row">

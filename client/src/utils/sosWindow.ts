@@ -86,3 +86,34 @@ export function buildWindowRosRanks(
   scored.forEach((row, i) => ranks.set(row.team, i + 1));
   return ranks;
 }
+
+/**
+ * Re-rank teams by average ESPN OPRK across the week window.
+ * OPRK is 1 = toughest / 32 = easiest, so higher avg → easier → rank 1.
+ */
+export function buildOprkWindowRanks(
+  teams: SosTeamRow[],
+  weeks: number[],
+  oprkByOpp: Record<string, number>
+): Map<string, number> {
+  const scored: Array<{ team: string; avg: number }> = [];
+  for (const row of teams) {
+    const byWeek = new Map((row.games ?? []).map((g) => [g.week, g]));
+    const ratings: number[] = [];
+    for (const week of weeks) {
+      const cell = byWeek.get(week);
+      if (!cell || cell.bye || !cell.opponent) continue;
+      const r = oprkByOpp[cell.opponent.toUpperCase()];
+      if (typeof r === 'number') ratings.push(r);
+    }
+    if (ratings.length === 0) continue;
+    scored.push({
+      team: row.team,
+      avg: ratings.reduce((sum, n) => sum + n, 0) / ratings.length,
+    });
+  }
+  scored.sort((a, b) => b.avg - a.avg || a.team.localeCompare(b.team));
+  const ranks = new Map<string, number>();
+  scored.forEach((row, i) => ranks.set(row.team, i + 1));
+  return ranks;
+}

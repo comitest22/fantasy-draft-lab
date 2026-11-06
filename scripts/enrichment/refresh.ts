@@ -64,6 +64,8 @@ async function main(): Promise<void> {
   console.log('Refresh:');
   console.log('  npm run enrichment:weekly          # Tuesday after MNF / Friday after TNF');
   console.log('  npm run enrichment:fetch-espn-ranks');
+  console.log('  npm run enrichment:fetch-espn-oprk');
+  console.log('  npm run enrichment:fetch-espn-week-scoring');
   console.log('  npm run enrichment:fetch-sos-schedule');
   console.log('  npm run enrichment:fetch-poolgenius');
   console.log('  npm run enrichment:fetch-game-context');

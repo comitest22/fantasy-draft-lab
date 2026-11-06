@@ -4,6 +4,7 @@ import { canonicalTeam, enrichmentStore } from '../data/enrichment';
 import { enrichmentDir } from '../data/store';
 import {
   buildContextInput,
+  clampContext,
   contextAdjustment,
   type ForecastRow,
   type TeamContextRow,
@@ -17,6 +18,7 @@ import {
   resultFromScores,
 } from './pgFuture';
 import { week1SeedWinPct } from './pgWeek1Seed';
+import { availabilityAdjustment } from './starterAvailability';
 
 export type SurvivorMode = 'win' | 'lose';
 
@@ -29,6 +31,16 @@ export interface SurvivorFutureCell {
   result?: 'W' | 'L' | null;
   score?: string | null;
   locked?: boolean;
+}
+
+/** One rest/travel/injury factor for Week cards + under-row notes. */
+export interface SurvivorContextItem {
+  id: string;
+  label: string;
+  /** Signed for display in this board's mode (>0 helps the pick). */
+  points: number;
+  /** Which side of the matchup the note is about. */
+  about: 'self' | 'opp' | 'slate';
 }
 
 export interface SurvivorWeekTeam {
@@ -47,10 +59,15 @@ export interface SurvivorWeekTeam {
   futureValue: number | null;
   gameNotes: string[];
   contextNotes: string[];
+  contextItems: SurvivorContextItem[];
   contextAdj: number | null;
   bye: boolean;
   pickRank: number | null;
   recommended: boolean;
+  /** High-odds + high-ownership chalk; prefer with caution. */
+  chalk?: boolean;
+  /** Best leftover low-ownership side (not in top 3). */
+  contrarian?: boolean;
   reason: string;
 }
 
@@ -86,6 +103,8 @@ export interface SurvivorBoard {
   week: SurvivorWeekTeam[];
   seasonRows: SurvivorSeasonRow[];
   picks: SurvivorWeekTeam[];
+  /** Best low-ownership leftover among non-top-3 sides (same mode scoring). */
+  contrarian: SurvivorWeekTeam | null;
 }
 
 /** Per-week PoolGenius board fields (Mkt / ML / Pop / EV) kept after the slate advances. */
@@ -175,10 +194,10 @@ function contextFor(
   team: string,
   week: number,
   assets: ContextAssets
-): { adj: number; notes: string[] } {
+): { adj: number; notes: string[]; items: SurvivorContextItem[] } {
   const all = enrichmentStore.getTeamSchedule(team);
   const game = all.find((g) => g.week === week);
-  if (!game) return { adj: 0, notes: [] };
+  if (!game) return { adj: 0, notes: [], items: [] as SurvivorContextItem[] };
   const key = canonicalTeam(team) ?? team;
   const input = buildContextInput({
     game,
@@ -187,8 +206,36 @@ function contextFor(
     teamRow: assets.teams[key],
     forecast: assets.forecasts[`${week}:${key}`],
   });
-  if (!input) return { adj: 0, notes: [] };
-  return contextAdjustment(input, 'win');
+  const travel = input ? contextAdjustment(input, 'win') : { adj: 0, notes: [] as string[], factors: [] };
+  const season = enrichmentStore.getSeasonState()?.season ?? 2026;
+  const availability = availabilityAdjustment({
+    team: key,
+    opponent: game.opponent,
+    teamPlayers: enrichmentStore.listTeamSkillPlayers(key, season),
+    oppPlayers: game.opponent
+      ? enrichmentStore.listTeamSkillPlayers(game.opponent, season)
+      : [],
+  });
+  const adj = Math.round(clampContext(travel.adj + availability.adj) * 10) / 10;
+  const items = [
+    ...travel.factors.map((f) => ({
+      id: f.id,
+      label: f.label,
+      points: f.points,
+      about: 'self' as const,
+    })),
+    ...availability.factors.map((f) => ({
+      id: f.id,
+      label: f.label.replace(/^Opp\s+/i, ''),
+      points: f.points,
+      about: f.about,
+    })),
+  ].filter((f) => f.points !== 0);
+  return {
+    adj,
+    notes: items.map((i) => i.label),
+    items,
+  };
 }
 
 function losePct(win: number | null): number | null {
@@ -326,7 +373,7 @@ export async function buildSurvivorBoard(mode: SurvivorMode, week?: number): Pro
   const assets = await loadContextAssets();
   const currentWeek = file.week ?? enrichmentStore.currentWeek();
   const w = Math.min(18, Math.max(1, week ?? currentWeek));
-  const ctxByTeam = new Map<string, { adj: number; notes: string[] }>();
+  const ctxByTeam = new Map<string, ReturnType<typeof contextFor>>();
   for (const team of file.teams) {
     ctxByTeam.set(team.team, contextFor(team.team, w, assets));
   }
@@ -350,8 +397,25 @@ export async function buildSurvivorBoard(mode: SurvivorMode, week?: number): Pro
     const bye = Boolean(cell.bye);
     const pickRank = bye ? null : (rankOf.get(team.team) ?? null);
     const snap = weekBoardSnap(team, w, currentWeek);
-    const ctx = ctxByTeam.get(team.team) ?? { adj: 0, notes: [] };
+    const ctx = ctxByTeam.get(team.team) ?? {
+      adj: 0,
+      notes: [] as string[],
+      items: [] as SurvivorContextItem[],
+    };
     const signedAdj = mode === 'lose' ? -ctx.adj : ctx.adj;
+    const sign = mode === 'lose' ? -1 : 1;
+    const contextItems: SurvivorContextItem[] = [
+      ...(snap?.gameNotes ?? []).map((label, i) => ({
+        id: `gameNote${i}`,
+        label,
+        points: 0,
+        about: 'slate' as const,
+      })),
+      ...ctx.items.map((item) => ({
+        ...item,
+        points: Math.round(item.points * sign * 10) / 10,
+      })),
+    ];
     const matchupLabel =
       snap?.matchupLabel ||
       (cell.opp
@@ -374,7 +438,8 @@ export async function buildSurvivorBoard(mode: SurvivorMode, week?: number): Pro
       ev: snap?.ev ?? null,
       futureValue: team.futureValue,
       gameNotes: snap?.gameNotes ?? [],
-      contextNotes: ctx.notes,
+      contextNotes: contextItems.filter((i) => i.points !== 0 || i.about === 'slate').map((i) => i.label),
+      contextItems,
       contextAdj: bye ? null : Math.round(signedAdj * 10) / 10,
       bye,
       pickRank,
@@ -387,6 +452,36 @@ export async function buildSurvivorBoard(mode: SurvivorMode, week?: number): Pro
     if (a.bye !== b.bye) return a.bye ? 1 : -1;
     return (a.pickRank ?? 99) - (b.pickRank ?? 99);
   });
+
+  const chalkThreshold = 20;
+  const topPop = Math.max(0, ...weekTeams.map((t) => t.popularityPct ?? 0));
+  for (const row of weekTeams) {
+    if (row.pickRank !== 1) continue;
+    row.chalk =
+      (row.popularityPct != null && row.popularityPct >= chalkThreshold) ||
+      (row.popularityPct != null && topPop > 0 && row.popularityPct >= topPop - 0.5);
+  }
+
+  const contrarian =
+    weekTeams
+      .filter(
+        (t) =>
+          !t.bye &&
+          t.pickRank != null &&
+          t.pickRank > 3 &&
+          t.popularityPct != null &&
+          t.popularityPct <= 12,
+      )
+      .sort((a, b) => (a.pickRank ?? 99) - (b.pickRank ?? 99))[0] ??
+    weekTeams
+      .filter((t) => !t.bye && t.pickRank != null && t.pickRank > 3)
+      .sort(
+        (a, b) =>
+          (a.popularityPct ?? 99) - (b.popularityPct ?? 99) ||
+          (a.pickRank ?? 99) - (b.pickRank ?? 99),
+      )[0] ??
+    null;
+  if (contrarian) contrarian.contrarian = true;
 
   const seasonRows: SurvivorSeasonRow[] = file.teams.map((team) => ({
     team: team.team,
@@ -413,11 +508,12 @@ export async function buildSurvivorBoard(mode: SurvivorMode, week?: number): Pro
     source: file.source ?? 'https://poolgenius.teamrankings.com/nfl-survivor-pool-picks/data-grid/',
     sourceNote:
       mode === 'win'
-        ? 'Recommended picks follow PoolGenius Data Grid (win odds, popularity, EV, future value) with a small rest/travel/weather overlay.'
-        : 'PoolGenius does not publish loser-pool ranks. This board inverts their win odds, then applies a small rest/travel/weather overlay: pick the team most likely to lose, and save sides with even worse future weeks.',
+        ? 'Recommended picks follow PoolGenius Data Grid (win odds, popularity, EV, future value) with a small rest/travel/weather/injury overlay.'
+        : 'PoolGenius does not publish loser-pool ranks. This board inverts their win odds, then applies a small rest/travel/weather/injury overlay: pick the team most likely to lose, and save sides with even worse future weeks.',
     weeks: Array.from({ length: 18 }, (_, i) => i + 1),
     week: weekTeams,
     seasonRows,
     picks: weekTeams.filter((t) => t.recommended),
+    contrarian,
   };
 }

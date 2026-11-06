@@ -2,9 +2,17 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { SurvivorBoard, SurvivorMode } from '../types';
 import { pctHeat } from '../utils/heatScale';
-import { buildEntryPaths, cellPct, formatSurviveProduct, bpaLocks } from '../utils/survivorPath';
+import {
+  buildEntryPaths,
+  cellPct,
+  formatSurviveProduct,
+  bpaLocks,
+  lockedWeekSet,
+  SKIP_WEEK_LOCK,
+} from '../utils/survivorPath';
 
-type Entry = { id: string; lockedCount: number; chosen: string[] };
+/** `startWeek` = first editable week (mid-season entries skip earlier weeks). */
+type Entry = { id: string; lockedWeeks: number[]; chosen: string[]; startWeek: number };
 type WeekOpt = {
   team: string;
   teamName: string;
@@ -30,28 +38,44 @@ function storeKey(mode: SurvivorMode): string {
   return mode === 'win' ? 'dsafd-survivor-win-picks-v1' : 'dsafd-survivor-lose-picks-v1';
 }
 
+function parseLockedWeeks(raw: Record<string, unknown>): number[] {
+  if (Array.isArray(raw.lockedWeeks)) {
+    return [...lockedWeekSet(raw.lockedWeeks as number[])].sort((a, b) => a - b);
+  }
+  // Legacy contiguous prefix: lockedCount = N → weeks 1…N.
+  return [...lockedWeekSet(Math.max(0, Number(raw.lockedCount) || 0))].sort((a, b) => a - b);
+}
+
 function parseEntry(row: unknown, i: number): Entry {
   const raw = row && typeof row === 'object' ? (row as Record<string, unknown>) : {};
   const id = String(raw.id ?? i + 1);
+  const startWeek = Math.max(1, Number(raw.startWeek) || 1);
   if (Array.isArray(raw.chosen)) {
     return {
       id,
-      lockedCount: Math.max(0, Number(raw.lockedCount) || 0),
+      lockedWeeks: parseLockedWeeks(raw).filter((w) => w >= startWeek),
       chosen: raw.chosen.map((team) => (typeof team === 'string' ? team : '')),
+      startWeek,
     };
   }
   const week1 = typeof raw.week1 === 'string' && raw.week1 ? raw.week1 : '';
-  return { id, lockedCount: 0, chosen: week1 ? [week1] : [] };
+  return { id, lockedWeeks: [], chosen: week1 ? [week1] : [], startWeek };
+}
+
+function blankEntry(startWeek = 1): Entry {
+  return { id: String(Date.now()), lockedWeeks: [], chosen: [], startWeek: Math.max(1, startWeek) };
 }
 
 function loadEntries(mode: SurvivorMode): Entry[] {
   try {
     const raw = localStorage.getItem(storeKey(mode));
     const parsed = raw ? JSON.parse(raw) : [];
-    if (!Array.isArray(parsed) || parsed.length === 0) return [{ id: '1', lockedCount: 0, chosen: [] }];
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      return [{ id: '1', lockedWeeks: [], chosen: [], startWeek: 1 }];
+    }
     return parsed.map(parseEntry);
   } catch {
-    return [{ id: '1', lockedCount: 0, chosen: [] }];
+    return [{ id: '1', lockedWeeks: [], chosen: [], startWeek: 1 }];
   }
 }
 
@@ -59,8 +83,22 @@ function saveEntries(mode: SurvivorMode, entries: Entry[]) {
   localStorage.setItem(storeKey(mode), JSON.stringify(entries));
 }
 
-function locksFor(entry: Entry): Array<string | null> {
-  return entry.chosen.map((team) => (team ? team : null));
+function locksFor(entry: Entry, weekCount: number): Array<string | null> {
+  const start = entry.startWeek ?? 1;
+  const locks: Array<string | null> = Array.from({ length: weekCount }, () => null);
+  for (let w = 1; w <= weekCount; w++) {
+    if (w < start) {
+      locks[w - 1] = SKIP_WEEK_LOCK;
+      continue;
+    }
+    const team = entry.chosen[w - 1] ?? '';
+    locks[w - 1] = team || null;
+  }
+  return locks;
+}
+
+function isWeekLocked(entry: Entry, week: number): boolean {
+  return lockedWeekSet(entry.lockedWeeks).has(week);
 }
 
 function LockIcon({ locked }: { locked: boolean }) {
@@ -248,7 +286,10 @@ function PickDrop({
   }, [open, onClose]);
 
   return (
-    <div className={`surv-pick-drop${open ? ' is-focused' : ''}`} ref={wrapRef}>
+    <div
+      className={`surv-pick-drop${open ? ' is-focused' : ''}${selected ? '' : ' is-empty'}`}
+      ref={wrapRef}
+    >
       <PickSquare
         team={selectedOpt?.team}
         opp={selectedOpt?.opp}
@@ -348,9 +389,15 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
     return map;
   }, [board.seasonRows, board.weeks, invert]);
 
+  const weekCount = board.weeks.length;
   const { paths } = useMemo(
-    () => buildEntryPaths(board.seasonRows, invert, entries.map(locksFor)),
-    [board.seasonRows, invert, entries],
+    () =>
+      buildEntryPaths(
+        board.seasonRows,
+        invert,
+        entries.map((entry) => locksFor(entry, weekCount)),
+      ),
+    [board.seasonRows, invert, entries, weekCount],
   );
 
   function write(next: Entry[]) {
@@ -362,31 +409,40 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
     write(
       entries.map((entry) => {
         if (entry.id !== id) return entry;
+        if (isWeekLocked(entry, week)) return entry;
         const chosen = entry.chosen.slice();
         chosen[week - 1] = team;
-        for (let w = week + 1; w <= chosen.length; w++) {
-          if (chosen[w - 1] === team) chosen[w - 1] = '';
+        if (team) {
+          const locked = lockedWeekSet(entry.lockedWeeks);
+          for (let w = 1; w <= Math.max(chosen.length, board.weeks.length); w++) {
+            if (w === week || locked.has(w)) continue;
+            if (chosen[w - 1] === team) chosen[w - 1] = '';
+          }
         }
         return { ...entry, chosen };
       }),
     );
   }
 
-  function lockWeek(id: string) {
+  function lockWeek(id: string, week: number) {
     write(
       entries.map((entry, i) => {
         if (entry.id !== id) return entry;
-        const week = entry.lockedCount + 1;
-        if (!entry.chosen[week - 1]) return entry;
+        const start = entry.startWeek ?? 1;
+        if (week < start || isWeekLocked(entry, week)) return entry;
+        const team =
+          entry.chosen[week - 1] || paths[i]?.slots[week - 1]?.team || '';
+        if (!team) return entry;
         const chosen = entry.chosen.slice();
-        const nextWeek = week + 1;
-        if (nextWeek <= board.weeks.length && !chosen[nextWeek - 1]) {
-          const suggested = paths[i]?.slots[nextWeek - 1]?.team;
-          if (suggested && !chosen.slice(0, week).includes(suggested)) {
-            chosen[nextWeek - 1] = suggested;
-          }
+        chosen[week - 1] = team;
+        const nextLocked = lockedWeekSet(entry.lockedWeeks);
+        nextLocked.add(week);
+        for (let w = 1; w <= Math.max(chosen.length, board.weeks.length); w++) {
+          if (w === week || nextLocked.has(w)) continue;
+          if (chosen[w - 1] === team) chosen[w - 1] = '';
         }
-        return { ...entry, lockedCount: week, chosen };
+        const lockedWeeks = [...nextLocked].sort((a, b) => a - b);
+        return { ...entry, lockedWeeks, chosen };
       }),
     );
   }
@@ -395,18 +451,23 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
     write(
       entries.map((entry) => {
         if (entry.id !== id) return entry;
-        return { ...entry, lockedCount: Math.max(0, week - 1) };
+        const start = entry.startWeek ?? 1;
+        if (week < start) return entry;
+        const lockedWeeks = [...lockedWeekSet(entry.lockedWeeks)]
+          .filter((w) => w !== week)
+          .sort((a, b) => a - b);
+        return { ...entry, lockedWeeks };
       }),
     );
   }
 
   function addEntry() {
-    write([...entries, { id: String(Date.now()), lockedCount: 0, chosen: [] }]);
+    write([...entries, blankEntry(board.currentWeek)]);
   }
 
   function removeEntry(id: string) {
     if (entries.length <= 1) {
-      write([{ id: entries[0]?.id ?? '1', lockedCount: 0, chosen: [] }]);
+      write([{ id: entries[0]?.id ?? '1', lockedWeeks: [], chosen: [], startWeek: 1 }]);
       return;
     }
     write(entries.filter((entry) => entry.id !== id));
@@ -414,14 +475,26 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
 
   function applyBpa() {
     const locks = entries.map((entry) =>
-      bpaLocks(entry.chosen, entry.lockedCount, board.seasonRows, board.currentWeek),
+      bpaLocks(
+        entry.chosen,
+        entry.lockedWeeks,
+        board.seasonRows,
+        board.currentWeek,
+        entry.startWeek ?? 1,
+      ),
     );
     const { paths: nextPaths } = buildEntryPaths(board.seasonRows, invert, locks);
     write(
       entries.map((entry, i) => {
+        const start = entry.startWeek ?? 1;
         const slots = nextPaths[i]?.slots ?? [];
         const lock = locks[i] ?? [];
-        const chosen = slots.map((slot, week) => lock[week] ?? slot?.team ?? '');
+        const chosen = slots.map((slot, week) => {
+          if (week + 1 < start) return '';
+          const locked = lock[week];
+          if (locked === SKIP_WEEK_LOCK) return '';
+          return locked ?? slot?.team ?? '';
+        });
         return { ...entry, chosen };
       }),
     );
@@ -429,6 +502,13 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
 
   return (
     <div>
+      <p className="subtitle">
+        Click any unlocked week to pick a team, then lock it to freeze that week. You can lock future weeks first and
+        run Best Path Available to fill around them. Unlock a week to edit it again. Leftover weeks are dealt across
+        tickets so no row hoards every top side. The number is that ticket’s chance of surviving the full slate
+        (product of weekly odds; finished W/L count as 100%/0%). Independent weeks make long paths look small — we also
+        show 1 in X.
+      </p>
       <div className="surv-picks-toolbar">
         <button
           type="button"
@@ -439,11 +519,6 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
           Best Path Available
         </button>
       </div>
-      <p className="subtitle">
-        Pick a team, then lock it to move the dropdown to the next week. Unlock a week to edit it again — later weeks
-        keep their last pick. Leftover weeks are dealt across tickets so no row hoards every top side. The number is
-        that ticket’s chance of surviving the full slate (product of weekly odds; finished W/L count as 100%/0%). Independent weeks make long paths look small — we also show 1 in X.
-      </p>
       <div className="sos-chart-wrap">
         <table className="sos-chart surv-season surv-picks-table">
           <thead>
@@ -467,8 +542,13 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
           <tbody>
             {entries.map((entry, i) => {
               const path = paths[i];
-              const cursor = entry.lockedCount + 1;
-              const used = new Set(entry.chosen.slice(0, entry.lockedCount).filter(Boolean));
+              const startWeek = entry.startWeek ?? 1;
+              const lockedSet = lockedWeekSet(entry.lockedWeeks);
+              const used = new Set(
+                entry.chosen
+                  .map((team, idx) => (lockedSet.has(idx + 1) ? team : ''))
+                  .filter(Boolean),
+              );
               return (
                 <tr key={entry.id}>
                   <td className="sos-chart-team">
@@ -486,91 +566,93 @@ export default function SurvivorPicksView({ board, invert, mode }: { board: Surv
                     </div>
                   </td>
                   {board.weeks.map((w) => {
-                    const slot = path?.slots[w - 1] ?? null;
-                    const locked = w <= entry.lockedCount;
-                    const isCursor = w === cursor;
-                    const chosenTeam = entry.chosen[w - 1] ?? '';
-                    const weekOpts = optionsByWeek.get(w) ?? [];
-                    const shown =
-                      slot ??
-                      (chosenTeam
-                        ? {
-                            week: w,
-                            team: chosenTeam,
-                            teamName: chosenTeam,
-                            opp: '',
-                            pct: 0,
-                            result: null as 'W' | 'L' | null,
-                          }
-                        : null);
-                    const shownOpt = shown
-                      ? weekOpts.find((opt) => opt.team === shown.team)
-                      : undefined;
-                    if (isCursor) {
-                      const selected = chosenTeam;
-                      const opts = weekOpts.filter((opt) => !used.has(opt.team) || opt.team === selected);
-                      if (selected && !opts.some((opt) => opt.team === selected)) {
-                        opts.unshift({
-                          team: selected,
-                          teamName: selected,
-                          pct: 0,
-                          projPct: null,
-                          opp: '',
-                          result: null,
-                          score: null,
-                        });
-                      }
-                      const selectedOpt = opts.find((opt) => opt.team === selected);
-                      const dropKey = `${entry.id}-${w}`;
+                    if (w < startWeek) {
                       return (
                         <td key={w}>
                           <div className="surv-pick-cell">
-                            <PickDrop
-                              week={w}
-                              label={`Entry ${i + 1} week ${w} team`}
-                              selected={selected}
-                              selectedOpt={selectedOpt}
-                              opts={opts}
-                              open={openKey === dropKey}
-                              onOpen={() => setOpenKey(dropKey)}
-                              onClose={() => setOpenKey((key) => (key === dropKey ? null : key))}
-                              onPick={(team) => setPick(entry.id, w, team)}
-                            />
-                            <LockControl
-                              locked={false}
-                              disabled={!selected}
-                              onClick={() => lockWeek(entry.id)}
-                              title={selected ? `Lock week ${w}` : 'Pick a team first'}
-                              label={selected ? `Lock week ${w}` : `Week ${w} unlocked`}
-                            />
+                            <PickSquare empty="—" />
+                            <LockControl locked={false} />
                           </div>
                         </td>
                       );
                     }
-                    return (
-                      <td key={w}>
-                        <div className="surv-pick-cell">
-                          {shown ? (
-                            <PickSquare
-                              team={shown.team}
-                              opp={shownOpt?.opp ?? shown.opp}
-                              pct={shown.pct}
-                              result={shownOpt?.result ?? shown.result}
-                              locked={locked}
-                            />
-                          ) : (
-                            <PickSquare empty="—" />
-                          )}
-                          {locked ? (
+                    const slot = path?.slots[w - 1] ?? null;
+                    const locked = lockedSet.has(w);
+                    const chosenTeam = entry.chosen[w - 1] ?? '';
+                    const weekOpts = optionsByWeek.get(w) ?? [];
+                    const selected = chosenTeam || slot?.team || '';
+                    const selectedOpt =
+                      weekOpts.find((opt) => opt.team === selected) ??
+                      (selected
+                        ? {
+                            team: selected,
+                            teamName: selected,
+                            pct: slot?.pct ?? 0,
+                            projPct: null,
+                            opp: slot?.opp ?? '',
+                            result: slot?.result ?? null,
+                            score: null,
+                          }
+                        : undefined);
+                    if (locked) {
+                      return (
+                        <td key={w}>
+                          <div className="surv-pick-cell">
+                            {selectedOpt || selected ? (
+                              <PickSquare
+                                team={selectedOpt?.team ?? selected}
+                                opp={selectedOpt?.opp}
+                                pct={selectedOpt?.pct ?? slot?.pct}
+                                result={selectedOpt?.result ?? slot?.result}
+                                locked
+                              />
+                            ) : (
+                              <PickSquare empty="—" />
+                            )}
                             <LockControl
                               locked
                               onClick={() => unlockWeek(entry.id, w)}
                               title={`Unlock week ${w}`}
                               label={`Unlock week ${w}`}
                             />
-                          ) : (
-                            <LockControl locked={false} />
-                          )}
+                          </div>
+                        </td>
+                      );
+                    }
+                    const opts = weekOpts.filter((opt) => !used.has(opt.team) || opt.team === selected);
+                    if (selected && !opts.some((opt) => opt.team === selected)) {
+                      opts.unshift({
+                        team: selected,
+                        teamName: selected,
+                        pct: selectedOpt?.pct ?? 0,
+                        projPct: null,
+                        opp: selectedOpt?.opp ?? '',
+                        result: selectedOpt?.result ?? null,
+                        score: null,
+                      });
+                    }
+                    const dropKey = `${entry.id}-${w}`;
+                    return (
+                      <td key={w}>
+                        <div className="surv-pick-cell">
+                          <PickDrop
+                            week={w}
+                            label={`Entry ${i + 1} week ${w} team`}
+                            selected={selected}
+                            selectedOpt={opts.find((opt) => opt.team === selected) ?? selectedOpt}
+                            opts={opts}
+                            open={openKey === dropKey}
+                            onOpen={() => setOpenKey(dropKey)}
+                            onClose={() => setOpenKey((key) => (key === dropKey ? null : key))}
+                            onPick={(team) => setPick(entry.id, w, team)}
+                          />
+                          <LockControl
+                            locked={false}
+                            disabled={!selected}
+                            onClick={() => lockWeek(entry.id, w)}
+                            title={selected ? `Lock week ${w}` : 'Pick a team first'}
+                            label={selected ? `Lock week ${w}` : `Week ${w} unlocked`}
+                          />
                         </div>
                       </td>
                     );

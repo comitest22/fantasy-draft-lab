@@ -1,4 +1,4 @@
-:root {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            :root {
   color-scheme: dark;
   --bg: #0f1419;
   --surface: #1a2332;
@@ -27,6 +27,11 @@ body {
   min-height: 100vh;
 }
 
+/* Non-Home routes: always reserve/show the vertical scrollbar (no layout shift). */
+html.force-y-scroll {
+  overflow-y: scroll;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -42,34 +47,38 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow: visible;
 }
 
 .header-inner {
+  --header-pad-y: 0.75rem;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: var(--header-pad-y) 1.5rem;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.75rem 1rem;
+  overflow: visible;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0.06em;
+  gap: 0.6rem;
+  font-family: 'Bungee', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  letter-spacing: 0.04em;
   color: var(--accent);
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .brand-logo {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   display: block;
   flex-shrink: 0;
 }
@@ -77,7 +86,8 @@ a {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  align-items: center;
+  gap: 0.25rem;
   flex-shrink: 0;
   margin-left: auto;
 }
@@ -88,10 +98,46 @@ a {
   color: var(--muted);
 }
 
+button.nav-link {
+  font: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+.nav-link.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.nav-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
 .nav-link.active,
 .nav-link:hover {
   color: var(--text);
   background: var(--surface);
+}
+
+.nav-link.nav-icon-link.active,
+.nav-link.nav-icon-link:hover {
+  border-color: var(--accent);
+  background: var(--surface-2);
 }
 
 .page-tabs {
@@ -128,9 +174,9 @@ a {
   padding: 1.5rem;
 }
 
-.main:has(.cheat-page) {
+/* Hub children with crumbs sit closer under the header (Cheat Sheets look). */
+.main:has(.page-intro .crumb) {
   padding-top: 0.65rem;
-  padding-bottom: 1.5rem;
 }
 
 .panel {
@@ -150,8 +196,380 @@ a {
   gap: 1rem;
 }
 
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.page-intro:has(.crumb) {
+  gap: 0.7rem;
+}
+
+.page-intro:has(.page-title-icon.has-badge) {
+  gap: 0.9rem;
+}
+
 .page-intro .subtitle {
-  margin-top: 0.2rem;
+  margin-top: 0.1rem;
+}
+
+.page-intro + .tool-grid,
+.page-intro + .page-tabs,
+.page-intro + .sos-tabs-row {
+  margin-top: 0.35rem;
+}
+
+.page-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 0;
+}
+
+.page-title-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 12px;
+  background: #0b111b;
+  border: 1px solid var(--border);
+  line-height: 0;
+}
+
+.page-title-text {
+  min-width: 0;
+}
+
+.main:has(.home-landing) {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-landing {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+/* Width comes from the logo + acronym; search/buttons stretch to match. */
+.home-launch {
+  display: grid;
+  grid-template-columns: max-content;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 100%;
+}
+
+.home-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
+  max-width: 100%;
+}
+
+.home-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+.home-brand-logo {
+  width: 76px;
+  height: 76px;
+  border-radius: 16px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.home-brand-title {
+  margin: 0;
+  font-family: 'Bungee', 'Segoe UI', system-ui, sans-serif;
+  font-size: 3.35rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  line-height: 1.05;
+  text-shadow:
+    0 2px 0 #0b111b,
+    0 3px 0 color-mix(in srgb, var(--accent) 35%, #0b111b),
+    0 0 18px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.home-acronym {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.home-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* Size from the hero column, then stretch 20% wider and center under it. */
+  width: 0;
+  min-width: 120%;
+  justify-self: center;
+}
+
+.home-search-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-search-wrap .header-search {
+  max-width: 100%;
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.home-search-wrap .header-results {
+  text-align: left;
+}
+
+.home-menu-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.35rem;
+  width: 100%;
+}
+
+.nav-flyout {
+  position: relative;
+}
+
+.home-menu-flyout {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.home-menu-flyout .home-menu-btn {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+.nav-flyout-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlay under flyout icons so opening doesn’t reflow / shift the centered launchpad. */
+.home-menu-sub,
+.nav-flyout-sub {
+  position: absolute;
+  top: calc(100% + 0.55rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.15rem;
+  z-index: 20;
+  padding: 0.3rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0b111b;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.nav-flyout-header .nav-flyout-sub {
+  top: calc(100% + 0.35rem);
+  left: 0;
+  right: auto;
+  transform: none;
+}
+
+/* Invisible bridge so hover can cross the gap without closing. */
+.nav-flyout-header .nav-flyout-sub::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: 0.35rem;
+}
+
+@media (max-width: 1390px) {
+  /* Strategy is near the right edge — flip so the panel isn’t clipped. */
+  .nav-flyout-header.is-strategy .nav-flyout-sub {
+    left: auto;
+    right: 0;
+  }
+}
+
+.home-menu-sub-btn {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  padding: 0.35rem 0.55rem 0.35rem 0.3rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.home-menu-sub-btn:hover,
+.home-menu-sub-btn:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.home-menu-sub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 7px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.home-menu-sub-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.home-menu-sub-btn:hover .home-menu-sub-label,
+.home-menu-sub-btn:focus-visible .home-menu-sub-label {
+  color: var(--text);
+}
+
+.home-menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.15rem 0.1rem;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.home-menu-btn:hover,
+.home-menu-btn:focus-visible {
+  transform: translateY(-1px);
+}
+
+.home-menu-btn:active {
+  transform: translateY(2px);
+}
+
+/* Flyout open: sit slightly under the other icons with a depressed tile. */
+.home-menu-btn.is-active,
+.home-menu-btn.is-active:hover,
+.home-menu-btn.is-active:focus-visible,
+.home-menu-btn.is-active:active {
+  transform: translateY(3px);
+}
+
+.home-menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #0b111b;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.home-menu-btn:hover .home-menu-icon,
+.home-menu-btn:focus-visible .home-menu-icon {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.home-menu-btn.is-active .home-menu-icon {
+  border-color: var(--accent);
+  background: var(--surface-2);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.55);
+}
+
+.home-menu-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.home-menu-btn:hover .home-menu-label,
+.home-menu-btn:focus-visible .home-menu-label,
+.home-menu-btn.is-active .home-menu-label {
+  color: var(--text);
+}
+
+@media (max-width: 26rem) {
+  .home-menu-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+  }
+
+  .home-menu-btn,
+  .home-menu-flyout {
+    flex: 0 0 calc(33.333% - 0.35rem);
+  }
+}
+
+
+.page-intro .crumb {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.page-intro .crumb a,
+.page-intro .crumb .crumb-btn {
+  color: var(--muted);
+}
+
+.page-intro .crumb a:hover,
+.page-intro .crumb .crumb-btn:hover {
+  color: var(--accent);
 }
 
 .league-format-bar {
@@ -205,6 +623,11 @@ a {
   width: 100%;
   padding: 0.5rem 0.75rem;
   font-size: 0.95rem;
+}
+
+.header-search-input::placeholder {
+  color: color-mix(in srgb, var(--muted) 78%, transparent);
+  opacity: 1;
 }
 
 .header-results {
@@ -377,7 +800,7 @@ a {
 
 .player-news-list {
   list-style: none;
-  margin: 0.85rem 0 0;
+  margin: 0.45rem 0 0;
   padding: 0;
 }
 
@@ -545,6 +968,9 @@ h1, h2, h3 {
   place-items: center;
   padding: 1rem;
   z-index: 100;
+  /* Clip oversized children (e.g. bio FA strip min-content) so place-items
+     centering can’t park the shell outside the viewport. */
+  overflow: hidden;
 }
 
 .dialog {
@@ -554,6 +980,1424 @@ h1, h2, h3 {
   border-radius: 12px;
   padding: 1.25rem;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.mt-player-bio-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
+  width: min(1080px, calc(100% - 4.5rem));
+  max-width: 100%;
+  max-height: min(96vh, 980px);
+  min-width: 0;
+  text-align: left;
+  /* Keep FA strip overflow inside the shell, not the backdrop. */
+  overflow: hidden;
+}
+
+.mt-player-bio-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.55rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+}
+
+.mt-player-bio-rail-wrap {
+  /* Align under the modal column (nav left / actions right are ~2rem + gap). */
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.45rem;
+  margin-left: calc(2rem + 0.55rem);
+  margin-right: calc(2rem + 0.55rem);
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  /* Fixed band: tile stack + rail pad + classic scrollbar. Same for My Team,
+     Available, and Available’s loading empty — no content-driven height jump. */
+  --mt-bio-rail-band: 8.65rem;
+  --mt-bio-rail-tile: 6.65rem;
+  height: var(--mt-bio-rail-band);
+}
+
+.mt-bio-rail-source {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0.3rem;
+  /* Wide enough for equal My Team / Available + 2×4 pos grid. */
+  width: 16.75rem;
+  height: 100%;
+  min-height: 0;
+  padding: 0.32rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  box-sizing: border-box;
+  align-self: stretch;
+}
+
+/* [My Team] [Available]  — equal width, grow to fill height
+   [ All QB RB WR / TE FLEX DST K ] — full width 2×4 */
+.mt-bio-rail-source-modes {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.3rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1 1 0;
+}
+
+.mt-bio-rail-source-btn {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mt-bio-rail-source-btn-team,
+.mt-bio-rail-source-btn-avail {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 0.4rem 0.3rem;
+  font-size: 0.76rem;
+  line-height: 1.15;
+}
+
+.mt-bio-rail-source-btn.is-active {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: var(--text);
+}
+
+.mt-bio-rail-source-btn:hover:not(.is-active) {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.mt-bio-rail-source-pos {
+  display: grid;
+  /* 8 chips → 2 rows × 4, fill remaining width + height */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.22rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  flex: 1.35 1 0;
+  align-content: stretch;
+}
+
+.mt-bio-rail-source-pos.is-disabled {
+  opacity: 0.38;
+}
+
+.mt-bio-rail-pos-btn {
+  margin: 0;
+  padding: 0.22rem 0.1rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.1;
+  cursor: pointer;
+  text-align: center;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.mt-bio-rail-pos-btn.is-active {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.mt-bio-rail-pos-btn:disabled {
+  cursor: not-allowed;
+}
+
+.mt-bio-rail-pos-btn:hover:not(:disabled):not(.is-active) {
+  color: var(--text);
+}
+
+.mt-player-bio-rail {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Slight top/bottom pad so highlight→border ≈ highlight→scrollbar. */
+  padding: 0.08rem 0.35rem 0.2rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  box-sizing: border-box;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+.mt-bio-rail-empty {
+  margin: 0;
+  flex: 1 1 auto;
+  align-self: stretch;
+  padding: 0 0.65rem;
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.mt-player-bio-rail-scroll {
+  display: flex;
+  flex-direction: row;
+  /* Fill the fixed rail band; tiles center in the row above the scrollbar. */
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.48rem;
+  /* min-width:auto (default) would expand to all FA chips and blow out the
+     fixed backdrop; force shrink so overflow-x scrolls inside the rail. */
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Same reserved track in both modes so content area doesn’t jump. */
+  scrollbar-gutter: stable;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.mt-bio-rail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.22rem;
+  flex: 0 0 auto;
+  width: 5.85rem;
+  /* Fixed tile height so name + week-proj don’t change the strip band. */
+  height: var(--mt-bio-rail-tile);
+  margin: 0;
+  /* Breathing room around highlight — same in My Team and Available. */
+  padding: 0.42rem 0.34rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.mt-bio-rail-divider {
+  flex: 0 0 auto;
+  /* Match fixed player-tile height. */
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+  width: 1.65rem;
+  height: var(--mt-bio-rail-tile);
+  margin: 0 0.1rem;
+  padding: 0.4rem 0;
+  box-sizing: border-box;
+}
+
+.mt-bio-rail-divider-line {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 1.1rem;
+  background: rgba(226, 232, 240, 0.28);
+}
+
+.mt-bio-rail-divider-label {
+  flex: 0 0 auto;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.52rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.mt-bio-rail-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mt-bio-rail-item.is-active {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--border);
+}
+
+.mt-bio-rail-sil {
+  position: relative;
+  width: 2.15rem;
+  height: 2.15rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(148, 163, 184, 0.18);
+  color: rgba(226, 232, 240, 0.72);
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+.mt-bio-rail-badge {
+  position: absolute;
+  top: -0.22rem;
+  right: -0.72rem;
+  margin: 0;
+  padding: 0.02rem 0.18rem;
+  font-size: 0.44rem;
+  line-height: 1.15;
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.mt-bio-rail-sil.pos-QB {
+  background: rgba(59, 130, 246, 0.22);
+  color: #93c5fd;
+}
+.mt-bio-rail-sil.pos-RB {
+  background: rgba(34, 197, 94, 0.22);
+  color: #86efac;
+}
+.mt-bio-rail-sil.pos-WR {
+  background: rgba(236, 72, 153, 0.22);
+  color: #f9a8d4;
+}
+.mt-bio-rail-sil.pos-TE {
+  background: rgba(168, 85, 247, 0.24);
+  color: #d8b4fe;
+}
+.mt-bio-rail-sil.pos-K {
+  background: rgba(148, 163, 184, 0.22);
+  color: #cbd5e1;
+}
+.mt-bio-rail-sil.pos-DST {
+  background: rgba(20, 184, 166, 0.24);
+  color: #5eead4;
+}
+
+.mt-bio-rail-sil-icon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.mt-bio-rail-name {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: calc(0.59rem * 1.15);
+  font-size: 0.59rem;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--text);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mt-bio-rail-proj {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: calc(0.59rem * 1.15);
+  font-size: 0.59rem;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--muted);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.mt-bio-rail-item .pos-pill {
+  min-width: 2.1rem;
+  margin-top: 0.24rem;
+  font-size: 0.55rem;
+  padding: 0.05rem 0.28rem;
+}
+
+.mt-player-bio {
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0.7rem 0.9rem 0.75rem;
+  text-align: left;
+}
+
+/* Covers bio content only — My Team / Available + player strip stay interactive. */
+.mt-player-bio-load-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 14, 26, 0.72);
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+.mt-player-bio-load-dialog {
+  margin: 0;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.mt-player-bio-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  margin: 0.15rem 0 0;
+}
+
+.mt-player-bio-close,
+.mt-player-bio-nav {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+.mt-player-bio-row > .mt-player-bio-nav {
+  margin: 0.15rem 0 0;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.mt-player-bio-actions > .mt-player-bio-nav {
+  margin: 0;
+}
+
+.mt-player-bio-close:hover,
+.mt-player-bio-nav:hover:not(:disabled) {
+  background: var(--bg);
+}
+
+.mt-player-bio-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.mt-player-bio .compare-dialog.compare-page,
+.mt-player-bio .compare-dialog.solo,
+.mt-player-bio .roster-bio {
+  width: 100%;
+  max-width: none;
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.mt-player-bio .roster-bio {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  /* Prefer fitting; scroll only if SOS would still clip after shrink. */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.roster-bio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas:
+    'top depth'
+    'ratings depth'
+    'stats stats'
+    'log news'
+    'sos sos';
+  /*
+    Stats row is content-sized (short layout is 2-row metrics).
+    Log/news keep a readable floor (~4–5 week rows) and take leftover height.
+  */
+  grid-template-rows: auto auto auto minmax(13.5rem, 1fr) auto;
+  gap: 0.55rem;
+  align-items: stretch;
+}
+
+@media (min-height: 900px) {
+  .roster-bio {
+    /* Tall viewports: keep a roomier log/news floor (~6 week rows). */
+    grid-template-rows: auto auto minmax(7.75rem, 9rem) minmax(16.75rem, 1fr) auto;
+  }
+}
+
+@media (max-height: 820px) {
+  .mt-player-bio-shell {
+    max-height: min(98vh, 980px);
+  }
+
+  .roster-bio {
+    grid-template-rows: auto auto auto minmax(12rem, 1fr) auto;
+    gap: 0.4rem;
+  }
+}
+
+.roster-bio-top {
+  grid-area: top;
+  display: flex;
+  align-items: stretch;
+}
+
+.roster-bio-top .compare-head.roster-bio-head {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.roster-bio-head-id {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.roster-bio-head-id > span {
+  /* Reserve the meta line (POS · TEAM · ESPN #) while gated load clears it. */
+  min-height: 1.15em;
+  line-height: 1.15;
+}
+
+.roster-bio-top .compare-head strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+/* Shared name-card badge chrome — beat `.compare-head span` so injury + pool
+   stay matched; size tracks the previous health-badge look (~0.8rem). */
+.roster-bio-top .compare-head .roster-bio-injury,
+.roster-bio-top .compare-head .roster-bio-pool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0;
+  box-sizing: border-box;
+  height: 1.55em;
+  padding: 0 0.42rem;
+  border-radius: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  position: relative;
+  top: 0.02em;
+}
+
+.roster-bio-top .compare-head .roster-bio-pool {
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.roster-bio-top .compare-head .roster-bio-pool-freeagent {
+  color: #86efac;
+  background: color-mix(in srgb, #4ade80 16%, transparent);
+  border-color: color-mix(in srgb, #4ade80 42%, transparent);
+}
+
+.roster-bio-top .compare-head .roster-bio-pool-waivers {
+  color: #fcd34d;
+  background: color-mix(in srgb, #f59e0b 18%, transparent);
+  border-color: color-mix(in srgb, #f59e0b 45%, transparent);
+}
+
+.roster-bio-top .compare-head .roster-bio-pool-onteam {
+  color: #93c5fd;
+  background: color-mix(in srgb, #3b82f6 18%, transparent);
+  border-color: color-mix(in srgb, #3b82f6 42%, transparent);
+}
+
+.roster-bio-top .compare-head .roster-bio-pool-mine {
+  color: #e2e8f0;
+  background: color-mix(in srgb, #94a3b8 18%, transparent);
+  border-color: color-mix(in srgb, #94a3b8 40%, transparent);
+}
+
+/* Beat `.compare-head span { color: muted }` so tone colors stick. */
+.roster-bio-top .compare-head .status-badge-warn {
+  color: #fcd34d;
+}
+
+.roster-bio-top .compare-head .status-badge-bad {
+  color: #fca5a5;
+}
+
+.roster-bio-head-ranks {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.roster-bio-head-rank-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  min-width: 3.1rem;
+}
+
+/* Beat `.compare-head span` so labels match WEEK PROJECTION style (incl. nested ROS/RANK). */
+.roster-bio-head .roster-bio-head-rank-label,
+.roster-bio-head .roster-bio-head-rank-label span {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Two-line ROS / RANK under the pill; week col stays single-line (badges top-align). */
+.roster-bio-head .roster-bio-head-rank-label-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.08rem;
+  text-align: center;
+}
+
+/* Beat `.compare-head span` (ranks live inside the name card). */
+.roster-bio-head .roster-bio-ratings-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  line-height: 1;
+  /* Same box as .is-heat so empty — doesn’t change head height. */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.85rem;
+  min-height: calc(1.1rem + 0.32rem);
+  padding: 0.16rem 0.32rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+}
+
+.roster-bio-head .roster-bio-ratings-value.is-heat {
+  border-color: transparent;
+}
+
+.roster-bio-head .roster-bio-ratings-value.is-empty {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.roster-bio-head .roster-bio-ratings-value.is-bye {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.1rem;
+  padding: 0.22rem 0.4rem;
+  border-radius: 6px;
+  border: 1.5px solid rgba(226, 232, 240, 0.55);
+  background: transparent;
+  box-sizing: border-box;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.roster-bio-week-proj {
+  grid-area: ratings;
+  min-width: 0;
+  padding: 0.4rem 0.55rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem 0.75rem;
+  align-items: start;
+}
+
+.roster-bio-week-proj-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  min-width: 0;
+  align-items: flex-start;
+}
+
+.roster-bio-week-proj-label {
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.roster-bio-week-proj-value {
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  line-height: 1.15;
+  margin: 0;
+  /* Lock value band so — vs 14.2 doesn’t resize the projection strip. */
+  min-height: 1.44rem;
+  display: flex;
+  align-items: center;
+}
+
+.roster-bio-week-proj-value.is-matchup {
+  font-size: 1.1rem;
+  min-height: 1.27rem;
+}
+
+.roster-bio-week-proj-value.is-empty {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* OPRK text heat on `{OPP} vs {POS}` (1 = toughest) — same bands as lineup. */
+.roster-bio-week-proj-value.is-tough {
+  color: #f87171;
+}
+
+.roster-bio-week-proj-value.is-tough-soft {
+  color: #fca5a5;
+}
+
+.roster-bio-week-proj-value.is-easy {
+  color: #4ade80;
+}
+
+.roster-bio-week-proj-value.is-easy-soft {
+  color: #86efac;
+}
+
+.roster-bio-stats {
+  grid-area: stats;
+  min-width: 0;
+  min-height: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-bio-stats-panel {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.35rem 0.65rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.roster-bio-stats-head {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 0.25rem;
+  flex: 0 0 auto;
+}
+
+.roster-bio-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.15rem 0.85rem;
+  flex: 1 1 auto;
+  min-height: 0;
+  align-content: start;
+}
+
+/* Season: 8 metrics → 4 × 2. Draft: 11 metrics → 6 × 2 (no 3rd-row scroll). */
+.roster-bio-stats-grid.is-season {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.roster-bio-stats-grid.is-draft {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  align-content: start;
+}
+
+.roster-bio-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05rem;
+  min-width: 0;
+  padding: 0.14rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.roster-bio-stat-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  min-height: calc(0.72rem * 1.2);
+}
+
+.roster-bio-stats-panel .compare-val {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  min-height: calc(0.95rem * 1.2);
+  font-variant-numeric: tabular-nums;
+}
+
+.roster-bio-stats-panel .player-takeaways {
+  margin-top: 0.75rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--border);
+}
+
+/* After base panel rules so display:grid wins over display:flex. */
+@media (max-height: 900px) {
+  .roster-bio-stats-panel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: start;
+    column-gap: 0.55rem;
+    row-gap: 0.3rem;
+    padding: 0.28rem 0.5rem 0.32rem;
+    /* Size to the 2-row grid; scroll only if draft takeaways overflow. */
+    flex: 0 0 auto;
+    overflow-y: auto;
+  }
+
+  .roster-bio-stats {
+    flex: 0 0 auto;
+  }
+
+  .roster-bio-stats-head {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+    align-self: start;
+  }
+
+  .roster-bio-stats-head .player-gamelog-pills {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0.22rem;
+    height: auto;
+  }
+
+  .roster-bio-stats-head .player-gamelog-pill {
+    width: 100%;
+    text-align: center;
+    font-size: 0.64rem;
+    padding: 0.2rem 0.42rem;
+  }
+
+  .roster-bio-stats-grid {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 0.1rem 0.65rem;
+    /* Keep 2 rows so log/news keep height. */
+    grid-auto-flow: row;
+    grid-template-rows: repeat(2, auto);
+    align-content: start;
+  }
+
+  .roster-bio-stats-grid.is-season {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .roster-bio-stats-grid.is-draft {
+    /* 11 metrics → 6 × 2. */
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-rows: repeat(2, auto);
+  }
+
+  .roster-bio-stat {
+    padding: 0.08rem 0;
+  }
+
+  .roster-bio-stat-label {
+    font-size: 0.62rem;
+    min-height: calc(0.62rem * 1.2);
+  }
+
+  .roster-bio-stats-panel .compare-val {
+    font-size: 0.82rem;
+    min-height: calc(0.82rem * 1.2);
+  }
+
+  .roster-bio-stats-panel .compare-prior {
+    font-size: 0.7rem;
+  }
+
+  .roster-bio-stats-panel .player-takeaways {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 0.2rem;
+    padding-top: 0.4rem;
+  }
+
+  .roster-bio-stats-panel .player-takeaways h3 {
+    font-size: 0.78rem;
+  }
+
+  .roster-bio-stats-panel .player-takeaways p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .roster-bio-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.roster-bio-news {
+  grid-area: news;
+  min-width: 0;
+  /* Match log column height (same trick as game-log body). */
+  height: 0;
+  min-height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-bio-news .player-news {
+  flex: 1 1 auto;
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 0.55rem 0.7rem;
+  border-radius: 10px;
+  background: var(--surface-2);
+  text-align: left;
+}
+
+.roster-bio-news .player-news h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  text-align: left;
+}
+
+.roster-bio-news .player-news-list {
+  margin-top: 0.3rem;
+  text-align: left;
+}
+
+.roster-bio-news .player-news-list a,
+.roster-bio-news .player-news-list span {
+  text-align: left;
+}
+
+.roster-bio-news .player-news > .status,
+.roster-bio-news .player-news > .error,
+.roster-bio-news .player-news > .player-news-empty {
+  margin-top: 0.3rem;
+}
+
+.roster-bio-news .player-news-list li {
+  padding: 0.4rem 0;
+}
+
+.roster-bio-news .player-news-list a {
+  font-size: 0.88rem;
+  line-height: 1.25;
+}
+
+.roster-bio-depth {
+  grid-area: depth;
+  min-width: 0;
+  align-self: stretch;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.35rem 0.45rem 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+}
+
+.roster-bio-depth .depth-chart {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.roster-bio-depth .depth-chart h3 {
+  flex: 0 0 auto;
+  font-size: 0.78rem;
+  margin: 0 0 0.25rem;
+  text-align: center;
+}
+
+.roster-bio-depth .depth-chart-note {
+  font-size: 0.68rem;
+  margin: 0 0 0.3rem;
+}
+
+.roster-bio-depth .depth-chart-row {
+  gap: 0.3rem 0.35rem;
+  padding: 0.12rem 0.25rem;
+}
+
+.roster-bio-depth .depth-chart-row .pos-pill {
+  min-width: 2.3rem;
+  font-size: 0.58rem;
+  padding: 0.06rem 0.28rem;
+}
+
+.roster-bio-depth .depth-chart-who {
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  min-width: 0;
+}
+
+.roster-bio-depth .depth-chart-name {
+  flex: 0 1 auto;
+  min-width: 0;
+  font-size: 0.76rem;
+}
+
+.roster-bio-depth .depth-chart-rank {
+  font-size: 0.66rem;
+}
+
+.roster-bio-depth .depth-chart-who .status-badge {
+  flex: 0 0 auto;
+  margin-left: 0;
+  padding: 0.02rem 0.22rem;
+  font-size: 0.55rem;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+}
+
+.roster-bio-depth .depth-chart-row.is-clickable {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.roster-bio-depth .depth-chart-row.is-clickable:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.roster-bio-depth .depth-chart-row.is-clickable.is-self,
+.roster-bio-depth .depth-chart-row.is-clickable.is-self:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Pills are normally ~20% fill; bump opacity on hover/selected so grey doesn’t wash them out. */
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-QB,
+.roster-bio-depth .depth-chart-row.is-self .pos-QB {
+  background: rgba(59, 130, 246, 0.42);
+}
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-RB,
+.roster-bio-depth .depth-chart-row.is-self .pos-RB {
+  background: rgba(34, 197, 94, 0.42);
+}
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-WR,
+.roster-bio-depth .depth-chart-row.is-self .pos-WR {
+  background: rgba(236, 72, 153, 0.42);
+}
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-TE,
+.roster-bio-depth .depth-chart-row.is-self .pos-TE {
+  background: rgba(168, 85, 247, 0.44);
+}
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-K,
+.roster-bio-depth .depth-chart-row.is-self .pos-K {
+  background: rgba(148, 163, 184, 0.42);
+}
+.roster-bio-depth .depth-chart-row.is-clickable:hover .pos-DST,
+.roster-bio-depth .depth-chart-row.is-self .pos-DST {
+  background: rgba(20, 184, 166, 0.44);
+}
+
+/* Fills box height; JS sizes rows/column to fit. Extra columns scroll horizontally. */
+.roster-bio-depth .depth-chart-cols {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.2rem 0.5rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior: contain;
+  padding-bottom: 0.45rem;
+}
+
+.roster-bio-depth .depth-chart-cols ol {
+  flex: 0 0 calc(50% - 0.25rem);
+  min-width: 8.25rem;
+  max-width: calc(50% - 0.25rem);
+}
+
+.roster-bio-depth .depth-chart:not(.is-split) .depth-chart-cols ol {
+  flex: 1 1 auto;
+  max-width: none;
+  min-width: 0;
+}
+
+.roster-bio-depth .depth-chart.is-split .depth-chart-cols {
+  grid-template-columns: unset;
+}
+
+.roster-bio-error {
+  grid-column: 1 / -1;
+}
+
+.player-gamelog-roster {
+  display: contents;
+}
+
+.player-gamelog-roster > .player-sos {
+  grid-area: sos;
+  width: 100%;
+  min-width: 0;
+  /* Keep the strip from being crushed when log/news absorb height. */
+  min-height: min-content;
+  margin-bottom: 0;
+  padding: 0.4rem 0.55rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+}
+
+.player-gamelog-roster > .player-gamelog-body {
+  grid-area: log;
+  align-self: stretch;
+  /* Match stats row height without letting the table expand the grid row. */
+  height: 0;
+  min-height: 100%;
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0.55rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface-2);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-head {
+  flex: 0 0 auto;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-swap {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-scroller {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-more-slot {
+  flex: 0 0 auto;
+  /* Match .player-gamelog-more line box so loading shells don’t shrink vs loaded. */
+  min-height: calc(0.78rem * 1.2 + 0.4rem + 0.2rem);
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-more-slot .player-gamelog-more {
+  flex: 1 1 auto;
+  width: 100%;
+  margin-top: 0;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-more.is-reserved {
+  /* Keep layout size; don’t use visibility:hidden alone (flex + display:contents
+     could still let the log/news row breathe differently under the bio overlay). */
+  color: transparent;
+  pointer-events: none;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-head h3 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.player-gamelog-roster > .player-sos .player-sos-head {
+  margin-bottom: 0.25rem;
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-2);
+}
+
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-table th,
+.player-gamelog-roster > .player-gamelog-body .player-gamelog-table td {
+  padding: 0.22rem 0.3rem;
+}
+
+.player-gamelog-roster > .player-sos.player-sos-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.player-sos-loading .player-sos-head {
+  width: 100%;
+}
+
+.player-sos .sos-match.player-sos-match-skeleton {
+  background: rgba(0, 0, 0, 0.14);
+  border: 1px dashed var(--border);
+  /* Match `.player-sos .sos-match` box size exactly. */
+  min-width: 2.85rem;
+  min-height: 2.35rem;
+  box-sizing: border-box;
+}
+
+/* Roster bio: stretch the full-season strip to the modal width. */
+.player-gamelog-roster > .player-sos .player-sos-row.is-full-strip {
+  width: 100%;
+}
+
+.player-gamelog-roster > .player-sos .player-sos-row.is-full-strip .player-sos-week {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.player-gamelog-roster > .player-sos .player-sos-row.is-full-strip .sos-match {
+  width: 100%;
+  min-width: 0;
+}
+
+.player-gamelog-roster > .player-sos .player-sos-row.is-full-strip .sos-match.player-sos-match-skeleton {
+  min-width: 0;
+}
+
+.player-gamelog-loading {
+  margin-top: 0.35rem;
+}
+
+.player-gamelog-scroller.is-loading {
+  position: relative;
+}
+
+.player-gamelog-skeleton-row td {
+  color: var(--muted);
+  opacity: 0.4;
+}
+
+/* Full-scroller overlay — skeleton table holds height; label does not add layout. */
+.player-gamelog-loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+  background: rgba(15, 20, 25, 0.28);
+}
+
+.depth-chart-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem 0.75rem;
+}
+
+.depth-chart.is-split .depth-chart-cols {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.depth-chart-cols ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 64rem) {
+  .roster-bio {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-template-areas:
+      'top'
+      'ratings'
+      'depth'
+      'stats'
+      'log'
+      'news'
+      'sos';
+    overflow: auto;
+  }
+
+  .mt-player-bio {
+    overflow: auto;
+  }
+
+  .player-gamelog-roster > .player-gamelog-body {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .roster-bio-news {
+    height: auto;
+    min-height: 0;
+  }
+
+  .roster-bio-news .player-news {
+    height: auto;
+    max-height: 12rem;
+  }
+
+  .roster-bio-stats-grid,
+  .roster-bio-stats-grid.is-season,
+  .roster-bio-stats-grid.is-draft {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .roster-bio-top .compare-head {
+    max-width: none;
+  }
+
+  /* Stacked layout: size to content. Desktop flex-fill collapses cols to 0 here. */
+  .roster-bio-depth {
+    height: auto;
+  }
+
+  .roster-bio-depth .depth-chart {
+    flex: 0 1 auto;
+    min-height: auto;
+  }
+
+  .roster-bio-depth .depth-chart-cols {
+    flex: 0 1 auto;
+    min-height: auto;
+  }
+
+  .depth-chart.is-split .depth-chart-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .roster-bio-depth .depth-chart.is-split .depth-chart-cols {
+    display: flex;
+  }
 }
 
 .dialog h2 {
@@ -569,6 +2413,71 @@ h1, h2, h3 {
   display: flex;
   justify-content: flex-end;
   gap: 0.75rem;
+}
+
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  width: 100%;
+  min-height: min(62vh, 30rem);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.page-loading-dots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.page-loading-dots span {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: 0.28;
+  animation: page-loading-dot 1.05s ease-in-out infinite;
+}
+
+.page-loading-dots span:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.page-loading-dots span:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+.page-loading-dots span:nth-child(4) {
+  animation-delay: 0.42s;
+}
+
+.page-loading-label {
+  margin: 0;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+@keyframes page-loading-dot {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-0.28rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loading-dots span {
+    animation: none;
+    opacity: 0.7;
+  }
 }
 
 .status,
@@ -1019,6 +2928,12 @@ select {
   border-top: 1px solid var(--border);
 }
 
+.depth-chart.depth-chart-inline {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .depth-chart h3 {
   margin: 0 0 0.15rem;
   font-size: 0.95rem;
@@ -1043,6 +2958,11 @@ select {
   gap: 0.4rem 0.5rem;
   padding: 0.22rem 0.35rem;
   border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.depth-chart ol > li {
+  list-style: none;
 }
 
 .depth-chart-row.is-self {
@@ -1055,6 +2975,13 @@ select {
   padding: 0.08rem 0.32rem;
 }
 
+.depth-chart-who {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
 .depth-chart-name {
   min-width: 0;
   overflow: hidden;
@@ -1062,6 +2989,15 @@ select {
   white-space: nowrap;
   font-size: 0.82rem;
   font-weight: 700;
+}
+
+.depth-chart-who .depth-chart-name {
+  flex: 0 1 auto;
+}
+
+.depth-chart-who .status-badge {
+  flex: 0 0 auto;
+  margin-left: 0;
 }
 
 .depth-chart-row.is-self .depth-chart-name {
@@ -1340,9 +3276,37 @@ select {
   font-weight: 700;
   letter-spacing: 0.04em;
   vertical-align: middle;
-  background: rgba(239, 68, 68, 0.22);
+  background: rgba(239, 68, 68, 0.4);
   color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.4);
+  border: 1px solid rgba(239, 68, 68, 0.6);
+}
+
+.status-badge-warn {
+  background: rgba(245, 158, 11, 0.4);
+  color: #fcd34d;
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+.status-badge-bad {
+  background: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.6);
+}
+
+.status-text {
+  display: inline;
+  margin-left: 0.35rem;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.status-text-warn {
+  color: #fbbf24;
+}
+
+.status-text-bad {
+  color: #f87171;
 }
 
 .seat-banner {
@@ -1779,11 +3743,41 @@ select {
 }
 
 .player-sos-ros {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   margin-left: auto;
   color: var(--muted);
   font-size: 0.75rem;
   font-weight: 700;
+  line-height: 1;
   white-space: nowrap;
+}
+
+.player-sos-ros-range,
+.player-sos-ros-body {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Same green→white rankHeat as week cells / bio rank pills. */
+.player-sos-ros-quality {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-left: 0.35rem;
+  /* Slightly more top / left padding so uppercase + letter-spacing reads centered. */
+  padding: 0.14rem 0.26rem 0.1rem 0.32rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1;
 }
 
 .player-sos-scroller {
@@ -1860,10 +3854,15 @@ select {
 }
 
 .player-gamelog-pill.active,
-.player-gamelog-pill:hover {
+.player-gamelog-pill:hover:not(:disabled) {
   color: var(--text);
   border-color: var(--accent);
   background: var(--accent-dim);
+}
+
+.player-gamelog-pill:disabled {
+  cursor: default;
+  opacity: 0.85;
 }
 
 .player-gamelog-head span {
@@ -2075,6 +4074,127 @@ select {
   color: var(--danger);
 }
 
+.tools-mode-backdrop {
+  position: fixed;
+}
+
+.tools-mode-dialog {
+  width: min(440px, 100%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tools-mode-dialog .page-title {
+  justify-content: center;
+  margin: 0;
+}
+
+.tools-mode-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.tools-mode-tile {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1rem 0.75rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.tools-mode-tile:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.tools-mode-tile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 12px;
+  background: #0b111b;
+  border: 1px solid var(--border);
+  line-height: 0;
+}
+
+.tools-mode-tile-label {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.tools-hub-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tools-hub-body.is-faded {
+  opacity: 0.35;
+  pointer-events: none;
+  user-select: none;
+  filter: saturate(0.85);
+}
+
+.crumb-btn {
+  display: inline;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.crumb-btn:hover {
+  color: var(--accent);
+}
+
+.page-title-icon.has-badge {
+  position: relative;
+}
+
+.page-title-badge {
+  position: absolute;
+  top: -0.7rem;
+  right: -0.7rem;
+  display: grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 50%;
+  background: #0b111b;
+  border: 1px solid var(--border);
+  line-height: 0;
+  overflow: hidden;
+  filter:
+    drop-shadow(0 0 1px var(--surface))
+    drop-shadow(0 1px 1.5px rgba(0, 0, 0, 0.45));
+}
+
+.page-title-badge svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex-shrink: 0;
+  /* Small strokes read high-left in a circle; nudge for optical center. */
+  transform: translate(0.5px, 0.5px);
+}
+
 .tool-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -2153,6 +4273,11 @@ select {
   border-color: var(--accent);
 }
 
+.sos-week-range input[type='number']:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .sos-week-range button {
   padding: 0.28rem 0.7rem;
   border-radius: 999px;
@@ -2164,9 +4289,14 @@ select {
   font-size: 0.78rem;
 }
 
-.sos-week-range button:hover {
+.sos-week-range button:hover:not(:disabled) {
   border-color: var(--accent);
   background: var(--accent-dim);
+}
+
+.sos-week-range button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .sos-week-remaining {
@@ -2180,10 +4310,20 @@ select {
   user-select: none;
 }
 
+.sos-week-remaining.is-disabled,
+.sos-week-remaining:has(input:disabled) {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
 .sos-week-remaining input {
   width: auto;
   margin: 0;
   accent-color: var(--accent);
+}
+
+.sos-week-remaining input:disabled {
+  cursor: not-allowed;
 }
 
 .sos-legend-row {
@@ -2504,7 +4644,7 @@ select {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-  padding: 0.1rem 0 0.08rem;
+  padding: 0.32rem 0 0.1rem;
   border-radius: 6px;
 }
 
@@ -2583,6 +4723,10 @@ select {
   min-width: 4.35rem;
 }
 
+.surv-season thead th:not(.sos-chart-team) {
+  vertical-align: bottom;
+}
+
 .surv-season .sos-match,
 .surv-season .sos-match.bye {
   min-width: 4.1rem;
@@ -2620,7 +4764,11 @@ select {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 0.2rem;
+  gap: 0.7rem;
+}
+
+.cheat-head.page-intro:has(.page-title-icon.has-badge) {
+  gap: 0.9rem;
 }
 
 .cheat-crumb {
@@ -2628,6 +4776,17 @@ select {
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--muted);
+}
+
+.page-title.cheat-crumb .page-title-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 8px;
+}
+
+.page-title.cheat-crumb .page-title-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 .cheat-crumb a {
@@ -3188,18 +5347,121 @@ select {
   }
 }
 
+.surv-weeks-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0.35rem auto 0.85rem;
+}
+
+.surv-weeks-label {
+  align-self: flex-start;
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #94a3b8);
+  white-space: nowrap;
+}
+
 .surv-weeks {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 0.35rem;
-  margin: 0.35rem 0 0.85rem;
+}
+
+/* Rectangular week chips — same family as SOS / season match boxes, not pills. */
+.surv-week-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.55rem;
+  min-height: 2.55rem;
+  padding: 0.28rem 0.35rem;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.surv-week-box:hover,
+.surv-week-box.active {
+  color: var(--text);
+  border-color: var(--accent);
+  background: var(--accent-dim);
+}
+
+.surv-picks-board {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem 0.75rem;
+  margin-bottom: 0.9rem;
+  align-items: stretch;
+}
+
+.surv-picks-group {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 0;
+}
+
+.surv-picks-top {
+  grid-column: 1 / 4;
+}
+
+.surv-picks-contra {
+  grid-column: 4;
+}
+
+.surv-picks-label {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #94a3b8);
 }
 
 .surv-picks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.65rem;
-  margin-bottom: 0.9rem;
+  gap: 0.75rem;
+  flex: 1;
+  align-items: stretch;
+}
+
+.surv-picks-top .surv-picks {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.surv-picks-contra .surv-picks {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (max-width: 1100px) {
+  .surv-picks-board {
+    grid-template-columns: 1fr;
+  }
+
+  .surv-picks-top,
+  .surv-picks-contra {
+    grid-column: auto;
+  }
+
+  .surv-picks-top .surv-picks {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
 }
 
 .surv-pick,
@@ -3217,10 +5479,202 @@ select {
 
 .surv-pick {
   cursor: pointer;
+  gap: 0.55rem;
+  min-height: 10.5rem;
+  height: 100%;
+  padding: 0.9rem 1rem;
+  box-sizing: border-box;
 }
 
 .surv-pick:hover {
   border-color: var(--accent);
+}
+
+.surv-pick.is-contrarian {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+}
+
+.surv-pick.is-chalk {
+  border-color: color-mix(in srgb, #d97706 50%, var(--border));
+}
+
+.surv-pick-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.surv-pick-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.surv-pick-title strong {
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.surv-pick-match {
+  font-size: 0.82rem;
+  color: var(--muted, #94a3b8);
+}
+
+.surv-pick-pct-row {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.surv-pick-pct {
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 0.95rem;
+  min-width: 3.2rem;
+  text-align: center;
+}
+
+.surv-pick-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.surv-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.72rem;
+  line-height: 1;
+  padding: 0.28rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 80%, #000);
+  color: var(--muted, #94a3b8);
+}
+
+.surv-pill.is-warn {
+  border-color: color-mix(in srgb, #d97706 55%, var(--border));
+  color: #fbbf24;
+}
+
+.surv-pill.is-alt {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border));
+  color: var(--accent);
+}
+
+.surv-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 0.65rem;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.surv-pick-bullets,
+.surv-notes-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.surv-pick-bullets li,
+.surv-notes-list li {
+  position: relative;
+  padding-left: 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.surv-pick-bullets li::before,
+.surv-notes-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+.surv-pick-bullets li.is-pro,
+.surv-notes-list li.is-pro,
+.surv-adj.is-pro {
+  color: #4ade80;
+}
+
+.surv-pick-bullets li.is-con,
+.surv-notes-list li.is-con,
+.surv-adj.is-con {
+  color: #f87171;
+}
+
+.surv-pick-bullets li.is-slate,
+.surv-notes-list li.is-slate {
+  color: var(--muted, #94a3b8);
+}
+
+.surv-notes-row td {
+  padding-top: 0;
+  padding-bottom: 0.75rem;
+  border-top: none;
+  background: color-mix(in srgb, var(--surface) 92%, #000);
+}
+
+.surv-notes-row.is-used td {
+  opacity: 0.55;
+}
+
+.surv-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1.25rem;
+  padding: 0.15rem 0.15rem 0.1rem;
+}
+
+.surv-notes-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted, #94a3b8);
+  margin-bottom: 0.3rem;
+}
+
+.surv-adj {
+  font-size: 0.85rem;
+  letter-spacing: 0;
+  text-transform: none;
+  font-weight: 700;
+}
+
+.surv-adj.is-slate {
+  color: var(--muted, #94a3b8);
+}
+
+.surv-notes-empty {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted, #94a3b8);
+}
+
+@media (max-width: 720px) {
+  .surv-notes-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .td-card-wrap {
@@ -3391,16 +5845,22 @@ select {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.55rem;
-  padding: 0.2rem 0.35rem;
-  border-radius: 999px;
+  min-width: 0;
+  padding: 0.1rem 0.15rem;
+  border-radius: 0;
+  border: none;
+  background: transparent;
   color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
+/* Season Grid: no pill — accent-highlight the week number (and keep ↑/↓). */
+.surv-season thead th.is-current .sos-sort,
 .surv-season thead .sos-sort.active {
-  color: var(--text);
-  border: 1px solid var(--accent);
-  background: var(--accent-dim);
+  color: var(--accent);
+  border: none;
+  background: transparent;
 }
 
 .surv-table tr.is-rec {
@@ -3537,8 +5997,9 @@ select {
 .surv-picks-toolbar {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 0.5rem;
-  margin: 0 0 0.55rem;
+  margin: 0 0 0.45rem;
 }
 
 .surv-pick-trigger {
@@ -3700,6 +6161,13 @@ select {
 
 .surv-pick-drop .sos-match {
   width: 100%;
+}
+
+/* Empty editable weeks + open/focused dropdowns keep the white ring; filled
+   unlocked weeks stay heat-only so the slate isn’t a wall of rings. */
+.surv-pick-drop.is-empty .sos-match,
+.surv-pick-drop.is-focused .sos-match,
+.surv-pick-drop:hover .sos-match {
   border-width: 3px !important;
   border-color: #fff !important;
 }
@@ -3814,4 +6282,1610 @@ button.surv-lock.is-locked:active:not(:disabled) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18.5rem, 1fr));
   gap: 0.65rem;
+}
+
+.import-league-section {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.import-league-section h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.import-league-section h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+}
+
+.import-league-submit {
+  margin-top: 1rem;
+}
+
+.espn-cookie-help {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.espn-cookie-help summary {
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 650;
+}
+
+.espn-cookie-help ol {
+  margin: 0.65rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.espn-cookie-help a {
+  color: var(--info);
+  text-decoration: underline;
+}
+
+.espn-team-field {
+  max-width: 36rem;
+}
+
+.espn-team-select-wrap {
+  position: relative;
+  display: block;
+}
+
+.espn-team-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0.95rem;
+  top: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.espn-team-select {
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.55rem 2.4rem 0.55rem 0.75rem;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--surface);
+}
+
+.espn-roster-preview {
+  margin-top: 1.25rem;
+}
+
+.espn-roster-preview h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.espn-roster-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.espn-roster-col h4 {
+  margin: 0 0 0.45rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.espn-roster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.espn-roster-list li {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  padding: 0.22rem 0.45rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.88rem;
+  min-width: 0;
+}
+
+.espn-roster-list .pos-pill {
+  flex-shrink: 0;
+  min-width: 2.35rem;
+  font-size: 0.62rem;
+  padding: 0.08rem 0.28rem;
+}
+
+.espn-roster-player {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 40rem) {
+  .espn-roster-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.my-team-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mt-page {
+  overflow-x: auto;
+}
+
+.mt-page .mt-team-name {
+  margin: 0;
+  font-size: 2.3rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.mt-roster {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mt-view-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem 1rem;
+  margin: 0 0 0.85rem;
+}
+
+.mt-view-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+}
+
+.mt-view-pills .page-tab {
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.mt-lineup-schedule-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin: 0;
+  margin-left: auto;
+}
+
+.mt-show-all-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0.18rem 0.35rem 0.18rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: color-mix(in srgb, var(--surface) 92%, var(--text));
+}
+
+.mt-show-all-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.mt-lineup-schedule-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mt-show-all-icon-check {
+  gap: 0.28rem;
+  color: var(--muted);
+}
+
+.mt-show-all-icon-check:hover,
+.mt-show-all-icon-check:has(input:checked) {
+  color: var(--accent);
+}
+
+.mt-show-all-icon-check .mt-sos-cal-icon {
+  display: block;
+  /* Optical center vs. “Show All:” / Apply label. */
+  transform: translateY(-1px);
+}
+
+.mt-lineup-schedule-check input {
+  margin: 0;
+  accent-color: #4ade80;
+  cursor: pointer;
+}
+
+.mt-lineup-schedule-apply {
+  margin: 0 0 0 0.15rem;
+  padding: 0.18rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  background: color-mix(in srgb, var(--surface) 78%, var(--text));
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.mt-lineup-schedule-apply:hover {
+  border-color: color-mix(in srgb, #4ade80 45%, var(--border));
+  background: color-mix(in srgb, #4ade80 12%, var(--surface));
+}
+
+.mt-roster-filter {
+  position: relative;
+}
+
+.mt-roster-filter-box {
+  padding: 0.18rem 0.35rem;
+}
+
+.mt-roster-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0.18rem 0.45rem 0.18rem 0.28rem;
+  border: 1px solid transparent;
+  border-radius: 0.3rem;
+  background: transparent;
+  color: var(--muted);
+  line-height: 0;
+  cursor: pointer;
+}
+
+.mt-roster-filter-btn .mt-sos-cal-icon {
+  display: block;
+  flex: 0 0 auto;
+  /* Optical center vs. “View All” label. */
+  transform: translateY(-1px);
+}
+
+.mt-roster-filter-current {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.mt-roster-filter-btn:hover,
+.mt-roster-filter-btn.is-open,
+.mt-roster-filter-btn.is-active {
+  border-color: color-mix(in srgb, #4ade80 45%, var(--border));
+  background: color-mix(in srgb, #4ade80 12%, var(--surface));
+}
+
+.mt-roster-filter-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: 12;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  width: max-content;
+  min-width: 5.25rem;
+  padding: 0.55rem 0.55rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 0.4rem;
+  background: color-mix(in srgb, var(--surface) 92%, var(--text));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+}
+
+.mt-roster-filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.mt-roster-filter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mt-roster-filter-option:hover,
+.mt-roster-filter-option:has(input:checked) {
+  color: var(--text);
+}
+
+.mt-roster-filter-option input {
+  margin: 0;
+  accent-color: #4ade80;
+  cursor: pointer;
+}
+
+.mt-roster-filter-apply {
+  margin: 0.15rem 0 0;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 0.3rem;
+  background: color-mix(in srgb, var(--surface) 78%, var(--text));
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.mt-roster-filter-apply:hover {
+  border-color: color-mix(in srgb, #4ade80 45%, var(--border));
+  background: color-mix(in srgb, #4ade80 12%, var(--surface));
+}
+
+.mt-roster-filter-reset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  cursor: pointer;
+  align-self: center;
+}
+
+.mt-roster-filter-reset:hover {
+  color: var(--accent);
+}
+
+.mt-table-wrap {
+  margin-top: 0;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+/* Stacked roster tables keep separation; pills sit tight above the first. */
+.mt-table-wrap + .mt-table-wrap {
+  margin-top: 0.85rem;
+}
+
+.mt-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  min-width: 52rem;
+}
+
+/* Fixed columns so Starters / Bench / IR share the same geometry. */
+.mt-lineup-table {
+  table-layout: fixed;
+}
+
+.mt-lineup-table col.mt-lineup-col-slot {
+  width: 3.5rem;
+}
+
+.mt-lineup-table col.mt-lineup-col-player {
+  width: 11.5rem;
+}
+
+.mt-lineup-table col.mt-lineup-col-opp {
+  width: 3.5rem;
+}
+
+.mt-lineup-table col.mt-lineup-col-status {
+  width: 7.75rem;
+}
+
+.mt-lineup-table col.mt-lineup-col-num {
+  width: 4rem;
+}
+
+.mt-lineup-table .mt-col-player,
+.mt-lineup-table td.mt-col-player {
+  overflow: hidden;
+}
+
+.mt-lineup-table .mt-col-status,
+.mt-lineup-table td.mt-status {
+  white-space: normal;
+  overflow: visible;
+}
+
+.mt-stats-table {
+  /* Grow horizontally instead of crushing columns — wrap already scrolls. */
+  width: max-content;
+  min-width: 100%;
+  table-layout: auto;
+}
+
+/* Shared Slot→Status rail so QB Passing and FLEX Rushing start on the same X. */
+.mt-stats-table col.mt-stats-col-slot,
+.mt-stats-table .mt-col-slot {
+  width: 3.75rem;
+  min-width: 3.75rem;
+  max-width: 3.75rem;
+}
+
+.mt-stats-table col.mt-stats-col-player,
+.mt-stats-table .mt-col-player {
+  width: 12.5rem;
+  min-width: 12.5rem;
+  max-width: 12.5rem;
+}
+
+.mt-stats-table col.mt-stats-col-opp,
+.mt-stats-table .mt-col-opp {
+  width: 3.75rem;
+  min-width: 3.75rem;
+  max-width: 3.75rem;
+  white-space: nowrap;
+}
+
+.mt-stats-table col.mt-stats-col-status,
+.mt-stats-table .mt-col-status {
+  width: 8.5rem;
+  min-width: 8.5rem;
+  max-width: 8.5rem;
+  white-space: nowrap;
+}
+
+/* Keep stat headers readable; values stay under labels. */
+.mt-stats-table .mt-col-row th.mt-sort-th.mt-num-col,
+.mt-stats-table .mt-col-row th.mt-muted {
+  min-width: 3.4rem;
+}
+
+.mt-table th,
+.mt-table td {
+  padding: 0.45rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.mt-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Last Bench/IR player (expand rows still follow) — one wrap edge, no double divider. */
+.mt-table tbody tr.mt-row-edge > td {
+  border-bottom: none;
+}
+
+.mt-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mt-group-row th {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  padding-top: 0.65rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface-2);
+}
+
+.mt-group-starters {
+  border-right: 1px solid var(--border);
+  padding-left: 0.575rem;
+}
+
+.mt-group-week {
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.mt-group-season {
+  text-align: center;
+}
+
+.mt-col-row th {
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Beat .mt-table td/th { text-align: left } for numeric columns. */
+.mt-lineup-table .mt-col-row th.mt-num-col,
+.mt-lineup-table td.mt-num,
+.mt-fa-table .mt-col-row th.mt-num-col,
+.mt-fa-table td.mt-num,
+.mt-stats-table .mt-col-row th.mt-sort-th.mt-num-col,
+.mt-stats-table .mt-col-row th.mt-muted,
+.mt-stats-table td.mt-num {
+  text-align: right;
+}
+
+/*
+ * Sort label sits left of a reserved arrow slot; values pad to match the
+ * label’s right edge (not the arrow), so numbers stay under headers.
+ * Lineup headers are not sortable — only FA strip / Players / Stats.
+ */
+.mt-fa-table .mt-col-row th.mt-sort-th.mt-num-col,
+.mt-stats-table .mt-col-row th.mt-sort-th.mt-num-col {
+  padding-right: 0.5rem;
+}
+
+.mt-fa-table td.mt-num,
+.mt-stats-table .mt-col-row th.mt-muted,
+.mt-stats-table td.mt-num {
+  padding-right: calc(0.5rem + 0.35rem + 0.75em + 0.2rem);
+}
+
+.mt-sort-th.is-active {
+  color: var(--text);
+}
+
+/*
+ * Active sort column wash on body only (header stays compact pill).
+ * Full cell band, no radius / vertical inset so stacked rows read as one strip.
+ * ::before avoids layout shift; row hover uses inset shadow so it doesn’t cover.
+ */
+.mt-fa-table td.is-sorted {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+.mt-fa-table td.is-sorted::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(34, 197, 94, 0.12);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Don’t let .mt-table row-hover background cover the sort wash. */
+.mt-fa-table tbody tr:hover td {
+  background: transparent;
+  box-shadow: inset 0 0 0 999px rgba(255, 255, 255, 0.02);
+}
+
+/*
+ * Same footprint inactive + active so sorting never shifts columns.
+ * Arrow after label; reserved width when hidden.
+ */
+.mt-sort {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.2rem;
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0.22rem 0.35rem;
+  margin: 0;
+  border-radius: 6px;
+  max-width: 100%;
+}
+
+.mt-sort:hover {
+  color: var(--text);
+}
+
+.mt-sort.active {
+  color: var(--text);
+  background: var(--accent-dim);
+}
+
+.mt-sort-arrow {
+  flex: 0 0 0.75em;
+  width: 0.75em;
+  min-width: 0.75em;
+  font-size: 0.85em;
+  line-height: 1;
+  text-align: center;
+  /* opacity keeps glyph metrics; visibility:hidden can collapse width in some flex cases */
+  opacity: 0;
+}
+
+.mt-sort.active .mt-sort-arrow {
+  opacity: 1;
+}
+
+.mt-col-slot {
+  width: 3.75rem;
+  min-width: 3.75rem;
+  padding-left: 0.575rem;
+  color: var(--muted);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.mt-col-player {
+  min-width: 11rem;
+  border-right: 1px solid var(--border);
+}
+
+.mt-col-opp {
+  padding-left: 0.575rem;
+}
+
+/* Slot sits with the player name line (not mid-row against name+meta). */
+.mt-lineup-table tbody td {
+  vertical-align: top;
+}
+
+.mt-lineup-table tbody td.mt-col-slot {
+  line-height: 1.2;
+  padding-top: 0.55rem;
+  padding-left: 0.575rem;
+}
+
+.mt-player {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.mt-player-name {
+  font-weight: 700;
+  color: var(--info);
+  line-height: 1.2;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button.mt-player-open {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: 700;
+  color: var(--info);
+  cursor: pointer;
+  text-align: left;
+  max-width: 100%;
+}
+
+button.mt-player-open:hover {
+  text-decoration: underline;
+}
+
+.mt-sos-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 1.35rem;
+  align-self: center;
+  box-sizing: border-box;
+  width: 1.35rem;
+  height: 1.35rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  line-height: 0;
+  transform: translateY(0);
+  transition:
+    color 0.12s ease,
+    border-color 0.12s ease,
+    background 0.12s ease,
+    transform 0.1s ease;
+}
+
+/* Open / hover / keyboard focus share the green badge. */
+.mt-sos-toggle:hover,
+.mt-sos-toggle.is-open,
+.mt-sos-toggle:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(34, 197, 94, 0.12);
+}
+
+/* Raise only while closed + hovered (selected/open stays flat). */
+.mt-sos-toggle:hover:not(.is-open),
+.mt-sos-toggle:focus-visible:not(.is-open) {
+  transform: translateY(-1px);
+}
+
+/* Press always wins over hover raise, then springs back on release. */
+.mt-sos-toggle:active,
+.mt-sos-toggle:hover:active,
+.mt-sos-toggle.is-open:active,
+.mt-sos-toggle.is-open:hover:active,
+.mt-sos-toggle:focus-visible:active {
+  transform: translateY(1px);
+  transition-duration: 0.05s;
+}
+
+.mt-sos-cal-icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  /* UA default svg fill is black; keep the glyph stroke-only. */
+  fill: none;
+}
+
+.mt-sos-row td {
+  padding: 0 0.75rem;
+  background: rgba(0, 0, 0, 0.18);
+  border-bottom: 1px solid transparent;
+  transition: padding 0.28s ease, border-color 0.28s ease;
+}
+
+.mt-sos-row:not(.is-open) {
+  pointer-events: none;
+}
+
+.mt-table tbody tr.mt-sos-row:hover td {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.mt-sos-row.is-open td {
+  padding: 0.65rem 0.75rem 0.75rem;
+  border-bottom-color: var(--border);
+}
+
+/* VS: no vertical cell pad — yards rule must meet the row borders. */
+.mt-vs-row.is-open td {
+  padding: 0 0.75rem;
+}
+
+/* Stats tables are width:max-content — keep the expand cell from collapsing the strip. */
+.mt-stats-table .mt-vs-row.is-open > td {
+  width: 100%;
+}
+
+.mt-vs-row .mt-sos-reveal,
+.mt-vs-row .mt-sos-reveal-inner {
+  width: 100%;
+}
+
+.mt-sos-reveal {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.mt-sos-row.is-open .mt-sos-reveal {
+  grid-template-rows: 1fr;
+}
+
+.mt-sos-reveal-inner {
+  overflow: hidden;
+  min-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.22s ease, transform 0.28s ease;
+}
+
+.mt-sos-row.is-open .mt-sos-reveal-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * FA strip: one-shot open animation instead of ongoing opacity/transform
+ * transitions, which can flash row dividers when sort reorders tbody rows.
+ */
+.mt-fa-row.is-open .mt-sos-reveal-inner {
+  transition: none;
+  animation: mt-fa-reveal 0.22s ease both;
+}
+
+.mt-vs-row.is-open .mt-sos-reveal-inner {
+  transition: none;
+  animation: mt-fa-reveal 0.22s ease both;
+}
+
+@keyframes mt-fa-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mt-vs-icon text {
+  fill: currentColor;
+}
+
+/*
+ * Flat 2×2 grid (no subgrid) — Stats tables use width:max-content and subgrid
+ * inside those cells collapsed the yards aisle / broke the divider.
+ */
+.mt-vs-strip {
+  display: grid;
+  grid-template-columns: minmax(16rem, 4fr) minmax(12rem, 3fr);
+  grid-template-rows: auto auto;
+  column-gap: 0.85rem;
+  row-gap: 0.42rem;
+  align-items: start;
+  width: 100%;
+  min-width: 36rem;
+  padding: 0.65rem 0.15rem 0.75rem 0;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.mt-vs-strip-main,
+.mt-vs-strip-yards {
+  display: contents;
+}
+
+.mt-vs-strip-title {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.42rem;
+  min-width: 0;
+  line-height: 1.1;
+  align-self: start;
+}
+
+.mt-vs-strip-kicker,
+.mt-vs-strip-matchup {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.mt-vs-strip-kicker {
+  font-size: 0.62rem;
+}
+
+.mt-vs-strip-matchup {
+  font-size: 0.84rem;
+  color: var(--text);
+}
+
+.mt-vs-strip-fixed {
+  grid-column: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.28rem 0.65rem;
+  align-items: start;
+  min-width: 0;
+}
+
+/* Continuous full-height rule for the yards aisle (bleeds into strip pad). */
+.mt-vs-strip.has-yards-toggle::before {
+  content: '';
+  grid-column: 2;
+  grid-row: 1 / -1;
+  justify-self: start;
+  align-self: stretch;
+  width: 1px;
+  margin: -0.65rem 0 -0.75rem;
+  background: color-mix(in srgb, var(--border) 88%, transparent);
+}
+
+.mt-vs-yards-toggle,
+.mt-vs-yards-toggle-slot {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  margin-left: 0.85rem;
+}
+
+.mt-vs-yards-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  width: fit-content;
+}
+
+.mt-vs-yards-toggle-slot {
+  min-height: 1px;
+}
+
+.mt-vs-yards-btn {
+  margin: 0;
+  padding: 0.22rem 0.48rem;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  border-radius: 0.3rem;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.25;
+  cursor: pointer;
+}
+
+.mt-vs-yards-btn:hover {
+  color: var(--text);
+  border-color: color-mix(in srgb, var(--text) 28%, transparent);
+}
+
+.mt-vs-yards-btn.is-active {
+  color: var(--text);
+  border-color: color-mix(in srgb, #4ade80 55%, var(--border));
+  background: color-mix(in srgb, #4ade80 14%, transparent);
+}
+
+.mt-vs-yards-metrics {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.28rem 0.65rem;
+  align-items: start;
+  min-width: 0;
+  margin-left: 0.85rem;
+}
+
+.mt-vs-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-width: 0;
+}
+
+.mt-vs-metric-label {
+  color: var(--muted);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.mt-vs-metric-value {
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  line-height: 1.15;
+  min-height: 1.2rem;
+}
+
+.mt-vs-metric-value.is-empty {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.mt-vs-metric-value.is-tough {
+  color: #f87171;
+}
+
+.mt-vs-metric-value.is-tough-soft {
+  color: #fca5a5;
+}
+
+.mt-vs-metric-value.is-easy {
+  color: #4ade80;
+}
+
+.mt-vs-metric-value.is-easy-soft {
+  color: #86efac;
+}
+
+@media (max-width: 1100px) {
+  .mt-vs-strip {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    min-width: 0;
+  }
+
+  .mt-vs-strip-main,
+  .mt-vs-strip-yards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.42rem;
+    min-width: 0;
+  }
+
+  .mt-vs-strip-title,
+  .mt-vs-yards-toggle,
+  .mt-vs-yards-toggle-slot,
+  .mt-vs-strip-fixed,
+  .mt-vs-yards-metrics {
+    grid-column: auto;
+    grid-row: auto;
+    margin-left: 0;
+  }
+
+  .mt-vs-strip.has-yards-toggle::before {
+    display: none;
+  }
+
+  .mt-vs-strip-yards {
+    padding-top: 0.55rem;
+    border-top: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+  }
+
+  .mt-vs-yards-toggle-slot {
+    display: none;
+  }
+
+  .mt-vs-strip-fixed {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .mt-vs-yards-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.mt-player-sos {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  margin-bottom: 0;
+}
+
+.mt-sos-strip-kicker {
+  margin: 0;
+  white-space: nowrap;
+  text-align: left;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.15;
+}
+
+/* League label + week strip sit under the kicker. */
+.mt-sos-strip-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.mt-sos-strip-rail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.mt-sos-rail-spacer {
+  flex: 0 0 auto;
+  min-height: 1.35rem;
+}
+
+.mt-sos-track-label.mt-sos-rail-label {
+  position: static;
+  left: auto;
+  z-index: auto;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  min-height: 2.55rem;
+  justify-content: flex-end;
+  background: transparent;
+  padding-right: 0;
+}
+
+.mt-player-sos .player-sos-scroller {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scrollbar-gutter: stable;
+}
+
+.mt-sos-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  width: max-content;
+}
+
+.mt-sos-grid-head,
+.mt-sos-track {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.mt-sos-grid-head {
+  padding-left: 0;
+  align-items: flex-end;
+}
+
+.mt-sos-track-label {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  flex: 0 0 3.4rem;
+  width: 3.4rem;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  min-height: 1.45rem;
+  box-sizing: border-box;
+  padding-right: 0.2rem;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.1;
+  background: color-mix(in srgb, var(--surface) 92%, #000);
+}
+
+.mt-sos-grid-head .player-sos-week-n {
+  position: relative;
+  z-index: 0;
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  min-height: 1.35rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.72rem;
+}
+
+.mt-sos-grid-head .surv-week-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.35rem;
+  height: 1.35rem;
+  padding: 0 0.15rem;
+  box-sizing: border-box;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+  line-height: 1;
+}
+
+/* Current week: same type, accent green text + translucent green circle. */
+.mt-sos-grid-head .player-sos-week-n.is-current .surv-week-num {
+  border-radius: 999px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.mt-player-sos .player-sos-row {
+  gap: 3px;
+}
+
+.mt-player-sos .player-sos-week {
+  flex: 0 0 3.25rem;
+  width: 3.25rem;
+  gap: 0;
+}
+
+/* Match Tools → SOS Offense/Defense week squares. */
+.mt-player-sos .sos-match {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.1rem;
+  width: 100%;
+  min-height: 2.55rem;
+  height: 2.55rem;
+  padding: 0.22rem 0.18rem;
+  font-size: 0.72rem;
+  gap: 0.05rem;
+  box-sizing: border-box;
+  border-radius: 7px;
+}
+
+.mt-player-sos .sos-match-opp {
+  flex: none;
+  min-width: 0;
+  font-size: inherit;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+
+.mt-player-sos .sos-match-n {
+  flex: none;
+  width: auto;
+  font-size: 0.68rem;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  position: static;
+  top: auto;
+  line-height: 1.1;
+  font-weight: 800;
+  opacity: 0.95;
+}
+
+.mt-sos-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.mt-player-meta {
+  margin-top: 0.1rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.mt-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.mt-status {
+  color: var(--info);
+  font-weight: 650;
+}
+
+.mt-status-inner {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.mt-status-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  line-height: 1.2;
+}
+
+.mt-status-secondary {
+  font-size: 0.82em;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.mt-weather {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  cursor: help;
+}
+
+.mt-weather:hover {
+  color: var(--text);
+}
+
+.mt-muted {
+  color: var(--muted);
+}
+
+.mt-oprk.is-tough {
+  color: #f87171;
+  font-weight: 700;
+}
+
+.mt-oprk.is-tough-soft {
+  color: #fca5a5;
+  font-weight: 600;
+}
+
+.mt-oprk.is-easy {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.mt-oprk.is-easy-soft {
+  color: #86efac;
+  font-weight: 600;
+}
+
+.mt-totals td {
+  background: rgba(0, 0, 0, 0.18);
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.mt-totals .mt-num {
+  color: var(--text);
+}
+
+.mt-fa-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1rem;
+  margin: 0 0 0.85rem;
+}
+
+.mt-fa-toolbar-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.65rem 0.85rem;
+  margin-left: auto;
+}
+
+.mt-fa-pos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.65rem;
+}
+
+.mt-fa-pos-btn {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0.15rem 0;
+  margin: 0;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.mt-fa-pos-btn:hover {
+  color: var(--text);
+}
+
+.mt-fa-pos-btn.is-active {
+  color: var(--accent, #4ade80);
+  border-bottom-color: var(--accent, #4ade80);
+}
+
+.mt-fa-search input {
+  min-width: 11rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.mt-fa-search input::placeholder {
+  color: var(--muted);
+}
+
+/*
+ * Players tab: fixed + colgroup (group header row would otherwise size col 1
+ * from the short “Players” label and crush names). Last stays on-screen.
+ */
+.mt-fa-table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.mt-fa-table col.mt-fa-col-player {
+  width: 13rem;
+}
+
+.mt-fa-table col.mt-fa-col-type {
+  width: 4.5rem;
+}
+
+.mt-fa-table col.mt-fa-col-opp {
+  width: 2.85rem;
+}
+
+.mt-fa-table col.mt-fa-col-status {
+  width: 5.75rem;
+}
+
+.mt-fa-table col.mt-fa-col-num {
+  width: 3.15rem;
+}
+
+.mt-fa-table .mt-col-type,
+.mt-fa-table td.mt-col-type {
+  white-space: nowrap;
+}
+
+.mt-fa-table td.mt-col-type {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mt-fa-table .mt-col-opp,
+.mt-fa-table td.mt-col-opp,
+.mt-fa-table .mt-col-status,
+.mt-fa-table td.mt-col-status {
+  white-space: nowrap;
+}
+
+.mt-fa-table .mt-player {
+  gap: 0.28rem;
+}
+
+.mt-fa-table .mt-player .status-text,
+.mt-fa-table .mt-player .mt-sos-toggle {
+  flex: 0 0 auto;
+}
+
+.mt-fa-table button.mt-player-open {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mt-fa-table tbody td {
+  vertical-align: top;
+}
+
+.mt-delta-up {
+  color: #4ade80;
+}
+
+.mt-delta-down {
+  color: #f87171;
+}
+
+.mt-lineup-fa-head {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.3rem;
+}
+
+.mt-lineup-fa-msg {
+  margin: 0.25rem 0 0;
+}
+
+.mt-lineup-fa-table {
+  width: 100%;
+  /* separate avoids white border flashes when React reorders rows on sort */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.mt-lineup-fa-table th,
+.mt-lineup-fa-table td {
+  font-size: 0.78rem;
+  padding-top: 0.22rem;
+  padding-bottom: 0.22rem;
+  vertical-align: middle;
+  /* inset shadow stays stable across reorders; collapsed borders flash white */
+  border-bottom: none;
+  box-shadow: inset 0 -1px 0 var(--border);
+  background-color: transparent;
+}
+
+.mt-lineup-fa-table tbody tr:last-child td {
+  box-shadow: inset 0 -1px 0 var(--border);
+}
+
+.mt-lineup-fa-table tbody tr:hover td {
+  /* Inset wash keeps sort ::before visible (background would cover it). */
+  background: transparent;
+  box-shadow:
+    inset 0 -1px 0 var(--border),
+    inset 0 0 0 999px rgba(255, 255, 255, 0.03);
+}
+
+.mt-lineup-fa-table .mt-col-row th {
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+  box-shadow: inset 0 -1px 0 var(--border);
+}
+
+.mt-lineup-fa-table .mt-sort {
+  /* Same horizontal footprint as lineup .mt-sort so arrow slot + td pad stay aligned */
+  padding: 0.1rem 0.35rem;
+  font-size: inherit;
+  letter-spacing: 0.03em;
+}
+
+.mt-lineup-fa-table .mt-col-row th.mt-sort-th.mt-num-col {
+  padding-right: 0.5rem;
+  min-width: 3.6rem;
+}
+
+.mt-lineup-fa-table td.mt-num {
+  padding-right: calc(0.5rem + 0.35rem + 0.75em + 0.2rem);
+}
+
+.mt-lineup-fa-table .mt-sort.is-start,
+.mt-sort.is-start {
+  justify-content: flex-start;
+}
+
+.mt-fa-table .mt-sort-th,
+.mt-lineup-fa-table .mt-sort-th {
+  white-space: nowrap;
+}
+
+.mt-lineup-fa-player {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  flex-wrap: nowrap;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.mt-lineup-fa-player .mt-player-name {
+  font-size: 0.82rem;
+}
+
+.mt-lineup-fa-meta {
+  color: var(--muted);
+  font-size: 0.72rem;
+  flex: 0 0 auto;
 }

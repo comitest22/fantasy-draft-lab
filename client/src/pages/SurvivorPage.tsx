@@ -1,15 +1,27 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
 import PageTabs from '../components/PageTabs';
+import PageTitle from '../components/PageTitle';
 import SurvivorPicksView from '../components/SurvivorPicksView';
+import { survivorLoseBadgeIcon, survivorWinBadgeIcon } from '../nav/homeFlyoutIcons';
 import { getSurvivorBoard } from '../services/api';
-import type { SurvivorBoard, SurvivorMode, SurvivorSeasonCell } from '../types';
+import type {
+  SurvivorBoard,
+  SurvivorContextItem,
+  SurvivorMode,
+  SurvivorSeasonCell,
+  SurvivorWeekTeam,
+} from '../types';
 import { pctHeat } from '../utils/heatScale';
 
+const CHALK_TIP =
+  'Chalk is driven by heavy favorites and high pool ownership — not always the smartest survivor play. A big favorite with a shaky or injured offense, or facing a must-win opponent that plays up, can still lose and take a huge cut of the pool with it.';
+
 const views = [
-  { id: 'week', label: 'Week' },
-  { id: 'season', label: 'Season' },
-  { id: 'picks', label: 'Picks' },
+  { id: 'week', label: 'List View' },
+  { id: 'season', label: 'Season Grid' },
+  { id: 'picks', label: 'Pick Assistant' },
 ];
 
 function usedKey(mode: SurvivorMode): string {
@@ -109,7 +121,7 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
     setSeasonSortDir('desc');
   }
 
-  if (loading && !board) return <p className="status">Loading survivor board...</p>;
+  if (loading && !board) return <PageLoading label="Scouting the board…" />;
   if (error && !board) return <p className="error">{error}</p>;
   if (!board) return null;
 
@@ -120,10 +132,16 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
   return (
     <section className="panel">
       <div className="page-intro">
-        <Link to="/strategy" className="back-link">
-          ← Strategy
-        </Link>
-        <h1>{title}</h1>
+        <p className="crumb">
+          <Link to="/strategy">Strategy</Link>
+          <span aria-hidden="true"> › </span>
+          {title}
+        </p>
+        <PageTitle
+          badge={(mode === 'win' ? survivorWinBadgeIcon : survivorLoseBadgeIcon)(20)}
+        >
+          {title}
+        </PageTitle>
         <p className="subtitle">
           {board.sourceNote} {board.lastUpdated ? board.lastUpdated.replace(/^Last updated:\s*/i, 'Updated ') : ''}
           Click a team code to mark it used.
@@ -131,35 +149,60 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
       </div>
       <PageTabs tabs={views} active={view} onChange={setView} label="Survivor view" />
       {view !== 'picks' && (
-      <div className="surv-weeks" role="tablist" aria-label="Week">
-        {board.weeks.map((w) => (
-          <button
-            key={w}
-            type="button"
-            className={`page-tab${selectedWeek === w ? ' active' : ''}`}
-            onClick={() => setWeek(w)}
-          >
-            {w}
-          </button>
-        ))}
+      <>
+      <div className="surv-weeks-wrap">
+        <div className="surv-weeks-label">NFL Weeks:</div>
+        <div className="surv-weeks" role="tablist" aria-label="NFL Weeks">
+          {board.weeks.map((w) => (
+            <button
+              key={w}
+              type="button"
+              className={`surv-week-box${selectedWeek === w ? ' active' : ''}`}
+              onClick={() => setWeek(w)}
+            >
+              {w}
+            </button>
+          ))}
+        </div>
       </div>
-      )}
-
-      {view === 'week' && (
-        <>
+      <div className="surv-picks-board">
+        <div className="surv-picks-group surv-picks-top">
+          <h3 className="surv-picks-label">Top Picks</h3>
           <div className="surv-picks">
             {board.picks
               .filter((p) => !used.includes(p.team))
               .slice(0, 3)
               .map((p) => (
-                <button key={p.team} type="button" className="surv-pick" onClick={() => toggleUsed(p.team)}>
-                  <strong>
-                    #{p.pickRank} {p.teamName}
-                  </strong>
-                  <span>{p.reason}</span>
-                </button>
+                <PickCard
+                  key={p.team}
+                  row={p}
+                  invert={invert}
+                  showLines={showLines}
+                  onToggle={() => toggleUsed(p.team)}
+                />
               ))}
           </div>
+        </div>
+        {board.contrarian && !used.includes(board.contrarian.team) ? (
+          <div className="surv-picks-group surv-picks-contra">
+            <h3 className="surv-picks-label">Contrarian Pick</h3>
+            <div className="surv-picks">
+              <PickCard
+                row={board.contrarian}
+                invert={invert}
+                showLines={showLines}
+                onToggle={() => toggleUsed(board.contrarian!.team)}
+                variant="contrarian"
+              />
+            </div>
+          </div>
+        ) : null}
+      </div>
+      </>
+      )}
+
+      {view === 'week' && (
+        <>
           <div className="sos-table-wrap">
             <table className="data-table surv-table">
               <thead>
@@ -168,44 +211,30 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
                   <th>Team</th>
                   <th>Matchup</th>
                   <th>{invert ? 'Lose' : 'PG win'}</th>
+                  <th title="Rest / travel / weather / injury overlay (±4 cap)">Ctx</th>
                   {showLines && <th>Mkt</th>}
                   {showLines && <th>ML</th>}
                   {showLines && <th>Spread</th>}
                   {showLines && <th>Pop</th>}
                   {showLines && <th>EV</th>}
                   <th>FV</th>
-                  <th>Notes</th>
                 </tr>
               </thead>
               <tbody>
-                {weekRows.map((row) => (
-                  <tr key={row.team} className={used.includes(row.team) ? 'is-used' : row.recommended ? 'is-rec' : undefined}>
-                    <td>{row.bye ? '—' : row.pickRank}</td>
-                    <td>
-                      <button type="button" className="surv-team" onClick={() => toggleUsed(row.team)}>
-                        <span className="sos-team-code">{row.team}</span>
-                        <span className="sos-team-name">{row.teamName}</span>
-                        {used.includes(row.team) ? ' · used' : ''}
-                      </button>
-                    </td>
-                    <td>{row.bye ? 'BYE' : row.matchupLabel || row.opponent}</td>
-                    <td>
-                      <span className="surv-chip" style={pctHeat(invert ? row.pgLosePct : row.pgWinPct)}>
-                        {row.bye ? '—' : `${invert ? row.pgLosePct : row.pgWinPct}%`}
-                      </span>
-                    </td>
-                    {showLines && <td>{row.marketWinPct != null ? `${row.marketWinPct}%` : '—'}</td>}
-                    {showLines && <td>{row.moneyline || '—'}</td>}
-                    {showLines && <td>{row.spread != null ? row.spread : '—'}</td>}
-                    {showLines && <td>{row.popularityPct != null ? `${row.popularityPct}%` : '—'}</td>}
-                    {showLines && <td>{row.ev != null ? row.ev.toFixed(2) : '—'}</td>}
-                    <td>{row.futureValue != null ? row.futureValue : '—'}</td>
-                    <td>
-                      {[...row.gameNotes, ...(row.contextNotes ?? [])].join(' ') || '—'}
-                      {row.contextAdj ? ` (${row.contextAdj > 0 ? '+' : ''}${row.contextAdj})` : ''}
-                    </td>
-                  </tr>
-                ))}
+                {weekRows.map((row) => {
+                  const colSpan = showLines ? 11 : 7;
+                  return (
+                    <WeekRow
+                      key={row.team}
+                      row={row}
+                      invert={invert}
+                      showLines={showLines}
+                      colSpan={colSpan}
+                      used={used.includes(row.team)}
+                      onToggle={() => toggleUsed(row.team)}
+                    />
+                  );
+                })}
               </tbody>
             </table>
           </div>
@@ -231,18 +260,33 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
             <thead>
               <tr>
                 <th className="sos-chart-team">Team</th>
-                {board.weeks.map((w) => (
-                  <th key={w}>
-                    <button
-                      type="button"
-                      className={`sos-sort${(seasonSortWeek ?? week) === w ? ' active' : ''}`}
-                      onClick={() => onSeasonWeek(w)}
-                    >
-                      {w}
-                      {seasonSortWeek === w ? (seasonSortDir === 'desc' ? ' ↓' : ' ↑') : ''}
-                    </button>
-                  </th>
-                ))}
+                {board.weeks.map((w) => {
+                  const isCurrent = w === board.currentWeek;
+                  const sortActive = (seasonSortWeek ?? week) === w;
+                  return (
+                    <th key={w} className={isCurrent ? 'is-current' : undefined}>
+                      <span className="surv-week-head">
+                        <span className={`surv-current-label${isCurrent ? '' : ' is-ghost'}`}>
+                          Current
+                          <br />
+                          Week
+                        </span>
+                        <button
+                          type="button"
+                          className={`sos-sort${sortActive ? ' active' : ''}`}
+                          onClick={() => onSeasonWeek(w)}
+                        >
+                          {w}
+                          {seasonSortWeek === w
+                            ? seasonSortDir === 'desc'
+                              ? ' ↓'
+                              : ' ↑'
+                            : ''}
+                        </button>
+                      </span>
+                    </th>
+                  );
+                })}
               </tr>
             </thead>
             <tbody>
@@ -266,6 +310,215 @@ export default function SurvivorPage({ mode }: { mode: SurvivorMode }) {
         </div>
       )}
     </section>
+  );
+}
+
+function pctFor(row: SurvivorWeekTeam, invert: boolean): number | null {
+  return invert ? row.pgLosePct : row.pgWinPct;
+}
+
+function itemsFor(row: SurvivorWeekTeam): SurvivorContextItem[] {
+  if (row.contextItems?.length) return row.contextItems;
+  return [
+    ...row.gameNotes.map((label, i) => ({
+      id: `game${i}`,
+      label,
+      points: 0,
+      about: 'slate' as const,
+    })),
+    ...(row.contextNotes ?? []).map((label, i) => ({
+      id: `legacy${i}`,
+      label,
+      points: 0,
+      about: 'self' as const,
+    })),
+  ];
+}
+
+function PickCard({
+  row,
+  invert,
+  showLines,
+  onToggle,
+  variant = 'top',
+}: {
+  row: SurvivorWeekTeam;
+  invert: boolean;
+  showLines: boolean;
+  onToggle: () => void;
+  variant?: 'top' | 'contrarian';
+}) {
+  const pct = pctFor(row, invert);
+  const items = itemsFor(row).filter((i) => i.about !== 'slate' || i.points !== 0);
+  const pros = items.filter((i) => i.points > 0);
+  const cons = items.filter((i) => i.points < 0);
+  const slate = itemsFor(row).filter((i) => i.about === 'slate');
+  const isChalk = Boolean(row.chalk) && variant === 'top';
+
+  return (
+    <button
+      type="button"
+      className={`surv-pick${variant === 'contrarian' ? ' is-contrarian' : ''}${isChalk ? ' is-chalk' : ''}`}
+      onClick={onToggle}
+    >
+      <div className="surv-pick-head">
+        <div className="surv-pick-title">
+          <strong>
+            {variant === 'contrarian' ? row.teamName : `#${row.pickRank} ${row.teamName}`}
+          </strong>
+          <span className="surv-pick-match">{row.matchupLabel || row.opponent}</span>
+        </div>
+        <div className="surv-pick-pct-row">
+          <span className="surv-chip surv-pick-pct" style={pctHeat(pct)}>
+            {pct != null ? `${pct}%` : '—'}
+          </span>
+          {isChalk ? (
+            <span className="surv-pill is-warn surv-chalk" title={CHALK_TIP}>
+              Chalk
+              <span className="surv-info" aria-label={CHALK_TIP}>
+                i
+              </span>
+            </span>
+          ) : null}
+        </div>
+      </div>
+      <div className="surv-pick-meta">
+        {showLines && row.ev != null ? <span className="surv-pill">EV {row.ev.toFixed(2)}</span> : null}
+        {showLines && row.popularityPct != null ? (
+          <span className={`surv-pill${isChalk ? ' is-warn' : ''}`}>{row.popularityPct}% owned</span>
+        ) : null}
+        {row.futureValue != null ? <span className="surv-pill">FV {row.futureValue}</span> : null}
+        {variant === 'contrarian' ? <span className="surv-pill is-alt">Low ownership</span> : null}
+      </div>
+      {(pros.length > 0 || cons.length > 0 || slate.length > 0) && (
+        <ul className="surv-pick-bullets">
+          {pros.map((i) => (
+            <li key={i.id} className="is-pro">
+              {i.label}
+            </li>
+          ))}
+          {cons.map((i) => (
+            <li key={i.id} className="is-con">
+              {i.label}
+            </li>
+          ))}
+          {slate.map((i) => (
+            <li key={i.id} className="is-slate">
+              {i.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </button>
+  );
+}
+
+function noteLabel(item: SurvivorContextItem, oppCode: string): string {
+  if (item.about !== 'opp') return item.label;
+  return item.label.startsWith(`${oppCode}:`) || item.label.startsWith('Opp ')
+    ? item.label
+    : `${oppCode}: ${item.label}`;
+}
+
+function WeekRow({
+  row,
+  invert,
+  showLines,
+  colSpan,
+  used,
+  onToggle,
+}: {
+  row: SurvivorWeekTeam;
+  invert: boolean;
+  showLines: boolean;
+  colSpan: number;
+  used: boolean;
+  onToggle: () => void;
+}) {
+  const oppCode = row.opponent?.replace(/^@/, '') || 'Opp';
+  const items = itemsFor(row).map((i) => ({ ...i, label: noteLabel(i, oppCode) }));
+  const pros = items.filter((i) => i.points > 0);
+  const cons = items.filter((i) => i.points < 0);
+  const slate = items.filter((i) => i.points === 0);
+  const hasNotes = pros.length > 0 || cons.length > 0 || slate.length > 0;
+  const adj = row.bye ? null : row.contextAdj;
+
+  return (
+    <>
+      <tr className={used ? 'is-used' : row.recommended || row.contrarian ? 'is-rec' : undefined}>
+        <td>{row.bye ? '—' : row.pickRank}</td>
+        <td>
+          <button type="button" className="surv-team" onClick={onToggle}>
+            <span className="sos-team-code">{row.team}</span>
+            <span className="sos-team-name">{row.teamName}</span>
+            {used ? ' · used' : ''}
+            {row.contrarian && !used ? ' · contrarian' : ''}
+          </button>
+        </td>
+        <td>{row.bye ? 'BYE' : row.matchupLabel || row.opponent}</td>
+        <td>
+          <span className="surv-chip" style={pctHeat(pctFor(row, invert))}>
+            {row.bye ? '—' : `${pctFor(row, invert)}%`}
+          </span>
+        </td>
+        <td>
+          {adj == null ? (
+            '—'
+          ) : (
+            <span className={`surv-adj${adj > 0 ? ' is-pro' : adj < 0 ? ' is-con' : ' is-slate'}`}>
+              {adj > 0 ? '+' : ''}
+              {adj}
+            </span>
+          )}
+        </td>
+        {showLines && <td>{row.marketWinPct != null ? `${row.marketWinPct}%` : '—'}</td>}
+        {showLines && <td>{row.moneyline || '—'}</td>}
+        {showLines && <td>{row.spread != null ? row.spread : '—'}</td>}
+        {showLines && <td>{row.popularityPct != null ? `${row.popularityPct}%` : '—'}</td>}
+        {showLines && <td>{row.ev != null ? row.ev.toFixed(2) : '—'}</td>}
+        <td>{row.futureValue != null ? row.futureValue : '—'}</td>
+      </tr>
+      {hasNotes && !row.bye ? (
+        <tr className={`surv-notes-row${used ? ' is-used' : ''}`}>
+          <td colSpan={colSpan}>
+            <div className="surv-notes-grid">
+              <NoteCol title="Pros" items={[...pros, ...slate]} empty="—" />
+              <NoteCol title="Cons" items={cons} empty="—" />
+            </div>
+          </td>
+        </tr>
+      ) : null}
+    </>
+  );
+}
+
+function NoteCol({
+  title,
+  items,
+  empty = '—',
+}: {
+  title: string;
+  items: SurvivorContextItem[];
+  empty?: string;
+}) {
+  return (
+    <div className="surv-notes-col">
+      <div className="surv-notes-head">{title}</div>
+      {items.length === 0 ? (
+        <p className="surv-notes-empty">{empty}</p>
+      ) : (
+        <ul className="surv-notes-list">
+          {items.map((i) => (
+            <li
+              key={i.id}
+              className={i.points > 0 ? 'is-pro' : i.points < 0 ? 'is-con' : 'is-slate'}
+            >
+              {i.label}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 ---
 title: Cheat Sheets
-source: DSAFD app internals
+source: BLITZ app internals
 date: 2026-09-08
 confidence: high
 kind: app
@@ -13,7 +13,7 @@ App-internal source of truth for Tools → Cheat Sheets (`/tools/cheatsheet`). L
 
 ## UI
 
-Sticky stack (`.cheat-sticky`, under the main nav): **My team** + **Watch list** plus the filter bar. They stay pinned together while the board scrolls, with a little padding under the nav so My team is not flush with the header. The `Tools > Cheat Sheet` crumb is not sticky and scrolls off with the page. Cheat Sheets uses tighter page padding and panel gap so the crumb is not sitting in extra margin above/below.
+Sticky stack (`.cheat-sticky`, under the main nav): **My team** + **Watch list** plus the filter bar. They stay pinned together while the board scrolls, with a little padding under the nav so My team is not flush with the header. The `Tools › Draft › Cheat Sheet` crumb (Insights-style `.page-intro .crumb` + `PageTitle` with Draft toolkit icon in a circular badge top-right on the Tools icon; **Tools** → `/tools`; Draft → `/tools?toolkit=draft`) is not sticky and scrolls off with the page. Non-Home routes keep a forced vertical scrollbar (`html.force-y-scroll`) so navigating from hubs doesn’t shift the page when a scrollbar appears. Cheat Sheets uses a tighter panel gap under the head. Top padding under the header matches other crumb subpages (`.main:has(.page-intro .crumb)`). The crumb / title / note stack uses the shared `.page-intro` gaps (extra room when the Draft toolkit badge overhangs the parent tile).
 
 Sticky filter bar (`.cheat-toolbar`, league-format field styles):
 
@@ -25,7 +25,7 @@ Clear checks / **Clear watchlist** sit in the bar, plus a `^` / `v` toggle that 
 
 **Pick lines:** a thin sky `--info` bar at **every remaining** snake overall for the Pick dropdown, not only the next one. Drafted count is off-board names (`picked ∪ mine`); next overall is `drafted + 1`. Each line sits before the remaining player at that overall (index `untilYou`). Compact label: `R# · N to go · #overall`, or green `On the clock · #overall` when `untilYou` is 0. After a snake pick is used, that line drops. Position filter still uses overall remaining order, then shows the bar before the next visible remaining name at or after that slot (or at the bottom if none).
 
-**My team:** under `Tools > Cheat Sheet` (crumb; no page title or snake-path subtitle). The crumb scrolls away; My team stays sticky with Watch list and the Scoring / Pick / Players bar while the list scrolls. Columns for this league’s roster from `data/league-config.json`: QB, RB, WR, TE, FLEX, D/ST, K, BN (5 bench). Each filled slot shows an ESPN **positional** rank pill (`posRank`, colored with that player’s `.pos-*` pill colors) plus **full name** (ellipsis if the column is tight). Empty slots are `—`. Extra RB/WR/TE after starters go to FLEX, then bench; names past a column’s need are red. `GET /cheatsheet` includes `roster`. `Clear my team` empties this set and unchecks those names.
+**My team:** under `Tools › Draft › Cheat Sheet`. The crumb + title scroll away; My team stays sticky with Watch list and the Scoring / Pick / Players bar while the list scrolls. Columns for this league’s roster from `data/league-config.json`: QB, RB, WR, TE, FLEX, D/ST, K, BN (5 bench). Each filled slot shows an ESPN **positional** rank pill (`posRank`, colored with that player’s `.pos-*` pill colors) plus **full name** (ellipsis if the column is tight). Empty slots are `—`. Extra RB/WR/TE after starters go to FLEX, then bench; names past a column’s need are red. `GET /cheatsheet` includes `roster`. `Clear my team` empties this set and unchecks those names.
 
 **Watch list:** narrower card beside My team (same sticky stack). Names you **right-click** on the board. Sorted in board rank order. Click a name to open compare; × or **Clear watchlist** (card or toolbar — same control) removes them and clears row highlights. Body height matches My team; extra names scroll inside the card. Checking a player off or adding them to My team drops the sky highlight and removes them from this list.
 
@@ -49,7 +49,7 @@ Each row: checkbox, colored position pill, ESPN rank pill next to full name + NF
 
 - **Checkbox:** toggle off the board (anyone drafted — typically other teams). Strikethrough + muted row; stay in place so a mis-click can be undone. When the player is on My team the box is checked and disabled.
 - **My team `✓` / `×`:** right-side control. Adds that player to your roster (amber highlight, no strikethrough), checks the left box, and disables it. `×` removes them from My team and unchecks the box.
-- **Player click** (name, rank, chips): centered modal with the same solo compare card as Home search (`PlayerCompareDialog`, `GET /routes/compare`) — ESPN rank, proj, SOS, ECR, units, takeaways, same-team positional depth under the stats, plus the current-season **Game Log** to the right of the stats (`GET /routes/gamelog?name=&season=`), year dropdown, weeks **ascending**, expanded on open with **Show less**, and a **positional SOS** week row above the log with muted right-aligned **ROS #N (Favorable / Slightly favorable / Average / Tough)** text above the cells. **No news pane.** Closing the modal (Close, backdrop, Escape) leaves the checklist, filters, and scroll where they were.
+- **Player click** (name, rank, chips): centered modal with the same solo compare card as Home search (`PlayerCompareDialog`, `GET /routes/compare`) — ESPN Current Rank, Current Pos. Rank, proj, SOS, ECR, units, takeaways, same-team positional depth under the stats, plus the current-season **Game Log** to the right of the stats (`GET /routes/gamelog?name=&season=`), year dropdown, weeks **ascending** (opens scrolled to **currentWeek+1** on the live season), expanded on open with **Show less**, and a **positional SOS** week row above the log with muted right-aligned **ROS #N** + quality `rankHeat` pill (custom Week Apply → spaced **W# - W#** · **SOS #N** + heat pill, ranked on only those weeks). **No news pane.** Closing the modal (Close, backdrop, Escape) leaves the checklist, filters, and scroll where they were.
 - **Right click:** `preventDefault` the browser menu and toggle a sky highlight (also adds/removes Watch list). Checking the player off or adding them to My team clears the highlight. Right-click does nothing while they are off the board or on My team.
 
 ## Persistence

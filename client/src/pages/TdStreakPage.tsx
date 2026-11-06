@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
 import PageTabs from '../components/PageTabs';
-import PlayerCompareDialog from '../components/PlayerCompareDialog';
+import PageTitle from '../components/PageTitle';
+import { tdStreakIcon } from '../nav/homeFlyoutIcons';
 import { getTdStreakBoard } from '../services/api';
 import type { TdCandidate, TdStreakBoard, TdWeekPick } from '../types';
 import { pctHeat } from '../utils/heatScale';
@@ -67,7 +69,19 @@ export default function TdStreakPage() {
   const [store, setStore] = useState<Store>(loadStore);
   const [swap, setSwap] = useState<{ week: number; slot: Slot; label: string } | null>(null);
   const [swapName, setSwapName] = useState('');
-  const [inspectName, setInspectName] = useState<string | null>(null);
+  const [, setParams] = useSearchParams();
+
+  function openPlayerBio(name: string) {
+    setParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set('player', name);
+        next.delete('article');
+        return next;
+      },
+      { replace: false }
+    );
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -274,17 +288,19 @@ export default function TdStreakPage() {
     });
   }
 
-  if (loading) return <p className="status">Loading TD streak board...</p>;
+  if (loading) return <PageLoading label="Charting the streak…" />;
   if (error) return <p className="error">{error}</p>;
   if (!board) return null;
 
   return (
     <section className="panel">
       <div className="page-intro">
-        <Link to="/strategy" className="back-link">
-          ← Strategy
-        </Link>
-        <h1>TD Streak</h1>
+        <p className="crumb">
+          <Link to="/strategy">Strategy</Link>
+          <span aria-hidden="true"> › </span>
+          TD Streak
+        </p>
+        <PageTitle badge={tdStreakIcon(20)}>TD Streak</PageTitle>
         <p className="subtitle">{board.note}</p>
       </div>
       <PageTabs tabs={views} active={view} onChange={setView} label="TD streak view" />
@@ -328,7 +344,7 @@ export default function TdStreakPage() {
                   player={primary}
                   locked={store.locked.includes(slotKey(row.week, 'primary'))}
                   onToggle={() => primary && toggleLock(row.week, 'primary', primary)}
-                  onInspect={() => primary && setInspectName(primary.playerName)}
+                  onInspect={() => primary && openPlayerBio(primary.playerName)}
                   onRefresh={() => refresh(row.week, 'primary')}
                   onSwap={() => openSwap(row.week, 'primary', second ? 'Primary A' : 'Primary', primary?.playerName)}
                 />
@@ -338,7 +354,7 @@ export default function TdStreakPage() {
                     player={primary2}
                     locked={store.locked.includes(slotKey(row.week, 'primary2'))}
                     onToggle={() => primary2 && toggleLock(row.week, 'primary2', primary2)}
-                    onInspect={() => primary2 && setInspectName(primary2.playerName)}
+                    onInspect={() => primary2 && openPlayerBio(primary2.playerName)}
                     onRefresh={() => refresh(row.week, 'primary2')}
                     onSwap={() => openSwap(row.week, 'primary2', 'Primary B', primary2?.playerName)}
                   />
@@ -348,7 +364,7 @@ export default function TdStreakPage() {
                   player={alternate}
                   locked={store.locked.includes(slotKey(row.week, 'alternate'))}
                   onToggle={() => alternate && toggleLock(row.week, 'alternate', alternate)}
-                  onInspect={() => alternate && setInspectName(alternate.playerName)}
+                  onInspect={() => alternate && openPlayerBio(alternate.playerName)}
                   onRefresh={() => refresh(row.week, 'alternate')}
                   onSwap={() => openSwap(row.week, 'alternate', 'Alternate', alternate?.playerName)}
                 />
@@ -385,7 +401,7 @@ export default function TdStreakPage() {
                       </button>
                     </td>
                     <td>
-                      <button type="button" className="td-player-link" onClick={() => setInspectName(p.playerName)}>
+                      <button type="button" className="td-player-link" onClick={() => openPlayerBio(p.playerName)}>
                         {p.playerName}
                       </button>
                       {p.status && p.status !== 'ACTIVE' ? ` · ${p.status}` : ''}
@@ -469,14 +485,6 @@ export default function TdStreakPage() {
             </div>
           </div>
         </div>
-      ) : null}
-      {inspectName ? (
-        <PlayerCompareDialog
-          solo
-          leftName={inspectName}
-          closeLabel="Close"
-          onClose={() => setInspectName(null)}
-        />
       ) : null}
     </section>
   );

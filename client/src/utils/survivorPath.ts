@@ -122,18 +122,47 @@ function weekCountOf(rows: SurvivorSeasonRow[]): number {
   return Math.max(18, ...rows.flatMap((row) => row.cells.map((cell) => cell.week)));
 }
 
+/** Lock sentinel: week is closed (mid-season entry) — leave slot empty, do not BPA-fill. */
+export const SKIP_WEEK_LOCK = '';
+
+/** Normalize legacy prefix `lockedCount` or a sparse week list into a set. */
+export function lockedWeekSet(
+  lockedWeeks: Iterable<number> | number | null | undefined,
+): Set<number> {
+  if (typeof lockedWeeks === 'number') {
+    const n = Math.max(0, lockedWeeks);
+    return new Set(Array.from({ length: n }, (_, i) => i + 1));
+  }
+  const out = new Set<number>();
+  if (!lockedWeeks) return out;
+  for (const week of lockedWeeks) {
+    const w = Number(week);
+    if (Number.isFinite(w) && w >= 1) out.add(Math.floor(w));
+  }
+  return out;
+}
+
 export function bpaLocks(
   chosen: string[],
-  lockedCount: number,
+  lockedWeeks: Iterable<number> | number,
   rows: SurvivorSeasonRow[],
   currentWeek = 0,
+  startWeek = 1,
 ): Array<string | null> {
   const weekCount = weekCountOf(rows);
+  const start = Math.max(1, startWeek);
+  const locked = lockedWeekSet(lockedWeeks);
   const locks: Array<string | null> = Array.from({ length: weekCount }, () => null);
   for (let week = 1; week <= weekCount; week++) {
+    if (week < start) {
+      locks[week - 1] = SKIP_WEEK_LOCK;
+      continue;
+    }
     const team = chosen[week - 1] ?? '';
     if (!team) continue;
-    if (week <= lockedCount || (currentWeek > 0 && week < currentWeek)) locks[week - 1] = team;
+    if (locked.has(week) || (currentWeek > 0 && week < currentWeek && week >= start)) {
+      locks[week - 1] = team;
+    }
   }
   return locks;
 }
@@ -150,8 +179,13 @@ export function optimizePath(
   const locks = weekLocks.slice();
   if (week1Team && !locks[0]) locks[0] = week1Team;
 
+  const skipped = new Set<number>();
   for (let week = 1; week <= Math.max(locks.length, 1); week++) {
     const team = locks[week - 1];
+    if (team === SKIP_WEEK_LOCK) {
+      skipped.add(week);
+      continue;
+    }
     if (!team || used.has(team)) continue;
     const row = rows.find((r) => r.team === team);
     const slot = row ? slotFrom(row, week, invert, { includePlayed: true }) : null;
@@ -170,7 +204,7 @@ export function optimizePath(
 
   const workers = rows.filter((row) => !used.has(row.team));
   const jobs = Array.from({ length: weekCount }, (_, i) => i + 1).filter((week) => {
-    if (slots[week - 1]) return false;
+    if (skipped.has(week) || slots[week - 1]) return false;
     return workers.some((row) => slotFrom(row, week, invert));
   });
   if (jobs.length === 0 || workers.length === 0) {
@@ -218,7 +252,7 @@ function playableWeeks(rows: SurvivorSeasonRow[], invert: boolean, weekCount: nu
 }
 
 function emptyWeeks(ticket: TicketState, weeks: number[]): number[] {
-  return weeks.filter((week) => !ticket.slots[week - 1]);
+  return weeks.filter((week) => !ticket.slots[week - 1] && !ticket.lockedWeeks.has(week));
 }
 
 function weekTakenByOther(tickets: TicketState[], skip: number, week: number, team: string): boolean {
@@ -350,6 +384,10 @@ function fillJoint(rows: SurvivorSeasonRow[], invert: boolean, locksPerTicket: A
     const lockedWeeks = new Set<number>();
     for (let week = 1; week <= locks.length; week++) {
       const team = locks[week - 1];
+      if (team === SKIP_WEEK_LOCK) {
+        lockedWeeks.add(week);
+        continue;
+      }
       if (!team || used.has(team)) continue;
       const row = byTeam.get(team);
       const slot = row ? slotFrom(row, week, invert, { includePlayed: true }) : null;

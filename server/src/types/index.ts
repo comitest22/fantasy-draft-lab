@@ -311,6 +311,11 @@ export interface PlayerSosSlate {
   /** First week still in the remaining slate (`season-state` currentWeek). */
   currentWeek: number;
   weeks: PlayerSosWeek[];
+  /**
+   * Opponent abbrev → ESPN OPRK (1 = toughest) for this slate’s position.
+   * Lets the bio re-rank a custom week window without another round-trip.
+   */
+  oprkByOpponent?: Record<string, number>;
 }
 
 export interface PlayerGameLog {
@@ -323,7 +328,10 @@ export interface PlayerGameLog {
   rows: PlayerGameLogRow[];
   previewRows: number;
   note?: string;
+  /** Source B week ranks + Source A remaining ROS (1 = easiest). */
   sosSlate?: PlayerSosSlate;
+  /** ESPN OPRK week ranks (1 = toughest) when `espn-oprk` is present — same as My Team lineup strip. */
+  oprkSlate?: PlayerSosSlate;
 }
 
 export interface DepthChartPlayer {
@@ -333,6 +341,28 @@ export interface DepthChartPlayer {
   rank: number;
   posRank?: number;
   status?: string;
+}
+
+/** Per-player platform ranks for bio modal (1 = best overall). Week cells may include schedule opp. */
+export interface PlatformRatingCell {
+  rank?: number;
+  opponent?: string;
+  home?: boolean;
+  bye?: boolean;
+}
+
+export interface PlayerPlatformRatings {
+  currentWeek: number;
+  ros: {
+    espn?: PlatformRatingCell;
+    sleeper?: PlatformRatingCell;
+    cbs?: PlatformRatingCell;
+  };
+  week: {
+    espn?: PlatformRatingCell;
+    sleeper?: PlatformRatingCell;
+    cbs?: PlatformRatingCell;
+  };
 }
 
 export interface PlayerCompare {
@@ -345,6 +375,28 @@ export interface PlayerCompare {
   offenseRankPrev?: number;
   olineRank?: number;
   olineRankPrev?: number;
+  /** Through-week points-for rank (1 = most PF). */
+  offenseRankSeason?: number;
+  /** Prior season through-week points-for rank (1 = most PF). */
+  offenseRankSeasonPrev?: number;
+  /** Through-week O-line rank from PBP sack rate (1 = lowest). */
+  olineRankSeason?: number;
+  /** D/ST: through-week rank vs the pass (1 = fewest pass yds allowed). */
+  defPassStopRank?: number;
+  /** D/ST: through-week rank vs the run (1 = fewest rush yds allowed). */
+  defRushStopRank?: number;
+  /** D/ST: pass yards allowed / game (through completed weeks). */
+  defPassYdsAvg?: number;
+  /** D/ST: rush yards allowed / game (through completed weeks). */
+  defRushYdsAvg?: number;
+  /** D/ST: YTD sacks from the game log. */
+  dstSacks?: number;
+  /** D/ST: dense rank of YTD sacks among NFL D/STs (1 = most). */
+  dstSacksRank?: number;
+  /** D/ST: YTD turnovers (INT + FR) from the game log. */
+  dstTurnovers?: number;
+  /** D/ST: dense rank of YTD turnovers among NFL D/STs (1 = most). */
+  dstTurnoversRank?: number;
   lastSeason?: number;
   lastYearPoints?: number;
   lastYearRank?: number;
@@ -363,6 +415,24 @@ export interface PlayerCompare {
   depthChart?: DepthChartPlayer[];
   /** Canonical team used for depthChart (same resolved team as the player card). */
   depthChartTeam?: string;
+  platformRatings?: PlayerPlatformRatings;
+  /** Current-week PPR projection (ESPN leaguedefaults; any player, not roster-only). */
+  weekProjectedPoints?: number;
+  /** Current-week opponent matchup context for the projection strip. */
+  weekMatchup?: PlayerWeekMatchup;
+}
+
+/** Current-week opponent vs player's position (ESPN OPRK + FP allowed / game). */
+export interface PlayerWeekMatchup {
+  week: number;
+  opponent?: string;
+  home?: boolean;
+  bye?: boolean;
+  /** ESPN OPRK vs this position (1 = toughest). */
+  oprkRank?: number;
+  /** Fantasy points allowed / game to this position. */
+  fpAllowedPerGame?: number;
+  position: Position;
 }
 
 export interface PlayerNewsItem {
@@ -389,6 +459,8 @@ export interface RouteBoardPlayer {
   playerName: string;
   position: Position;
   rank: number;
+  /** NFL team abbr when known (helps D/ST search by team code). */
+  nflTeam?: string;
 }
 
 export interface RoutePickAlt {
@@ -484,4 +556,203 @@ export interface SotDocument {
   confidence: 'high' | 'medium' | 'low';
   tags: string[];
   content: string;
+}
+
+export type LineupSlot =
+  | 'QB'
+  | 'RB'
+  | 'WR'
+  | 'TE'
+  | 'FLEX'
+  | 'D/ST'
+  | 'K'
+  | 'BE'
+  | 'IR'
+  | 'UNKNOWN';
+
+export interface MyTeamPlayer {
+  espnId: number;
+  name: string;
+  nflTeam: string;
+  position: Position;
+  lineupSlot: LineupSlot;
+  lineupSlotId: number;
+  /** ESPN injury / roster status when not ACTIVE (OUT, QUESTIONABLE, …). */
+  status?: string;
+}
+
+/** YTD counting stats for My Team Stats tab (omitted fields show as —). */
+export type MyTeamSeasonStats =
+  | {
+      kind: 'QB';
+      cmp?: number;
+      att?: number;
+      pct?: number;
+      passYds?: number;
+      passTd?: number;
+      int?: number;
+      /** NFL passer rating (season YTD). */
+      passerRating?: number;
+      fuml?: number;
+      rushCar?: number;
+      rushYds?: number;
+      rushTd?: number;
+      snapPct?: number;
+    }
+  | {
+      kind: 'FLEX';
+      rushCar?: number;
+      rushYds?: number;
+      rushAvg?: number;
+      rushTd?: number;
+      rec?: number;
+      recYds?: number;
+      recAvg?: number;
+      recTd?: number;
+      targets?: number;
+      /** Targets per game played. */
+      tgtPg?: number;
+      totalTd?: number;
+      fuml?: number;
+      snapPct?: number;
+      /** Route participation % (ESPN YPRR routes ÷ team dropbacks until pbp_participation). */
+      routePct?: number;
+      airYards?: number;
+      yac?: number;
+      adot?: number;
+      targetShare?: number;
+      /** Share of team carries (%). */
+      carryShare?: number;
+    }
+  | {
+      kind: 'K';
+      fg?: number;
+      fga?: number;
+      xp?: number;
+      xpa?: number;
+    }
+  | {
+      kind: 'DST';
+      td?: number;
+      int?: number;
+      fr?: number;
+      sck?: number;
+      sfty?: number;
+      blk?: number;
+      pa?: number;
+      ya?: number;
+    };
+
+/** Lineup vs-strip: opponent defense vs this player's position. */
+export interface VsPosMatchup {
+  opponent: string;
+  position: Position;
+  /** ESPN OPRK vs this position (1 = toughest). */
+  oprkRank?: number;
+  /** Season fantasy points allowed / game to this position. */
+  fpAllowedPerGame?: number;
+  /** League rank of season FPA (1 = fewest allowed = toughest). */
+  fpAllowedRank?: number;
+  /** Avg fantasy points allowed over the last ≤3 completed weeks. */
+  last3FpAllowed?: number;
+  /** League rank of L3 FPA (1 = fewest allowed = toughest). */
+  last3FpAllowedRank?: number;
+  /**
+   * Combined yards/g: net pass for QB; rush+rec for RB/WR/TE
+   * (nflverse weekly / td-defense season).
+   */
+  yardsAllowedPerGame?: number;
+  /** League rank of combined yards/g (1 = fewest = toughest). */
+  yardsAllowedRank?: number;
+  /** Avg combined yards over the last ≤3 completed weeks. */
+  last3YardsAllowed?: number;
+  /** League rank of L3 combined yards/g (1 = fewest = toughest). */
+  last3YardsAllowedRank?: number;
+  /** Season total TDs allowed (QB: pass+rush; RB/WR/TE: rush+rec). */
+  tdsAllowed?: number;
+  /** League rank of season total TDs (1 = fewest = toughest). */
+  tdsAllowedRank?: number;
+  /** Air yards/g: pass (QB) or receiving (RB/WR/TE). */
+  airYardsPerGame?: number;
+  airYardsRank?: number;
+  last3AirYards?: number;
+  last3AirYardsRank?: number;
+  /** Season air TDs: pass (QB) or receiving (RB/WR/TE). */
+  airTds?: number;
+  airTdsRank?: number;
+  /** Rushing yards/g allowed to this position. */
+  rushYardsPerGame?: number;
+  rushYardsRank?: number;
+  last3RushYards?: number;
+  last3RushYardsRank?: number;
+  /** Season rushing TDs allowed to this position. */
+  rushTds?: number;
+  rushTdsRank?: number;
+}
+
+/** Enriched roster row for My Team UI (not persisted). */
+export interface MyTeamRosterPlayer extends MyTeamPlayer {
+  opponent?: string;
+  home?: boolean;
+  bye?: boolean;
+  kickoff?: string;
+  gameStatus?: 'SCHEDULED' | 'IN_PROGRESS' | 'FINAL';
+  /** NFL team score when the game is final / in progress. */
+  teamScore?: number;
+  oppScore?: number;
+  /** Dome / outdoor weather glyph + tooltip (from game-context + venues). */
+  weather?: { kind: string; label: string };
+  /** ESPN week projection (`statSourceId=1`). */
+  projectedPoints?: number;
+  /** ESPN week actual (`statSourceId=0`); absent until the game starts. */
+  weekScore?: number;
+  /** Prior week actual fantasy points. */
+  lastWeekPoints?: number;
+  /** ESPN-style OPRK: 1 = toughest matchup. */
+  oppRank?: number;
+  percentOwned?: number;
+  posRank?: number;
+  fantasyPoints?: number;
+  gamesPlayed?: number;
+  avgPoints?: number;
+  seasonStats?: MyTeamSeasonStats;
+  /**
+   * Positional ranks for Stats value tooltips (`field` → rank among NFL at same position).
+   * Keys match seasonStats / fpts / avg (e.g. `recYds`, `snapPct`).
+   */
+  statRanks?: Record<string, { rank: number; of: number }>;
+  /** Positional SOS week slate for Lineup expand (Source B + Off/OL). */
+  sosSlate?: PlayerSosSlate;
+  /** Weekly OPRK-style ranks (raw Source B, no Off/OL) for Lineup ESPN strip. */
+  oprkSlate?: PlayerSosSlate;
+  /** Opponent vs this position (Lineup vs expand). */
+  vsMatchup?: VsPosMatchup;
+}
+
+/** Host site the My Team roster was imported from. */
+export type FantasyPlatform = 'espn' | 'sleeper' | 'cbs';
+
+export interface MyTeamFile {
+  season: number;
+  /** Import host; omit on legacy files → treat as espn. */
+  platform?: FantasyPlatform;
+  leagueId: number;
+  teamId: number;
+  teamName: string;
+  importedAt: string;
+  refreshedAt: string;
+  players: MyTeamPlayer[];
+}
+
+export interface MyTeamRosterView extends Omit<MyTeamFile, 'players'> {
+  currentWeek: number;
+  completedWeeks: number;
+  players: MyTeamRosterPlayer[];
+}
+
+export interface EspnTeamSummary {
+  teamId: number;
+  name: string;
+  abbrev?: string;
+  playerCount: number;
 }

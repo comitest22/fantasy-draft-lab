@@ -1,9 +1,12 @@
 /**
  * Pull live ESPN PPR draft ranks and depth-chart extras, write:
  *   data/enrichment/espn-ppr-overall/{season}.csv
- *   data/enrichment/espn-depth-{season}.csv   (team roster players past the ranked board)
+ *   data/enrichment/espn-depth-{season}.csv   (current NFL team-roster skill players past the ranked board)
  *   data/enrichment/espn-ids-{season}.csv     (athlete ids for game logs past the top board)
  * then merge ranks into adp.csv (keeps existing expectedPoints).
+ *
+ * Depth extras start from ESPN fantasy percent-owned, then keep only players who appear on
+ * that team's live ESPN roster (drops retired / FA stubs still tagged to a club in fantasy).
  *
  * Usage:
  *   npx tsx scripts/enrichment/fetch-espn-ranks.ts
@@ -101,6 +104,22 @@ type IdRow = {
   playerName: string;
   espnId: number;
   position: string;
+};
+
+type RosterAthlete = {
+  espnId: number;
+  playerName: string;
+  position: string;
+  status?: string;
+};
+
+const ROSTER_POS: Record<string, string> = {
+  QB: 'QB',
+  RB: 'RB',
+  WR: 'WR',
+  TE: 'TE',
+  PK: 'K',
+  K: 'K',
 };
 
 function playerEspnId(player: EspnPlayer): number | undefined {
@@ -270,6 +289,79 @@ function isLiveDepth(d: DepthRow): boolean {
   return (d.espnRank != null && d.espnRank > 0) || (d.percentOwned != null && d.percentOwned > 0);
 }
 
+async function fetchTeamRoster(teamId: number): Promise<RosterAthlete[]> {
+  const url = `https://site.web.api.espn.com/apis/site/v2/sports/football/nfl/teams/${teamId}/roster`;
+  const res = await fetch(url, {
+    headers: { Accept: 'application/json', 'User-Agent': 'fantasy-draft-lab' },
+  });
+  if (!res.ok) throw new Error(`ESPN roster ${teamId}: ${res.status}`);
+  const body = (await res.json()) as {
+    athletes?: Array<{ items?: Array<{
+      id?: string | number;
+      displayName?: string;
+      fullName?: string;
+      position?: { abbreviation?: string };
+      injuries?: Array<{ status?: string }>;
+      status?: { type?: string; name?: string };
+    }> }>;
+  };
+  const out: RosterAthlete[] = [];
+  for (const group of body.athletes ?? []) {
+    for (const p of group.items ?? []) {
+      const pos = ROSTER_POS[(p.position?.abbreviation ?? '').toUpperCase()];
+      const espnId = Number(p.id);
+      const playerName = (p.displayName ?? p.fullName ?? '').trim();
+      if (!pos || !playerName || !Number.isFinite(espnId) || espnId <= 0) continue;
+      const injury = (p.injuries?.[0]?.status ?? '').trim();
+      const statusType = (p.status?.type ?? p.status?.name ?? '').trim();
+      const status = injury || statusType || undefined;
+      out.push({ espnId, playerName, position: pos, status });
+    }
+  }
+  return out;
+}
+
+/** Live NFL roster membership by team (canonical abbr) for depth filtering. */
+async function loadLiveRosters(): Promise<{
+  byTeamId: Map<string, Set<number>>;
+  byTeamName: Map<string, Set<string>>;
+}> {
+  const byTeamId = new Map<string, Set<number>>();
+  const byTeamName = new Map<string, Set<string>>();
+  const teamIds = Object.keys(ESPN_TEAM).map(Number);
+  for (const teamId of teamIds) {
+    const abbr = ESPN_TEAM[teamId];
+    if (!abbr) continue;
+    try {
+      const athletes = await fetchTeamRoster(teamId);
+      const ids = new Set<number>();
+      const names = new Set<string>();
+      for (const a of athletes) {
+        ids.add(a.espnId);
+        names.add(normalizeName(a.playerName));
+      }
+      byTeamId.set(abbr, ids);
+      byTeamName.set(abbr, names);
+      console.log(`   Roster ${abbr}: ${athletes.length} skill/K`);
+    } catch (err) {
+      console.warn(`   Roster ${abbr} failed:`, err instanceof Error ? err.message : err);
+    }
+  }
+  return { byTeamId, byTeamName };
+}
+
+function onLiveRoster(
+  d: DepthRow,
+  byTeamId: Map<string, Set<number>>,
+  byTeamName: Map<string, Set<string>>
+): boolean {
+  const ids = byTeamId.get(d.nflTeam);
+  const names = byTeamName.get(d.nflTeam);
+  if (!ids && !names) return false;
+  if (d.espnId != null && ids?.has(d.espnId)) return true;
+  return Boolean(names?.has(normalizeName(d.playerName)));
+}
+
 async function mergeAdp(season: number, rows: RankRow[]): Promise<void> {
   const raw = await fs.readFile(ADP_PATH, 'utf-8');
   const lines = raw.trim().split(/\r?\n/);
@@ -332,9 +424,70 @@ export async function run(seasonArg?: number): Promise<void> {
   const ranked = [...byRank.values()].sort(
     (a, b) => a.adp - b.adp || a.playerName.localeCompare(b.playerName)
   );
-  const rows = ranked.map((row, i) => ({ ...row, adp: i + 1 }));
+  let rows = ranked.map((row, i) => ({ ...row, adp: i + 1 }));
   if (rows.length < 100) {
     throw new Error(`Only got ${rows.length} ESPN PPR ranks — aborting so we don’t wipe the board`);
+  }
+
+  // ESPN's published PPR board often stops before all 32 D/ST — append the rest so
+  // search / compare / ADP stay complete (same nicknames as app D/ST display).
+  const ABBR_TO_NICK: Record<string, string> = {
+    ARI: 'Cardinals',
+    ATL: 'Falcons',
+    BAL: 'Ravens',
+    BUF: 'Bills',
+    CAR: 'Panthers',
+    CHI: 'Bears',
+    CIN: 'Bengals',
+    CLE: 'Browns',
+    DAL: 'Cowboys',
+    DEN: 'Broncos',
+    DET: 'Lions',
+    GB: 'Packers',
+    HOU: 'Texans',
+    IND: 'Colts',
+    JAX: 'Jaguars',
+    KC: 'Chiefs',
+    LV: 'Raiders',
+    LAC: 'Chargers',
+    LA: 'Rams',
+    MIA: 'Dolphins',
+    MIN: 'Vikings',
+    NE: 'Patriots',
+    NO: 'Saints',
+    NYG: 'Giants',
+    NYJ: 'Jets',
+    PHI: 'Eagles',
+    PIT: 'Steelers',
+    SF: '49ers',
+    SEA: 'Seahawks',
+    TB: 'Buccaneers',
+    TEN: 'Titans',
+    WAS: 'Commanders',
+  };
+  const onBoardDst = new Set(
+    rows.filter((r) => r.position === 'D/ST').map((r) => normalizeName(r.playerName))
+  );
+  let nextAdp = rows.length + 1;
+  const missingDst: RankRow[] = [];
+  for (const abbr of Object.values(ESPN_TEAM)) {
+    const nick = ABBR_TO_NICK[abbr];
+    if (!nick) continue;
+    const playerName = `${nick} D/ST`;
+    const key = normalizeName(playerName);
+    if (onBoardDst.has(key) || onBoard.has(key)) continue;
+    missingDst.push({
+      playerName,
+      season,
+      position: 'D/ST',
+      adp: nextAdp++,
+      expectedPoints: points.get(key),
+    });
+    onBoard.add(key);
+  }
+  if (missingDst.length > 0) {
+    rows = [...rows, ...missingDst];
+    console.log(`   Appended ${missingDst.length} missing D/ST to complete all 32`);
   }
 
   const depthByName = new Map<string, DepthRow>();
@@ -354,6 +507,14 @@ export async function run(seasonArg?: number): Promise<void> {
     }
     if (page.length < PAGE) break;
   }
+
+  console.log(`   Depth candidates from fantasy owned: ${depthByName.size}`);
+  console.log('   Filtering depth to live ESPN team rosters…');
+  const { byTeamId, byTeamName } = await loadLiveRosters();
+  for (const [key, depth] of [...depthByName.entries()]) {
+    if (!onLiveRoster(depth, byTeamId, byTeamName)) depthByName.delete(key);
+  }
+
   const depthRows = [...depthByName.values()].sort(
     (a, b) =>
       (b.percentOwned ?? 0) - (a.percentOwned ?? 0) || a.playerName.localeCompare(b.playerName)

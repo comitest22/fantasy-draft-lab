@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
+import PageTitle from '../components/PageTitle';
 import { getOverview } from '../services/api';
 import type { SeasonAnalysis } from '../types';
 import { sortSeasonAnalyses } from '../utils/sort';
@@ -21,13 +23,13 @@ export default function SeasonsPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="status">Loading seasons...</p>;
+  if (loading) return <PageLoading label="Flipping through seasons…" />;
   if (error) return <p className="error">{error}</p>;
 
   if (sortedAnalyses.length === 0) {
     return (
       <section className="panel">
-        <h1>Your Draft History</h1>
+        <PageTitle>Your Draft History</PageTitle>
         <p>No seasons imported yet.</p>
         <Link to="/import" className="button">
           Import your first draft
@@ -39,7 +41,7 @@ export default function SeasonsPage() {
   return (
     <section className="panel">
       <div className="panel-header">
-        <h1>Your Draft History</h1>
+        <PageTitle>Your Draft History</PageTitle>
         <Link to="/import" className="button secondary">
           Import season
         </Link>

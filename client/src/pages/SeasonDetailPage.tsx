@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ConfirmDialog from '../components/ConfirmDialog';
 import DraftBoard from '../components/DraftBoard';
+import PageLoading from '../components/PageLoading';
+import PageTitle from '../components/PageTitle';
+import { draftIcon } from '../nav/toolsMode';
 import PodiumCompare from '../components/PodiumCompare';
 import { deleteSeason, getDraftSeason } from '../services/api';
 import type { DraftFile, SeasonAnalysis } from '../types';
@@ -42,7 +45,7 @@ export default function SeasonDetailPage() {
     }
   }
 
-  if (loading) return <p className="status">Loading draft...</p>;
+  if (loading) return <PageLoading label="Unrolling the board…" />;
   if (error && !draft) return <p className="error">{error}</p>;
   if (!draft || !analysis) return <p className="error">Draft not found</p>;
 
@@ -51,11 +54,13 @@ export default function SeasonDetailPage() {
   return (
     <section className="panel">
       <div className="panel-header">
-        <div>
-          <Link to="/seasons" className="back-link">
-            ← All seasons
-          </Link>
-          <h1>{draft.season} Draft</h1>
+        <div className="page-intro">
+          <p className="crumb">
+            <Link to="/seasons">Seasons</Link>
+            <span aria-hidden="true"> › </span>
+            {draft.season} Draft
+          </p>
+          <PageTitle badge={draftIcon(20)}>{draft.season} Draft</PageTitle>
           <p className="subtitle">
             {analysis.userTeamName ?? 'Team not mapped'} · Draft grade{' '}
             {analysis.draftGrade}

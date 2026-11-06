@@ -1,6 +1,9 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageLoading from '../components/PageLoading';
+import PageTitle from '../components/PageTitle';
 import PlayerCompareDialog from '../components/PlayerCompareDialog';
+import { draftIcon } from '../nav/toolsMode';
 import { getCheatSheet } from '../services/api';
 import type { CheatSheet, CheatSheetScoring, Position, RankedPlayer, RosterSettings } from '../types';
 import { snakePath } from '../utils/snake';
@@ -258,14 +261,19 @@ export default function CheatSheetsPage() {
     setHighlighted(new Set());
   }
 
+  if (loading) return <PageLoading label="Warming up the board…" />;
+
   return (
     <section className="panel cheat-page">
-      <div className="cheat-head">
-        <h1 className="cheat-crumb">
+      <div className="cheat-head page-intro">
+        <p className="crumb">
           <Link to="/tools">Tools</Link>
-          {' > '}
+          <span aria-hidden="true"> › </span>
+          <Link to="/tools?toolkit=draft">Draft</Link>
+          <span aria-hidden="true"> › </span>
           Cheat Sheet
-        </h1>
+        </p>
+        <PageTitle badge={draftIcon(20)}>Cheat Sheet</PageTitle>
         {sheet?.note && <p className="subtitle">{sheet.note}</p>}
       </div>
 
@@ -350,9 +358,8 @@ export default function CheatSheetsPage() {
       </div>
       </div>
 
-      {loading && <p className="status">Loading board…</p>}
       {error && <p className="error">{error}</p>}
-      {!loading && !error && (
+      {!error && (
         <ul className="cheat-list">
           {rows.map((player) => (
             <Fragment key={player.playerName}>
@@ -569,7 +576,7 @@ function CheatRow({
             <strong>{player.playerName}</strong>
             {player.nflTeam && <span className="cheat-team">{player.nflTeam}</span>}
             {badge && (
-              <span className="status-badge" title={badge.title}>
+              <span className={`status-badge status-badge-${badge.tone}`} title={badge.title}>
                 {badge.label}
               </span>
             )}

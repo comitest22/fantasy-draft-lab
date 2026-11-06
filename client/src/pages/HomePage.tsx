@@ -1,107 +1,75 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
-import KeyTakeaways from '../components/KeyTakeaways';
-import LearningsList from '../components/LearningsList';
-import PlayerCompareDialog from '../components/PlayerCompareDialog';
-import PlayerNews from '../components/PlayerNews';
-import { getStrategy } from '../services/api';
-import type { StrategyRecommendation, TimingAdvice } from '../types';
+import { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
+import HeaderSearch from '../components/HeaderSearch';
+import NavFlyoutMenu from '../components/NavFlyoutMenu';
+import { homeMenuItems } from '../nav/appNav';
+import { navFlyoutByPath, type NavFlyoutId } from '../nav/homeFlyouts';
 
 export default function HomePage() {
-  const [params, setParams] = useSearchParams();
-  const selected = params.get('player');
-  const articleUrl = params.get('article');
-  const [recommendations, setRecommendations] = useState<StrategyRecommendation[]>([]);
-  const [takeaways, setTakeaways] = useState<TimingAdvice[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [openFlyout, setOpenFlyout] = useState<NavFlyoutId | null>(null);
 
-  useEffect(() => {
-    if (selected) window.scrollTo({ top: 0 });
-  }, [selected, articleUrl]);
+  const closeFlyout = useCallback(() => setOpenFlyout(null), []);
 
-  useEffect(() => {
-    if (selected) return;
-    let cancelled = false;
-    getStrategy()
-      .then((data) => {
-        if (cancelled) return;
-        setRecommendations(data.recommendations);
-        setTakeaways(data.playbook?.timingAdvice ?? []);
-        setError(null);
-      })
-      .catch((err) => {
-        if (!cancelled) setError(err instanceof Error ? err.message : String(err));
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [selected]);
-
-  function openArticle(url: string) {
-    if (!selected) return;
-    setParams({ player: selected, article: url });
-  }
-
-  function backToNews() {
-    if (!selected) return;
-    setParams({ player: selected });
-  }
-
-  function backToHome() {
-    setParams({});
-  }
-
-  if (selected) {
-    return (
-      <section className="player-page">
-        <button type="button" className="back-link player-page-back" onClick={backToHome}>
-          ← Back
-        </button>
-        <div className="player-page-grid">
-          <PlayerCompareDialog
-            solo
-            variant="page"
-            leftName={selected}
-            onClose={backToHome}
-          />
-          <PlayerNews
-            name={selected}
-            articleUrl={articleUrl}
-            onOpenArticle={(item) => openArticle(item.url)}
-            onBackToResults={backToNews}
-          />
-        </div>
-      </section>
-    );
+  function toggleFlyout(id: NavFlyoutId) {
+    setOpenFlyout((current) => (current === id ? null : id));
   }
 
   return (
-    <section className="panel">
-      <div className="page-intro">
-        <h1>DontSuckAtFantasyDrafts</h1>
-        <p className="subtitle">
-          What this league’s drafts actually teach — learnings from the path, takeaways from the
-          podium.
-        </p>
-      </div>
-      {loading && <p className="status">Loading notes…</p>}
-      {error && <p className="error">{error}</p>}
-      {!loading && !error && (
-        <div className="insight-columns">
-          <section>
-            <h2>Learnings</h2>
-            <LearningsList recommendations={recommendations} />
-          </section>
-          <section>
-            <h2>Takeaways</h2>
-            <KeyTakeaways takes={takeaways} showHeading={false} />
-          </section>
+    <section className="panel home-landing">
+      <div className="home-launch">
+        <div className="home-hero">
+          <div className="home-brand">
+            <img src="/dsafd-logo.png" alt="" className="home-brand-logo" width={76} height={76} />
+            <h1 className="home-brand-title">B.L.I.T.Z.</h1>
+          </div>
+          <p className="subtitle home-acronym">
+            Boards, Lineups, Insights, Tools, &amp; Zero-suck
+          </p>
         </div>
-      )}
+        <div className="home-controls">
+          <div className="home-search-wrap">
+            <HeaderSearch />
+          </div>
+          <nav className="home-menu-grid" aria-label="Main navigation">
+            {homeMenuItems.map((item) => {
+              const flyoutId = navFlyoutByPath[item.to];
+              if (!flyoutId) {
+                return (
+                  <Link key={item.to} to={item.to} className="home-menu-btn">
+                    <span className="home-menu-icon">{item.icon(28)}</span>
+                    <span className="home-menu-label">{item.label}</span>
+                  </Link>
+                );
+              }
+
+              const isOpen = openFlyout === flyoutId;
+              const panelId = `home-${flyoutId}-sub`;
+
+              return (
+                <NavFlyoutMenu
+                  key={item.to}
+                  id={flyoutId}
+                  open={isOpen}
+                  onClose={closeFlyout}
+                  panelId={panelId}
+                  className="home-menu-flyout"
+                >
+                  <button
+                    type="button"
+                    className={`home-menu-btn${isOpen ? ' is-active' : ''}`}
+                    onClick={() => toggleFlyout(flyoutId)}
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                  >
+                    <span className="home-menu-icon">{item.icon(28)}</span>
+                    <span className="home-menu-label">{item.label}</span>
+                  </button>
+                </NavFlyoutMenu>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
     </section>
   );
 }

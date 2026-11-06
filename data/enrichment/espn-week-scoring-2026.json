@@ -1,0 +1,91 @@
+{
+  "season": 2026,
+  "scoringPeriodId": 9,
+  "leagueId": 1735901,
+  "teamId": 6,
+  "fetchedAt": "2026-11-06T20:18:18.961Z",
+  "players": [
+    {
+      "espnId": -16027,
+      "projectedPoints": 4.4,
+      "lastWeekPoints": 15,
+      "percentOwned": 31.8
+    },
+    {
+      "espnId": 15818,
+      "projectedPoints": 10.2,
+      "lastWeekPoints": 13.7,
+      "percentOwned": 45.6
+    },
+    {
+      "espnId": 3126486,
+      "projectedPoints": 0,
+      "percentOwned": 75.7
+    },
+    {
+      "espnId": 4241389,
+      "projectedPoints": 20.5,
+      "lastWeekPoints": 12.8,
+      "percentOwned": 99.9
+    },
+    {
+      "espnId": 4361741,
+      "projectedPoints": 22.2,
+      "percentOwned": 98.7
+    },
+    {
+      "espnId": 4426385,
+      "projectedPoints": 10.8,
+      "lastWeekPoints": 5.9,
+      "percentOwned": 73.4
+    },
+    {
+      "espnId": 4427366,
+      "projectedPoints": 10.9,
+      "lastWeekPoints": 0,
+      "percentOwned": 95.6
+    },
+    {
+      "espnId": 4431452,
+      "projectedPoints": 20.9,
+      "lastWeekPoints": 22.5,
+      "percentOwned": 99
+    },
+    {
+      "espnId": 4431459,
+      "projectedPoints": 11.9,
+      "lastWeekPoints": 5.8,
+      "percentOwned": 96.5
+    },
+    {
+      "espnId": 4567104,
+      "projectedPoints": 10.7,
+      "lastWeekPoints": 0,
+      "percentOwned": 92.1
+    },
+    {
+      "espnId": 4569987,
+      "projectedPoints": 0,
+      "lastWeekPoints": 21.3,
+      "percentOwned": 96.3
+    },
+    {
+      "espnId": 4695883,
+      "projectedPoints": 12,
+      "lastWeekPoints": 9.6,
+      "percentOwned": 89.4
+    },
+    {
+      "espnId": 4711533,
+      "projectedPoints": 16.4,
+      "lastWeekPoints": 6.9,
+      "percentOwned": 88
+    },
+    {
+      "espnId": 4871023,
+      "projectedPoints": 0,
+      "lastWeekPoints": 0,
+      "percentOwned": 83.5
+    }
+  ]
+}

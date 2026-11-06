@@ -1,7 +1,13 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import type { SosTeamRow } from '../types';
-import { avgWindowMatchup, buildWindowRosRanks, clampWeekRange, compareWeekOrder } from './sosWindow';
+import {
+  avgWindowMatchup,
+  buildOprkWindowRanks,
+  buildWindowRosRanks,
+  clampWeekRange,
+  compareWeekOrder,
+} from './sosWindow';
 
 function team(
   code: string,
@@ -86,6 +92,32 @@ describe('buildWindowRosRanks', () => {
     assert.equal(full.get('AAA'), 2);
 
     const early = buildWindowRosRanks(teams, [1], 'rb');
+    assert.equal(early.get('AAA'), 1);
+    assert.equal(early.get('BBB'), 2);
+  });
+});
+
+describe('buildOprkWindowRanks', () => {
+  it('ranks higher avg OPRK first (easier) and uses only the window weeks', () => {
+    // OPRK: 1 toughest … 32 easiest. AAA faces soft then tough; BBB opposite.
+    const teams = [
+      team('AAA', [
+        { week: 1, opp: 'SOFT' },
+        { week: 2, opp: 'HARD' },
+        { week: 3, opp: 'HARD' },
+      ]),
+      team('BBB', [
+        { week: 1, opp: 'HARD' },
+        { week: 2, opp: 'SOFT' },
+        { week: 3, opp: 'SOFT' },
+      ]),
+    ];
+    const oprk = { SOFT: 30, HARD: 2 };
+    const full = buildOprkWindowRanks(teams, [1, 2, 3], oprk);
+    assert.equal(full.get('BBB'), 1);
+    assert.equal(full.get('AAA'), 2);
+
+    const early = buildOprkWindowRanks(teams, [1], oprk);
     assert.equal(early.get('AAA'), 1);
     assert.equal(early.get('BBB'), 2);
   });

@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import PageTitle from '../components/PageTitle';
 
 const cards = [
   {
     to: '/strategy/draft',
     title: 'Draft',
-    detail: 'Pick-by-pick routes, values, landmines, podium, learnings, and research for this league.',
+    detail: 'Pick-by-pick routes, values, landmines, podium, era, and research for this league.',
   },
   {
     to: '/strategy/survivor',
@@ -27,7 +28,7 @@ export default function StrategyHubPage() {
   return (
     <section className="panel">
       <div className="page-intro">
-        <h1>Strategy</h1>
+        <PageTitle>Strategy</PageTitle>
         <p className="subtitle">Draft work plus the three in-season survivor leagues.</p>
       </div>
       <div className="tool-grid">
