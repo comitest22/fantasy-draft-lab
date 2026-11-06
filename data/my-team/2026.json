@@ -1,0 +1,125 @@
+{
+  "season": 2026,
+  "platform": "espn",
+  "leagueId": 1735901,
+  "teamId": 6,
+  "teamName": "Drake 'n Bake",
+  "importedAt": "2026-10-03T07:16:43.877Z",
+  "refreshedAt": "2026-11-06T20:38:48.733Z",
+  "players": [
+    {
+      "espnId": 4361741,
+      "name": "Brock Purdy",
+      "nflTeam": "SF",
+      "position": "QB",
+      "lineupSlot": "QB",
+      "lineupSlotId": 0
+    },
+    {
+      "espnId": 4427366,
+      "name": "Breece Hall",
+      "nflTeam": "NYJ",
+      "position": "RB",
+      "lineupSlot": "RB",
+      "lineupSlotId": 2
+    },
+    {
+      "espnId": 4711533,
+      "name": "Ollie Gordon II",
+      "nflTeam": "MIA",
+      "position": "RB",
+      "lineupSlot": "RB",
+      "lineupSlotId": 2
+    },
+    {
+      "espnId": 4241389,
+      "name": "CeeDee Lamb",
+      "nflTeam": "DAL",
+      "position": "WR",
+      "lineupSlot": "WR",
+      "lineupSlotId": 4
+    },
+    {
+      "espnId": 4695883,
+      "name": "Jalen Coker",
+      "nflTeam": "CAR",
+      "position": "WR",
+      "lineupSlot": "WR",
+      "lineupSlotId": 4
+    },
+    {
+      "espnId": 4431459,
+      "name": "Tyler Warren",
+      "nflTeam": "IND",
+      "position": "TE",
+      "lineupSlot": "TE",
+      "lineupSlotId": 6
+    },
+    {
+      "espnId": 15818,
+      "name": "Keenan Allen",
+      "nflTeam": "IND",
+      "position": "WR",
+      "lineupSlot": "FLEX",
+      "lineupSlotId": 23
+    },
+    {
+      "espnId": -16027,
+      "name": "Buccaneers D/ST",
+      "nflTeam": "TB",
+      "position": "D/ST",
+      "lineupSlot": "D/ST",
+      "lineupSlotId": 16
+    },
+    {
+      "espnId": 4567104,
+      "name": "Will Reichard",
+      "nflTeam": "MIN",
+      "position": "K",
+      "lineupSlot": "K",
+      "lineupSlotId": 17
+    },
+    {
+      "espnId": 4871023,
+      "name": "Carnell Tate",
+      "nflTeam": "TEN",
+      "position": "WR",
+      "lineupSlot": "BE",
+      "lineupSlotId": 20,
+      "status": "OUT"
+    },
+    {
+      "espnId": 3126486,
+      "name": "Deebo Samuel Sr.",
+      "nflTeam": "SF",
+      "position": "WR",
+      "lineupSlot": "BE",
+      "lineupSlotId": 20,
+      "status": "QUESTIONABLE"
+    },
+    {
+      "espnId": 4431452,
+      "name": "Drake Maye",
+      "nflTeam": "NE",
+      "position": "QB",
+      "lineupSlot": "BE",
+      "lineupSlotId": 20
+    },
+    {
+      "espnId": 4569987,
+      "name": "Jaylen Warren",
+      "nflTeam": "PIT",
+      "position": "RB",
+      "lineupSlot": "BE",
+      "lineupSlotId": 20
+    },
+    {
+      "espnId": 4426385,
+      "name": "Zach Charbonnet",
+      "nflTeam": "SEA",
+      "position": "RB",
+      "lineupSlot": "BE",
+      "lineupSlotId": 20
+    }
+  ]
+}
