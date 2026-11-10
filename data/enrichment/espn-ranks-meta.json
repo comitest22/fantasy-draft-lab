@@ -1,9 +1,9 @@
 {
   "source": "ESPN live PPR draft ranks",
   "season": 2026,
-  "fetchedAt": "2026-11-06T20:39:27.059Z",
-  "playerCount": 352,
+  "fetchedAt": "2026-11-10T21:14:40.503Z",
+  "playerCount": 362,
   "maxRank": 500,
-  "depthCount": 380,
+  "depthCount": 336,
   "idCount": 4465
 }
