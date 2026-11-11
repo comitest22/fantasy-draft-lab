@@ -3,2001 +3,8 @@
   "currentWeek": 10,
   "scoring": "PPR",
   "rankScope": "positional",
-  "fetchedAt": "2026-11-10T21:13:50.269Z",
+  "fetchedAt": "2026-11-11T18:16:14.022Z",
   "byPlayer": {
-    "jamarr chase": {
-      "espn": {
-        "week": 1,
-        "ros": 1
-      },
-      "sleeper": {
-        "week": 3,
-        "ros": 2
-      },
-      "cbs": {
-        "week": 3,
-        "ros": 2
-      }
-    },
-    "jaxon smithnjigba": {
-      "espn": {
-        "week": 2,
-        "ros": 4
-      },
-      "sleeper": {
-        "week": 1,
-        "ros": 3
-      },
-      "cbs": {
-        "week": 2,
-        "ros": 1
-      }
-    },
-    "ceedee lamb": {
-      "espn": {
-        "week": 3,
-        "ros": 5
-      },
-      "sleeper": {
-        "week": 2,
-        "ros": 5
-      },
-      "cbs": {
-        "week": 1,
-        "ros": 4
-      }
-    },
-    "amonra st brown": {
-      "espn": {
-        "week": 4,
-        "ros": 2
-      },
-      "sleeper": {
-        "week": 4,
-        "ros": 4
-      },
-      "cbs": {
-        "week": 4,
-        "ros": 3
-      }
-    },
-    "justin jefferson": {
-      "espn": {
-        "week": 5,
-        "ros": 3
-      },
-      "sleeper": {
-        "week": 6,
-        "ros": 7
-      },
-      "cbs": {
-        "ros": 5
-      }
-    },
-    "matthew golden": {
-      "espn": {
-        "week": 6,
-        "ros": 7
-      },
-      "sleeper": {
-        "week": 16,
-        "ros": 43
-      },
-      "cbs": {
-        "week": 10,
-        "ros": 12
-      }
-    },
-    "malik nabers": {
-      "espn": {
-        "week": 7,
-        "ros": 8
-      },
-      "sleeper": {
-        "week": 7,
-        "ros": 10
-      },
-      "cbs": {
-        "week": 8,
-        "ros": 10
-      }
-    },
-    "tee higgins": {
-      "espn": {
-        "week": 8,
-        "ros": 6
-      },
-      "sleeper": {
-        "week": 5,
-        "ros": 17
-      },
-      "cbs": {
-        "week": 5,
-        "ros": 6
-      }
-    },
-    "tetairoa mcmillan": {
-      "espn": {
-        "week": 9,
-        "ros": 10
-      },
-      "sleeper": {
-        "week": 12,
-        "ros": 19
-      },
-      "cbs": {
-        "week": 12,
-        "ros": 22
-      }
-    },
-    "chris olave": {
-      "espn": {
-        "week": 10,
-        "ros": 9
-      },
-      "sleeper": {
-        "week": 10,
-        "ros": 11
-      },
-      "cbs": {
-        "week": 6,
-        "ros": 8
-      }
-    },
-    "christian watson": {
-      "espn": {
-        "week": 11,
-        "ros": 11
-      },
-      "sleeper": {
-        "week": 11,
-        "ros": 26
-      },
-      "cbs": {
-        "week": 9,
-        "ros": 9
-      }
-    },
-    "drake london": {
-      "espn": {
-        "week": 12,
-        "ros": 14
-      },
-      "sleeper": {
-        "week": 8,
-        "ros": 8
-      },
-      "cbs": {
-        "week": 11,
-        "ros": 16
-      }
-    },
-    "zay flowers": {
-      "espn": {
-        "week": 13,
-        "ros": 20
-      },
-      "sleeper": {
-        "week": 9,
-        "ros": 15
-      },
-      "cbs": {
-        "week": 15,
-        "ros": 21
-      }
-    },
-    "parker washington": {
-      "espn": {
-        "week": 14,
-        "ros": 12
-      },
-      "sleeper": {
-        "week": 13,
-        "ros": 23
-      },
-      "cbs": {
-        "week": 7,
-        "ros": 11
-      }
-    },
-    "dj moore": {
-      "espn": {
-        "week": 15,
-        "ros": 16
-      },
-      "sleeper": {
-        "week": 21,
-        "ros": 33
-      },
-      "cbs": {
-        "week": 19,
-        "ros": 26
-      }
-    },
-    "nico collins": {
-      "espn": {
-        "week": 16,
-        "ros": 13
-      },
-      "sleeper": {
-        "week": 14,
-        "ros": 6
-      },
-      "cbs": {
-        "week": 16,
-        "ros": 13
-      }
-    },
-    "rashee rice": {
-      "espn": {
-        "week": 17,
-        "ros": 17
-      },
-      "sleeper": {
-        "week": 17,
-        "ros": 12
-      },
-      "cbs": {
-        "ros": 14
-      }
-    },
-    "denzel boston": {
-      "espn": {
-        "week": 18,
-        "ros": 25
-      },
-      "sleeper": {
-        "week": 33,
-        "ros": 56
-      },
-      "cbs": {
-        "week": 31,
-        "ros": 41
-      }
-    },
-    "garrett wilson": {
-      "espn": {
-        "week": 19,
-        "ros": 24
-      },
-      "sleeper": {
-        "week": 18,
-        "ros": 16
-      },
-      "cbs": {
-        "week": 55,
-        "ros": 27
-      }
-    },
-    "george pickens": {
-      "espn": {
-        "week": 20,
-        "ros": 32
-      },
-      "sleeper": {
-        "week": 20,
-        "ros": 9
-      },
-      "cbs": {
-        "ros": 20
-      }
-    },
-    "carnell tate": {
-      "espn": {
-        "week": 21,
-        "ros": 18
-      },
-      "sleeper": {
-        "week": 23,
-        "ros": 35
-      },
-      "cbs": {
-        "ros": 19
-      }
-    },
-    "jameson williams": {
-      "espn": {
-        "week": 22,
-        "ros": 27
-      },
-      "sleeper": {
-        "week": 22,
-        "ros": 27
-      },
-      "cbs": {
-        "week": 14,
-        "ros": 18
-      }
-    },
-    "demario douglas": {
-      "espn": {
-        "week": 23,
-        "ros": 50
-      },
-      "sleeper": {
-        "week": 44,
-        "ros": 88
-      },
-      "cbs": {
-        "week": 25,
-        "ros": 67
-      }
-    },
-    "deebo samuel": {
-      "espn": {
-        "week": 24,
-        "ros": 38
-      },
-      "sleeper": {
-        "week": 28,
-        "ros": 54
-      },
-      "cbs": {
-        "ros": 48
-      }
-    },
-    "jakobi meyers": {
-      "espn": {
-        "week": 25,
-        "ros": 29
-      },
-      "sleeper": {
-        "week": 35,
-        "ros": 44
-      },
-      "cbs": {
-        "week": 22,
-        "ros": 30
-      }
-    },
-    "jalen coker": {
-      "espn": {
-        "week": 26,
-        "ros": 31
-      },
-      "sleeper": {
-        "week": 15,
-        "ros": 48
-      },
-      "cbs": {
-        "week": 21,
-        "ros": 36
-      }
-    },
-    "dk metcalf": {
-      "espn": {
-        "week": 27,
-        "ros": 19
-      },
-      "sleeper": {
-        "week": 24,
-        "ros": 32
-      },
-      "cbs": {
-        "week": 26,
-        "ros": 37
-      }
-    },
-    "germie bernard": {
-      "espn": {
-        "week": 28,
-        "ros": 30
-      },
-      "sleeper": {
-        "week": 29,
-        "ros": 74
-      },
-      "cbs": {
-        "ros": 54
-      }
-    },
-    "stefon diggs": {
-      "espn": {
-        "week": 29,
-        "ros": 23
-      },
-      "sleeper": {
-        "week": 26,
-        "ros": 52
-      },
-      "cbs": {
-        "week": 18,
-        "ros": 24
-      }
-    },
-    "jordan addison": {
-      "espn": {
-        "week": 30,
-        "ros": 26
-      },
-      "sleeper": {
-        "week": 41,
-        "ros": 39
-      },
-      "cbs": {
-        "week": 42,
-        "ros": 43
-      }
-    },
-    "kc concepcion": {
-      "espn": {
-        "week": 31,
-        "ros": 40
-      },
-      "sleeper": {
-        "week": 34,
-        "ros": 53
-      },
-      "cbs": {
-        "week": 37,
-        "ros": 56
-      }
-    },
-    "mack hollins": {
-      "espn": {
-        "week": 32,
-        "ros": 56
-      },
-      "sleeper": {
-        "week": 59,
-        "ros": 113
-      },
-      "cbs": {
-        "ros": 68
-      }
-    },
-    "ladd mcconkey": {
-      "espn": {
-        "week": 33,
-        "ros": 34
-      },
-      "sleeper": {
-        "week": 25,
-        "ros": 14
-      },
-      "cbs": {
-        "week": 59,
-        "ros": 32
-      }
-    },
-    "adonai mitchell": {
-      "espn": {
-        "week": 34,
-        "ros": 42
-      },
-      "sleeper": {
-        "week": 47,
-        "ros": 75
-      },
-      "cbs": {
-        "week": 30,
-        "ros": 51
-      }
-    },
-    "khalil shakir": {
-      "espn": {
-        "week": 35,
-        "ros": 36
-      },
-      "sleeper": {
-        "week": 32,
-        "ros": 41
-      },
-      "cbs": {
-        "week": 20,
-        "ros": 25
-      }
-    },
-    "omar cooper": {
-      "espn": {
-        "week": 36,
-        "ros": 51
-      },
-      "sleeper": {
-        "week": 38,
-        "ros": 61
-      },
-      "cbs": {
-        "week": 28,
-        "ros": 55
-      }
-    },
-    "malachi fields": {
-      "espn": {
-        "week": 37,
-        "ros": 41
-      },
-      "sleeper": {
-        "week": 55,
-        "ros": 71
-      },
-      "cbs": {
-        "week": 57,
-        "ros": 76
-      }
-    },
-    "caleb douglas": {
-      "espn": {
-        "week": 38,
-        "ros": 44
-      },
-      "sleeper": {
-        "week": 43,
-        "ros": 78
-      },
-      "cbs": {
-        "week": 27,
-        "ros": 39
-      }
-    },
-    "treylon burks": {
-      "espn": {
-        "week": 39,
-        "ros": 39
-      },
-      "sleeper": {
-        "week": 64,
-        "ros": 130
-      },
-      "cbs": {
-        "week": 52,
-        "ros": 71
-      }
-    },
-    "josh downs": {
-      "espn": {
-        "week": 40,
-        "ros": 45
-      },
-      "sleeper": {
-        "ros": 38
-      },
-      "cbs": {
-        "week": 13,
-        "ros": 38
-      }
-    },
-    "malik washington": {
-      "espn": {
-        "week": 41,
-        "ros": 46
-      },
-      "sleeper": {
-        "week": 31,
-        "ros": 57
-      },
-      "cbs": {
-        "week": 38,
-        "ros": 57
-      }
-    },
-    "tutu atwell": {
-      "espn": {
-        "week": 42,
-        "ros": 58
-      },
-      "sleeper": {
-        "week": 48,
-        "ros": 164
-      },
-      "cbs": {
-        "week": 39,
-        "ros": 96
-      }
-    },
-    "konata mumpfield": {
-      "espn": {
-        "week": 43,
-        "ros": 62
-      },
-      "sleeper": {
-        "week": 45,
-        "ros": 121
-      },
-      "cbs": {
-        "week": 47
-      }
-    },
-    "wandale robinson": {
-      "espn": {
-        "week": 44,
-        "ros": 43
-      },
-      "sleeper": {
-        "week": 27,
-        "ros": 42
-      },
-      "cbs": {
-        "week": 36,
-        "ros": 44
-      }
-    },
-    "keenan allen": {
-      "espn": {
-        "week": 45,
-        "ros": 74
-      },
-      "sleeper": {
-        "week": 56,
-        "ros": 69
-      },
-      "cbs": {
-        "week": 23,
-        "ros": 46
-      }
-    },
-    "jordyn tyson": {
-      "espn": {
-        "week": 46,
-        "ros": 53
-      },
-      "sleeper": {
-        "week": 52,
-        "ros": 67
-      },
-      "cbs": {
-        "week": 24,
-        "ros": 33
-      }
-    },
-    "tre tucker": {
-      "espn": {
-        "week": 47,
-        "ros": 55
-      },
-      "sleeper": {
-        "week": 37,
-        "ros": 62
-      },
-      "cbs": {
-        "week": 33,
-        "ros": 40
-      }
-    },
-    "tank dell": {
-      "espn": {
-        "week": 48,
-        "ros": 48
-      },
-      "sleeper": {
-        "week": 89,
-        "ros": 116
-      },
-      "cbs": {
-        "week": 29,
-        "ros": 28
-      }
-    },
-    "ryan flournoy": {
-      "espn": {
-        "week": 49,
-        "ros": 65
-      },
-      "sleeper": {
-        "week": 39,
-        "ros": 64
-      },
-      "cbs": {
-        "week": 17,
-        "ros": 53
-      }
-    },
-    "xavier worthy": {
-      "espn": {
-        "week": 50,
-        "ros": 54
-      },
-      "sleeper": {
-        "week": 30,
-        "ros": 50
-      },
-      "cbs": {
-        "week": 72
-      }
-    },
-    "antonio williams": {
-      "espn": {
-        "week": 51,
-        "ros": 47
-      },
-      "sleeper": {
-        "week": 46,
-        "ros": 95
-      },
-      "cbs": {
-        "ros": 45
-      }
-    },
-    "xavier hutchinson": {
-      "espn": {
-        "week": 52,
-        "ros": 52
-      },
-      "sleeper": {
-        "week": 75,
-        "ros": 127
-      },
-      "cbs": {
-        "ros": 74
-      }
-    },
-    "savion williams": {
-      "espn": {
-        "week": 53,
-        "ros": 60
-      },
-      "sleeper": {
-        "week": 74,
-        "ros": 136
-      },
-      "cbs": {
-        "week": 76
-      }
-    },
-    "jahan dotson": {
-      "espn": {
-        "week": 54,
-        "ros": 64
-      },
-      "sleeper": {
-        "week": 50,
-        "ros": 99
-      },
-      "cbs": {
-        "week": 71,
-        "ros": 94
-      }
-    },
-    "keon coleman": {
-      "espn": {
-        "week": 55,
-        "ros": 59
-      },
-      "sleeper": {
-        "week": 40,
-        "ros": 86
-      },
-      "cbs": {
-        "week": 35,
-        "ros": 47
-      }
-    },
-    "laquon treadwell": {
-      "espn": {
-        "week": 56,
-        "ros": 69
-      },
-      "sleeper": {
-        "week": 67
-      },
-      "cbs": {
-        "week": 84
-      }
-    },
-    "devaughn vele": {
-      "espn": {
-        "week": 57,
-        "ros": 61
-      },
-      "sleeper": {
-        "week": 42,
-        "ros": 68
-      },
-      "cbs": {
-        "ros": 34
-      }
-    },
-    "efton chism": {
-      "espn": {
-        "week": 58,
-        "ros": 108
-      },
-      "sleeper": {
-        "week": 77,
-        "ros": 195
-      },
-      "cbs": {
-        "week": 49,
-        "ros": 90
-      }
-    },
-    "rashid shaheed": {
-      "espn": {
-        "week": 59,
-        "ros": 78
-      },
-      "sleeper": {
-        "week": 58,
-        "ros": 55
-      },
-      "cbs": {
-        "ros": 75
-      }
-    },
-    "reggie virgil": {
-      "espn": {
-        "week": 60,
-        "ros": 63
-      },
-      "sleeper": {
-        "week": 49,
-        "ros": 154
-      },
-      "cbs": {
-        "week": 51,
-        "ros": 64
-      }
-    },
-    "kyle williams": {
-      "espn": {
-        "week": 61,
-        "ros": 98
-      },
-      "sleeper": {
-        "week": 79,
-        "ros": 138
-      },
-      "cbs": {
-        "week": 64
-      }
-    },
-    "jordan whittington": {
-      "espn": {
-        "week": 62,
-        "ros": 85
-      },
-      "sleeper": {
-        "ros": 161
-      },
-      "cbs": {
-        "week": 74
-      }
-    },
-    "demarcus robinson": {
-      "espn": {
-        "week": 63,
-        "ros": 116
-      },
-      "sleeper": {
-        "week": 36,
-        "ros": 97
-      },
-      "cbs": {
-        "week": 40,
-        "ros": 69
-      }
-    },
-    "quentin johnston": {
-      "espn": {
-        "week": 64,
-        "ros": 66
-      },
-      "sleeper": {
-        "week": 51,
-        "ros": 49
-      },
-      "cbs": {
-        "week": 34,
-        "ros": 52
-      }
-    },
-    "darnell mooney": {
-      "espn": {
-        "week": 65,
-        "ros": 71
-      },
-      "sleeper": {
-        "week": 84,
-        "ros": 96
-      },
-      "cbs": {
-        "week": 62,
-        "ros": 86
-      }
-    },
-    "tre harris": {
-      "espn": {
-        "week": 66,
-        "ros": 68
-      },
-      "sleeper": {
-        "week": 63,
-        "ros": 66
-      },
-      "cbs": {
-        "week": 32,
-        "ros": 60
-      }
-    },
-    "brian thomas": {
-      "espn": {
-        "week": 67,
-        "ros": 76
-      },
-      "sleeper": {
-        "week": 69,
-        "ros": 29
-      },
-      "cbs": {
-        "ros": 97
-      }
-    },
-    "jalen nailor": {
-      "espn": {
-        "week": 68,
-        "ros": 77
-      },
-      "sleeper": {
-        "week": 86,
-        "ros": 58
-      },
-      "cbs": {
-        "week": 83
-      }
-    },
-    "elic ayomanor": {
-      "espn": {
-        "week": 69,
-        "ros": 72
-      },
-      "sleeper": {
-        "week": 57,
-        "ros": 115
-      },
-      "cbs": {
-        "ros": 78
-      }
-    },
-    "marvin harrison": {
-      "espn": {
-        "week": 70,
-        "ros": 70
-      },
-      "sleeper": {
-        "week": 65,
-        "ros": 31
-      },
-      "cbs": {
-        "week": 48,
-        "ros": 59
-      }
-    },
-    "chris bell": {
-      "espn": {
-        "week": 71,
-        "ros": 80
-      },
-      "sleeper": {
-        "week": 54,
-        "ros": 103
-      },
-      "cbs": {
-        "week": 66,
-        "ros": 89
-      }
-    },
-    "jakobi lane": {
-      "espn": {
-        "week": 72,
-        "ros": 89
-      },
-      "sleeper": {
-        "week": 60,
-        "ros": 72
-      },
-      "cbs": {
-        "ros": 88
-      }
-    },
-    "john metchie": {
-      "espn": {
-        "week": 73,
-        "ros": 83
-      },
-      "sleeper": {
-        "week": 102,
-        "ros": 118
-      },
-      "cbs": {
-        "week": 58,
-        "ros": 91
-      }
-    },
-    "rashod bateman": {
-      "espn": {
-        "week": 74,
-        "ros": 91
-      },
-      "sleeper": {
-        "week": 61,
-        "ros": 73
-      },
-      "cbs": {
-        "week": 54,
-        "ros": 80
-      }
-    },
-    "cooper kupp": {
-      "espn": {
-        "week": 75,
-        "ros": 92
-      },
-      "sleeper": {
-        "week": 53,
-        "ros": 85
-      },
-      "cbs": {
-        "week": 46,
-        "ros": 72
-      }
-    },
-    "dohnte meyers": {
-      "espn": {
-        "week": 76,
-        "ros": 81
-      },
-      "sleeper": {
-        "week": 97,
-        "ros": 128
-      },
-      "cbs": {
-        "week": 79
-      }
-    },
-    "isaac teslaa": {
-      "espn": {
-        "week": 77,
-        "ros": 86
-      },
-      "sleeper": {
-        "week": 70,
-        "ros": 84
-      },
-      "cbs": {
-        "week": 70,
-        "ros": 93
-      }
-    },
-    "kayshon boutte": {
-      "espn": {
-        "week": 78,
-        "ros": 82
-      },
-      "sleeper": {
-        "week": 76,
-        "ros": 63
-      },
-      "cbs": {
-        "week": 50,
-        "ros": 62
-      }
-    },
-    "jerry jeudy": {
-      "espn": {
-        "week": 79,
-        "ros": 93
-      },
-      "sleeper": {
-        "week": 78,
-        "ros": 65
-      },
-      "cbs": {
-        "week": 65,
-        "ros": 85
-      }
-    },
-    "kevin coleman": {
-      "espn": {
-        "week": 80,
-        "ros": 88
-      },
-      "sleeper": {
-        "week": 92,
-        "ros": 135
-      },
-      "cbs": {
-        "week": 56,
-        "ros": 79
-      }
-    },
-    "van jefferson": {
-      "espn": {
-        "week": 81,
-        "ros": 87
-      },
-      "sleeper": {
-        "week": 94,
-        "ros": 175
-      },
-      "cbs": {
-        "week": 60,
-        "ros": 77
-      }
-    },
-    "josh cameron": {
-      "espn": {
-        "week": 82,
-        "ros": 94
-      },
-      "sleeper": {
-        "week": 72,
-        "ros": 112
-      },
-      "cbs": {
-        "week": 75
-      }
-    },
-    "jauan jennings": {
-      "espn": {
-        "week": 83,
-        "ros": 90
-      },
-      "sleeper": {
-        "week": 85,
-        "ros": 70
-      },
-      "cbs": {
-        "ros": 95
-      }
-    },
-    "jordan watkins": {
-      "espn": {
-        "week": 84,
-        "ros": 122
-      },
-      "sleeper": {
-        "week": 68,
-        "ros": 209
-      },
-      "cbs": {
-        "week": 45,
-        "ros": 70
-      }
-    },
-    "devin duvernay": {
-      "espn": {
-        "week": 85,
-        "ros": 95
-      },
-      "sleeper": {
-        "week": 80,
-        "ros": 219
-      },
-      "cbs": {
-        "week": 82
-      }
-    },
-    "olamide zaccheaus": {
-      "espn": {
-        "week": 86,
-        "ros": 103
-      },
-      "sleeper": {
-        "week": 82,
-        "ros": 94
-      }
-    },
-    "tory horton": {
-      "espn": {
-        "week": 87,
-        "ros": 100
-      },
-      "sleeper": {
-        "week": 87,
-        "ros": 81
-      }
-    },
-    "travis hunter": {
-      "espn": {
-        "week": 88,
-        "ros": 97
-      }
-    },
-    "cyrus allen": {
-      "espn": {
-        "week": 89,
-        "ros": 99
-      },
-      "sleeper": {
-        "week": 109,
-        "ros": 79
-      },
-      "cbs": {
-        "week": 69
-      }
-    },
-    "calvin ridley": {
-      "espn": {
-        "week": 90,
-        "ros": 102
-      },
-      "sleeper": {
-        "week": 88,
-        "ros": 92
-      }
-    },
-    "jack bech": {
-      "espn": {
-        "week": 91,
-        "ros": 105
-      },
-      "sleeper": {
-        "week": 81,
-        "ros": 90
-      },
-      "cbs": {
-        "week": 85
-      }
-    },
-    "brycen tremayne": {
-      "espn": {
-        "week": 92,
-        "ros": 107
-      },
-      "sleeper": {
-        "week": 120,
-        "ros": 163
-      }
-    },
-    "kavontae turpin": {
-      "espn": {
-        "week": 93,
-        "ros": 109
-      },
-      "sleeper": {
-        "week": 93,
-        "ros": 98
-      },
-      "cbs": {
-        "week": 81
-      }
-    },
-    "chimere dike": {
-      "espn": {
-        "week": 94,
-        "ros": 111
-      },
-      "sleeper": {
-        "week": 96,
-        "ros": 83
-      }
-    },
-    "bo melton": {
-      "espn": {
-        "week": 95,
-        "ros": 112
-      },
-      "sleeper": {
-        "week": 112,
-        "ros": 165
-      }
-    },
-    "bryce lance": {
-      "espn": {
-        "week": 96,
-        "ros": 113
-      },
-      "sleeper": {
-        "week": 106,
-        "ros": 124
-      },
-      "cbs": {
-        "week": 68
-      }
-    },
-    "barion brown": {
-      "espn": {
-        "week": 97,
-        "ros": 114
-      },
-      "sleeper": {
-        "week": 98,
-        "ros": 107
-      }
-    },
-    "myles price": {
-      "espn": {
-        "week": 98,
-        "ros": 117
-      },
-      "sleeper": {
-        "week": 142
-      }
-    },
-    "isaiah williams": {
-      "espn": {
-        "week": 99,
-        "ros": 118
-      },
-      "sleeper": {
-        "week": 119,
-        "ros": 137
-      },
-      "cbs": {
-        "week": 63
-      }
-    },
-    "devontez walker": {
-      "espn": {
-        "week": 100,
-        "ros": 119
-      },
-      "sleeper": {
-        "week": 90,
-        "ros": 143
-      }
-    },
-    "luke mccaffrey": {
-      "espn": {
-        "week": 101,
-        "ros": 121
-      },
-      "sleeper": {
-        "week": 128,
-        "ros": 166
-      }
-    },
-    "colbie young": {
-      "espn": {
-        "week": 102,
-        "ros": 120
-      },
-      "sleeper": {
-        "week": 139,
-        "ros": 139
-      }
-    },
-    "lajohntay wester": {
-      "espn": {
-        "week": 103,
-        "ros": 123
-      },
-      "sleeper": {
-        "week": 135,
-        "ros": 213
-      }
-    },
-    "jonathan mingo": {
-      "espn": {
-        "week": 104,
-        "ros": 124
-      },
-      "sleeper": {
-        "week": 115
-      }
-    },
-    "charlie jones": {
-      "espn": {
-        "week": 105,
-        "ros": 125
-      },
-      "sleeper": {
-        "week": 132
-      }
-    },
-    "kaden wetjen": {
-      "espn": {
-        "week": 106,
-        "ros": 126
-      },
-      "sleeper": {
-        "week": 138,
-        "ros": 198
-      }
-    },
-    "jacob cowing": {
-      "espn": {
-        "week": 107,
-        "ros": 127
-      },
-      "sleeper": {
-        "week": 121,
-        "ros": 212
-      }
-    },
-    "malik benson": {
-      "espn": {
-        "week": 108,
-        "ros": 129
-      },
-      "sleeper": {
-        "week": 130,
-        "ros": 111
-      }
-    },
-    "greg dortch": {
-      "espn": {
-        "week": 109,
-        "ros": 128
-      },
-      "sleeper": {
-        "week": 118,
-        "ros": 119
-      }
-    },
-    "jalen royals": {
-      "espn": {
-        "week": 110,
-        "ros": 130
-      },
-      "sleeper": {
-        "week": 103,
-        "ros": 133
-      }
-    },
-    "aj brown": {
-      "espn": {
-        "week": 111,
-        "ros": 33
-      },
-      "sleeper": {
-        "week": 19,
-        "ros": 46
-      },
-      "cbs": {
-        "week": 53,
-        "ros": 35
-      }
-    },
-    "alec pierce": {
-      "espn": {
-        "week": 112,
-        "ros": 131
-      },
-      "sleeper": {
-        "ros": 34
-      }
-    },
-    "andrei iosivas": {
-      "espn": {
-        "week": 113,
-        "ros": 132
-      },
-      "sleeper": {
-        "week": 71,
-        "ros": 82
-      },
-      "cbs": {
-        "week": 61,
-        "ros": 83
-      }
-    },
-    "brandin cooks": {
-      "espn": {
-        "week": 114,
-        "ros": 133
-      },
-      "sleeper": {
-        "week": 99,
-        "ros": 147
-      },
-      "cbs": {
-        "week": 78
-      }
-    },
-    "chris brazzell": {
-      "espn": {
-        "week": 115,
-        "ros": 134
-      }
-    },
-    "chris godwin": {
-      "espn": {
-        "week": 116,
-        "ros": 67
-      },
-      "sleeper": {
-        "ros": 37
-      },
-      "cbs": {
-        "ros": 58
-      }
-    },
-    "christian kirk": {
-      "espn": {
-        "week": 117,
-        "ros": 135
-      },
-      "sleeper": {
-        "ros": 120
-      }
-    },
-    "cody white": {
-      "espn": {
-        "week": 118,
-        "ros": 136
-      },
-      "sleeper": {
-        "ros": 170
-      }
-    },
-    "courtland sutton": {
-      "espn": {
-        "week": 119,
-        "ros": 49
-      },
-      "sleeper": {
-        "ros": 36
-      },
-      "cbs": {
-        "ros": 49
-      }
-    },
-    "darius cooper": {
-      "espn": {
-        "week": 120,
-        "ros": 115
-      },
-      "sleeper": {
-        "ros": 176
-      }
-    },
-    "darius slayton": {
-      "espn": {
-        "week": 121,
-        "ros": 137
-      },
-      "sleeper": {
-        "ros": 93
-      }
-    },
-    "davante adams": {
-      "espn": {
-        "week": 122,
-        "ros": 138
-      },
-      "sleeper": {
-        "ros": 30
-      },
-      "cbs": {
-        "ros": 29
-      }
-    },
-    "dezhaun stribling": {
-      "espn": {
-        "week": 123,
-        "ros": 139
-      },
-      "sleeper": {
-        "ros": 59
-      },
-      "cbs": {
-        "ros": 92
-      }
-    },
-    "devonta smith": {
-      "espn": {
-        "week": 124,
-        "ros": 21
-      },
-      "sleeper": {
-        "ros": 13
-      },
-      "cbs": {
-        "ros": 23
-      }
-    },
-    "donte thornton": {
-      "espn": {
-        "week": 125,
-        "ros": 140
-      },
-      "sleeper": {
-        "week": 116,
-        "ros": 193
-      }
-    },
-    "dontayvion wicks": {
-      "espn": {
-        "week": 126,
-        "ros": 57
-      },
-      "sleeper": {
-        "ros": 100
-      },
-      "cbs": {
-        "ros": 81
-      }
-    },
-    "dyami brown": {
-      "espn": {
-        "week": 127,
-        "ros": 141
-      },
-      "sleeper": {
-        "ros": 190
-      }
-    },
-    "elijah sarratt": {
-      "espn": {
-        "week": 128,
-        "ros": 142
-      },
-      "sleeper": {
-        "week": 126,
-        "ros": 110
-      }
-    },
-    "emeka egbuka": {
-      "espn": {
-        "week": 129,
-        "ros": 35
-      },
-      "sleeper": {
-        "ros": 18
-      },
-      "cbs": {
-        "ros": 31
-      }
-    },
-    "hollywood brown": {
-      "espn": {
-        "week": 130,
-        "ros": 143
-      }
-    },
-    "isaiah bond": {
-      "espn": {
-        "week": 131,
-        "ros": 144
-      },
-      "sleeper": {
-        "week": 110,
-        "ros": 108
-      }
-    },
-    "jahdae walker": {
-      "espn": {
-        "week": 132,
-        "ros": 145
-      },
-      "sleeper": {
-        "ros": 156
-      }
-    },
-    "jalen mcmillan": {
-      "espn": {
-        "week": 133,
-        "ros": 146
-      },
-      "sleeper": {
-        "ros": 60
-      }
-    },
-    "jalen tolbert": {
-      "espn": {
-        "week": 134,
-        "ros": 147
-      },
-      "sleeper": {
-        "week": 114,
-        "ros": 132
-      }
-    },
-    "jayden higgins": {
-      "espn": {
-        "week": 135,
-        "ros": 148
-      }
-    },
-    "jayden reed": {
-      "espn": {
-        "week": 136,
-        "ros": 149
-      },
-      "sleeper": {
-        "ros": 28
-      }
-    },
-    "jaylen waddle": {
-      "espn": {
-        "week": 137,
-        "ros": 28
-      },
-      "sleeper": {
-        "ros": 21
-      },
-      "cbs": {
-        "ros": 50
-      }
-    },
-    "jaylin noel": {
-      "espn": {
-        "week": 138,
-        "ros": 150
-      },
-      "sleeper": {
-        "ros": 87
-      }
-    },
-    "joshua palmer": {
-      "espn": {
-        "week": 139,
-        "ros": 151
-      },
-      "sleeper": {
-        "ros": 134
-      }
-    },
-    "kalif raymond": {
-      "espn": {
-        "week": 140,
-        "ros": 79
-      },
-      "sleeper": {
-        "ros": 150
-      },
-      "cbs": {
-        "ros": 73
-      }
-    },
-    "kendrick bourne": {
-      "espn": {
-        "week": 141,
-        "ros": 152
-      },
-      "sleeper": {
-        "ros": 91
-      }
-    },
-    "liljordan humphrey": {
-      "espn": {
-        "week": 142,
-        "ros": 153
-      },
-      "sleeper": {
-        "ros": 159
-      }
-    },
-    "luther burden": {
-      "espn": {
-        "week": 143,
-        "ros": 15
-      },
-      "sleeper": {
-        "ros": 24
-      },
-      "cbs": {
-        "ros": 15
-      }
-    },
-    "makai lemon": {
-      "espn": {
-        "week": 144,
-        "ros": 84
-      },
-      "sleeper": {
-        "ros": 45
-      },
-      "cbs": {
-        "ros": 63
-      }
-    },
-    "marvin mims": {
-      "espn": {
-        "week": 145,
-        "ros": 96
-      },
-      "sleeper": {
-        "ros": 101
-      }
-    },
-    "michael pittman": {
-      "espn": {
-        "week": 146,
-        "ros": 154
-      },
-      "sleeper": {
-        "ros": 40
-      },
-      "cbs": {
-        "week": 43,
-        "ros": 61
-      }
-    },
-    "michael wilson": {
-      "espn": {
-        "week": 147,
-        "ros": 155
-      },
-      "sleeper": {
-        "ros": 47
-      }
-    },
-    "mike evans": {
-      "espn": {
-        "week": 148,
-        "ros": 22
-      },
-      "sleeper": {
-        "ros": 20
-      },
-      "cbs": {
-        "week": 41,
-        "ros": 17
-      }
-    },
-    "odell beckham": {
-      "espn": {
-        "week": 149,
-        "ros": 156
-      },
-      "sleeper": {
-        "week": 111,
-        "ros": 149
-      }
-    },
-    "pat bryant": {
-      "espn": {
-        "week": 150,
-        "ros": 75
-      },
-      "sleeper": {
-        "ros": 77
-      },
-      "cbs": {
-        "ros": 66
-      }
-    },
-    "puka nacua": {
-      "espn": {
-        "week": 151,
-        "ros": 157
-      },
-      "sleeper": {
-        "ros": 1
-      },
-      "cbs": {
-        "ros": 7
-      }
-    },
-    "ricky pearsall": {
-      "espn": {
-        "week": 152,
-        "ros": 158
-      }
-    },
-    "roman wilson": {
-      "espn": {
-        "week": 153,
-        "ros": 159
-      },
-      "sleeper": {
-        "ros": 153
-      },
-      "cbs": {
-        "ros": 82
-      }
-    },
-    "rome odunze": {
-      "espn": {
-        "week": 154,
-        "ros": 37
-      },
-      "sleeper": {
-        "ros": 25
-      },
-      "cbs": {
-        "ros": 42
-      }
-    },
-    "romeo doubs": {
-      "espn": {
-        "week": 155,
-        "ros": 160
-      },
-      "sleeper": {
-        "ros": 51
-      },
-      "cbs": {
-        "ros": 65
-      }
-    },
-    "skyler bell": {
-      "espn": {
-        "week": 156,
-        "ros": 161
-      },
-      "sleeper": {
-        "week": 134,
-        "ros": 106
-      }
-    },
-    "skyy moore": {
-      "espn": {
-        "week": 157,
-        "ros": 162
-      },
-      "sleeper": {
-        "ros": 207
-      }
-    },
-    "tai felton": {
-      "espn": {
-        "week": 158,
-        "ros": 163
-      },
-      "sleeper": {
-        "week": 104,
-        "ros": 146
-      }
-    },
-    "ted hurst": {
-      "espn": {
-        "week": 159,
-        "ros": 104
-      },
-      "sleeper": {
-        "ros": 76
-      }
-    },
-    "terry mclaurin": {
-      "espn": {
-        "week": 160,
-        "ros": 164
-      },
-      "sleeper": {
-        "ros": 22
-      }
-    },
-    "tez johnson": {
-      "espn": {
-        "week": 161,
-        "ros": 73
-      },
-      "sleeper": {
-        "ros": 125
-      }
-    },
-    "troy franklin": {
-      "espn": {
-        "week": 162,
-        "ros": 101
-      },
-      "sleeper": {
-        "ros": 104
-      }
-    },
-    "tyquan thornton": {
-      "espn": {
-        "week": 163,
-        "ros": 165
-      },
-      "sleeper": {
-        "ros": 109
-      }
-    },
-    "xavier legette": {
-      "espn": {
-        "week": 164,
-        "ros": 166
-      },
-      "sleeper": {
-        "week": 91,
-        "ros": 105
-      },
-      "cbs": {
-        "week": 73
-      }
-    },
-    "zachariah branch": {
-      "espn": {
-        "week": 165,
-        "ros": 110
-      },
-      "sleeper": {
-        "ros": 89
-      }
-    },
-    "zavion thomas": {
-      "espn": {
-        "week": 166,
-        "ros": 106
-      },
-      "sleeper": {
-        "ros": 114
-      }
-    },
     "kenneth walker": {
       "espn": {
         "week": 1,
@@ -2046,7 +53,7 @@
         "ros": 4
       },
       "sleeper": {
-        "week": 12,
+        "week": 11,
         "ros": 5
       }
     },
@@ -2060,7 +67,7 @@
         "ros": 36
       },
       "cbs": {
-        "week": 8,
+        "week": 7,
         "ros": 5
       }
     },
@@ -2070,7 +77,7 @@
         "ros": 14
       },
       "sleeper": {
-        "week": 8,
+        "week": 9,
         "ros": 17
       },
       "cbs": {
@@ -2098,7 +105,7 @@
         "ros": 19
       },
       "sleeper": {
-        "week": 11,
+        "week": 12,
         "ros": 9
       },
       "cbs": {
@@ -2116,7 +123,8 @@
         "ros": 4
       },
       "cbs": {
-        "week": 6
+        "week": 8,
+        "ros": 13
       }
     },
     "bhayshul tuten": {
@@ -2139,11 +147,11 @@
         "ros": 16
       },
       "sleeper": {
-        "week": 14,
+        "week": 13,
         "ros": 97
       },
       "cbs": {
-        "ros": 15
+        "week": 17
       }
     },
     "jaylen warren": {
@@ -2152,11 +160,11 @@
         "ros": 10
       },
       "sleeper": {
-        "week": 9,
+        "week": 8,
         "ros": 25
       },
       "cbs": {
-        "week": 7,
+        "week": 6,
         "ros": 6
       }
     },
@@ -2183,7 +191,7 @@
         "ros": 55
       },
       "cbs": {
-        "week": 25,
+        "week": 26,
         "ros": 23
       }
     },
@@ -2197,8 +205,8 @@
         "ros": 49
       },
       "cbs": {
-        "week": 26,
-        "ros": 26
+        "week": 25,
+        "ros": 25
       }
     },
     "ashton jeanty": {
@@ -2207,7 +215,7 @@
         "ros": 18
       },
       "sleeper": {
-        "week": 18,
+        "week": 19,
         "ros": 8
       },
       "cbs": {
@@ -2220,7 +228,7 @@
         "ros": 11
       },
       "sleeper": {
-        "week": 13,
+        "week": 14,
         "ros": 7
       },
       "cbs": {
@@ -2234,7 +242,7 @@
         "ros": 9
       },
       "sleeper": {
-        "week": 16,
+        "week": 17,
         "ros": 30
       },
       "cbs": {
@@ -2248,7 +256,7 @@
         "ros": 23
       },
       "sleeper": {
-        "week": 29,
+        "week": 18,
         "ros": 15
       },
       "cbs": {
@@ -2262,12 +270,12 @@
         "ros": 33
       },
       "sleeper": {
-        "week": 36,
+        "week": 37,
         "ros": 26
       },
       "cbs": {
         "week": 28,
-        "ros": 32
+        "ros": 30
       }
     },
     "quinshon judkins": {
@@ -2276,7 +284,7 @@
         "ros": 24
       },
       "sleeper": {
-        "week": 21,
+        "week": 23,
         "ros": 22
       },
       "cbs": {
@@ -2290,12 +298,12 @@
         "ros": 34
       },
       "sleeper": {
-        "week": 23,
+        "week": 21,
         "ros": 40
       },
       "cbs": {
-        "week": 19,
-        "ros": 29
+        "week": 21,
+        "ros": 27
       }
     },
     "cam skattebo": {
@@ -2304,12 +312,12 @@
         "ros": 21
       },
       "sleeper": {
-        "week": 17,
+        "week": 16,
         "ros": 20
       },
       "cbs": {
         "week": 13,
-        "ros": 14
+        "ros": 15
       }
     },
     "rachaad white": {
@@ -2318,12 +326,12 @@
         "ros": 22
       },
       "sleeper": {
-        "week": 20,
+        "week": 22,
         "ros": 42
       },
       "cbs": {
-        "week": 17,
-        "ros": 25
+        "week": 19,
+        "ros": 24
       }
     },
     "audric estime": {
@@ -2332,11 +340,8 @@
         "ros": 75
       },
       "sleeper": {
-        "week": 57,
+        "week": 36,
         "ros": 98
-      },
-      "cbs": {
-        "week": 23
       }
     },
     "corey kiner": {
@@ -2345,7 +350,7 @@
         "ros": 62
       },
       "sleeper": {
-        "week": 30
+        "week": 27
       },
       "cbs": {
         "week": 27,
@@ -2358,7 +363,7 @@
         "ros": 36
       },
       "sleeper": {
-        "week": 40,
+        "week": 50,
         "ros": 61
       },
       "cbs": {
@@ -2372,7 +377,7 @@
         "ros": 30
       },
       "sleeper": {
-        "week": 27,
+        "week": 25,
         "ros": 28
       },
       "cbs": {
@@ -2386,12 +391,12 @@
         "ros": 27
       },
       "sleeper": {
-        "week": 32,
+        "week": 30,
         "ros": 33
       },
       "cbs": {
         "week": 32,
-        "ros": 27
+        "ros": 32
       }
     },
     "dylan sampson": {
@@ -2400,7 +405,7 @@
         "ros": 39
       },
       "sleeper": {
-        "week": 37,
+        "week": 38,
         "ros": 48
       },
       "cbs": {
@@ -2417,7 +422,7 @@
         "ros": 50
       },
       "cbs": {
-        "week": 22,
+        "week": 23,
         "ros": 22
       }
     },
@@ -2427,11 +432,12 @@
         "ros": 31
       },
       "sleeper": {
-        "week": 25,
+        "week": 26,
         "ros": 39
       },
       "cbs": {
-        "ros": 24
+        "week": 31,
+        "ros": 31
       }
     },
     "austin ekeler": {
@@ -2440,11 +446,11 @@
         "ros": 37
       },
       "sleeper": {
-        "week": 35,
+        "week": 33,
         "ros": 109
       },
       "cbs": {
-        "week": 33,
+        "week": 35,
         "ros": 52
       }
     },
@@ -2454,12 +460,12 @@
         "ros": 40
       },
       "sleeper": {
-        "week": 34,
+        "week": 28,
         "ros": 12
       },
       "cbs": {
         "week": 24,
-        "ros": 28
+        "ros": 26
       }
     },
     "braelon allen": {
@@ -2468,12 +474,12 @@
         "ros": 44
       },
       "sleeper": {
-        "week": 22,
+        "week": 35,
         "ros": 73
       },
       "cbs": {
-        "week": 21,
-        "ros": 30
+        "week": 22,
+        "ros": 28
       }
     },
     "kimani vidal": {
@@ -2486,7 +492,7 @@
         "ros": 63
       },
       "cbs": {
-        "week": 35
+        "week": 34
       }
     },
     "kaelon black": {
@@ -2495,11 +501,11 @@
         "ros": 46
       },
       "sleeper": {
-        "week": 49,
+        "week": 51,
         "ros": 51
       },
       "cbs": {
-        "week": 37,
+        "week": 41,
         "ros": 46
       }
     },
@@ -2509,7 +515,7 @@
         "ros": 43
       },
       "sleeper": {
-        "week": 26,
+        "week": 34,
         "ros": 84
       },
       "cbs": {
@@ -2523,11 +529,11 @@
         "ros": 60
       },
       "sleeper": {
-        "week": 48,
+        "week": 49,
         "ros": 35
       },
       "cbs": {
-        "week": 50,
+        "week": 51,
         "ros": 61
       }
     },
@@ -2537,7 +543,7 @@
         "ros": 53
       },
       "sleeper": {
-        "week": 38,
+        "week": 40,
         "ros": 54
       },
       "cbs": {
@@ -2570,11 +576,11 @@
         "ros": 48
       },
       "sleeper": {
-        "week": 54,
+        "week": 55,
         "ros": 47
       },
       "cbs": {
-        "week": 34,
+        "week": 33,
         "ros": 39
       }
     },
@@ -2584,17 +590,29 @@
         "ros": 52
       },
       "sleeper": {
-        "week": 42,
+        "week": 41,
         "ros": 56
       },
       "cbs": {
-        "week": 41,
+        "week": 42,
         "ros": 43
+      }
+    },
+    "lan larison": {
+      "espn": {
+        "week": 45,
+        "ros": 76
+      },
+      "sleeper": {
+        "week": 52
+      },
+      "cbs": {
+        "ros": 64
       }
     },
     "tyjae spears": {
       "espn": {
-        "week": 45,
+        "week": 46,
         "ros": 49
       },
       "sleeper": {
@@ -2602,27 +620,27 @@
         "ros": 44
       },
       "cbs": {
-        "week": 44,
+        "week": 45,
         "ros": 53
       }
     },
     "mike washington": {
       "espn": {
-        "week": 46,
+        "week": 47,
         "ros": 50
       },
       "sleeper": {
-        "week": 51,
+        "week": 53,
         "ros": 46
       },
       "cbs": {
-        "week": 43,
+        "week": 44,
         "ros": 49
       }
     },
     "samaje perine": {
       "espn": {
-        "week": 47,
+        "week": 48,
         "ros": 47
       },
       "sleeper": {
@@ -2630,13 +648,13 @@
         "ros": 53
       },
       "cbs": {
-        "week": 42,
+        "week": 43,
         "ros": 44
       }
     },
     "pierre strong": {
       "espn": {
-        "week": 48,
+        "week": 49,
         "ros": 69
       },
       "sleeper": {
@@ -2644,16 +662,16 @@
         "ros": 117
       },
       "cbs": {
-        "week": 47
+        "week": 48
       }
     },
     "ty johnson": {
       "espn": {
-        "week": 49,
+        "week": 50,
         "ros": 55
       },
       "sleeper": {
-        "week": 52,
+        "week": 54,
         "ros": 70
       },
       "cbs": {
@@ -2663,11 +681,11 @@
     },
     "kaleb johnson": {
       "espn": {
-        "week": 50,
+        "week": 51,
         "ros": 71
       },
       "sleeper": {
-        "week": 41,
+        "week": 42,
         "ros": 81
       },
       "cbs": {
@@ -2676,67 +694,67 @@
     },
     "seth mcgowan": {
       "espn": {
-        "week": 51,
+        "week": 52,
         "ros": 59
       },
       "sleeper": {
-        "week": 53,
+        "week": 47,
         "ros": 77
       },
       "cbs": {
-        "week": 31,
+        "week": 37,
         "ros": 47
       }
     },
     "emari demercado": {
       "espn": {
-        "week": 52,
-        "ros": 77
+        "week": 53,
+        "ros": 78
       },
       "sleeper": {
         "week": 63,
         "ros": 64
       },
       "cbs": {
-        "week": 63,
+        "week": 64,
         "ros": 82
       }
     },
     "sione vaki": {
       "espn": {
-        "week": 53,
+        "week": 54,
         "ros": 61
       },
       "sleeper": {
-        "week": 58,
+        "week": 57,
         "ros": 138
       },
       "cbs": {
-        "week": 46,
+        "week": 47,
         "ros": 54
       }
     },
     "jaylen wright": {
       "espn": {
-        "week": 54,
+        "week": 55,
         "ros": 63
       },
       "sleeper": {
-        "week": 56,
+        "week": 60,
         "ros": 75
       },
       "cbs": {
-        "week": 51,
+        "week": 52,
         "ros": 62
       }
     },
     "khalil herbert": {
       "espn": {
-        "week": 55,
+        "week": 56,
         "ros": 65
       },
       "sleeper": {
-        "week": 55
+        "week": 56
       },
       "cbs": {
         "week": 49,
@@ -2745,11 +763,11 @@
     },
     "cj donaldson": {
       "espn": {
-        "week": 56,
+        "week": 57,
         "ros": 72
       },
       "sleeper": {
-        "week": 60,
+        "week": 67,
         "ros": 125
       },
       "cbs": {
@@ -2758,26 +776,26 @@
     },
     "kyle juszczyk": {
       "espn": {
-        "week": 57,
+        "week": 58,
         "ros": 67
       }
     },
     "trevor etienne": {
       "espn": {
-        "week": 58,
+        "week": 59,
         "ros": 68
       },
       "sleeper": {
-        "week": 59,
+        "week": 58,
         "ros": 78
       },
       "cbs": {
-        "week": 75
+        "week": 76
       }
     },
     "ray davis": {
       "espn": {
-        "week": 59,
+        "week": 60,
         "ros": 70
       },
       "sleeper": {
@@ -2785,24 +803,24 @@
         "ros": 58
       },
       "cbs": {
-        "week": 64
+        "week": 65
       }
     },
     "deejay dallas": {
       "espn": {
-        "week": 60,
+        "week": 61,
         "ros": 73
       },
       "sleeper": {
         "week": 72
       },
       "cbs": {
-        "week": 68
+        "week": 73
       }
     },
     "lequint allen": {
       "espn": {
-        "week": 61,
+        "week": 62,
         "ros": 74
       },
       "sleeper": {
@@ -2810,16 +828,16 @@
         "ros": 69
       },
       "cbs": {
-        "week": 80
+        "week": 81
       }
     },
     "dare ogunbowale": {
       "espn": {
-        "week": 62,
-        "ros": 80
+        "week": 63,
+        "ros": 81
       },
       "sleeper": {
-        "week": 81,
+        "week": 82,
         "ros": 111
       },
       "cbs": {
@@ -2828,8 +846,8 @@
     },
     "hunter luepke": {
       "espn": {
-        "week": 63,
-        "ros": 76
+        "week": 64,
+        "ros": 77
       },
       "cbs": {
         "week": 69
@@ -2837,53 +855,53 @@
     },
     "patrick ricard": {
       "espn": {
-        "week": 64,
-        "ros": 78
+        "week": 65,
+        "ros": 79
       }
     },
     "kene nwangwu": {
       "espn": {
-        "week": 65,
-        "ros": 79
+        "week": 66,
+        "ros": 80
       },
       "sleeper": {
-        "week": 90
+        "week": 92
       },
       "cbs": {
-        "week": 74
+        "week": 75
       }
     },
     "dylan laube": {
-      "espn": {
-        "week": 66,
-        "ros": 81
-      },
-      "sleeper": {
-        "week": 77,
-        "ros": 103
-      },
-      "cbs": {
-        "week": 77,
-        "ros": 78
-      }
-    },
-    "jacob saylors": {
       "espn": {
         "week": 67,
         "ros": 82
       },
       "sleeper": {
         "week": 78,
+        "ros": 103
+      },
+      "cbs": {
+        "week": 78,
+        "ros": 78
+      }
+    },
+    "jacob saylors": {
+      "espn": {
+        "week": 68,
+        "ros": 83
+      },
+      "sleeper": {
+        "week": 79,
         "ros": 91
       },
       "cbs": {
-        "week": 82
+        "week": 83
       }
     },
     "ameer abdullah": {
       "espn": {
-        "week": 68,
-        "ros": 83
+        "week": 69,
+        "ros": 84
       },
       "sleeper": {
         "week": 70,
@@ -2895,82 +913,79 @@
     },
     "rasheen ali": {
       "espn": {
-        "week": 69,
-        "ros": 84
+        "week": 70,
+        "ros": 85
       },
       "sleeper": {
-        "week": 80,
+        "week": 81,
         "ros": 76
       },
       "cbs": {
-        "week": 83
+        "week": 84
       }
     },
     "tahj brooks": {
       "espn": {
-        "week": 70,
-        "ros": 86
+        "week": 71,
+        "ros": 87
       },
       "sleeper": {
         "week": 73,
         "ros": 95
-      },
-      "cbs": {
-        "week": 85
       }
     },
     "jordan james": {
       "espn": {
-        "week": 71,
-        "ros": 88
+        "week": 72,
+        "ros": 89
       },
       "sleeper": {
         "week": 74,
         "ros": 85
       },
       "cbs": {
-        "week": 73
+        "week": 74
       }
     },
     "george holani": {
       "espn": {
-        "week": 72,
-        "ros": 89
+        "week": 73,
+        "ros": 90
       },
       "sleeper": {
         "week": 61,
         "ros": 93
       },
       "cbs": {
-        "week": 78
+        "week": 79
       }
     },
     "adam randall": {
       "espn": {
-        "week": 73,
-        "ros": 90
+        "week": 74,
+        "ros": 91
       },
       "sleeper": {
         "ros": 86
       },
       "cbs": {
-        "week": 53,
+        "week": 54,
         "ros": 68
       }
     },
     "aj dillon": {
       "espn": {
-        "week": 74,
-        "ros": 91
+        "week": 75,
+        "ros": 92
       },
       "cbs": {
-        "week": 76
+        "week": 77
       }
     },
     "brashard smith": {
       "espn": {
-        "week": 75,
-        "ros": 92
+        "week": 76,
+        "ros": 93
       },
       "sleeper": {
         "ros": 89
@@ -2981,8 +996,8 @@
     },
     "brian robinson": {
       "espn": {
-        "week": 76,
-        "ros": 93
+        "week": 77,
+        "ros": 94
       },
       "sleeper": {
         "ros": 52
@@ -2990,7 +1005,7 @@
     },
     "bucky irving": {
       "espn": {
-        "week": 77,
+        "week": 78,
         "ros": 7
       },
       "sleeper": {
@@ -3002,8 +1017,8 @@
     },
     "chris brooks": {
       "espn": {
-        "week": 78,
-        "ros": 94
+        "week": 79,
+        "ros": 95
       },
       "sleeper": {
         "ros": 68
@@ -3011,7 +1026,7 @@
     },
     "dandre swift": {
       "espn": {
-        "week": 79,
+        "week": 80,
         "ros": 17
       },
       "sleeper": {
@@ -3020,8 +1035,8 @@
     },
     "dameon pierce": {
       "espn": {
-        "week": 80,
-        "ros": 95
+        "week": 81,
+        "ros": 96
       },
       "sleeper": {
         "ros": 133
@@ -3029,22 +1044,22 @@
     },
     "david montgomery": {
       "espn": {
-        "week": 81,
+        "week": 82,
         "ros": 28
       },
       "sleeper": {
-        "week": 19,
+        "week": 20,
         "ros": 19
       },
       "cbs": {
-        "week": 45,
+        "week": 46,
         "ros": 37
       }
     },
     "devon achane": {
       "espn": {
-        "week": 82,
-        "ros": 96
+        "week": 83,
+        "ros": 97
       },
       "sleeper": {
         "ros": 6
@@ -3052,8 +1067,8 @@
     },
     "demond claiborne": {
       "espn": {
-        "week": 83,
-        "ros": 97
+        "week": 84,
+        "ros": 98
       },
       "sleeper": {
         "ros": 94
@@ -3061,34 +1076,34 @@
     },
     "dj giddens": {
       "espn": {
-        "week": 84,
-        "ros": 98
+        "week": 85,
+        "ros": 99
       },
       "sleeper": {
-        "week": 82,
+        "week": 86,
         "ros": 87
       },
       "cbs": {
-        "week": 62,
+        "week": 63,
         "ros": 84
       }
     },
     "eli heidenreich": {
       "espn": {
-        "week": 85,
-        "ros": 99
+        "week": 86,
+        "ros": 100
       },
       "sleeper": {
-        "week": 85
+        "week": 87
       },
       "cbs": {
-        "week": 56,
+        "week": 58,
         "ros": 72
       }
     },
     "elijah mitchell": {
       "espn": {
-        "week": 86,
+        "week": 87,
         "ros": 58
       },
       "sleeper": {
@@ -3097,57 +1112,35 @@
     },
     "emanuel wilson": {
       "espn": {
-        "week": 87,
-        "ros": 100
-      },
-      "sleeper": {
-        "week": 67,
-        "ros": 67
-      },
-      "cbs": {
-        "week": 60
-      }
-    },
-    "greg desrosiers": {
-      "espn": {
         "week": 88,
         "ros": 101
       },
+      "sleeper": {
+        "week": 66,
+        "ros": 67
+      },
       "cbs": {
-        "week": 54,
-        "ros": 70
+        "week": 61
       }
     },
-    "isaac guerendo": {
+    "isaiah davis": {
       "espn": {
         "week": 89,
         "ros": 102
       },
       "sleeper": {
-        "ros": 120
-      },
-      "cbs": {
-        "ros": 66
-      }
-    },
-    "isaiah davis": {
-      "espn": {
-        "week": 90,
-        "ros": 103
-      },
-      "sleeper": {
-        "week": 76,
+        "week": 77,
         "ros": 62
       },
       "cbs": {
-        "week": 61,
+        "week": 62,
         "ros": 83
       }
     },
     "isiah pacheco": {
       "espn": {
-        "week": 91,
-        "ros": 104
+        "week": 90,
+        "ros": 103
       },
       "sleeper": {
         "ros": 71
@@ -3155,7 +1148,7 @@
     },
     "jk dobbins": {
       "espn": {
-        "week": 92,
+        "week": 91,
         "ros": 54
       },
       "sleeper": {
@@ -3167,8 +1160,8 @@
     },
     "jacory croskeymerritt": {
       "espn": {
-        "week": 93,
-        "ros": 105
+        "week": 92,
+        "ros": 104
       },
       "sleeper": {
         "ros": 43
@@ -3179,22 +1172,22 @@
     },
     "jaleel mclaughlin": {
       "espn": {
-        "week": 94,
-        "ros": 106
+        "week": 93,
+        "ros": 105
       },
       "sleeper": {
         "week": 68,
         "ros": 116
       },
       "cbs": {
-        "week": 57,
+        "week": 59,
         "ros": 67
       }
     },
     "james conner": {
       "espn": {
-        "week": 95,
-        "ros": 107
+        "week": 94,
+        "ros": 106
       },
       "sleeper": {
         "ros": 65
@@ -3205,8 +1198,8 @@
     },
     "jawhar jordan": {
       "espn": {
-        "week": 96,
-        "ros": 108
+        "week": 95,
+        "ros": 107
       },
       "sleeper": {
         "ros": 88
@@ -3217,8 +1210,8 @@
     },
     "jaydon blue": {
       "espn": {
-        "week": 97,
-        "ros": 85
+        "week": 96,
+        "ros": 86
       },
       "sleeper": {
         "ros": 66
@@ -3226,7 +1219,7 @@
     },
     "jeremiyah love": {
       "espn": {
-        "week": 98,
+        "week": 97,
         "ros": 56
       },
       "sleeper": {
@@ -3238,8 +1231,8 @@
     },
     "jeremy mcnichols": {
       "espn": {
-        "week": 99,
-        "ros": 109
+        "week": 98,
+        "ros": 108
       },
       "sleeper": {
         "ros": 108
@@ -3247,20 +1240,20 @@
     },
     "jonah coleman": {
       "espn": {
-        "week": 100,
+        "week": 99,
         "ros": 12
       },
       "sleeper": {
         "ros": 59
       },
       "cbs": {
-        "ros": 13
+        "ros": 14
       }
     },
     "jonathon brooks": {
       "espn": {
-        "week": 101,
-        "ros": 110
+        "week": 100,
+        "ros": 109
       },
       "sleeper": {
         "ros": 31
@@ -3272,7 +1265,7 @@
     },
     "josh jacobs": {
       "espn": {
-        "week": 102,
+        "week": 101,
         "ros": 29
       },
       "sleeper": {
@@ -3284,21 +1277,21 @@
     },
     "kaytron allen": {
       "espn": {
-        "week": 103,
-        "ros": 111
+        "week": 102,
+        "ros": 110
       },
       "sleeper": {
-        "week": 65,
+        "week": 59,
         "ros": 74
       },
       "cbs": {
-        "week": 66
+        "week": 67
       }
     },
     "kendre miller": {
       "espn": {
-        "week": 104,
-        "ros": 112
+        "week": 103,
+        "ros": 111
       },
       "sleeper": {
         "ros": 123
@@ -3306,7 +1299,7 @@
     },
     "kenny gainwell": {
       "espn": {
-        "week": 105,
+        "week": 104,
         "ros": 38
       },
       "sleeper": {
@@ -3315,26 +1308,26 @@
     },
     "kyle monangai": {
       "espn": {
-        "week": 106,
+        "week": 105,
         "ros": 45
       },
       "sleeper": {
         "ros": 32
       },
       "cbs": {
-        "ros": 31
+        "ros": 29
       }
     },
     "malik davis": {
       "espn": {
-        "week": 107,
-        "ros": 113
+        "week": 106,
+        "ros": 112
       }
     },
     "najee harris": {
       "espn": {
-        "week": 108,
-        "ros": 114
+        "week": 107,
+        "ros": 113
       },
       "sleeper": {
         "ros": 90
@@ -3342,21 +1335,21 @@
     },
     "nicholas singleton": {
       "espn": {
-        "week": 109,
-        "ros": 115
+        "week": 108,
+        "ros": 114
       },
       "sleeper": {
         "week": 84,
         "ros": 60
       },
       "cbs": {
-        "week": 79
+        "week": 80
       }
     },
     "raheim sanders": {
       "espn": {
-        "week": 110,
-        "ros": 116
+        "week": 109,
+        "ros": 115
       },
       "sleeper": {
         "ros": 131
@@ -3367,7 +1360,7 @@
     },
     "rhamondre stevenson": {
       "espn": {
-        "week": 111,
+        "week": 110,
         "ros": 32
       },
       "sleeper": {
@@ -3376,8 +1369,8 @@
     },
     "rj harvey": {
       "espn": {
-        "week": 112,
-        "ros": 117
+        "week": 111,
+        "ros": 116
       },
       "sleeper": {
         "ros": 37
@@ -3388,8 +1381,8 @@
     },
     "roschon johnson": {
       "espn": {
-        "week": 113,
-        "ros": 118
+        "week": 112,
+        "ros": 117
       },
       "sleeper": {
         "ros": 115
@@ -3400,7 +1393,7 @@
     },
     "saquon barkley": {
       "espn": {
-        "week": 114,
+        "week": 113,
         "ros": 20
       },
       "sleeper": {
@@ -3412,8 +1405,8 @@
     },
     "sean tucker": {
       "espn": {
-        "week": 115,
-        "ros": 87
+        "week": 114,
+        "ros": 88
       },
       "sleeper": {
         "ros": 72
@@ -3424,8 +1417,8 @@
     },
     "tank bigsby": {
       "espn": {
-        "week": 116,
-        "ros": 119
+        "week": 115,
+        "ros": 118
       },
       "sleeper": {
         "ros": 57
@@ -3433,25 +1426,25 @@
     },
     "travis etienne": {
       "espn": {
-        "week": 117,
+        "week": 116,
         "ros": 26
       },
       "sleeper": {
-        "week": 28,
+        "week": 29,
         "ros": 18
       },
       "cbs": {
-        "week": 67,
+        "week": 68,
         "ros": 20
       }
     },
     "treveyon henderson": {
       "espn": {
-        "week": 118,
+        "week": 117,
         "ros": 57
       },
       "sleeper": {
-        "week": 47,
+        "week": 48,
         "ros": 24
       },
       "cbs": {
@@ -3460,14 +1453,14 @@
     },
     "trey benson": {
       "espn": {
-        "week": 119,
-        "ros": 120
+        "week": 118,
+        "ros": 119
       }
     },
     "tyler badie": {
       "espn": {
-        "week": 120,
-        "ros": 121
+        "week": 119,
+        "ros": 120
       },
       "sleeper": {
         "ros": 113
@@ -3475,7 +1468,7 @@
     },
     "tyler goodson": {
       "espn": {
-        "week": 121,
+        "week": 120,
         "ros": 66
       },
       "sleeper": {
@@ -3487,8 +1480,8 @@
     },
     "tyrone tracy": {
       "espn": {
-        "week": 122,
-        "ros": 122
+        "week": 121,
+        "ros": 121
       },
       "sleeper": {
         "ros": 45
@@ -3499,8 +1492,8 @@
     },
     "will shipley": {
       "espn": {
-        "week": 123,
-        "ros": 123
+        "week": 122,
+        "ros": 122
       },
       "sleeper": {
         "ros": 79
@@ -3509,902 +1502,2032 @@
         "ros": 74
       }
     },
-    "brock bowers": {
+    "jamarr chase": {
       "espn": {
         "week": 1,
         "ros": 1
       },
       "sleeper": {
-        "week": 1,
+        "week": 3,
         "ros": 2
       },
       "cbs": {
-        "week": 4,
-        "ros": 3
+        "week": 3,
+        "ros": 2
       }
     },
-    "george kittle": {
+    "jaxon smithnjigba": {
       "espn": {
         "week": 2,
-        "ros": 2
+        "ros": 4
+      },
+      "sleeper": {
+        "week": 1,
+        "ros": 3
+      },
+      "cbs": {
+        "week": 2,
+        "ros": 1
+      }
+    },
+    "ceedee lamb": {
+      "espn": {
+        "week": 3,
+        "ros": 5
       },
       "sleeper": {
         "week": 2,
+        "ros": 5
+      },
+      "cbs": {
+        "week": 1,
+        "ros": 5
+      }
+    },
+    "amonra st brown": {
+      "espn": {
+        "week": 4,
+        "ros": 2
+      },
+      "sleeper": {
+        "week": 4,
+        "ros": 4
+      },
+      "cbs": {
+        "week": 4,
+        "ros": 4
+      }
+    },
+    "justin jefferson": {
+      "espn": {
+        "week": 5,
+        "ros": 3
+      },
+      "sleeper": {
+        "week": 5,
+        "ros": 7
+      },
+      "cbs": {
+        "week": 7,
+        "ros": 3
+      }
+    },
+    "matthew golden": {
+      "espn": {
+        "week": 6,
+        "ros": 7
+      },
+      "sleeper": {
+        "week": 13,
+        "ros": 43
+      },
+      "cbs": {
+        "week": 11,
+        "ros": 12
+      }
+    },
+    "malik nabers": {
+      "espn": {
+        "week": 7,
+        "ros": 8
+      },
+      "sleeper": {
+        "week": 7,
         "ros": 10
       },
       "cbs": {
-        "week": 5,
-        "ros": 6
+        "week": 8,
+        "ros": 10
       }
     },
-    "trey mcbride": {
-      "espn": {
-        "week": 3,
-        "ros": 3
-      },
-      "sleeper": {
-        "week": 3,
-        "ros": 1
-      },
-      "cbs": {
-        "week": 1,
-        "ros": 1
-      }
-    },
-    "isaiah likely": {
-      "espn": {
-        "week": 4,
-        "ros": 4
-      },
-      "sleeper": {
-        "week": 7,
-        "ros": 15
-      },
-      "cbs": {
-        "week": 3,
-        "ros": 2
-      }
-    },
-    "tj hockenson": {
-      "espn": {
-        "week": 5,
-        "ros": 5
-      },
-      "sleeper": {
-        "week": 12,
-        "ros": 16
-      },
-      "cbs": {
-        "week": 12,
-        "ros": 8
-      }
-    },
-    "sam laporta": {
-      "espn": {
-        "week": 6,
-        "ros": 8
-      },
-      "sleeper": {
-        "week": 4,
-        "ros": 5
-      },
-      "cbs": {
-        "ros": 5
-      }
-    },
-    "travis kelce": {
-      "espn": {
-        "week": 7,
-        "ros": 6
-      },
-      "sleeper": {
-        "week": 5,
-        "ros": 9
-      },
-      "cbs": {
-        "week": 6,
-        "ros": 4
-      }
-    },
-    "tyler warren": {
+    "tee higgins": {
       "espn": {
         "week": 8,
-        "ros": 13
+        "ros": 6
       },
       "sleeper": {
         "week": 6,
-        "ros": 4
+        "ros": 17
       },
       "cbs": {
-        "week": 2,
-        "ros": 7
+        "week": 5,
+        "ros": 6
       }
     },
-    "harold fannin": {
+    "tetairoa mcmillan": {
       "espn": {
         "week": 9,
-        "ros": 12
-      },
-      "sleeper": {
-        "week": 8,
-        "ros": 6
-      },
-      "cbs": {
-        "week": 8,
-        "ros": 9
-      }
-    },
-    "brenton strange": {
-      "espn": {
-        "week": 10,
         "ros": 10
       },
       "sleeper": {
-        "week": 10,
-        "ros": 13
+        "week": 12,
+        "ros": 19
       },
       "cbs": {
-        "week": 7
+        "week": 13,
+        "ros": 21
       }
     },
-    "tucker kraft": {
+    "chris olave": {
+      "espn": {
+        "week": 10,
+        "ros": 9
+      },
+      "sleeper": {
+        "week": 11,
+        "ros": 11
+      },
+      "cbs": {
+        "week": 6,
+        "ros": 8
+      }
+    },
+    "christian watson": {
       "espn": {
         "week": 11,
         "ros": 11
       },
       "sleeper": {
-        "week": 13,
-        "ros": 7
+        "week": 8,
+        "ros": 26
       },
       "cbs": {
-        "ros": 13
+        "week": 10,
+        "ros": 9
       }
     },
-    "hunter henry": {
+    "drake london": {
       "espn": {
         "week": 12,
-        "ros": 22
-      },
-      "sleeper": {
-        "week": 15,
-        "ros": 17
-      },
-      "cbs": {
-        "week": 17,
-        "ros": 19
-      }
-    },
-    "kyle pitts": {
-      "espn": {
-        "week": 13,
-        "ros": 15
-      },
-      "sleeper": {
-        "week": 19,
-        "ros": 8
-      },
-      "cbs": {
-        "week": 16,
-        "ros": 20
-      }
-    },
-    "eli raridon": {
-      "espn": {
-        "week": 14,
-        "ros": 25
-      },
-      "sleeper": {
-        "week": 31,
-        "ros": 62
-      },
-      "cbs": {
-        "week": 29,
-        "ros": 40
-      }
-    },
-    "dalton kincaid": {
-      "espn": {
-        "week": 15,
         "ros": 14
       },
       "sleeper": {
-        "week": 11,
-        "ros": 11
+        "week": 10,
+        "ros": 8
       },
       "cbs": {
-        "week": 11,
-        "ros": 12
-      }
-    },
-    "aj barner": {
-      "espn": {
-        "week": 16,
-        "ros": 27
-      },
-      "sleeper": {
-        "week": 23,
-        "ros": 20
-      },
-      "cbs": {
-        "week": 25,
-        "ros": 31
-      }
-    },
-    "chig okonkwo": {
-      "espn": {
-        "week": 17,
-        "ros": 9
-      },
-      "sleeper": {
-        "week": 21,
-        "ros": 19
-      }
-    },
-    "darren waller": {
-      "espn": {
-        "week": 18,
-        "ros": 17
-      },
-      "sleeper": {
-        "week": 18,
-        "ros": 26
-      },
-      "cbs": {
-        "week": 19,
-        "ros": 22
-      }
-    },
-    "pat freiermuth": {
-      "espn": {
-        "week": 19,
+        "week": 12,
         "ros": 16
+      }
+    },
+    "zay flowers": {
+      "espn": {
+        "week": 13,
+        "ros": 20
       },
       "sleeper": {
         "week": 9,
-        "ros": 25
+        "ros": 15
       },
       "cbs": {
-        "week": 21,
-        "ros": 21
+        "week": 14,
+        "ros": 20
       }
     },
-    "greg dulcich": {
+    "parker washington": {
       "espn": {
-        "week": 20,
-        "ros": 21
+        "week": 14,
+        "ros": 12
       },
       "sleeper": {
-        "week": 26,
-        "ros": 28
+        "week": 14,
+        "ros": 23
+      },
+      "cbs": {
+        "week": 9,
+        "ros": 11
+      }
+    },
+    "dj moore": {
+      "espn": {
+        "week": 15,
+        "ros": 16
+      },
+      "sleeper": {
+        "week": 21,
+        "ros": 33
+      },
+      "cbs": {
+        "week": 19,
+        "ros": 26
+      }
+    },
+    "nico collins": {
+      "espn": {
+        "week": 16,
+        "ros": 13
+      },
+      "sleeper": {
+        "week": 15,
+        "ros": 6
       },
       "cbs": {
         "week": 15,
+        "ros": 13
+      }
+    },
+    "rashee rice": {
+      "espn": {
+        "week": 17,
         "ros": 17
-      }
-    },
-    "darnell washington": {
-      "espn": {
-        "week": 21,
-        "ros": 19
-      },
-      "sleeper": {
-        "week": 25,
-        "ros": 33
-      },
-      "cbs": {
-        "week": 20,
-        "ros": 18
-      }
-    },
-    "mason taylor": {
-      "espn": {
-        "week": 22,
-        "ros": 26
-      },
-      "sleeper": {
-        "week": 24,
-        "ros": 32
-      },
-      "cbs": {
-        "week": 22,
-        "ros": 27
-      }
-    },
-    "dalton schultz": {
-      "espn": {
-        "week": 23,
-        "ros": 18
-      },
-      "sleeper": {
-        "week": 22,
-        "ros": 18
-      },
-      "cbs": {
-        "week": 26,
-        "ros": 23
-      }
-    },
-    "mike gesicki": {
-      "espn": {
-        "week": 24,
-        "ros": 20
-      },
-      "sleeper": {
-        "week": 14,
-        "ros": 29
-      },
-      "cbs": {
-        "week": 13,
-        "ros": 16
-      }
-    },
-    "colby parkinson": {
-      "espn": {
-        "week": 25,
-        "ros": 35
-      },
-      "sleeper": {
-        "week": 28,
-        "ros": 39
-      },
-      "cbs": {
-        "week": 18,
-        "ros": 33
-      }
-    },
-    "juwan johnson": {
-      "espn": {
-        "week": 26,
-        "ros": 24
       },
       "sleeper": {
         "week": 16,
-        "ros": 22
-      },
-      "cbs": {
-        "week": 10,
-        "ros": 10
-      }
-    },
-    "michael mayer": {
-      "espn": {
-        "week": 27,
-        "ros": 28
-      },
-      "sleeper": {
-        "week": 29,
-        "ros": 35
-      },
-      "cbs": {
-        "week": 23,
-        "ros": 25
-      }
-    },
-    "tyler higbee": {
-      "espn": {
-        "week": 28,
-        "ros": 38
-      },
-      "sleeper": {
-        "week": 17,
-        "ros": 63
-      },
-      "cbs": {
-        "week": 14,
-        "ros": 26
-      }
-    },
-    "mark andrews": {
-      "espn": {
-        "week": 29,
-        "ros": 34
-      },
-      "sleeper": {
-        "week": 20,
         "ros": 12
       },
       "cbs": {
-        "week": 27,
-        "ros": 32
+        "ros": 14
       }
     },
-    "tommy tremble": {
+    "denzel boston": {
       "espn": {
+        "week": 18,
+        "ros": 25
+      },
+      "sleeper": {
         "week": 30,
-        "ros": 31
-      },
-      "sleeper": {
-        "week": 34,
-        "ros": 68
+        "ros": 56
       },
       "cbs": {
-        "ros": 36
-      }
-    },
-    "oronde gadsden": {
-      "espn": {
-        "week": 31,
-        "ros": 30
-      },
-      "sleeper": {
-        "week": 35,
-        "ros": 21
-      },
-      "cbs": {
-        "week": 24,
-        "ros": 28
-      }
-    },
-    "gunnar helm": {
-      "espn": {
         "week": 32,
-        "ros": 33
-      },
-      "sleeper": {
-        "week": 33,
+        "ros": 41
+      }
+    },
+    "garrett wilson": {
+      "espn": {
+        "week": 19,
         "ros": 24
       },
-      "cbs": {
-        "week": 33,
-        "ros": 37
-      }
-    },
-    "brevyn spannford": {
-      "espn": {
-        "week": 33,
-        "ros": 41
-      },
       "sleeper": {
-        "week": 27,
-        "ros": 76
-      },
-      "cbs": {
-        "week": 37,
-        "ros": 50
-      }
-    },
-    "davis allen": {
-      "espn": {
-        "week": 34,
-        "ros": 49
-      },
-      "sleeper": {
-        "week": 39,
-        "ros": 105
-      },
-      "cbs": {
-        "week": 32,
-        "ros": 46
-      }
-    },
-    "charlie kolar": {
-      "espn": {
-        "week": 35,
-        "ros": 37
-      },
-      "sleeper": {
-        "week": 38,
-        "ros": 54
-      },
-      "cbs": {
-        "week": 30,
-        "ros": 35
-      }
-    },
-    "dawson knox": {
-      "espn": {
-        "week": 36,
-        "ros": 39
-      },
-      "sleeper": {
-        "week": 44,
-        "ros": 38
-      },
-      "cbs": {
-        "week": 50
-      }
-    },
-    "elijah higgins": {
-      "espn": {
-        "week": 37,
-        "ros": 40
-      },
-      "sleeper": {
-        "week": 30,
-        "ros": 50
-      },
-      "cbs": {
-        "week": 35,
-        "ros": 42
-      }
-    },
-    "kenyon sadiq": {
-      "espn": {
-        "week": 38,
-        "ros": 42
-      },
-      "sleeper": {
-        "week": 37,
-        "ros": 31
-      },
-      "cbs": {
-        "week": 31,
-        "ros": 38
-      }
-    },
-    "nate boerkircher": {
-      "espn": {
-        "week": 39,
-        "ros": 43
-      },
-      "sleeper": {
-        "week": 58,
-        "ros": 80
-      },
-      "cbs": {
-        "week": 34,
-        "ros": 39
-      }
-    },
-    "noah fant": {
-      "espn": {
-        "week": 40,
-        "ros": 44
-      },
-      "sleeper": {
-        "week": 32,
-        "ros": 56
-      },
-      "cbs": {
-        "week": 28,
-        "ros": 30
-      }
-    },
-    "noah gray": {
-      "espn": {
-        "week": 41,
-        "ros": 45
-      },
-      "sleeper": {
-        "week": 36,
-        "ros": 44
-      },
-      "cbs": {
-        "week": 49,
-        "ros": 57
-      }
-    },
-    "josh cuevas": {
-      "espn": {
-        "week": 42,
-        "ros": 48
-      },
-      "sleeper": {
-        "week": 56,
-        "ros": 78
-      },
-      "cbs": {
-        "week": 46,
-        "ros": 56
-      }
-    },
-    "foster moreau": {
-      "espn": {
-        "week": 43,
-        "ros": 47
-      },
-      "sleeper": {
-        "week": 43,
-        "ros": 91
-      },
-      "cbs": {
-        "week": 38,
-        "ros": 44
-      }
-    },
-    "luke schoonmaker": {
-      "espn": {
-        "week": 44,
-        "ros": 58
-      },
-      "sleeper": {
-        "week": 40,
-        "ros": 74
-      },
-      "cbs": {
-        "ros": 81
-      }
-    },
-    "austin hooper": {
-      "espn": {
-        "week": 45,
-        "ros": 52
-      },
-      "sleeper": {
-        "week": 42,
-        "ros": 60
-      },
-      "cbs": {
-        "week": 41,
-        "ros": 53
-      }
-    },
-    "drew sample": {
-      "espn": {
-        "week": 46,
-        "ros": 51
-      },
-      "sleeper": {
-        "week": 45,
-        "ros": 69
-      },
-      "cbs": {
-        "ros": 47
-      }
-    },
-    "jackson hawes": {
-      "espn": {
-        "week": 47,
-        "ros": 53
-      },
-      "sleeper": {
-        "week": 69,
-        "ros": 65
+        "week": 18,
+        "ros": 16
       },
       "cbs": {
         "week": 57,
-        "ros": 62
+        "ros": 27
       }
     },
-    "theo johnson": {
+    "george pickens": {
       "espn": {
-        "week": 48,
-        "ros": 55
+        "week": 20,
+        "ros": 32
       },
       "sleeper": {
-        "week": 41,
-        "ros": 37
+        "week": 20,
+        "ros": 9
       },
       "cbs": {
-        "week": 48,
-        "ros": 59
+        "ros": 19
       }
     },
-    "brock wright": {
+    "carnell tate": {
       "espn": {
-        "week": 49,
-        "ros": 57
+        "week": 21,
+        "ros": 18
       },
       "sleeper": {
-        "week": 53,
-        "ros": 81
+        "week": 23,
+        "ros": 35
       },
       "cbs": {
-        "week": 39,
-        "ros": 49
+        "ros": 18
       }
     },
-    "adam trautman": {
+    "jameson williams": {
       "espn": {
-        "week": 50,
-        "ros": 50
+        "week": 22,
+        "ros": 27
       },
       "sleeper": {
-        "ros": 77
-      },
-      "cbs": {
-        "ros": 85
-      }
-    },
-    "cade otton": {
-      "espn": {
-        "week": 51,
-        "ros": 29
-      },
-      "sleeper": {
+        "week": 22,
         "ros": 27
       },
       "cbs": {
-        "ros": 29
+        "week": 16,
+        "ros": 17
       }
     },
-    "cole kmet": {
+    "demario douglas": {
       "espn": {
-        "week": 52,
-        "ros": 59
+        "week": 23,
+        "ros": 50
       },
       "sleeper": {
+        "week": 41,
+        "ros": 88
+      },
+      "cbs": {
+        "week": 23,
+        "ros": 68
+      }
+    },
+    "deebo samuel": {
+      "espn": {
+        "week": 24,
+        "ros": 38
+      },
+      "sleeper": {
+        "week": 28,
+        "ros": 54
+      },
+      "cbs": {
+        "ros": 46
+      }
+    },
+    "jakobi meyers": {
+      "espn": {
+        "week": 25,
+        "ros": 29
+      },
+      "sleeper": {
+        "week": 33,
+        "ros": 44
+      },
+      "cbs": {
+        "week": 22,
+        "ros": 30
+      }
+    },
+    "jalen coker": {
+      "espn": {
+        "week": 26,
+        "ros": 31
+      },
+      "sleeper": {
+        "week": 17,
+        "ros": 48
+      },
+      "cbs": {
+        "week": 21,
         "ros": 36
       }
     },
-    "colston loveland": {
+    "dk metcalf": {
+      "espn": {
+        "week": 27,
+        "ros": 19
+      },
+      "sleeper": {
+        "week": 24,
+        "ros": 32
+      },
+      "cbs": {
+        "week": 25,
+        "ros": 37
+      }
+    },
+    "germie bernard": {
+      "espn": {
+        "week": 28,
+        "ros": 30
+      },
+      "sleeper": {
+        "week": 29,
+        "ros": 74
+      },
+      "cbs": {
+        "ros": 52
+      }
+    },
+    "stefon diggs": {
+      "espn": {
+        "week": 29,
+        "ros": 23
+      },
+      "sleeper": {
+        "week": 26,
+        "ros": 52
+      },
+      "cbs": {
+        "week": 18,
+        "ros": 24
+      }
+    },
+    "jordan addison": {
+      "espn": {
+        "week": 30,
+        "ros": 26
+      },
+      "sleeper": {
+        "week": 40,
+        "ros": 39
+      },
+      "cbs": {
+        "week": 30,
+        "ros": 38
+      }
+    },
+    "kc concepcion": {
+      "espn": {
+        "week": 31,
+        "ros": 40
+      },
+      "sleeper": {
+        "week": 31,
+        "ros": 53
+      },
+      "cbs": {
+        "week": 38,
+        "ros": 54
+      }
+    },
+    "mack hollins": {
+      "espn": {
+        "week": 32,
+        "ros": 56
+      },
+      "sleeper": {
+        "week": 57,
+        "ros": 113
+      },
+      "cbs": {
+        "week": 43,
+        "ros": 69
+      }
+    },
+    "ladd mcconkey": {
+      "espn": {
+        "week": 33,
+        "ros": 34
+      },
+      "sleeper": {
+        "week": 25,
+        "ros": 14
+      },
+      "cbs": {
+        "week": 58,
+        "ros": 32
+      }
+    },
+    "adonai mitchell": {
+      "espn": {
+        "week": 34,
+        "ros": 42
+      },
+      "sleeper": {
+        "week": 45,
+        "ros": 75
+      },
+      "cbs": {
+        "week": 29,
+        "ros": 49
+      }
+    },
+    "khalil shakir": {
+      "espn": {
+        "week": 35,
+        "ros": 36
+      },
+      "sleeper": {
+        "week": 32,
+        "ros": 41
+      },
+      "cbs": {
+        "week": 20,
+        "ros": 25
+      }
+    },
+    "omar cooper": {
+      "espn": {
+        "week": 36,
+        "ros": 51
+      },
+      "sleeper": {
+        "week": 37,
+        "ros": 61
+      },
+      "cbs": {
+        "week": 26,
+        "ros": 53
+      }
+    },
+    "malachi fields": {
+      "espn": {
+        "week": 37,
+        "ros": 41
+      },
+      "sleeper": {
+        "week": 56,
+        "ros": 71
+      },
+      "cbs": {
+        "ros": 76
+      }
+    },
+    "caleb douglas": {
+      "espn": {
+        "week": 38,
+        "ros": 44
+      },
+      "sleeper": {
+        "week": 47,
+        "ros": 78
+      },
+      "cbs": {
+        "week": 28,
+        "ros": 39
+      }
+    },
+    "treylon burks": {
+      "espn": {
+        "week": 39,
+        "ros": 39
+      },
+      "sleeper": {
+        "week": 67,
+        "ros": 130
+      },
+      "cbs": {
+        "week": 54,
+        "ros": 71
+      }
+    },
+    "josh downs": {
+      "espn": {
+        "week": 40,
+        "ros": 45
+      },
+      "sleeper": {
+        "week": 50,
+        "ros": 38
+      },
+      "cbs": {
+        "week": 46,
+        "ros": 58
+      }
+    },
+    "malik washington": {
+      "espn": {
+        "week": 41,
+        "ros": 46
+      },
+      "sleeper": {
+        "week": 34,
+        "ros": 57
+      },
+      "cbs": {
+        "week": 41,
+        "ros": 55
+      }
+    },
+    "tutu atwell": {
+      "espn": {
+        "week": 42,
+        "ros": 58
+      },
+      "sleeper": {
+        "week": 46,
+        "ros": 164
+      },
+      "cbs": {
+        "week": 39,
+        "ros": 96
+      }
+    },
+    "konata mumpfield": {
+      "espn": {
+        "week": 43,
+        "ros": 62
+      },
+      "sleeper": {
+        "week": 44,
+        "ros": 121
+      },
+      "cbs": {
+        "week": 48
+      }
+    },
+    "wandale robinson": {
+      "espn": {
+        "week": 44,
+        "ros": 43
+      },
+      "sleeper": {
+        "week": 27,
+        "ros": 42
+      },
+      "cbs": {
+        "week": 37,
+        "ros": 43
+      }
+    },
+    "keenan allen": {
+      "espn": {
+        "week": 45,
+        "ros": 74
+      },
+      "sleeper": {
+        "week": 58,
+        "ros": 69
+      },
+      "cbs": {
+        "week": 50,
+        "ros": 57
+      }
+    },
+    "jordyn tyson": {
+      "espn": {
+        "week": 46,
+        "ros": 53
+      },
+      "sleeper": {
+        "week": 62,
+        "ros": 67
+      },
+      "cbs": {
+        "week": 24,
+        "ros": 33
+      }
+    },
+    "tre tucker": {
+      "espn": {
+        "week": 47,
+        "ros": 55
+      },
+      "sleeper": {
+        "week": 36,
+        "ros": 62
+      },
+      "cbs": {
+        "week": 34,
+        "ros": 40
+      }
+    },
+    "tank dell": {
+      "espn": {
+        "week": 48,
+        "ros": 48
+      },
+      "sleeper": {
+        "week": 88,
+        "ros": 116
+      },
+      "cbs": {
+        "week": 27,
+        "ros": 28
+      }
+    },
+    "ryan flournoy": {
+      "espn": {
+        "week": 49,
+        "ros": 65
+      },
+      "sleeper": {
+        "week": 38,
+        "ros": 64
+      },
+      "cbs": {
+        "week": 17,
+        "ros": 51
+      }
+    },
+    "xavier worthy": {
+      "espn": {
+        "week": 50,
+        "ros": 54
+      },
+      "sleeper": {
+        "ros": 50
+      },
+      "cbs": {
+        "week": 75
+      }
+    },
+    "antonio williams": {
+      "espn": {
+        "week": 51,
+        "ros": 47
+      },
+      "sleeper": {
+        "week": 43,
+        "ros": 95
+      },
+      "cbs": {
+        "ros": 44
+      }
+    },
+    "xavier hutchinson": {
+      "espn": {
+        "week": 52,
+        "ros": 52
+      },
+      "sleeper": {
+        "week": 77,
+        "ros": 127
+      },
+      "cbs": {
+        "ros": 74
+      }
+    },
+    "savion williams": {
       "espn": {
         "week": 53,
-        "ros": 7
-      },
-      "sleeper": {
-        "ros": 3
-      },
-      "cbs": {
-        "ros": 14
-      }
-    },
-    "dallas goedert": {
-      "espn": {
-        "week": 54,
-        "ros": 23
-      },
-      "sleeper": {
-        "ros": 23
-      },
-      "cbs": {
-        "ros": 15
-      }
-    },
-    "david njoku": {
-      "espn": {
-        "week": 55,
         "ros": 60
       },
       "sleeper": {
-        "ros": 45
+        "week": 76,
+        "ros": 136
+      },
+      "cbs": {
+        "week": 76
+      }
+    },
+    "jahan dotson": {
+      "espn": {
+        "week": 54,
+        "ros": 64
+      },
+      "sleeper": {
+        "week": 53,
+        "ros": 99
+      },
+      "cbs": {
+        "week": 69,
+        "ros": 95
+      }
+    },
+    "keon coleman": {
+      "espn": {
+        "week": 55,
+        "ros": 59
+      },
+      "sleeper": {
+        "week": 39,
+        "ros": 86
       },
       "cbs": {
         "week": 36,
         "ros": 45
       }
     },
-    "eli stowers": {
+    "laquon treadwell": {
       "espn": {
         "week": 56,
-        "ros": 54
+        "ros": 69
       },
       "sleeper": {
-        "ros": 34
+        "week": 49
+      },
+      "cbs": {
+        "week": 68
       }
     },
-    "elijah arroyo": {
+    "devaughn vele": {
       "espn": {
         "week": 57,
         "ros": 61
       },
       "sleeper": {
-        "ros": 40
-      }
-    },
-    "erick all": {
-      "espn": {
-        "week": 58,
-        "ros": 62
-      }
-    },
-    "evan engram": {
-      "espn": {
-        "week": 59,
-        "ros": 36
-      },
-      "sleeper": {
-        "ros": 42
+        "week": 42,
+        "ros": 68
       },
       "cbs": {
         "ros": 34
       }
     },
-    "jatavion sanders": {
+    "efton chism": {
+      "espn": {
+        "week": 58,
+        "ros": 110
+      },
+      "sleeper": {
+        "week": 72,
+        "ros": 195
+      },
+      "cbs": {
+        "week": 51,
+        "ros": 90
+      }
+    },
+    "rashid shaheed": {
+      "espn": {
+        "week": 59,
+        "ros": 78
+      },
+      "sleeper": {
+        "week": 61,
+        "ros": 55
+      },
+      "cbs": {
+        "ros": 75
+      }
+    },
+    "reggie virgil": {
       "espn": {
         "week": 60,
         "ros": 63
       },
       "sleeper": {
-        "week": 74,
-        "ros": 84
+        "week": 54,
+        "ros": 154
       },
       "cbs": {
-        "week": 65,
-        "ros": 79
+        "week": 53,
+        "ros": 65
       }
     },
-    "jake ferguson": {
+    "kyle williams": {
       "espn": {
         "week": 61,
-        "ros": 46
+        "ros": 101
       },
       "sleeper": {
-        "ros": 14
+        "week": 81,
+        "ros": 138
       },
       "cbs": {
-        "ros": 41
+        "week": 63
       }
     },
-    "jake tonges": {
+    "jordan whittington": {
       "espn": {
         "week": 62,
-        "ros": 64
+        "ros": 86
       },
       "sleeper": {
-        "ros": 41
+        "ros": 161
       }
     },
-    "jonnu smith": {
+    "demarcus robinson": {
       "espn": {
         "week": 63,
-        "ros": 65
+        "ros": 118
       },
       "sleeper": {
-        "week": 51,
-        "ros": 57
+        "week": 35,
+        "ros": 97
       },
       "cbs": {
-        "week": 67,
-        "ros": 73
+        "week": 40,
+        "ros": 70
       }
     },
-    "josh oliver": {
+    "quentin johnston": {
       "espn": {
         "week": 64,
         "ros": 66
       },
       "sleeper": {
-        "ros": 73
+        "week": 51,
+        "ros": 49
+      },
+      "cbs": {
+        "week": 35,
+        "ros": 50
       }
     },
-    "max klare": {
+    "deion burks": {
       "espn": {
         "week": 65,
-        "ros": 67
+        "ros": 82
+      },
+      "sleeper": {
+        "week": 48,
+        "ros": 160
+      },
+      "cbs": {
+        "week": 66
+      }
+    },
+    "darnell mooney": {
+      "espn": {
+        "week": 66,
+        "ros": 71
+      },
+      "sleeper": {
+        "week": 85,
+        "ros": 96
+      },
+      "cbs": {
+        "week": 62,
+        "ros": 86
+      }
+    },
+    "tre harris": {
+      "espn": {
+        "week": 67,
+        "ros": 68
+      },
+      "sleeper": {
+        "week": 66,
+        "ros": 66
+      },
+      "cbs": {
+        "week": 33,
+        "ros": 60
+      }
+    },
+    "brian thomas": {
+      "espn": {
+        "week": 68,
+        "ros": 76
+      },
+      "sleeper": {
+        "week": 71,
+        "ros": 29
+      },
+      "cbs": {
+        "ros": 97
+      }
+    },
+    "jalen nailor": {
+      "espn": {
+        "week": 69,
+        "ros": 77
+      },
+      "sleeper": {
+        "week": 86,
+        "ros": 58
+      },
+      "cbs": {
+        "week": 86
+      }
+    },
+    "elic ayomanor": {
+      "espn": {
+        "week": 70,
+        "ros": 72
+      },
+      "sleeper": {
+        "week": 59,
+        "ros": 115
+      },
+      "cbs": {
+        "ros": 78
+      }
+    },
+    "marvin harrison": {
+      "espn": {
+        "week": 71,
+        "ros": 70
+      },
+      "sleeper": {
+        "week": 68,
+        "ros": 31
+      },
+      "cbs": {
+        "week": 49,
+        "ros": 59
+      }
+    },
+    "ashton dulin": {
+      "espn": {
+        "week": 72,
+        "ros": 87
+      },
+      "sleeper": {
+        "week": 52,
+        "ros": 206
+      },
+      "cbs": {
+        "week": 45,
+        "ros": 84
+      }
+    },
+    "chris bell": {
+      "espn": {
+        "week": 73,
+        "ros": 80
+      },
+      "sleeper": {
+        "week": 60,
+        "ros": 103
+      },
+      "cbs": {
+        "week": 65,
+        "ros": 89
+      }
+    },
+    "jakobi lane": {
+      "espn": {
+        "week": 74,
+        "ros": 91
       },
       "sleeper": {
         "week": 63,
-        "ros": 48
+        "ros": 72
       },
       "cbs": {
-        "ros": 76
+        "ros": 88
       }
     },
-    "sam roush": {
+    "john metchie": {
       "espn": {
-        "week": 66,
-        "ros": 56
+        "week": 75,
+        "ros": 84
       },
       "sleeper": {
-        "ros": 59
+        "week": 105,
+        "ros": 118
       },
       "cbs": {
+        "week": 59,
+        "ros": 91
+      }
+    },
+    "rashod bateman": {
+      "espn": {
+        "week": 76,
+        "ros": 93
+      },
+      "sleeper": {
+        "week": 64,
+        "ros": 73
+      },
+      "cbs": {
+        "week": 56,
+        "ros": 80
+      }
+    },
+    "cooper kupp": {
+      "espn": {
+        "week": 77,
+        "ros": 94
+      },
+      "sleeper": {
+        "week": 55,
+        "ros": 85
+      },
+      "cbs": {
+        "week": 47,
+        "ros": 72
+      }
+    },
+    "cj daniels": {
+      "espn": {
+        "week": 78,
+        "ros": 97
+      },
+      "sleeper": {
+        "week": 65,
+        "ros": 122
+      }
+    },
+    "dohnte meyers": {
+      "espn": {
+        "week": 79,
+        "ros": 81
+      },
+      "sleeper": {
+        "week": 99,
+        "ros": 128
+      },
+      "cbs": {
+        "week": 81
+      }
+    },
+    "isaac teslaa": {
+      "espn": {
+        "week": 80,
+        "ros": 88
+      },
+      "sleeper": {
+        "week": 73,
+        "ros": 84
+      },
+      "cbs": {
+        "week": 73,
+        "ros": 94
+      }
+    },
+    "kayshon boutte": {
+      "espn": {
+        "week": 81,
+        "ros": 83
+      },
+      "sleeper": {
+        "week": 78,
+        "ros": 63
+      },
+      "cbs": {
+        "week": 52,
+        "ros": 63
+      }
+    },
+    "jerry jeudy": {
+      "espn": {
+        "week": 82,
+        "ros": 95
+      },
+      "sleeper": {
+        "week": 80,
+        "ros": 65
+      },
+      "cbs": {
+        "week": 64,
+        "ros": 85
+      }
+    },
+    "kevin coleman": {
+      "espn": {
+        "week": 83,
+        "ros": 90
+      },
+      "sleeper": {
+        "week": 94,
+        "ros": 135
+      },
+      "cbs": {
+        "week": 67,
+        "ros": 79
+      }
+    },
+    "van jefferson": {
+      "espn": {
+        "week": 84,
+        "ros": 89
+      },
+      "sleeper": {
+        "week": 96,
+        "ros": 175
+      },
+      "cbs": {
+        "week": 60,
+        "ros": 77
+      }
+    },
+    "josh cameron": {
+      "espn": {
+        "week": 85,
+        "ros": 96
+      },
+      "sleeper": {
+        "week": 75,
+        "ros": 112
+      },
+      "cbs": {
+        "week": 78
+      }
+    },
+    "jauan jennings": {
+      "espn": {
+        "week": 86,
+        "ros": 92
+      },
+      "sleeper": {
+        "week": 83,
+        "ros": 70
+      },
+      "cbs": {
+        "week": 82,
+        "ros": 92
+      }
+    },
+    "jordan watkins": {
+      "espn": {
+        "week": 87,
+        "ros": 124
+      },
+      "sleeper": {
+        "week": 70,
+        "ros": 209
+      },
+      "cbs": {
+        "week": 31,
+        "ros": 62
+      }
+    },
+    "devin duvernay": {
+      "espn": {
+        "week": 88,
+        "ros": 98
+      },
+      "sleeper": {
+        "week": 84,
+        "ros": 219
+      },
+      "cbs": {
+        "week": 85
+      }
+    },
+    "olamide zaccheaus": {
+      "espn": {
+        "week": 89,
+        "ros": 105
+      },
+      "sleeper": {
+        "week": 79,
+        "ros": 94
+      }
+    },
+    "tory horton": {
+      "espn": {
+        "week": 90,
+        "ros": 102
+      },
+      "sleeper": {
+        "week": 87,
+        "ros": 81
+      }
+    },
+    "travis hunter": {
+      "espn": {
+        "week": 91,
+        "ros": 100
+      }
+    },
+    "calvin ridley": {
+      "espn": {
+        "week": 92,
+        "ros": 104
+      },
+      "sleeper": {
+        "week": 89,
+        "ros": 92
+      }
+    },
+    "jack bech": {
+      "espn": {
+        "week": 93,
+        "ros": 107
+      },
+      "sleeper": {
+        "week": 82,
+        "ros": 90
+      },
+      "cbs": {
+        "week": 87
+      }
+    },
+    "brycen tremayne": {
+      "espn": {
+        "week": 94,
+        "ros": 109
+      },
+      "sleeper": {
+        "week": 123,
+        "ros": 163
+      }
+    },
+    "kavontae turpin": {
+      "espn": {
+        "week": 95,
+        "ros": 111
+      },
+      "sleeper": {
+        "week": 93,
+        "ros": 98
+      },
+      "cbs": {
+        "week": 83
+      }
+    },
+    "chimere dike": {
+      "espn": {
+        "week": 96,
+        "ros": 113
+      },
+      "sleeper": {
+        "week": 98,
         "ros": 83
       }
     },
-    "terrance ferguson": {
+    "bo melton": {
       "espn": {
-        "week": 67,
-        "ros": 32
+        "week": 97,
+        "ros": 114
+      },
+      "sleeper": {
+        "week": 113,
+        "ros": 165
+      }
+    },
+    "bryce lance": {
+      "espn": {
+        "week": 98,
+        "ros": 115
+      },
+      "sleeper": {
+        "week": 109,
+        "ros": 124
+      },
+      "cbs": {
+        "week": 71
+      }
+    },
+    "barion brown": {
+      "espn": {
+        "week": 99,
+        "ros": 116
+      },
+      "sleeper": {
+        "week": 100,
+        "ros": 107
+      }
+    },
+    "myles price": {
+      "espn": {
+        "week": 100,
+        "ros": 119
+      },
+      "sleeper": {
+        "week": 142
+      }
+    },
+    "isaiah williams": {
+      "espn": {
+        "week": 101,
+        "ros": 120
+      },
+      "sleeper": {
+        "week": 120,
+        "ros": 137
+      },
+      "cbs": {
+        "week": 74
+      }
+    },
+    "devontez walker": {
+      "espn": {
+        "week": 102,
+        "ros": 121
+      },
+      "sleeper": {
+        "week": 91,
+        "ros": 143
+      }
+    },
+    "luke mccaffrey": {
+      "espn": {
+        "week": 103,
+        "ros": 123
+      },
+      "sleeper": {
+        "week": 130,
+        "ros": 166
+      }
+    },
+    "colbie young": {
+      "espn": {
+        "week": 104,
+        "ros": 122
+      },
+      "sleeper": {
+        "week": 139,
+        "ros": 139
+      }
+    },
+    "lajohntay wester": {
+      "espn": {
+        "week": 105,
+        "ros": 125
+      },
+      "sleeper": {
+        "week": 136,
+        "ros": 213
+      }
+    },
+    "jonathan mingo": {
+      "espn": {
+        "week": 106,
+        "ros": 126
+      },
+      "sleeper": {
+        "week": 115
+      }
+    },
+    "charlie jones": {
+      "espn": {
+        "week": 107,
+        "ros": 127
+      },
+      "sleeper": {
+        "week": 124
+      }
+    },
+    "kaden wetjen": {
+      "espn": {
+        "week": 108,
+        "ros": 128
+      },
+      "sleeper": {
+        "week": 138,
+        "ros": 198
+      }
+    },
+    "jacob cowing": {
+      "espn": {
+        "week": 109,
+        "ros": 129
+      },
+      "sleeper": {
+        "week": 122,
+        "ros": 212
+      }
+    },
+    "malik benson": {
+      "espn": {
+        "week": 110,
+        "ros": 131
+      },
+      "sleeper": {
+        "week": 132,
+        "ros": 111
+      }
+    },
+    "greg dortch": {
+      "espn": {
+        "week": 111,
+        "ros": 130
+      },
+      "sleeper": {
+        "week": 119,
+        "ros": 119
+      }
+    },
+    "jalen royals": {
+      "espn": {
+        "week": 112,
+        "ros": 132
+      },
+      "sleeper": {
+        "week": 106,
+        "ros": 133
+      }
+    },
+    "aj brown": {
+      "espn": {
+        "week": 113,
+        "ros": 33
+      },
+      "sleeper": {
+        "week": 19,
+        "ros": 46
+      },
+      "cbs": {
+        "week": 55,
+        "ros": 35
+      }
+    },
+    "alec pierce": {
+      "espn": {
+        "week": 114,
+        "ros": 133
+      },
+      "sleeper": {
+        "ros": 34
+      }
+    },
+    "andrei iosivas": {
+      "espn": {
+        "week": 115,
+        "ros": 134
+      },
+      "sleeper": {
+        "week": 74,
+        "ros": 82
+      },
+      "cbs": {
+        "week": 61,
+        "ros": 83
+      }
+    },
+    "brandin cooks": {
+      "espn": {
+        "week": 116,
+        "ros": 135
+      },
+      "sleeper": {
+        "week": 102,
+        "ros": 147
+      },
+      "cbs": {
+        "week": 80
+      }
+    },
+    "chris brazzell": {
+      "espn": {
+        "week": 117,
+        "ros": 136
+      }
+    },
+    "chris godwin": {
+      "espn": {
+        "week": 118,
+        "ros": 67
+      },
+      "sleeper": {
+        "ros": 37
+      },
+      "cbs": {
+        "ros": 56
+      }
+    },
+    "christian kirk": {
+      "espn": {
+        "week": 119,
+        "ros": 137
+      },
+      "sleeper": {
+        "ros": 120
+      }
+    },
+    "cody white": {
+      "espn": {
+        "week": 120,
+        "ros": 138
+      },
+      "sleeper": {
+        "ros": 170
+      }
+    },
+    "courtland sutton": {
+      "espn": {
+        "week": 121,
+        "ros": 49
+      },
+      "sleeper": {
+        "ros": 36
+      },
+      "cbs": {
+        "ros": 47
+      }
+    },
+    "cyrus allen": {
+      "espn": {
+        "week": 122,
+        "ros": 139
+      },
+      "sleeper": {
+        "week": 90,
+        "ros": 79
+      },
+      "cbs": {
+        "week": 72
+      }
+    },
+    "darius cooper": {
+      "espn": {
+        "week": 123,
+        "ros": 117
+      },
+      "sleeper": {
+        "ros": 176
+      }
+    },
+    "darius slayton": {
+      "espn": {
+        "week": 124,
+        "ros": 140
+      },
+      "sleeper": {
+        "ros": 93
+      }
+    },
+    "davante adams": {
+      "espn": {
+        "week": 125,
+        "ros": 141
       },
       "sleeper": {
         "ros": 30
       },
       "cbs": {
-        "ros": 43
+        "ros": 29
       }
     },
-    "will mallory": {
+    "dezhaun stribling": {
       "espn": {
-        "week": 68,
-        "ros": 68
+        "week": 126,
+        "ros": 142
       },
       "sleeper": {
-        "week": 85
+        "ros": 59
       },
       "cbs": {
-        "week": 70,
         "ros": 93
       }
     },
-    "zach ertz": {
+    "devonta smith": {
       "espn": {
-        "week": 69,
-        "ros": 69
+        "week": 127,
+        "ros": 21
       },
       "sleeper": {
-        "ros": 55
+        "ros": 13
+      },
+      "cbs": {
+        "ros": 22
+      }
+    },
+    "donte thornton": {
+      "espn": {
+        "week": 128,
+        "ros": 143
+      },
+      "sleeper": {
+        "week": 116,
+        "ros": 193
+      }
+    },
+    "dontayvion wicks": {
+      "espn": {
+        "week": 129,
+        "ros": 57
+      },
+      "sleeper": {
+        "ros": 100
+      },
+      "cbs": {
+        "ros": 81
+      }
+    },
+    "dyami brown": {
+      "espn": {
+        "week": 130,
+        "ros": 144
+      },
+      "sleeper": {
+        "ros": 190
+      }
+    },
+    "elijah sarratt": {
+      "espn": {
+        "week": 131,
+        "ros": 145
+      },
+      "sleeper": {
+        "week": 128,
+        "ros": 110
+      }
+    },
+    "emeka egbuka": {
+      "espn": {
+        "week": 132,
+        "ros": 35
+      },
+      "sleeper": {
+        "ros": 18
+      },
+      "cbs": {
+        "ros": 31
+      }
+    },
+    "hollywood brown": {
+      "espn": {
+        "week": 133,
+        "ros": 146
+      }
+    },
+    "isaiah bond": {
+      "espn": {
+        "week": 134,
+        "ros": 147
+      },
+      "sleeper": {
+        "week": 111,
+        "ros": 108
+      }
+    },
+    "jahdae walker": {
+      "espn": {
+        "week": 135,
+        "ros": 148
+      },
+      "sleeper": {
+        "ros": 156
+      }
+    },
+    "jalen mcmillan": {
+      "espn": {
+        "week": 136,
+        "ros": 149
+      },
+      "sleeper": {
+        "ros": 60
+      }
+    },
+    "jalen tolbert": {
+      "espn": {
+        "week": 137,
+        "ros": 150
+      },
+      "sleeper": {
+        "week": 117,
+        "ros": 132
+      }
+    },
+    "jayden higgins": {
+      "espn": {
+        "week": 138,
+        "ros": 151
+      }
+    },
+    "jayden reed": {
+      "espn": {
+        "week": 139,
+        "ros": 152
+      },
+      "sleeper": {
+        "ros": 28
+      }
+    },
+    "jaylen waddle": {
+      "espn": {
+        "week": 140,
+        "ros": 28
+      },
+      "sleeper": {
+        "ros": 21
+      },
+      "cbs": {
+        "ros": 48
+      }
+    },
+    "jaylin noel": {
+      "espn": {
+        "week": 141,
+        "ros": 153
+      },
+      "sleeper": {
+        "ros": 87
+      }
+    },
+    "joshua palmer": {
+      "espn": {
+        "week": 142,
+        "ros": 154
+      },
+      "sleeper": {
+        "ros": 134
+      }
+    },
+    "kalif raymond": {
+      "espn": {
+        "week": 143,
+        "ros": 79
+      },
+      "sleeper": {
+        "ros": 150
+      },
+      "cbs": {
+        "ros": 73
+      }
+    },
+    "kendrick bourne": {
+      "espn": {
+        "week": 144,
+        "ros": 155
+      },
+      "sleeper": {
+        "ros": 91
+      }
+    },
+    "liljordan humphrey": {
+      "espn": {
+        "week": 145,
+        "ros": 156
+      },
+      "sleeper": {
+        "ros": 159
+      }
+    },
+    "luther burden": {
+      "espn": {
+        "week": 146,
+        "ros": 15
+      },
+      "sleeper": {
+        "ros": 24
+      },
+      "cbs": {
+        "ros": 15
+      }
+    },
+    "makai lemon": {
+      "espn": {
+        "week": 147,
+        "ros": 85
+      },
+      "sleeper": {
+        "ros": 45
+      },
+      "cbs": {
+        "ros": 64
+      }
+    },
+    "marvin mims": {
+      "espn": {
+        "week": 148,
+        "ros": 99
+      },
+      "sleeper": {
+        "ros": 101
+      }
+    },
+    "michael pittman": {
+      "espn": {
+        "week": 149,
+        "ros": 157
+      },
+      "sleeper": {
+        "ros": 40
+      },
+      "cbs": {
+        "week": 42,
+        "ros": 61
+      }
+    },
+    "michael wilson": {
+      "espn": {
+        "week": 150,
+        "ros": 158
+      },
+      "sleeper": {
+        "ros": 47
+      }
+    },
+    "mike evans": {
+      "espn": {
+        "week": 151,
+        "ros": 22
+      },
+      "sleeper": {
+        "ros": 20
+      },
+      "cbs": {
+        "week": 44,
+        "ros": 23
+      }
+    },
+    "odell beckham": {
+      "espn": {
+        "week": 152,
+        "ros": 159
+      },
+      "sleeper": {
+        "ros": 149
+      }
+    },
+    "pat bryant": {
+      "espn": {
+        "week": 153,
+        "ros": 75
+      },
+      "sleeper": {
+        "ros": 77
+      },
+      "cbs": {
+        "ros": 67
+      }
+    },
+    "puka nacua": {
+      "espn": {
+        "week": 154,
+        "ros": 160
+      },
+      "sleeper": {
+        "ros": 1
+      },
+      "cbs": {
+        "ros": 7
+      }
+    },
+    "ricky pearsall": {
+      "espn": {
+        "week": 155,
+        "ros": 161
+      }
+    },
+    "roman wilson": {
+      "espn": {
+        "week": 156,
+        "ros": 162
+      },
+      "sleeper": {
+        "ros": 153
+      },
+      "cbs": {
+        "ros": 82
+      }
+    },
+    "rome odunze": {
+      "espn": {
+        "week": 157,
+        "ros": 37
+      },
+      "sleeper": {
+        "ros": 25
+      },
+      "cbs": {
+        "ros": 42
+      }
+    },
+    "romeo doubs": {
+      "espn": {
+        "week": 158,
+        "ros": 163
+      },
+      "sleeper": {
+        "ros": 51
+      },
+      "cbs": {
+        "ros": 66
+      }
+    },
+    "skyler bell": {
+      "espn": {
+        "week": 159,
+        "ros": 164
+      },
+      "sleeper": {
+        "week": 135,
+        "ros": 106
+      }
+    },
+    "skyy moore": {
+      "espn": {
+        "week": 160,
+        "ros": 165
+      },
+      "sleeper": {
+        "ros": 207
+      }
+    },
+    "tai felton": {
+      "espn": {
+        "week": 161,
+        "ros": 166
+      },
+      "sleeper": {
+        "week": 107,
+        "ros": 146
+      }
+    },
+    "ted hurst": {
+      "espn": {
+        "week": 162,
+        "ros": 106
+      },
+      "sleeper": {
+        "ros": 76
+      }
+    },
+    "terry mclaurin": {
+      "espn": {
+        "week": 163,
+        "ros": 167
+      },
+      "sleeper": {
+        "ros": 22
+      }
+    },
+    "tez johnson": {
+      "espn": {
+        "week": 164,
+        "ros": 73
+      },
+      "sleeper": {
+        "ros": 125
+      }
+    },
+    "troy franklin": {
+      "espn": {
+        "week": 165,
+        "ros": 103
+      },
+      "sleeper": {
+        "ros": 104
+      }
+    },
+    "tyquan thornton": {
+      "espn": {
+        "week": 166,
+        "ros": 168
+      },
+      "sleeper": {
+        "ros": 109
+      }
+    },
+    "xavier legette": {
+      "espn": {
+        "week": 167,
+        "ros": 169
+      },
+      "sleeper": {
+        "week": 92,
+        "ros": 105
+      },
+      "cbs": {
+        "week": 77
+      }
+    },
+    "zachariah branch": {
+      "espn": {
+        "week": 168,
+        "ros": 112
+      },
+      "sleeper": {
+        "ros": 89
+      }
+    },
+    "zavion thomas": {
+      "espn": {
+        "week": 169,
+        "ros": 108
+      },
+      "sleeper": {
+        "ros": 114
       }
     },
     "josh allen": {
@@ -4431,7 +3554,7 @@
         "ros": 3
       },
       "cbs": {
-        "week": 12,
+        "week": 8,
         "ros": 12
       }
     },
@@ -4486,7 +3609,8 @@
         "ros": 24
       },
       "cbs": {
-        "week": 10
+        "week": 9,
+        "ros": 15
       }
     },
     "jayden daniels": {
@@ -4495,7 +3619,7 @@
         "ros": 3
       },
       "sleeper": {
-        "week": 7,
+        "week": 9,
         "ros": 5
       },
       "cbs": {
@@ -4509,24 +3633,25 @@
         "ros": 6
       },
       "sleeper": {
-        "week": 17,
+        "week": 14,
         "ros": 23
       },
       "cbs": {
+        "week": 13,
         "ros": 6
       }
     },
     "drew lock": {
       "espn": {
         "week": 9,
-        "ros": 33
+        "ros": 34
       },
       "sleeper": {
         "week": 18
       },
       "cbs": {
         "week": 14,
-        "ros": 29
+        "ros": 31
       }
     },
     "patrick mahomes": {
@@ -4535,11 +3660,11 @@
         "ros": 8
       },
       "sleeper": {
-        "week": 8,
+        "week": 10,
         "ros": 14
       },
       "cbs": {
-        "week": 9,
+        "week": 12,
         "ros": 5
       }
     },
@@ -4549,8 +3674,12 @@
         "ros": 12
       },
       "sleeper": {
-        "week": 9,
+        "week": 7,
         "ros": 15
+      },
+      "cbs": {
+        "week": 11,
+        "ros": 7
       }
     },
     "tyler shough": {
@@ -4573,11 +3702,11 @@
         "ros": 23
       },
       "sleeper": {
-        "week": 15,
+        "week": 16,
         "ros": 17
       },
       "cbs": {
-        "week": 11,
+        "week": 10,
         "ros": 13
       }
     },
@@ -4587,12 +3716,12 @@
         "ros": 17
       },
       "sleeper": {
-        "week": 10,
+        "week": 8,
         "ros": 7
       },
       "cbs": {
         "week": 6,
-        "ros": 7
+        "ros": 8
       }
     },
     "jordan love": {
@@ -4605,7 +3734,7 @@
         "ros": 18
       },
       "cbs": {
-        "week": 16,
+        "week": 17,
         "ros": 11
       }
     },
@@ -4615,11 +3744,12 @@
         "ros": 16
       },
       "sleeper": {
-        "week": 14,
+        "week": 15,
         "ros": 49
       },
       "cbs": {
-        "ros": 17
+        "week": 15,
+        "ros": 19
       }
     },
     "deshaun watson": {
@@ -4628,12 +3758,12 @@
         "ros": 20
       },
       "sleeper": {
-        "week": 23,
+        "week": 21,
         "ros": 32
       },
       "cbs": {
-        "week": 18,
-        "ros": 16
+        "week": 21,
+        "ros": 17
       }
     },
     "aaron rodgers": {
@@ -4646,7 +3776,7 @@
         "ros": 29
       },
       "cbs": {
-        "week": 17
+        "week": 20
       }
     },
     "geno smith": {
@@ -4655,12 +3785,12 @@
         "ros": 22
       },
       "sleeper": {
-        "week": 16,
+        "week": 17,
         "ros": 27
       },
       "cbs": {
-        "week": 20,
-        "ros": 24
+        "week": 24,
+        "ros": 25
       }
     },
     "jacoby brissett": {
@@ -4669,12 +3799,12 @@
         "ros": 29
       },
       "sleeper": {
-        "week": 24,
+        "week": 23,
         "ros": 30
       },
       "cbs": {
-        "week": 15,
-        "ros": 27
+        "week": 16,
+        "ros": 28
       }
     },
     "fernando mendoza": {
@@ -4687,8 +3817,7 @@
         "ros": 28
       },
       "cbs": {
-        "week": 21,
-        "ros": 18
+        "ros": 20
       }
     },
     "kirk cousins": {
@@ -4697,12 +3826,12 @@
         "ros": 18
       },
       "sleeper": {
-        "week": 22,
+        "week": 20,
         "ros": 36
       },
       "cbs": {
-        "week": 25,
-        "ros": 21
+        "week": 26,
+        "ros": 18
       }
     },
     "michael penix": {
@@ -4715,7 +3844,7 @@
         "ros": 31
       },
       "cbs": {
-        "week": 23,
+        "week": 25,
         "ros": 26
       }
     },
@@ -4725,12 +3854,11 @@
         "ros": 31
       },
       "sleeper": {
-        "week": 20,
+        "week": 24,
         "ros": 26
       },
       "cbs": {
-        "week": 13,
-        "ros": 25
+        "week": 19
       }
     },
     "justin herbert": {
@@ -4739,12 +3867,12 @@
         "ros": 26
       },
       "sleeper": {
-        "week": 25,
+        "week": 22,
         "ros": 13
       },
       "cbs": {
-        "week": 24,
-        "ros": 20
+        "week": 18,
+        "ros": 22
       }
     },
     "cam ward": {
@@ -4753,17 +3881,29 @@
         "ros": 21
       },
       "sleeper": {
-        "week": 26,
+        "week": 25,
         "ros": 25
       },
       "cbs": {
+        "ros": 21
+      }
+    },
+    "kyle mccord": {
+      "espn": {
+        "week": 27,
+        "ros": 33
+      },
+      "sleeper": {
+        "week": 26
+      },
+      "cbs": {
         "week": 22,
-        "ros": 19
+        "ros": 29
       }
     },
     "carson beck": {
       "espn": {
-        "week": 27,
+        "week": 28,
         "ros": 28
       },
       "sleeper": {
@@ -4771,74 +3911,74 @@
         "ros": 35
       },
       "cbs": {
-        "week": 19,
+        "week": 23,
         "ros": 14
       }
     },
     "jameis winston": {
       "espn": {
-        "week": 28,
-        "ros": 34
+        "week": 29,
+        "ros": 35
       },
       "sleeper": {
         "ros": 53
       },
       "cbs": {
-        "ros": 38
+        "ros": 40
       }
     },
     "anthony richardson": {
       "espn": {
-        "week": 29,
-        "ros": 35
+        "week": 30,
+        "ros": 36
       },
       "sleeper": {
         "ros": 46
       },
       "cbs": {
-        "ros": 49
+        "ros": 50
       }
     },
     "baker mayfield": {
       "espn": {
-        "week": 30,
+        "week": 31,
         "ros": 25
       },
       "sleeper": {
         "ros": 19
       },
       "cbs": {
-        "ros": 22
+        "ros": 23
       }
     },
     "bo nix": {
       "espn": {
-        "week": 31,
+        "week": 32,
         "ros": 14
       },
       "sleeper": {
         "ros": 12
       },
       "cbs": {
-        "ros": 15
+        "ros": 16
       }
     },
     "cade klubnik": {
       "espn": {
-        "week": 32,
-        "ros": 36
+        "week": 33,
+        "ros": 37
       },
       "sleeper": {
         "ros": 43
       },
       "cbs": {
         "week": 44,
-        "ros": 54
+        "ros": 56
       }
     },
     "caleb williams": {
       "espn": {
-        "week": 33,
+        "week": 34,
         "ros": 15
       },
       "sleeper": {
@@ -4850,8 +3990,8 @@
     },
     "carson wentz": {
       "espn": {
-        "week": 34,
-        "ros": 37
+        "week": 35,
+        "ros": 38
       },
       "sleeper": {
         "ros": 59
@@ -4859,8 +3999,8 @@
     },
     "case keenum": {
       "espn": {
-        "week": 35,
-        "ros": 38
+        "week": 36,
+        "ros": 39
       },
       "sleeper": {
         "ros": 78
@@ -4868,8 +4008,8 @@
     },
     "drew allar": {
       "espn": {
-        "week": 36,
-        "ros": 39
+        "week": 37,
+        "ros": 40
       },
       "sleeper": {
         "ros": 45
@@ -4877,8 +4017,8 @@
     },
     "gardner minshew": {
       "espn": {
-        "week": 37,
-        "ros": 40
+        "week": 38,
+        "ros": 41
       },
       "sleeper": {
         "ros": 40
@@ -4886,8 +4026,8 @@
     },
     "jalen hurts": {
       "espn": {
-        "week": 38,
-        "ros": 41
+        "week": 39,
+        "ros": 42
       },
       "sleeper": {
         "ros": 4
@@ -4895,29 +4035,29 @@
     },
     "jalon daniels": {
       "espn": {
-        "week": 39,
-        "ros": 42
+        "week": 40,
+        "ros": 43
       },
       "cbs": {
-        "ros": 30
+        "ros": 32
       }
     },
     "jarrett stidham": {
       "espn": {
-        "week": 40,
-        "ros": 43
+        "week": 41,
+        "ros": 44
       },
       "sleeper": {
         "ros": 68
       },
       "cbs": {
-        "ros": 44
+        "ros": 47
       }
     },
     "jaxson dart": {
       "espn": {
-        "week": 41,
-        "ros": 44
+        "week": 42,
+        "ros": 45
       },
       "sleeper": {
         "ros": 11
@@ -4925,8 +4065,8 @@
     },
     "joe fagnano": {
       "espn": {
-        "week": 42,
-        "ros": 45
+        "week": 43,
+        "ros": 46
       },
       "cbs": {
         "week": 43
@@ -4934,20 +4074,20 @@
     },
     "joe flacco": {
       "espn": {
-        "week": 43,
-        "ros": 46
+        "week": 44,
+        "ros": 47
       },
       "sleeper": {
         "ros": 39
       },
       "cbs": {
-        "week": 38,
-        "ros": 33
+        "week": 40,
+        "ros": 35
       }
     },
     "joe milton": {
       "espn": {
-        "week": 44,
+        "week": 45,
         "ros": 27
       },
       "sleeper": {
@@ -4956,146 +4096,136 @@
     },
     "joshua dobbs": {
       "espn": {
-        "week": 45,
-        "ros": 47
+        "week": 46,
+        "ros": 48
       },
       "sleeper": {
         "ros": 64
       },
       "cbs": {
         "week": 29,
-        "ros": 34
+        "ros": 36
       }
     },
     "justin fields": {
       "espn": {
-        "week": 46,
-        "ros": 48
+        "week": 47,
+        "ros": 49
       },
       "sleeper": {
         "ros": 37
       },
       "cbs": {
-        "ros": 35
+        "ros": 38
       }
     },
     "kyle allen": {
       "espn": {
-        "week": 47,
-        "ros": 49
+        "week": 48,
+        "ros": 50
       },
       "sleeper": {
         "ros": 71
       },
       "cbs": {
         "week": 47,
-        "ros": 58
+        "ros": 59
       }
     },
     "kyler murray": {
       "espn": {
-        "week": 48,
-        "ros": 50
+        "week": 49,
+        "ros": 51
       },
       "sleeper": {
         "ros": 16
       },
       "cbs": {
         "week": 41,
-        "ros": 45
+        "ros": 42
       }
     },
     "lamar jackson": {
       "espn": {
-        "week": 49,
-        "ros": 51
+        "week": 50,
+        "ros": 52
       },
       "sleeper": {
         "ros": 2
       },
       "cbs": {
-        "ros": 28
+        "ros": 30
       }
     },
     "mac jones": {
       "espn": {
-        "week": 50,
-        "ros": 52
+        "week": 51,
+        "ros": 53
       },
       "sleeper": {
         "ros": 42
       },
       "cbs": {
         "week": 31,
-        "ros": 37
+        "ros": 39
       }
     },
     "malik willis": {
       "espn": {
-        "week": 51,
+        "week": 52,
         "ros": 32
       },
       "sleeper": {
         "ros": 21
       },
       "cbs": {
-        "week": 8,
-        "ros": 8
+        "ros": 27
       }
     },
     "marcus mariota": {
       "espn": {
-        "week": 52,
-        "ros": 53
+        "week": 53,
+        "ros": 54
       },
       "sleeper": {
         "ros": 51
       },
       "cbs": {
-        "ros": 40
+        "ros": 43
       }
     },
     "sam darnold": {
       "espn": {
-        "week": 53,
+        "week": 54,
         "ros": 30
       },
       "sleeper": {
         "ros": 22
       },
       "cbs": {
-        "ros": 23
+        "ros": 24
       }
     },
     "sam howell": {
       "espn": {
-        "week": 54,
-        "ros": 54
+        "week": 55,
+        "ros": 55
       },
       "cbs": {
-        "week": 34,
-        "ros": 46
+        "week": 35,
+        "ros": 48
       }
     },
     "shedeur sanders": {
       "espn": {
-        "week": 55,
-        "ros": 55
+        "week": 56,
+        "ros": 56
       },
       "sleeper": {
         "ros": 33
       },
       "cbs": {
-        "week": 35
-      }
-    },
-    "stetson bennett": {
-      "espn": {
-        "week": 56,
-        "ros": 56
-      },
-      "cbs": {
-        "ros": 50
+        "week": 36
       }
     },
     "tanner mckee": {
@@ -5107,7 +4237,7 @@
         "ros": 61
       },
       "cbs": {
-        "ros": 52
+        "ros": 54
       }
     },
     "tommy devito": {
@@ -5131,7 +4261,7 @@
         "ros": 34
       },
       "cbs": {
-        "ros": 53
+        "ros": 55
       }
     },
     "ty simpson": {
@@ -5144,7 +4274,7 @@
       },
       "cbs": {
         "week": 28,
-        "ros": 31
+        "ros": 33
       }
     },
     "tyler huntley": {
@@ -5165,8 +4295,8 @@
         "ros": 52
       },
       "cbs": {
-        "week": 37,
-        "ros": 42
+        "week": 38,
+        "ros": 45
       }
     },
     "tyson bagent": {
@@ -5176,6 +4306,873 @@
       },
       "sleeper": {
         "ros": 58
+      }
+    },
+    "brock bowers": {
+      "espn": {
+        "week": 1,
+        "ros": 1
+      },
+      "sleeper": {
+        "week": 1,
+        "ros": 2
+      },
+      "cbs": {
+        "week": 4,
+        "ros": 3
+      }
+    },
+    "george kittle": {
+      "espn": {
+        "week": 2,
+        "ros": 2
+      },
+      "sleeper": {
+        "week": 2,
+        "ros": 10
+      },
+      "cbs": {
+        "week": 2,
+        "ros": 4
+      }
+    },
+    "trey mcbride": {
+      "espn": {
+        "week": 3,
+        "ros": 3
+      },
+      "sleeper": {
+        "week": 3,
+        "ros": 1
+      },
+      "cbs": {
+        "week": 1,
+        "ros": 1
+      }
+    },
+    "isaiah likely": {
+      "espn": {
+        "week": 4,
+        "ros": 4
+      },
+      "sleeper": {
+        "week": 6,
+        "ros": 15
+      },
+      "cbs": {
+        "week": 3,
+        "ros": 2
+      }
+    },
+    "tj hockenson": {
+      "espn": {
+        "week": 5,
+        "ros": 5
+      },
+      "sleeper": {
+        "week": 9,
+        "ros": 16
+      },
+      "cbs": {
+        "week": 8
+      }
+    },
+    "sam laporta": {
+      "espn": {
+        "week": 6,
+        "ros": 8
+      },
+      "sleeper": {
+        "week": 4,
+        "ros": 5
+      },
+      "cbs": {
+        "week": 7,
+        "ros": 7
+      }
+    },
+    "travis kelce": {
+      "espn": {
+        "week": 7,
+        "ros": 6
+      },
+      "sleeper": {
+        "week": 5,
+        "ros": 9
+      },
+      "cbs": {
+        "week": 5
+      }
+    },
+    "tyler warren": {
+      "espn": {
+        "week": 8,
+        "ros": 13
+      },
+      "sleeper": {
+        "week": 7,
+        "ros": 4
+      },
+      "cbs": {
+        "ros": 5
+      }
+    },
+    "harold fannin": {
+      "espn": {
+        "week": 9,
+        "ros": 12
+      },
+      "sleeper": {
+        "week": 8,
+        "ros": 6
+      },
+      "cbs": {
+        "week": 9,
+        "ros": 6
+      }
+    },
+    "brenton strange": {
+      "espn": {
+        "week": 10,
+        "ros": 10
+      },
+      "sleeper": {
+        "week": 12,
+        "ros": 13
+      },
+      "cbs": {
+        "week": 6
+      }
+    },
+    "tucker kraft": {
+      "espn": {
+        "week": 11,
+        "ros": 11
+      },
+      "sleeper": {
+        "week": 11,
+        "ros": 7
+      },
+      "cbs": {
+        "week": 13,
+        "ros": 11
+      }
+    },
+    "hunter henry": {
+      "espn": {
+        "week": 12,
+        "ros": 22
+      },
+      "sleeper": {
+        "week": 14,
+        "ros": 17
+      },
+      "cbs": {
+        "week": 18,
+        "ros": 17
+      }
+    },
+    "kyle pitts": {
+      "espn": {
+        "week": 13,
+        "ros": 15
+      },
+      "sleeper": {
+        "week": 19,
+        "ros": 8
+      },
+      "cbs": {
+        "week": 17,
+        "ros": 18
+      }
+    },
+    "eli raridon": {
+      "espn": {
+        "week": 14,
+        "ros": 25
+      },
+      "sleeper": {
+        "week": 31,
+        "ros": 62
+      },
+      "cbs": {
+        "ros": 38
+      }
+    },
+    "dalton kincaid": {
+      "espn": {
+        "week": 15,
+        "ros": 14
+      },
+      "sleeper": {
+        "week": 15,
+        "ros": 11
+      },
+      "cbs": {
+        "week": 12,
+        "ros": 10
+      }
+    },
+    "aj barner": {
+      "espn": {
+        "week": 16,
+        "ros": 27
+      },
+      "sleeper": {
+        "week": 23,
+        "ros": 20
+      },
+      "cbs": {
+        "week": 27,
+        "ros": 29
+      }
+    },
+    "chig okonkwo": {
+      "espn": {
+        "week": 17,
+        "ros": 9
+      },
+      "sleeper": {
+        "week": 21,
+        "ros": 19
+      }
+    },
+    "darren waller": {
+      "espn": {
+        "week": 18,
+        "ros": 17
+      },
+      "sleeper": {
+        "week": 18,
+        "ros": 26
+      },
+      "cbs": {
+        "week": 20,
+        "ros": 20
+      }
+    },
+    "pat freiermuth": {
+      "espn": {
+        "week": 19,
+        "ros": 16
+      },
+      "sleeper": {
+        "week": 10,
+        "ros": 25
+      },
+      "cbs": {
+        "week": 22,
+        "ros": 19
+      }
+    },
+    "greg dulcich": {
+      "espn": {
+        "week": 20,
+        "ros": 21
+      },
+      "sleeper": {
+        "week": 27,
+        "ros": 28
+      },
+      "cbs": {
+        "week": 16,
+        "ros": 15
+      }
+    },
+    "darnell washington": {
+      "espn": {
+        "week": 21,
+        "ros": 19
+      },
+      "sleeper": {
+        "week": 25,
+        "ros": 33
+      },
+      "cbs": {
+        "week": 21,
+        "ros": 16
+      }
+    },
+    "mason taylor": {
+      "espn": {
+        "week": 22,
+        "ros": 26
+      },
+      "sleeper": {
+        "week": 24,
+        "ros": 32
+      },
+      "cbs": {
+        "week": 23,
+        "ros": 25
+      }
+    },
+    "dalton schultz": {
+      "espn": {
+        "week": 23,
+        "ros": 18
+      },
+      "sleeper": {
+        "week": 22,
+        "ros": 18
+      },
+      "cbs": {
+        "week": 28,
+        "ros": 21
+      }
+    },
+    "mike gesicki": {
+      "espn": {
+        "week": 24,
+        "ros": 20
+      },
+      "sleeper": {
+        "week": 13,
+        "ros": 29
+      },
+      "cbs": {
+        "week": 14,
+        "ros": 14
+      }
+    },
+    "colby parkinson": {
+      "espn": {
+        "week": 25,
+        "ros": 35
+      },
+      "sleeper": {
+        "week": 28,
+        "ros": 39
+      },
+      "cbs": {
+        "week": 19,
+        "ros": 31
+      }
+    },
+    "juwan johnson": {
+      "espn": {
+        "week": 26,
+        "ros": 24
+      },
+      "sleeper": {
+        "week": 16,
+        "ros": 22
+      },
+      "cbs": {
+        "week": 11,
+        "ros": 8
+      }
+    },
+    "michael mayer": {
+      "espn": {
+        "week": 27,
+        "ros": 28
+      },
+      "sleeper": {
+        "week": 29,
+        "ros": 35
+      },
+      "cbs": {
+        "week": 24,
+        "ros": 22
+      }
+    },
+    "tyler higbee": {
+      "espn": {
+        "week": 28,
+        "ros": 38
+      },
+      "sleeper": {
+        "week": 17,
+        "ros": 63
+      },
+      "cbs": {
+        "week": 15,
+        "ros": 24
+      }
+    },
+    "mark andrews": {
+      "espn": {
+        "week": 29,
+        "ros": 34
+      },
+      "sleeper": {
+        "week": 20,
+        "ros": 12
+      },
+      "cbs": {
+        "week": 29,
+        "ros": 30
+      }
+    },
+    "tommy tremble": {
+      "espn": {
+        "week": 30,
+        "ros": 31
+      },
+      "sleeper": {
+        "week": 34,
+        "ros": 68
+      },
+      "cbs": {
+        "ros": 34
+      }
+    },
+    "oronde gadsden": {
+      "espn": {
+        "week": 31,
+        "ros": 30
+      },
+      "sleeper": {
+        "week": 35,
+        "ros": 21
+      },
+      "cbs": {
+        "week": 25,
+        "ros": 26
+      }
+    },
+    "gunnar helm": {
+      "espn": {
+        "week": 32,
+        "ros": 33
+      },
+      "sleeper": {
+        "week": 33,
+        "ros": 24
+      },
+      "cbs": {
+        "week": 34,
+        "ros": 35
+      }
+    },
+    "brevyn spannford": {
+      "espn": {
+        "week": 33,
+        "ros": 41
+      },
+      "sleeper": {
+        "week": 26,
+        "ros": 76
+      },
+      "cbs": {
+        "week": 38,
+        "ros": 47
+      }
+    },
+    "davis allen": {
+      "espn": {
+        "week": 34,
+        "ros": 47
+      },
+      "sleeper": {
+        "week": 40,
+        "ros": 105
+      },
+      "cbs": {
+        "week": 33,
+        "ros": 43
+      }
+    },
+    "charlie kolar": {
+      "espn": {
+        "week": 35,
+        "ros": 37
+      },
+      "sleeper": {
+        "week": 39,
+        "ros": 54
+      },
+      "cbs": {
+        "week": 31,
+        "ros": 32
+      }
+    },
+    "dawson knox": {
+      "espn": {
+        "week": 36,
+        "ros": 39
+      },
+      "sleeper": {
+        "week": 38,
+        "ros": 38
+      },
+      "cbs": {
+        "week": 52
+      }
+    },
+    "elijah higgins": {
+      "espn": {
+        "week": 37,
+        "ros": 40
+      },
+      "sleeper": {
+        "week": 30,
+        "ros": 50
+      },
+      "cbs": {
+        "week": 36,
+        "ros": 40
+      }
+    },
+    "kenyon sadiq": {
+      "espn": {
+        "week": 38,
+        "ros": 42
+      },
+      "sleeper": {
+        "week": 37,
+        "ros": 31
+      },
+      "cbs": {
+        "week": 32,
+        "ros": 36
+      }
+    },
+    "nate boerkircher": {
+      "espn": {
+        "week": 39,
+        "ros": 43
+      },
+      "sleeper": {
+        "week": 58,
+        "ros": 80
+      },
+      "cbs": {
+        "week": 35,
+        "ros": 37
+      }
+    },
+    "noah fant": {
+      "espn": {
+        "week": 40,
+        "ros": 44
+      },
+      "sleeper": {
+        "week": 32,
+        "ros": 56
+      },
+      "cbs": {
+        "week": 30,
+        "ros": 28
+      }
+    },
+    "noah gray": {
+      "espn": {
+        "week": 41,
+        "ros": 45
+      },
+      "sleeper": {
+        "week": 36,
+        "ros": 44
+      },
+      "cbs": {
+        "week": 51,
+        "ros": 54
+      }
+    },
+    "luke schoonmaker": {
+      "espn": {
+        "week": 42,
+        "ros": 56
+      },
+      "sleeper": {
+        "week": 41,
+        "ros": 74
+      },
+      "cbs": {
+        "ros": 80
+      }
+    },
+    "austin hooper": {
+      "espn": {
+        "week": 43,
+        "ros": 50
+      },
+      "sleeper": {
+        "week": 43,
+        "ros": 60
+      },
+      "cbs": {
+        "week": 42,
+        "ros": 50
+      }
+    },
+    "drew sample": {
+      "espn": {
+        "week": 44,
+        "ros": 49
+      },
+      "sleeper": {
+        "week": 45,
+        "ros": 69
+      },
+      "cbs": {
+        "ros": 44
+      }
+    },
+    "jackson hawes": {
+      "espn": {
+        "week": 45,
+        "ros": 51
+      },
+      "sleeper": {
+        "week": 69,
+        "ros": 65
+      },
+      "cbs": {
+        "week": 59,
+        "ros": 61
+      }
+    },
+    "theo johnson": {
+      "espn": {
+        "week": 46,
+        "ros": 53
+      },
+      "sleeper": {
+        "week": 42,
+        "ros": 37
+      },
+      "cbs": {
+        "week": 50,
+        "ros": 56
+      }
+    },
+    "brock wright": {
+      "espn": {
+        "week": 47,
+        "ros": 55
+      },
+      "sleeper": {
+        "week": 55,
+        "ros": 81
+      },
+      "cbs": {
+        "week": 40,
+        "ros": 46
+      }
+    },
+    "adam trautman": {
+      "espn": {
+        "week": 48,
+        "ros": 48
+      },
+      "sleeper": {
+        "ros": 77
+      },
+      "cbs": {
+        "ros": 83
+      }
+    },
+    "cade otton": {
+      "espn": {
+        "week": 49,
+        "ros": 29
+      },
+      "sleeper": {
+        "ros": 27
+      },
+      "cbs": {
+        "ros": 27
+      }
+    },
+    "cole kmet": {
+      "espn": {
+        "week": 50,
+        "ros": 57
+      },
+      "sleeper": {
+        "ros": 36
+      }
+    },
+    "colston loveland": {
+      "espn": {
+        "week": 51,
+        "ros": 7
+      },
+      "sleeper": {
+        "ros": 3
+      },
+      "cbs": {
+        "ros": 12
+      }
+    },
+    "dallas goedert": {
+      "espn": {
+        "week": 52,
+        "ros": 23
+      },
+      "sleeper": {
+        "ros": 23
+      },
+      "cbs": {
+        "ros": 13
+      }
+    },
+    "david njoku": {
+      "espn": {
+        "week": 53,
+        "ros": 58
+      },
+      "sleeper": {
+        "ros": 45
+      },
+      "cbs": {
+        "week": 37
+      }
+    },
+    "eli stowers": {
+      "espn": {
+        "week": 54,
+        "ros": 52
+      },
+      "sleeper": {
+        "ros": 34
+      }
+    },
+    "elijah arroyo": {
+      "espn": {
+        "week": 55,
+        "ros": 59
+      },
+      "sleeper": {
+        "ros": 40
+      }
+    },
+    "erick all": {
+      "espn": {
+        "week": 56,
+        "ros": 60
+      }
+    },
+    "evan engram": {
+      "espn": {
+        "week": 57,
+        "ros": 36
+      },
+      "sleeper": {
+        "ros": 42
+      },
+      "cbs": {
+        "ros": 33
+      }
+    },
+    "jatavion sanders": {
+      "espn": {
+        "week": 58,
+        "ros": 61
+      },
+      "sleeper": {
+        "week": 74,
+        "ros": 84
+      },
+      "cbs": {
+        "week": 67,
+        "ros": 78
+      }
+    },
+    "jake ferguson": {
+      "espn": {
+        "week": 59,
+        "ros": 46
+      },
+      "sleeper": {
+        "ros": 14
+      },
+      "cbs": {
+        "ros": 39
+      }
+    },
+    "jake tonges": {
+      "espn": {
+        "week": 60,
+        "ros": 62
+      },
+      "sleeper": {
+        "ros": 41
+      }
+    },
+    "jonnu smith": {
+      "espn": {
+        "week": 61,
+        "ros": 63
+      },
+      "sleeper": {
+        "week": 50,
+        "ros": 57
+      },
+      "cbs": {
+        "week": 69,
+        "ros": 71
+      }
+    },
+    "josh oliver": {
+      "espn": {
+        "week": 62,
+        "ros": 64
+      },
+      "sleeper": {
+        "ros": 73
+      }
+    },
+    "max klare": {
+      "espn": {
+        "week": 63,
+        "ros": 65
+      },
+      "sleeper": {
+        "week": 63,
+        "ros": 48
+      },
+      "cbs": {
+        "ros": 74
+      }
+    },
+    "sam roush": {
+      "espn": {
+        "week": 64,
+        "ros": 54
+      },
+      "sleeper": {
+        "ros": 59
+      },
+      "cbs": {
+        "ros": 81
+      }
+    },
+    "terrance ferguson": {
+      "espn": {
+        "week": 65,
+        "ros": 32
+      },
+      "sleeper": {
+        "ros": 30
+      },
+      "cbs": {
+        "ros": 41
+      }
+    },
+    "will mallory": {
+      "espn": {
+        "week": 66,
+        "ros": 66
+      },
+      "sleeper": {
+        "week": 83
+      },
+      "cbs": {
+        "week": 45,
+        "ros": 60
+      }
+    },
+    "zach ertz": {
+      "espn": {
+        "week": 67,
+        "ros": 67
+      },
+      "sleeper": {
+        "ros": 55
       }
     },
     "tyler bass": {
@@ -5188,7 +5185,7 @@
         "ros": 14
       },
       "cbs": {
-        "week": 5,
+        "week": 4,
         "ros": 3
       }
     },
@@ -5216,8 +5213,8 @@
         "ros": 33
       },
       "cbs": {
-        "week": 1,
-        "ros": 12
+        "week": 6,
+        "ros": 19
       }
     },
     "chris boswell": {
@@ -5230,8 +5227,8 @@
         "ros": 7
       },
       "cbs": {
-        "week": 17,
-        "ros": 11
+        "week": 18,
+        "ros": 12
       }
     },
     "brandon aubrey": {
@@ -5244,8 +5241,8 @@
         "ros": 1
       },
       "cbs": {
-        "week": 4,
-        "ros": 5
+        "week": 2,
+        "ros": 6
       }
     },
     "kaimi fairbairn": {
@@ -5254,11 +5251,11 @@
         "ros": 4
       },
       "sleeper": {
-        "week": 12,
+        "week": 10,
         "ros": 2
       },
       "cbs": {
-        "week": 6,
+        "week": 7,
         "ros": 1
       }
     },
@@ -5268,11 +5265,11 @@
         "ros": 13
       },
       "sleeper": {
-        "week": 20,
+        "week": 21,
         "ros": 24
       },
       "cbs": {
-        "week": 13,
+        "week": 15,
         "ros": 21
       }
     },
@@ -5286,7 +5283,8 @@
         "ros": 3
       },
       "cbs": {
-        "week": 2
+        "week": 1,
+        "ros": 4
       }
     },
     "andre szmyt": {
@@ -5300,7 +5298,7 @@
       },
       "cbs": {
         "week": 20,
-        "ros": 24
+        "ros": 25
       }
     },
     "will reichard": {
@@ -5327,7 +5325,8 @@
         "ros": 12
       },
       "cbs": {
-        "ros": 4
+        "week": 5,
+        "ros": 5
       }
     },
     "harrison butker": {
@@ -5336,12 +5335,12 @@
         "ros": 8
       },
       "sleeper": {
-        "week": 21,
+        "week": 20,
         "ros": 18
       },
       "cbs": {
-        "week": 8,
-        "ros": 6
+        "week": 10,
+        "ros": 8
       }
     },
     "jason myers": {
@@ -5354,8 +5353,8 @@
         "ros": 4
       },
       "cbs": {
-        "week": 7,
-        "ros": 9
+        "week": 8,
+        "ros": 10
       }
     },
     "drew stevens": {
@@ -5368,7 +5367,7 @@
         "ros": 34
       },
       "cbs": {
-        "week": 11,
+        "week": 13,
         "ros": 14
       }
     },
@@ -5378,12 +5377,12 @@
         "ros": 18
       },
       "sleeper": {
-        "week": 15,
+        "week": 14,
         "ros": 26
       },
       "cbs": {
-        "week": 10,
-        "ros": 19
+        "week": 12,
+        "ros": 20
       }
     },
     "trey smack": {
@@ -5392,12 +5391,12 @@
         "ros": 20
       },
       "sleeper": {
-        "week": 14,
+        "week": 15,
         "ros": 35
       },
       "cbs": {
-        "week": 19,
-        "ros": 26
+        "week": 16,
+        "ros": 27
       }
     },
     "matt gay": {
@@ -5410,7 +5409,7 @@
         "ros": 32
       },
       "cbs": {
-        "ros": 22
+        "ros": 23
       }
     },
     "cameron dicker": {
@@ -5419,11 +5418,11 @@
         "ros": 16
       },
       "sleeper": {
-        "week": 24,
+        "week": 23,
         "ros": 17
       },
       "cbs": {
-        "week": 15,
+        "week": 11,
         "ros": 18
       }
     },
@@ -5461,12 +5460,12 @@
         "ros": 31
       },
       "sleeper": {
-        "week": 23,
+        "week": 24,
         "ros": 30
       },
       "cbs": {
-        "week": 18,
-        "ros": 27
+        "week": 19,
+        "ros": 28
       }
     },
     "brandon mcmanus": {
@@ -5479,8 +5478,8 @@
         "ros": 6
       },
       "cbs": {
-        "week": 16,
-        "ros": 28
+        "week": 17,
+        "ros": 29
       }
     },
     "ryan fitzgerald": {
@@ -5489,12 +5488,12 @@
         "ros": 23
       },
       "sleeper": {
-        "week": 10,
+        "week": 12,
         "ros": 25
       },
       "cbs": {
-        "week": 12,
-        "ros": 25
+        "week": 14,
+        "ros": 26
       }
     },
     "andy borregales": {
@@ -5539,8 +5538,8 @@
         "ros": 21
       },
       "cbs": {
-        "week": 14,
-        "ros": 20
+        "week": 24,
+        "ros": 22
       }
     },
     "joey slye": {
@@ -5553,8 +5552,8 @@
         "ros": 31
       },
       "cbs": {
-        "week": 24,
-        "ros": 23
+        "week": 25,
+        "ros": 24
       }
     },
     "ben sauls": {
@@ -5596,7 +5595,7 @@
         "ros": 11
       },
       "cbs": {
-        "ros": 8
+        "ros": 9
       }
     },
     "daniel carlson": {
@@ -5626,7 +5625,7 @@
         "ros": 28
       },
       "cbs": {
-        "ros": 30
+        "ros": 31
       }
     },
     "riley patterson": {
@@ -5647,7 +5646,7 @@
         "ros": 10
       },
       "cbs": {
-        "ros": 31
+        "ros": 32
       }
     },
     "wil lutz": {
@@ -5659,7 +5658,7 @@
         "ros": 19
       },
       "cbs": {
-        "ros": 10
+        "ros": 11
       }
     },
     "younghoe koo": {
@@ -5677,7 +5676,7 @@
         "ros": 4
       },
       "sleeper": {
-        "week": 4,
+        "week": 5,
         "ros": 1
       }
     },
@@ -5687,7 +5686,7 @@
         "ros": 20
       },
       "sleeper": {
-        "week": 2,
+        "week": 3,
         "ros": 6
       }
     },
@@ -5697,7 +5696,7 @@
         "ros": 7
       },
       "sleeper": {
-        "week": 5,
+        "week": 4,
         "ros": 2
       }
     },
@@ -5707,7 +5706,7 @@
         "ros": 6
       },
       "sleeper": {
-        "week": 7,
+        "week": 2,
         "ros": 3
       }
     },
@@ -5717,7 +5716,7 @@
         "ros": 14
       },
       "sleeper": {
-        "week": 13,
+        "week": 15,
         "ros": 26
       }
     },
@@ -5737,7 +5736,7 @@
         "ros": 10
       },
       "sleeper": {
-        "week": 9,
+        "week": 10,
         "ros": 19
       }
     },
@@ -5757,7 +5756,7 @@
         "ros": 27
       },
       "sleeper": {
-        "week": 19,
+        "week": 11,
         "ros": 32
       }
     },
@@ -5767,7 +5766,7 @@
         "ros": 17
       },
       "sleeper": {
-        "week": 3,
+        "week": 7,
         "ros": 16
       }
     },
@@ -5787,7 +5786,7 @@
         "ros": 8
       },
       "sleeper": {
-        "week": 10,
+        "week": 13,
         "ros": 24
       }
     },
@@ -5797,7 +5796,7 @@
         "ros": 11
       },
       "sleeper": {
-        "week": 8,
+        "week": 9,
         "ros": 15
       }
     },
@@ -5807,7 +5806,7 @@
         "ros": 5
       },
       "sleeper": {
-        "week": 14,
+        "week": 12,
         "ros": 9
       }
     },
@@ -5817,7 +5816,7 @@
         "ros": 15
       },
       "sleeper": {
-        "week": 17,
+        "week": 18,
         "ros": 7
       }
     },
@@ -5827,7 +5826,7 @@
         "ros": 12
       },
       "sleeper": {
-        "week": 11,
+        "week": 8,
         "ros": 12
       }
     },
@@ -5847,7 +5846,7 @@
         "ros": 24
       },
       "sleeper": {
-        "week": 12,
+        "week": 14,
         "ros": 25
       }
     },
@@ -5857,7 +5856,7 @@
         "ros": 18
       },
       "sleeper": {
-        "week": 15,
+        "week": 16,
         "ros": 23
       }
     },
@@ -5867,7 +5866,7 @@
         "ros": 2
       },
       "sleeper": {
-        "week": 18,
+        "week": 19,
         "ros": 18
       }
     },
@@ -5877,7 +5876,7 @@
         "ros": 16
       },
       "sleeper": {
-        "week": 16,
+        "week": 17,
         "ros": 27
       }
     },
@@ -5987,30 +5986,13 @@
         "ros": 4
       }
     },
-    "kyle mccord": {
-      "sleeper": {
-        "week": 21
-      },
-      "cbs": {
-        "week": 39,
-        "ros": 56
-      }
-    },
     "zonovan knight": {
       "sleeper": {
-        "week": 33
+        "week": 32
       },
       "cbs": {
         "week": 38,
         "ros": 59
-      }
-    },
-    "lan larison": {
-      "sleeper": {
-        "week": 50
-      },
-      "cbs": {
-        "ros": 64
       }
     },
     "anthony tyus": {
@@ -6020,11 +6002,11 @@
     },
     "dj herman": {
       "sleeper": {
-        "week": 66,
+        "week": 65,
         "ros": 100
       },
       "cbs": {
-        "week": 48,
+        "week": 50,
         "ros": 58
       }
     },
@@ -6034,15 +6016,26 @@
         "ros": 101
       }
     },
-    "evan hull": {
+    "robert henry": {
       "sleeper": {
         "week": 75
+      },
+      "cbs": {
+        "week": 53
+      }
+    },
+    "evan hull": {
+      "sleeper": {
+        "week": 76
       }
     },
     "julius chestnut": {
       "sleeper": {
-        "week": 79,
+        "week": 80,
         "ros": 121
+      },
+      "cbs": {
+        "week": 86
       }
     },
     "jaydn ott": {
@@ -6051,188 +6044,171 @@
         "ros": 104
       }
     },
+    "ronnie rivers": {
+      "sleeper": {
+        "week": 85,
+        "ros": 118
+      }
+    },
     "michael carter": {
       "sleeper": {
-        "week": 86,
+        "week": 88,
         "ros": 114
       }
     },
     "riley nowakowski": {
       "sleeper": {
-        "week": 87,
+        "week": 89,
         "ros": 107
       }
     },
     "lew nichols": {
       "sleeper": {
-        "week": 88
+        "week": 90
       },
       "cbs": {
-        "week": 55,
+        "week": 56,
         "ros": 73
       }
     },
     "max bredeson": {
       "sleeper": {
-        "week": 89,
+        "week": 91,
         "ros": 140
       }
     },
     "andrew beck": {
       "sleeper": {
-        "week": 91
-      }
-    },
-    "ronnie rivers": {
-      "sleeper": {
-        "week": 92,
-        "ros": 118
+        "week": 93
       }
     },
     "travis homer": {
       "sleeper": {
-        "week": 93
+        "week": 94
       },
       "cbs": {
-        "week": 86
-      }
-    },
-    "cj daniels": {
-      "sleeper": {
-        "week": 62,
-        "ros": 122
+        "week": 87
       }
     },
     "simi fehoko": {
       "sleeper": {
-        "week": 66
+        "week": 69
       },
       "cbs": {
-        "week": 67,
+        "week": 70,
         "ros": 87
-      }
-    },
-    "deion burks": {
-      "sleeper": {
-        "week": 73,
-        "ros": 160
-      }
-    },
-    "ashton dulin": {
-      "sleeper": {
-        "week": 83,
-        "ros": 206
-      },
-      "cbs": {
-        "week": 44,
-        "ros": 84
-      }
-    },
-    "ben skowronek": {
-      "sleeper": {
-        "week": 95,
-        "ros": 214
-      },
-      "cbs": {
-        "week": 77
-      }
-    },
-    "brandon smith": {
-      "sleeper": {
-        "week": 100
-      }
-    },
-    "keandre lambertsmith": {
-      "sleeper": {
-        "week": 101,
-        "ros": 129
-      }
-    },
-    "tyrell shavers": {
-      "sleeper": {
-        "week": 105,
-        "ros": 203
       }
     },
     "anthony gould": {
       "sleeper": {
-        "week": 107,
+        "week": 95,
         "ros": 205
+      }
+    },
+    "ben skowronek": {
+      "sleeper": {
+        "week": 97,
+        "ros": 214
+      },
+      "cbs": {
+        "week": 79
+      }
+    },
+    "brandon smith": {
+      "sleeper": {
+        "week": 101
+      }
+    },
+    "keandre lambertsmith": {
+      "sleeper": {
+        "week": 103,
+        "ros": 129
+      }
+    },
+    "andrew armstrong": {
+      "sleeper": {
+        "week": 104,
+        "ros": 131
+      }
+    },
+    "tyrell shavers": {
+      "sleeper": {
+        "week": 108,
+        "ros": 203
       }
     },
     "jared wayne": {
       "sleeper": {
-        "week": 108
+        "week": 110
+      }
+    },
+    "chris blair": {
+      "sleeper": {
+        "week": 112
       }
     },
     "brenen thompson": {
       "sleeper": {
-        "week": 113,
+        "week": 114,
         "ros": 123
       }
     },
     "tylan wallace": {
       "sleeper": {
-        "week": 117,
+        "week": 118,
         "ros": 200
       }
     },
-    "andrew armstrong": {
+    "nick westbrookikhine": {
       "sleeper": {
-        "week": 122,
-        "ros": 131
+        "week": 121,
+        "ros": 144
+      }
+    },
+    "xavier smith": {
+      "sleeper": {
+        "week": 125,
+        "ros": 158
       }
     },
     "derius davis": {
       "sleeper": {
-        "week": 123,
+        "week": 126,
         "ros": 218
-      }
-    },
-    "trent sherfield": {
-      "sleeper": {
-        "week": 124,
-        "ros": 204
       }
     },
     "dareke young": {
       "sleeper": {
-        "week": 125,
+        "week": 127,
         "ros": 194
       }
     },
     "deandre carter": {
       "sleeper": {
-        "week": 127,
+        "week": 129,
         "ros": 211
       }
     },
     "tay martin": {
       "sleeper": {
-        "week": 129
+        "week": 131
       }
     },
     "mitch tinsley": {
       "sleeper": {
-        "week": 131
+        "week": 133
       }
     },
     "theo wease": {
       "sleeper": {
-        "week": 133,
+        "week": 134,
         "ros": 169
       }
     },
     "malachi corley": {
       "sleeper": {
-        "week": 136,
-        "ros": 174
-      }
-    },
-    "nikko remigio": {
-      "sleeper": {
         "week": 137,
-        "ros": 216
+        "ros": 174
       }
     },
     "tim patrick": {
@@ -6251,6 +6227,16 @@
         "week": 143
       }
     },
+    "foster moreau": {
+      "sleeper": {
+        "week": 44,
+        "ros": 91
+      },
+      "cbs": {
+        "week": 39,
+        "ros": 42
+      }
+    },
     "matt hibner": {
       "sleeper": {
         "week": 46,
@@ -6263,7 +6249,7 @@
         "ros": 89
       },
       "cbs": {
-        "week": 84
+        "week": 83
       }
     },
     "blake whiteheart": {
@@ -6272,8 +6258,8 @@
         "ros": 112
       },
       "cbs": {
-        "week": 60,
-        "ros": 63
+        "week": 62,
+        "ros": 62
       }
     },
     "oscar delp": {
@@ -6282,18 +6268,18 @@
         "ros": 53
       },
       "cbs": {
-        "week": 68,
-        "ros": 72
+        "week": 70,
+        "ros": 70
       }
     },
     "daniel bellinger": {
       "sleeper": {
-        "week": 50,
+        "week": 51,
         "ros": 52
       },
       "cbs": {
-        "week": 42,
-        "ros": 52
+        "week": 43,
+        "ros": 49
       }
     },
     "teagan quitoriano": {
@@ -6301,7 +6287,13 @@
         "week": 52
       },
       "cbs": {
-        "ros": 24
+        "week": 26,
+        "ros": 23
+      }
+    },
+    "gavin bartholomew": {
+      "sleeper": {
+        "week": 53
       }
     },
     "john bates": {
@@ -6310,23 +6302,28 @@
         "ros": 66
       },
       "cbs": {
-        "week": 45,
-        "ros": 54
+        "week": 47,
+        "ros": 51
       }
     },
     "marlin klein": {
       "sleeper": {
-        "week": 55,
+        "week": 56,
         "ros": 75
       },
       "cbs": {
-        "week": 74,
-        "ros": 71
+        "week": 75,
+        "ros": 69
       }
     },
-    "gavin bartholomew": {
+    "josh cuevas": {
       "sleeper": {
-        "week": 57
+        "week": 57,
+        "ros": 78
+      },
+      "cbs": {
+        "week": 48,
+        "ros": 53
       }
     },
     "eric saubert": {
@@ -6341,8 +6338,8 @@
         "ros": 64
       },
       "cbs": {
-        "week": 59,
-        "ros": 91
+        "week": 61,
+        "ros": 89
       }
     },
     "mitchell evans": {
@@ -6351,8 +6348,8 @@
         "ros": 85
       },
       "cbs": {
-        "week": 47,
-        "ros": 61
+        "week": 49,
+        "ros": 58
       }
     },
     "will kacmarek": {
@@ -6361,8 +6358,8 @@
         "ros": 43
       },
       "cbs": {
-        "week": 51,
-        "ros": 69
+        "week": 53,
+        "ros": 67
       }
     },
     "nick kallerup": {
@@ -6370,23 +6367,23 @@
         "week": 64
       }
     },
-    "mo aliecox": {
-      "sleeper": {
-        "week": 65,
-        "ros": 86
-      },
-      "cbs": {
-        "week": 58,
-        "ros": 67
-      }
-    },
     "ben sinnott": {
       "sleeper": {
-        "week": 66,
+        "week": 65,
         "ros": 79
       },
       "cbs": {
-        "week": 85
+        "week": 84
+      }
+    },
+    "mo aliecox": {
+      "sleeper": {
+        "week": 66,
+        "ros": 86
+      },
+      "cbs": {
+        "week": 60,
+        "ros": 65
       }
     },
     "cade stover": {
@@ -6395,8 +6392,8 @@
         "ros": 61
       },
       "cbs": {
-        "week": 71,
-        "ros": 70
+        "week": 72,
+        "ros": 68
       }
     },
     "jeremy ruckert": {
@@ -6405,8 +6402,8 @@
         "ros": 93
       },
       "cbs": {
-        "week": 44,
-        "ros": 55
+        "week": 46,
+        "ros": 52
       }
     },
     "jake briningstool": {
@@ -6425,8 +6422,8 @@
         "ros": 96
       },
       "cbs": {
-        "week": 40,
-        "ros": 51
+        "week": 41,
+        "ros": 48
       }
     },
     "drew ogletree": {
@@ -6440,162 +6437,144 @@
         "week": 75
       }
     },
-    "colson yankoff": {
+    "jelani woods": {
       "sleeper": {
         "week": 76
       },
       "cbs": {
-        "week": 86
+        "week": 82
       }
     },
-    "hayden rucci": {
+    "keleki latu": {
       "sleeper": {
         "week": 77
       },
       "cbs": {
-        "week": 55,
-        "ros": 65
-      }
-    },
-    "jelani woods": {
-      "sleeper": {
-        "week": 78
-      },
-      "cbs": {
-        "week": 83
+        "week": 64,
+        "ros": 66
       }
     },
     "ian thomas": {
       "sleeper": {
-        "week": 79,
+        "week": 78,
         "ros": 116
       },
       "cbs": {
-        "week": 56,
-        "ros": 66
+        "week": 58,
+        "ros": 64
       }
     },
     "cameron latu": {
       "sleeper": {
-        "week": 80,
+        "week": 79,
         "ros": 114
-      }
-    },
-    "nick vannett": {
-      "sleeper": {
-        "week": 81
-      },
-      "cbs": {
-        "week": 64
       }
     },
     "quintin morris": {
       "sleeper": {
-        "week": 82,
+        "week": 80,
         "ros": 97
       }
     },
     "justin joly": {
       "sleeper": {
-        "week": 83,
+        "week": 81,
         "ros": 46
       },
       "cbs": {
-        "week": 79,
-        "ros": 88
+        "ros": 86
       }
     },
     "brevin jordan": {
       "sleeper": {
-        "week": 84,
+        "week": 82,
         "ros": 104
-      }
-    },
-    "thomas fidone": {
-      "sleeper": {
-        "week": 86
-      },
-      "cbs": {
-        "week": 69,
-        "ros": 77
       }
     },
     "ben yurosek": {
       "sleeper": {
-        "week": 87,
+        "week": 84,
         "ros": 113
+      }
+    },
+    "thomas fidone": {
+      "sleeper": {
+        "week": 85
+      },
+      "cbs": {
+        "week": 71,
+        "ros": 76
       }
     },
     "kylen granson": {
       "sleeper": {
-        "week": 88,
+        "week": 86,
         "ros": 117
       },
       "cbs": {
         "week": 80,
-        "ros": 89
+        "ros": 87
       }
     },
     "jack endries": {
       "sleeper": {
-        "week": 89,
+        "week": 87,
         "ros": 49
       },
       "cbs": {
-        "week": 52,
-        "ros": 60
+        "week": 54,
+        "ros": 57
       }
     },
     "tyler conklin": {
       "sleeper": {
-        "week": 90,
+        "week": 88,
         "ros": 124
       }
     },
     "david martinrobinson": {
       "sleeper": {
-        "week": 91
+        "week": 89
       }
     },
     "josh whyle": {
       "sleeper": {
-        "week": 92,
+        "week": 90,
         "ros": 88
       },
       "cbs": {
-        "week": 78,
-        "ros": 80
+        "week": 79,
+        "ros": 79
       }
     },
     "chris manhertz": {
       "sleeper": {
-        "week": 93,
+        "week": 91,
         "ros": 119
       },
       "cbs": {
-        "week": 61,
-        "ros": 64
+        "week": 63,
+        "ros": 63
       }
     },
     "seydou traore": {
       "sleeper": {
-        "week": 94,
+        "week": 92,
         "ros": 98
       },
       "cbs": {
-        "week": 81,
-        "ros": 90
+        "ros": 88
       }
     },
     "feleipe franks": {
       "sleeper": {
-        "week": 95,
+        "week": 93,
         "ros": 122
       }
     },
     "robert tonyan": {
       "sleeper": {
-        "week": 96,
+        "week": 94,
         "ros": 123
       }
     },
@@ -6625,7 +6604,7 @@
       },
       "cbs": {
         "week": 27,
-        "ros": 57
+        "ros": 58
       }
     },
     "will levis": {
@@ -6638,8 +6617,8 @@
         "ros": 55
       },
       "cbs": {
-        "week": 36,
-        "ros": 43
+        "week": 37,
+        "ros": 46
       }
     },
     "diego pavia": {
@@ -6663,7 +6642,7 @@
       },
       "cbs": {
         "week": 32,
-        "ros": 36
+        "ros": 37
       }
     },
     "jimmy garoppolo": {
@@ -6676,7 +6655,7 @@
         "ros": 69
       },
       "cbs": {
-        "ros": 32
+        "ros": 34
       }
     },
     "nick mullens": {
@@ -6704,7 +6683,7 @@
         "ros": 75
       },
       "cbs": {
-        "ros": 41
+        "ros": 44
       }
     },
     "teddy bridgewater": {
@@ -6717,7 +6696,7 @@
         "ros": 77
       },
       "cbs": {
-        "week": 33
+        "week": 34
       }
     },
     "israel abanikanda": {
@@ -6760,7 +6739,7 @@
         "ros": 105
       },
       "cbs": {
-        "week": 81
+        "week": 82
       }
     },
     "jarquez hunter": {
@@ -6778,8 +6757,16 @@
         "ros": 119
       },
       "cbs": {
-        "week": 58,
+        "week": 57,
         "ros": 69
+      }
+    },
+    "isaac guerendo": {
+      "sleeper": {
+        "ros": 120
+      },
+      "cbs": {
+        "ros": 66
       }
     },
     "kalel mullings": {
@@ -6827,7 +6814,7 @@
         "ros": 136
       },
       "cbs": {
-        "week": 84
+        "week": 85
       }
     },
     "jamal haynes": {
@@ -6890,11 +6877,6 @@
         "ros": 142
       }
     },
-    "nick westbrookikhine": {
-      "sleeper": {
-        "ros": 144
-      }
-    },
     "eric rivers": {
       "sleeper": {
         "ros": 145
@@ -6923,11 +6905,6 @@
     "khadarel hodge": {
       "sleeper": {
         "ros": 157
-      }
-    },
-    "xavier smith": {
-      "sleeper": {
-        "ros": 158
       }
     },
     "noah brown": {
@@ -7058,6 +7035,11 @@
         "ros": 202
       }
     },
+    "trent sherfield": {
+      "sleeper": {
+        "ros": 204
+      }
+    },
     "deandre hopkins": {
       "sleeper": {
         "ros": 208
@@ -7073,6 +7055,11 @@
         "ros": 215
       }
     },
+    "nikko remigio": {
+      "sleeper": {
+        "ros": 216
+      }
+    },
     "sterling shepard": {
       "sleeper": {
         "ros": 217
@@ -7083,8 +7070,8 @@
         "ros": 47
       },
       "cbs": {
-        "week": 77,
-        "ros": 87
+        "week": 78,
+        "ros": 85
       }
     },
     "john michael gyllenborg": {
@@ -7127,8 +7114,8 @@
         "ros": 87
       },
       "cbs": {
-        "week": 82,
-        "ros": 84
+        "week": 81,
+        "ros": 82
       }
     },
     "durham smythe": {
@@ -7161,7 +7148,7 @@
         "ros": 100
       },
       "cbs": {
-        "week": 73
+        "week": 74
       }
     },
     "tucker fisk": {
@@ -7189,7 +7176,7 @@
         "ros": 108
       },
       "cbs": {
-        "ros": 48
+        "ros": 45
       }
     },
     "stone smartt": {
@@ -7252,125 +7239,140 @@
         "ros": 45
       }
     },
-    "dj uiagalelei": {
-      "cbs": {
-        "week": 26,
-        "ros": 48
-      }
-    },
     "kenny pickett": {
       "cbs": {
         "week": 30,
-        "ros": 39
+        "ros": 41
+      }
+    },
+    "dj uiagalelei": {
+      "cbs": {
+        "week": 33,
+        "ros": 52
       }
     },
     "aidan oconnell": {
       "cbs": {
-        "week": 40,
-        "ros": 47
+        "week": 39,
+        "ros": 49
       }
     },
     "joey aguilar": {
       "cbs": {
         "week": 45,
-        "ros": 55
+        "ros": 57
       }
     },
     "mitch trubisky": {
       "cbs": {
         "week": 46,
-        "ros": 51
+        "ros": 53
       }
     },
-    "robert henry": {
+    "greg desrosiers": {
       "cbs": {
-        "week": 52
+        "week": 55,
+        "ros": 70
       }
     },
     "jerome ford": {
       "cbs": {
-        "week": 59,
+        "week": 60,
         "ros": 76
       }
     },
     "christopher brooks": {
       "cbs": {
-        "week": 65,
-        "ros": 85
+        "week": 66
       }
     },
     "harrison wallace": {
       "cbs": {
-        "week": 80
+        "week": 84
       }
     },
     "chigoziem okonkwo": {
       "cbs": {
-        "week": 9,
-        "ros": 11
+        "week": 10,
+        "ros": 9
       }
     },
     "matthew hibner": {
       "cbs": {
-        "week": 43,
-        "ros": 58
+        "week": 44,
+        "ros": 55
       }
     },
     "james mitchell": {
       "cbs": {
-        "week": 53,
-        "ros": 74
+        "week": 55,
+        "ros": 72
       }
     },
     "andrew ogletree": {
       "cbs": {
-        "week": 54
+        "week": 56
       }
     },
-    "keleki latu": {
+    "hayden rucci": {
       "cbs": {
-        "week": 62,
-        "ros": 68
+        "week": 57,
+        "ros": 59
       }
     },
     "nick muse": {
       "cbs": {
-        "week": 63
+        "week": 65
+      }
+    },
+    "nick vannett": {
+      "cbs": {
+        "week": 66
       }
     },
     "jared wiley": {
       "cbs": {
-        "week": 66,
-        "ros": 75
+        "week": 68,
+        "ros": 73
       }
     },
     "hunter long": {
       "cbs": {
-        "week": 72,
-        "ros": 78
+        "week": 73,
+        "ros": 77
       }
     },
     "patrick herbert": {
       "cbs": {
-        "week": 75,
-        "ros": 82
+        "week": 76,
+        "ros": 75
       }
     },
     "carter runyon": {
       "cbs": {
-        "week": 76,
-        "ros": 92
+        "week": 77,
+        "ros": 90
+      }
+    },
+    "colson yankoff": {
+      "cbs": {
+        "week": 85
       }
     },
     "andres borregales": {
       "cbs": {
         "week": 23,
-        "ros": 29
+        "ros": 30
+      }
+    },
+    "stetson bennett": {
+      "cbs": {
+        "ros": 51
       }
     },
     "dallen bentley": {
       "cbs": {
-        "ros": 86
+        "ros": 84
       }
     }
   }

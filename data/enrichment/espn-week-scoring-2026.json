@@ -1,90 +1,90 @@
 {
   "season": 2026,
-  "scoringPeriodId": 9,
+  "scoringPeriodId": 10,
   "leagueId": 1735901,
   "teamId": 6,
-  "fetchedAt": "2026-11-06T20:18:18.961Z",
+  "fetchedAt": "2026-11-11T18:16:14.400Z",
   "players": [
     {
-      "espnId": -16027,
-      "projectedPoints": 4.4,
-      "lastWeekPoints": 15,
-      "percentOwned": 31.8
+      "espnId": -16014,
+      "projectedPoints": 8.3,
+      "lastWeekPoints": 11,
+      "percentOwned": 90.1
     },
     {
       "espnId": 15818,
-      "projectedPoints": 10.2,
-      "lastWeekPoints": 13.7,
-      "percentOwned": 45.6
+      "projectedPoints": 8.7,
+      "lastWeekPoints": 6.6,
+      "percentOwned": 50
     },
     {
       "espnId": 3126486,
-      "projectedPoints": 0,
-      "percentOwned": 75.7
+      "projectedPoints": 11.7,
+      "lastWeekPoints": 0,
+      "percentOwned": 76.1
     },
     {
       "espnId": 4241389,
-      "projectedPoints": 20.5,
-      "lastWeekPoints": 12.8,
+      "projectedPoints": 20.9,
+      "lastWeekPoints": 33.5,
       "percentOwned": 99.9
     },
     {
       "espnId": 4361741,
-      "projectedPoints": 22.2,
-      "percentOwned": 98.7
+      "projectedPoints": 20.7,
+      "lastWeekPoints": 25.3,
+      "percentOwned": 98.8
+    },
+    {
+      "espnId": 4366031,
+      "projectedPoints": 8.4,
+      "lastWeekPoints": 20.5,
+      "percentOwned": 48.2
     },
     {
       "espnId": 4426385,
-      "projectedPoints": 10.8,
-      "lastWeekPoints": 5.9,
-      "percentOwned": 73.4
+      "projectedPoints": 14.5,
+      "lastWeekPoints": 9.6,
+      "percentOwned": 79.2
     },
     {
       "espnId": 4427366,
-      "projectedPoints": 10.9,
-      "lastWeekPoints": 0,
-      "percentOwned": 95.6
+      "projectedPoints": 12.1,
+      "lastWeekPoints": 11.7,
+      "percentOwned": 95.7
     },
     {
       "espnId": 4431452,
-      "projectedPoints": 20.9,
-      "lastWeekPoints": 22.5,
-      "percentOwned": 99
+      "projectedPoints": 22,
+      "lastWeekPoints": 18.3,
+      "percentOwned": 98.9
     },
     {
       "espnId": 4431459,
-      "projectedPoints": 11.9,
-      "lastWeekPoints": 5.8,
-      "percentOwned": 96.5
+      "projectedPoints": 10.6,
+      "lastWeekPoints": 8.4,
+      "percentOwned": 96.4
     },
     {
       "espnId": 4567104,
-      "projectedPoints": 10.7,
-      "lastWeekPoints": 0,
-      "percentOwned": 92.1
+      "projectedPoints": 9.4,
+      "lastWeekPoints": 9,
+      "percentOwned": 90.2
     },
     {
       "espnId": 4569987,
-      "projectedPoints": 0,
-      "lastWeekPoints": 21.3,
-      "percentOwned": 96.3
-    },
-    {
-      "espnId": 4695883,
-      "projectedPoints": 12,
-      "lastWeekPoints": 9.6,
-      "percentOwned": 89.4
+      "projectedPoints": 15.5,
+      "percentOwned": 96.4
     },
     {
       "espnId": 4711533,
-      "projectedPoints": 16.4,
-      "lastWeekPoints": 6.9,
-      "percentOwned": 88
+      "projectedPoints": 15.7,
+      "lastWeekPoints": 7.4,
+      "percentOwned": 89.1
     },
     {
       "espnId": 4871023,
-      "projectedPoints": 0,
-      "lastWeekPoints": 0,
+      "projectedPoints": 12.2,
       "percentOwned": 83.5
     }
   ]
