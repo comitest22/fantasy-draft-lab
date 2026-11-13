@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-11-11T18:17:17.290Z",
+  "pulledAt": "2026-11-13T21:05:06.858Z",
   "lastUpdated": null,
   "week": 10,
   "source": "https://poolgenius.teamrankings.com/nfl-survivor-pool-picks/data-grid/",
@@ -10,13 +10,13 @@
       "opponent": "ARI",
       "home": false,
       "matchupLabel": "at ARI",
-      "pgWinPct": 83,
-      "marketWinPct": 80,
-      "moneyline": "-450",
+      "pgWinPct": 82,
+      "marketWinPct": 81,
+      "moneyline": "-488",
       "spread": -9.5,
-      "popularityPct": 38,
+      "popularityPct": 37,
       "ev": 1.02,
-      "futureValue": 0.97,
+      "futureValue": 0.99,
       "gameNotes": [],
       "future": [
         {
@@ -102,7 +102,7 @@
         },
         {
           "week": 10,
-          "winPct": 83,
+          "winPct": 82,
           "opp": "@ARI",
           "bye": false,
           "result": null,
@@ -247,11 +247,11 @@
           "opponent": "ARI",
           "home": false,
           "matchupLabel": "at ARI",
-          "pgWinPct": 83,
-          "marketWinPct": 80,
-          "moneyline": "-450",
+          "pgWinPct": 82,
+          "marketWinPct": 81,
+          "moneyline": "-488",
           "spread": -9.5,
-          "popularityPct": 38,
+          "popularityPct": 37,
           "ev": 1.02,
           "gameNotes": []
         }
@@ -264,12 +264,12 @@
       "home": false,
       "matchupLabel": "at TEN",
       "pgWinPct": 81,
-      "marketWinPct": 83,
-      "moneyline": "-559",
+      "marketWinPct": 85,
+      "moneyline": "-654",
       "spread": -10.5,
-      "popularityPct": 12,
-      "ev": 1.11,
-      "futureValue": 1.15,
+      "popularityPct": 13,
+      "ev": 1.12,
+      "futureValue": 1.17,
       "gameNotes": [],
       "future": [
         {
@@ -501,11 +501,11 @@
           "home": false,
           "matchupLabel": "at TEN",
           "pgWinPct": 81,
-          "marketWinPct": 83,
-          "moneyline": "-559",
+          "marketWinPct": 85,
+          "moneyline": "-654",
           "spread": -10.5,
-          "popularityPct": 12,
-          "ev": 1.11,
+          "popularityPct": 13,
+          "ev": 1.12,
           "gameNotes": []
         }
       }
@@ -518,10 +518,10 @@
       "matchupLabel": "at NYJ",
       "pgWinPct": 77,
       "marketWinPct": 79,
-      "moneyline": "-441",
+      "moneyline": "-437",
       "spread": -7.5,
       "popularityPct": 22,
-      "ev": 1,
+      "ev": 1.01,
       "futureValue": 1.04,
       "gameNotes": [],
       "future": [
@@ -755,10 +755,10 @@
           "matchupLabel": "at NYJ",
           "pgWinPct": 77,
           "marketWinPct": 79,
-          "moneyline": "-441",
+          "moneyline": "-437",
           "spread": -7.5,
           "popularityPct": 22,
-          "ev": 1,
+          "ev": 1.01,
           "gameNotes": []
         }
       }
@@ -770,11 +770,11 @@
       "home": false,
       "matchupLabel": "at LV",
       "pgWinPct": 74,
-      "marketWinPct": 72,
-      "moneyline": "-292",
+      "marketWinPct": 73,
+      "moneyline": "-297",
       "spread": -6.5,
       "popularityPct": 8,
-      "ev": 1.02,
+      "ev": 1.03,
       "futureValue": 1.01,
       "gameNotes": [],
       "future": [
@@ -1007,11 +1007,11 @@
           "home": false,
           "matchupLabel": "at LV",
           "pgWinPct": 74,
-          "marketWinPct": 72,
-          "moneyline": "-292",
+          "marketWinPct": 73,
+          "moneyline": "-297",
           "spread": -6.5,
           "popularityPct": 8,
-          "ev": 1.02,
+          "ev": 1.03,
           "gameNotes": []
         }
       }
@@ -1022,12 +1022,12 @@
       "opponent": "DAL",
       "home": false,
       "matchupLabel": "at DAL",
-      "pgWinPct": 67,
+      "pgWinPct": 69,
       "marketWinPct": 66,
-      "moneyline": "-210",
-      "spread": -3.5,
+      "moneyline": "-214",
+      "spread": -4,
       "popularityPct": 1,
-      "ev": 0.95,
+      "ev": 0.99,
       "futureValue": 0.95,
       "gameNotes": [],
       "future": [
@@ -1114,7 +1114,7 @@
         },
         {
           "week": 10,
-          "winPct": 67,
+          "winPct": 69,
           "opp": "@DAL",
           "bye": false,
           "result": null,
@@ -1141,7 +1141,7 @@
         },
         {
           "week": 13,
-          "winPct": 65,
+          "winPct": 66,
           "opp": "@NYG",
           "bye": false,
           "result": null,
@@ -1159,7 +1159,7 @@
         },
         {
           "week": 15,
-          "winPct": 72,
+          "winPct": 73,
           "opp": "@LAC",
           "bye": false,
           "result": null,
@@ -1259,12 +1259,12 @@
           "opponent": "DAL",
           "home": false,
           "matchupLabel": "at DAL",
-          "pgWinPct": 67,
+          "pgWinPct": 69,
           "marketWinPct": 66,
-          "moneyline": "-210",
-          "spread": -3.5,
+          "moneyline": "-214",
+          "spread": -4,
           "popularityPct": 1,
-          "ev": 0.95,
+          "ev": 0.99,
           "gameNotes": []
         }
       }
@@ -1277,10 +1277,10 @@
       "matchupLabel": "at CLE",
       "pgWinPct": 66,
       "marketWinPct": 68,
-      "moneyline": "-235",
+      "moneyline": "-236",
       "spread": -4.5,
       "popularityPct": 2,
-      "ev": 0.93,
+      "ev": 0.94,
       "futureValue": 0.97,
       "gameNotes": [],
       "future": [
@@ -1403,7 +1403,7 @@
         },
         {
           "week": 14,
-          "winPct": 59,
+          "winPct": 58,
           "opp": "@WAS",
           "bye": false,
           "result": null,
@@ -1412,7 +1412,7 @@
         },
         {
           "week": 15,
-          "winPct": 59,
+          "winPct": 58,
           "opp": "JAX",
           "bye": false,
           "result": null,
@@ -1514,263 +1514,10 @@
           "matchupLabel": "at CLE",
           "pgWinPct": 66,
           "marketWinPct": 68,
-          "moneyline": "-235",
+          "moneyline": "-236",
           "spread": -4.5,
           "popularityPct": 2,
-          "ev": 0.93,
-          "gameNotes": []
-        }
-      }
-    },
-    {
-      "team": "BAL",
-      "teamName": "Baltimore",
-      "opponent": "LAC",
-      "home": true,
-      "matchupLabel": "vs. LAC",
-      "pgWinPct": 64,
-      "marketWinPct": 67,
-      "moneyline": "-219",
-      "spread": -4.5,
-      "popularityPct": 7,
-      "ev": 0.88,
-      "futureValue": 0.92,
-      "gameNotes": [],
-      "future": [
-        {
-          "week": 1,
-          "winPct": 60,
-          "opp": "@IND",
-          "bye": false,
-          "result": "W",
-          "score": "41-23",
-          "locked": true
-        },
-        {
-          "week": 2,
-          "winPct": 64,
-          "opp": "NO",
-          "bye": false,
-          "result": "L",
-          "score": "17-24",
-          "locked": true
-        },
-        {
-          "week": 3,
-          "winPct": 82,
-          "opp": "@DAL",
-          "bye": false,
-          "result": "W",
-          "score": "34-31",
-          "locked": true
-        },
-        {
-          "week": 4,
-          "winPct": 84,
-          "opp": "TEN",
-          "bye": false,
-          "result": "W",
-          "score": "24-18",
-          "locked": true
-        },
-        {
-          "week": 5,
-          "winPct": 35,
-          "opp": "@ATL",
-          "bye": false,
-          "result": "W",
-          "score": "30-23",
-          "locked": true
-        },
-        {
-          "week": 6,
-          "winPct": 53,
-          "opp": "@CLE",
-          "bye": false,
-          "result": "L",
-          "score": "10-13",
-          "locked": true
-        },
-        {
-          "week": 7,
-          "winPct": 44,
-          "opp": "CIN",
-          "bye": false,
-          "result": "L",
-          "score": "13-35",
-          "locked": true
-        },
-        {
-          "week": 8,
-          "winPct": 36,
-          "opp": "@BUF",
-          "bye": false,
-          "result": "L",
-          "score": "10-36",
-          "locked": true
-        },
-        {
-          "week": 9,
-          "winPct": null,
-          "opp": "JAX",
-          "bye": false,
-          "result": "L",
-          "score": "10-33",
-          "locked": false
-        },
-        {
-          "week": 10,
-          "winPct": 64,
-          "opp": "LAC",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 11,
-          "winPct": 51,
-          "opp": "@CAR",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 12,
-          "winPct": 30,
-          "opp": "@HOU",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 13,
-          "winPct": null,
-          "opp": "BYE",
-          "bye": true,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 14,
-          "winPct": 56,
-          "opp": "TB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 15,
-          "winPct": 44,
-          "opp": "@PIT",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 16,
-          "winPct": 71,
-          "opp": "CLE",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 17,
-          "winPct": 36,
-          "opp": "@CIN",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 18,
-          "winPct": 36,
-          "opp": "PIT",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        }
-      ],
-      "weekBoards": {
-        "4": {
-          "opponent": "TEN",
-          "home": true,
-          "matchupLabel": "vs. TEN",
-          "pgWinPct": 84,
-          "marketWinPct": 86,
-          "moneyline": "-719",
-          "spread": -11.5,
-          "popularityPct": 36,
-          "ev": 1.05,
-          "gameNotes": []
-        },
-        "5": {
-          "opponent": "ATL",
-          "home": false,
-          "matchupLabel": "at ATL",
-          "pgWinPct": 35,
-          "marketWinPct": 38,
-          "moneyline": "+150",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.54,
-          "gameNotes": []
-        },
-        "7": {
-          "opponent": "CIN",
-          "home": true,
-          "matchupLabel": "vs. CIN",
-          "pgWinPct": 44,
-          "marketWinPct": 43,
-          "moneyline": "+123",
-          "spread": 2.5,
-          "popularityPct": 0,
-          "ev": 0.67,
-          "gameNotes": []
-        },
-        "8": {
-          "opponent": "BUF",
-          "home": false,
-          "matchupLabel": "at BUF",
-          "pgWinPct": 36,
-          "marketWinPct": 38,
-          "moneyline": "+152",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.53,
-          "gameNotes": []
-        },
-        "9": {
-          "opponent": "JAC",
-          "home": true,
-          "matchupLabel": "vs. JAC",
-          "pgWinPct": 21,
-          "marketWinPct": 20,
-          "moneyline": "+354",
-          "spread": 9.5,
-          "popularityPct": 0,
-          "ev": 0.32,
-          "gameNotes": []
-        },
-        "10": {
-          "opponent": "LAC",
-          "home": true,
-          "matchupLabel": "vs. LAC",
-          "pgWinPct": 64,
-          "marketWinPct": 67,
-          "moneyline": "-219",
-          "spread": -4.5,
-          "popularityPct": 7,
-          "ev": 0.88,
+          "ev": 0.94,
           "gameNotes": []
         }
       }
@@ -1781,12 +1528,12 @@
       "opponent": "MIA",
       "home": true,
       "matchupLabel": "vs. MIA",
-      "pgWinPct": 64,
+      "pgWinPct": 66,
       "marketWinPct": 65,
-      "moneyline": "-200",
-      "spread": -3.5,
-      "popularityPct": 6,
-      "ev": 0.88,
+      "moneyline": "-206",
+      "spread": -4,
+      "popularityPct": 7,
+      "ev": 0.91,
       "futureValue": 0.9,
       "gameNotes": [],
       "future": [
@@ -1873,7 +1620,7 @@
         },
         {
           "week": 10,
-          "winPct": 64,
+          "winPct": 66,
           "opp": "MIA",
           "bye": false,
           "result": null,
@@ -1891,7 +1638,7 @@
         },
         {
           "week": 12,
-          "winPct": 42,
+          "winPct": 43,
           "opp": "NYG",
           "bye": false,
           "result": null,
@@ -2018,12 +1765,265 @@
           "opponent": "MIA",
           "home": true,
           "matchupLabel": "vs. MIA",
-          "pgWinPct": 64,
+          "pgWinPct": 66,
           "marketWinPct": 65,
-          "moneyline": "-200",
-          "spread": -3.5,
+          "moneyline": "-206",
+          "spread": -4,
+          "popularityPct": 7,
+          "ev": 0.91,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "BAL",
+      "teamName": "Baltimore",
+      "opponent": "LAC",
+      "home": true,
+      "matchupLabel": "vs. LAC",
+      "pgWinPct": 64,
+      "marketWinPct": 67,
+      "moneyline": "-218",
+      "spread": -4.5,
+      "popularityPct": 6,
+      "ev": 0.9,
+      "futureValue": 0.92,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 60,
+          "opp": "@IND",
+          "bye": false,
+          "result": "W",
+          "score": "41-23",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 64,
+          "opp": "NO",
+          "bye": false,
+          "result": "L",
+          "score": "17-24",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 82,
+          "opp": "@DAL",
+          "bye": false,
+          "result": "W",
+          "score": "34-31",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 84,
+          "opp": "TEN",
+          "bye": false,
+          "result": "W",
+          "score": "24-18",
+          "locked": true
+        },
+        {
+          "week": 5,
+          "winPct": 35,
+          "opp": "@ATL",
+          "bye": false,
+          "result": "W",
+          "score": "30-23",
+          "locked": true
+        },
+        {
+          "week": 6,
+          "winPct": 53,
+          "opp": "@CLE",
+          "bye": false,
+          "result": "L",
+          "score": "10-13",
+          "locked": true
+        },
+        {
+          "week": 7,
+          "winPct": 44,
+          "opp": "CIN",
+          "bye": false,
+          "result": "L",
+          "score": "13-35",
+          "locked": true
+        },
+        {
+          "week": 8,
+          "winPct": 36,
+          "opp": "@BUF",
+          "bye": false,
+          "result": "L",
+          "score": "10-36",
+          "locked": true
+        },
+        {
+          "week": 9,
+          "winPct": null,
+          "opp": "JAX",
+          "bye": false,
+          "result": "L",
+          "score": "10-33",
+          "locked": false
+        },
+        {
+          "week": 10,
+          "winPct": 64,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 51,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 30,
+          "opp": "@HOU",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 52,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 39,
+          "opp": "@PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 70,
+          "opp": "CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 35,
+          "opp": "@CIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 35,
+          "opp": "PIT",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "TEN",
+          "home": true,
+          "matchupLabel": "vs. TEN",
+          "pgWinPct": 84,
+          "marketWinPct": 86,
+          "moneyline": "-719",
+          "spread": -11.5,
+          "popularityPct": 36,
+          "ev": 1.05,
+          "gameNotes": []
+        },
+        "5": {
+          "opponent": "ATL",
+          "home": false,
+          "matchupLabel": "at ATL",
+          "pgWinPct": 35,
+          "marketWinPct": 38,
+          "moneyline": "+150",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.54,
+          "gameNotes": []
+        },
+        "7": {
+          "opponent": "CIN",
+          "home": true,
+          "matchupLabel": "vs. CIN",
+          "pgWinPct": 44,
+          "marketWinPct": 43,
+          "moneyline": "+123",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.67,
+          "gameNotes": []
+        },
+        "8": {
+          "opponent": "BUF",
+          "home": false,
+          "matchupLabel": "at BUF",
+          "pgWinPct": 36,
+          "marketWinPct": 38,
+          "moneyline": "+152",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.53,
+          "gameNotes": []
+        },
+        "9": {
+          "opponent": "JAC",
+          "home": true,
+          "matchupLabel": "vs. JAC",
+          "pgWinPct": 21,
+          "marketWinPct": 20,
+          "moneyline": "+354",
+          "spread": 9.5,
+          "popularityPct": 0,
+          "ev": 0.32,
+          "gameNotes": []
+        },
+        "10": {
+          "opponent": "LAC",
+          "home": true,
+          "matchupLabel": "vs. LAC",
+          "pgWinPct": 64,
+          "marketWinPct": 67,
+          "moneyline": "-218",
+          "spread": -4.5,
           "popularityPct": 6,
-          "ev": 0.88,
+          "ev": 0.9,
           "gameNotes": []
         }
       }
@@ -2036,11 +2036,11 @@
       "matchupLabel": "vs. PIT",
       "pgWinPct": 64,
       "marketWinPct": 63,
-      "moneyline": "-186",
+      "moneyline": "-185",
       "spread": -3.5,
       "popularityPct": 0,
-      "ev": 0.92,
-      "futureValue": 0.91,
+      "ev": 0.93,
+      "futureValue": 0.9,
       "gameNotes": [],
       "future": [
         {
@@ -2135,7 +2135,7 @@
         },
         {
           "week": 11,
-          "winPct": 63,
+          "winPct": 61,
           "opp": "@WAS",
           "bye": false,
           "result": null,
@@ -2144,7 +2144,7 @@
         },
         {
           "week": 12,
-          "winPct": 74,
+          "winPct": 73,
           "opp": "NO",
           "bye": false,
           "result": null,
@@ -2189,7 +2189,7 @@
         },
         {
           "week": 17,
-          "winPct": 64,
+          "winPct": 65,
           "opp": "BAL",
           "bye": false,
           "result": null,
@@ -2198,7 +2198,7 @@
         },
         {
           "week": 18,
-          "winPct": 64,
+          "winPct": 65,
           "opp": "CLE",
           "bye": false,
           "result": null,
@@ -2273,10 +2273,263 @@
           "matchupLabel": "vs. PIT",
           "pgWinPct": 64,
           "marketWinPct": 63,
-          "moneyline": "-186",
+          "moneyline": "-185",
           "spread": -3.5,
           "popularityPct": 0,
-          "ev": 0.92,
+          "ev": 0.93,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "DET",
+      "teamName": "Detroit",
+      "opponent": "NE (N)",
+      "home": true,
+      "matchupLabel": "vs. NE (N)",
+      "pgWinPct": 59,
+      "marketWinPct": 58,
+      "moneyline": "-153",
+      "spread": -3,
+      "popularityPct": 0,
+      "ev": 0.86,
+      "futureValue": 0.84,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 33,
+          "opp": "NO",
+          "bye": false,
+          "result": "W",
+          "score": "31-30",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 68,
+          "opp": "@BUF",
+          "bye": false,
+          "result": "L",
+          "score": "31-41",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 55,
+          "opp": "NYJ",
+          "bye": false,
+          "result": "W",
+          "score": "31-24",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 64,
+          "opp": "@CAR",
+          "bye": false,
+          "result": "L",
+          "score": "26-32",
+          "locked": true
+        },
+        {
+          "week": 5,
+          "winPct": 70,
+          "opp": "@ARI",
+          "bye": false,
+          "result": "W",
+          "score": "45-21",
+          "locked": true
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 64,
+          "opp": "GB",
+          "bye": false,
+          "result": "W",
+          "score": "20-17",
+          "locked": true
+        },
+        {
+          "week": 8,
+          "winPct": 65,
+          "opp": "MIN",
+          "bye": false,
+          "result": "W",
+          "score": "19-15",
+          "locked": true
+        },
+        {
+          "week": 9,
+          "winPct": 71,
+          "opp": "@MIA",
+          "bye": false,
+          "result": "W",
+          "score": "19-9",
+          "locked": true
+        },
+        {
+          "week": 10,
+          "winPct": 59,
+          "opp": "NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 63,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 52,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 57,
+          "opp": "@ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 81,
+          "opp": "TEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 48,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 71,
+          "opp": "NYG",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 39,
+          "opp": "@CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 39,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "CAR",
+          "home": false,
+          "matchupLabel": "at CAR",
+          "pgWinPct": 64,
+          "marketWinPct": 64,
+          "moneyline": "-191",
+          "spread": -3.5,
+          "popularityPct": 2,
+          "ev": 0.95,
+          "gameNotes": []
+        },
+        "5": {
+          "opponent": "ARI",
+          "home": false,
+          "matchupLabel": "at ARI",
+          "pgWinPct": 70,
+          "marketWinPct": 69,
+          "moneyline": "-242",
+          "spread": -5,
+          "popularityPct": 9,
+          "ev": 0.99,
+          "gameNotes": []
+        },
+        "7": {
+          "opponent": "GB",
+          "home": true,
+          "matchupLabel": "vs. GB",
+          "pgWinPct": 64,
+          "marketWinPct": 62,
+          "moneyline": "-182",
+          "spread": -3.5,
+          "popularityPct": 0,
+          "ev": 0.97,
+          "gameNotes": []
+        },
+        "8": {
+          "opponent": "MIN",
+          "home": true,
+          "matchupLabel": "vs. MIN",
+          "pgWinPct": 65,
+          "marketWinPct": 62,
+          "moneyline": "-178",
+          "spread": -3.5,
+          "popularityPct": 1,
+          "ev": 0.97,
+          "gameNotes": []
+        },
+        "9": {
+          "opponent": "MIA",
+          "home": false,
+          "matchupLabel": "at MIA",
+          "pgWinPct": 71,
+          "marketWinPct": 74,
+          "moneyline": "-319",
+          "spread": -6.5,
+          "popularityPct": 17,
+          "ev": 0.91,
+          "gameNotes": []
+        },
+        "10": {
+          "opponent": "NE (N)",
+          "home": true,
+          "matchupLabel": "vs. NE (N)",
+          "pgWinPct": 59,
+          "marketWinPct": 58,
+          "moneyline": "-153",
+          "spread": -3,
+          "popularityPct": 0,
+          "ev": 0.86,
           "gameNotes": []
         }
       }
@@ -2287,13 +2540,13 @@
       "opponent": "MIN",
       "home": true,
       "matchupLabel": "vs. MIN",
-      "pgWinPct": 63,
-      "marketWinPct": 61,
-      "moneyline": "-172",
-      "spread": -3.5,
+      "pgWinPct": 58,
+      "marketWinPct": 59,
+      "moneyline": "-158",
+      "spread": -3,
       "popularityPct": 2,
-      "ev": 0.89,
-      "futureValue": 0.87,
+      "ev": 0.83,
+      "futureValue": 0.84,
       "gameNotes": [],
       "future": [
         {
@@ -2379,7 +2632,7 @@
         },
         {
           "week": 10,
-          "winPct": 63,
+          "winPct": 58,
           "opp": "MIN",
           "bye": false,
           "result": null,
@@ -2406,7 +2659,7 @@
         },
         {
           "week": 13,
-          "winPct": 62,
+          "winPct": 61,
           "opp": "@NO",
           "bye": false,
           "result": null,
@@ -2524,12 +2777,12 @@
           "opponent": "MIN",
           "home": true,
           "matchupLabel": "vs. MIN",
-          "pgWinPct": 63,
-          "marketWinPct": 61,
-          "moneyline": "-172",
-          "spread": -3.5,
+          "pgWinPct": 58,
+          "marketWinPct": 59,
+          "moneyline": "-158",
+          "spread": -3,
           "popularityPct": 2,
-          "ev": 0.89,
+          "ev": 0.83,
           "gameNotes": []
         }
       }
@@ -2540,13 +2793,13 @@
       "opponent": "ATL",
       "home": false,
       "matchupLabel": "at ATL",
-      "pgWinPct": 61,
-      "marketWinPct": 62,
-      "moneyline": "-182",
-      "spread": -3.5,
+      "pgWinPct": 56,
+      "marketWinPct": 61,
+      "moneyline": "-175",
+      "spread": -3,
       "popularityPct": 0,
-      "ev": 0.87,
-      "futureValue": 0.9,
+      "ev": 0.82,
+      "futureValue": 0.88,
       "gameNotes": [],
       "future": [
         {
@@ -2632,7 +2885,7 @@
         },
         {
           "week": 10,
-          "winPct": 61,
+          "winPct": 56,
           "opp": "@ATL",
           "bye": false,
           "result": null,
@@ -2641,7 +2894,7 @@
         },
         {
           "week": 11,
-          "winPct": 89,
+          "winPct": 90,
           "opp": "ARI",
           "bye": false,
           "result": null,
@@ -2777,265 +3030,12 @@
           "opponent": "ATL",
           "home": false,
           "matchupLabel": "at ATL",
-          "pgWinPct": 61,
-          "marketWinPct": 62,
-          "moneyline": "-182",
-          "spread": -3.5,
-          "popularityPct": 0,
-          "ev": 0.87,
-          "gameNotes": []
-        }
-      }
-    },
-    {
-      "team": "DET",
-      "teamName": "Detroit",
-      "opponent": "NE (N)",
-      "home": true,
-      "matchupLabel": "vs. NE (N)",
-      "pgWinPct": 59,
-      "marketWinPct": 59,
-      "moneyline": "-154",
-      "spread": -3,
-      "popularityPct": 0,
-      "ev": 0.85,
-      "futureValue": 0.85,
-      "gameNotes": [],
-      "future": [
-        {
-          "week": 1,
-          "winPct": 33,
-          "opp": "NO",
-          "bye": false,
-          "result": "W",
-          "score": "31-30",
-          "locked": true
-        },
-        {
-          "week": 2,
-          "winPct": 68,
-          "opp": "@BUF",
-          "bye": false,
-          "result": "L",
-          "score": "31-41",
-          "locked": true
-        },
-        {
-          "week": 3,
-          "winPct": 55,
-          "opp": "NYJ",
-          "bye": false,
-          "result": "W",
-          "score": "31-24",
-          "locked": true
-        },
-        {
-          "week": 4,
-          "winPct": 64,
-          "opp": "@CAR",
-          "bye": false,
-          "result": "L",
-          "score": "26-32",
-          "locked": true
-        },
-        {
-          "week": 5,
-          "winPct": 70,
-          "opp": "@ARI",
-          "bye": false,
-          "result": "W",
-          "score": "45-21",
-          "locked": true
-        },
-        {
-          "week": 6,
-          "winPct": null,
-          "opp": "BYE",
-          "bye": true,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 7,
-          "winPct": 64,
-          "opp": "GB",
-          "bye": false,
-          "result": "W",
-          "score": "20-17",
-          "locked": true
-        },
-        {
-          "week": 8,
-          "winPct": 65,
-          "opp": "MIN",
-          "bye": false,
-          "result": "W",
-          "score": "19-15",
-          "locked": true
-        },
-        {
-          "week": 9,
-          "winPct": 71,
-          "opp": "@MIA",
-          "bye": false,
-          "result": "W",
-          "score": "19-9",
-          "locked": true
-        },
-        {
-          "week": 10,
-          "winPct": 59,
-          "opp": "NE",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 11,
-          "winPct": 64,
-          "opp": "TB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 12,
-          "winPct": 52,
-          "opp": "CHI",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 13,
-          "winPct": 57,
-          "opp": "@ATL",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 14,
-          "winPct": 81,
-          "opp": "TEN",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 15,
-          "winPct": 48,
-          "opp": "@MIN",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 16,
-          "winPct": 70,
-          "opp": "NYG",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 17,
-          "winPct": 39,
-          "opp": "@CHI",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 18,
-          "winPct": 39,
-          "opp": "@GB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        }
-      ],
-      "weekBoards": {
-        "4": {
-          "opponent": "CAR",
-          "home": false,
-          "matchupLabel": "at CAR",
-          "pgWinPct": 64,
-          "marketWinPct": 64,
-          "moneyline": "-191",
-          "spread": -3.5,
-          "popularityPct": 2,
-          "ev": 0.95,
-          "gameNotes": []
-        },
-        "5": {
-          "opponent": "ARI",
-          "home": false,
-          "matchupLabel": "at ARI",
-          "pgWinPct": 70,
-          "marketWinPct": 69,
-          "moneyline": "-242",
-          "spread": -5,
-          "popularityPct": 9,
-          "ev": 0.99,
-          "gameNotes": []
-        },
-        "7": {
-          "opponent": "GB",
-          "home": true,
-          "matchupLabel": "vs. GB",
-          "pgWinPct": 64,
-          "marketWinPct": 62,
-          "moneyline": "-182",
-          "spread": -3.5,
-          "popularityPct": 0,
-          "ev": 0.97,
-          "gameNotes": []
-        },
-        "8": {
-          "opponent": "MIN",
-          "home": true,
-          "matchupLabel": "vs. MIN",
-          "pgWinPct": 65,
-          "marketWinPct": 62,
-          "moneyline": "-178",
-          "spread": -3.5,
-          "popularityPct": 1,
-          "ev": 0.97,
-          "gameNotes": []
-        },
-        "9": {
-          "opponent": "MIA",
-          "home": false,
-          "matchupLabel": "at MIA",
-          "pgWinPct": 71,
-          "marketWinPct": 74,
-          "moneyline": "-319",
-          "spread": -6.5,
-          "popularityPct": 17,
-          "ev": 0.91,
-          "gameNotes": []
-        },
-        "10": {
-          "opponent": "NE (N)",
-          "home": true,
-          "matchupLabel": "vs. NE (N)",
-          "pgWinPct": 59,
-          "marketWinPct": 59,
-          "moneyline": "-154",
+          "pgWinPct": 56,
+          "marketWinPct": 61,
+          "moneyline": "-175",
           "spread": -3,
           "popularityPct": 0,
-          "ev": 0.85,
+          "ev": 0.82,
           "gameNotes": []
         }
       }
@@ -3156,7 +3156,7 @@
         },
         {
           "week": 12,
-          "winPct": 26,
+          "winPct": 27,
           "opp": "@CIN",
           "bye": false,
           "result": null,
@@ -3165,7 +3165,7 @@
         },
         {
           "week": 13,
-          "winPct": 38,
+          "winPct": 39,
           "opp": "GB",
           "bye": false,
           "result": null,
@@ -3174,7 +3174,7 @@
         },
         {
           "week": 14,
-          "winPct": 40,
+          "winPct": 42,
           "opp": "@CAR",
           "bye": false,
           "result": null,
@@ -3183,7 +3183,7 @@
         },
         {
           "week": 15,
-          "winPct": 34,
+          "winPct": 35,
           "opp": "@TB",
           "bye": false,
           "result": null,
@@ -3192,7 +3192,7 @@
         },
         {
           "week": 16,
-          "winPct": 68,
+          "winPct": 69,
           "opp": "ARI",
           "bye": false,
           "result": null,
@@ -3201,7 +3201,7 @@
         },
         {
           "week": 17,
-          "winPct": 38,
+          "winPct": 39,
           "opp": "@ATL",
           "bye": false,
           "result": null,
@@ -3210,7 +3210,7 @@
         },
         {
           "week": 18,
-          "winPct": 38,
+          "winPct": 39,
           "opp": "TB",
           "bye": false,
           "result": null,
@@ -3299,13 +3299,13 @@
       "opponent": "WAS",
       "home": true,
       "matchupLabel": "vs. WAS",
-      "pgWinPct": 54,
-      "marketWinPct": 56,
-      "moneyline": "-137",
-      "spread": -2.5,
+      "pgWinPct": 51,
+      "marketWinPct": 53,
+      "moneyline": "-121",
+      "spread": -1.5,
       "popularityPct": 1,
-      "ev": 0.76,
-      "futureValue": 0.8,
+      "ev": 0.73,
+      "futureValue": 0.74,
       "gameNotes": [],
       "future": [
         {
@@ -3346,7 +3346,7 @@
         },
         {
           "week": 5,
-          "winPct": 54,
+          "winPct": 51,
           "opp": "@WAS",
           "bye": false,
           "result": null,
@@ -3394,13 +3394,13 @@
           "winPct": null,
           "opp": "WAS",
           "bye": false,
-          "result": null,
-          "score": null,
+          "result": "L",
+          "score": "21-24",
           "locked": false
         },
         {
           "week": 11,
-          "winPct": 54,
+          "winPct": 51,
           "opp": "JAX",
           "bye": false,
           "result": null,
@@ -3409,7 +3409,7 @@
         },
         {
           "week": 12,
-          "winPct": 58,
+          "winPct": 57,
           "opp": "@IND",
           "bye": false,
           "result": null,
@@ -3418,7 +3418,7 @@
         },
         {
           "week": 13,
-          "winPct": 35,
+          "winPct": 34,
           "opp": "SF",
           "bye": false,
           "result": null,
@@ -3445,7 +3445,7 @@
         },
         {
           "week": 16,
-          "winPct": 30,
+          "winPct": 29,
           "opp": "@DET",
           "bye": false,
           "result": null,
@@ -3536,12 +3536,12 @@
           "opponent": "WAS",
           "home": true,
           "matchupLabel": "vs. WAS",
-          "pgWinPct": 54,
-          "marketWinPct": 56,
-          "moneyline": "-137",
-          "spread": -2.5,
+          "pgWinPct": 51,
+          "marketWinPct": 53,
+          "moneyline": "-121",
+          "spread": -1.5,
           "popularityPct": 1,
-          "ev": 0.76,
+          "ev": 0.73,
           "gameNotes": []
         }
       }
@@ -3552,13 +3552,13 @@
       "opponent": "NYG",
       "home": false,
       "matchupLabel": "at NYG",
-      "pgWinPct": 46,
-      "marketWinPct": 44,
-      "moneyline": "+117",
-      "spread": 2.5,
+      "pgWinPct": 49,
+      "marketWinPct": 47,
+      "moneyline": "+102",
+      "spread": 1.5,
       "popularityPct": 0,
-      "ev": 0.67,
-      "futureValue": 0.65,
+      "ev": 0.7,
+      "futureValue": 0.68,
       "gameNotes": [],
       "future": [
         {
@@ -3599,7 +3599,7 @@
         },
         {
           "week": 5,
-          "winPct": 46,
+          "winPct": 49,
           "opp": "NYG",
           "bye": false,
           "result": null,
@@ -3647,13 +3647,13 @@
           "winPct": null,
           "opp": "@NYG",
           "bye": false,
-          "result": null,
-          "score": null,
+          "result": "W",
+          "score": "24-21",
           "locked": false
         },
         {
           "week": 11,
-          "winPct": 37,
+          "winPct": 39,
           "opp": "CIN",
           "bye": false,
           "result": null,
@@ -3662,7 +3662,7 @@
         },
         {
           "week": 12,
-          "winPct": 58,
+          "winPct": 59,
           "opp": "@ARI",
           "bye": false,
           "result": null,
@@ -3680,7 +3680,7 @@
         },
         {
           "week": 14,
-          "winPct": 41,
+          "winPct": 42,
           "opp": "HOU",
           "bye": false,
           "result": null,
@@ -3698,7 +3698,7 @@
         },
         {
           "week": 16,
-          "winPct": 32,
+          "winPct": 33,
           "opp": "@MIN",
           "bye": false,
           "result": null,
@@ -3707,7 +3707,7 @@
         },
         {
           "week": 17,
-          "winPct": 32,
+          "winPct": 33,
           "opp": "@JAX",
           "bye": false,
           "result": null,
@@ -3789,12 +3789,12 @@
           "opponent": "NYG",
           "home": false,
           "matchupLabel": "at NYG",
-          "pgWinPct": 46,
-          "marketWinPct": 44,
-          "moneyline": "+117",
-          "spread": 2.5,
+          "pgWinPct": 49,
+          "marketWinPct": 47,
+          "moneyline": "+102",
+          "spread": 1.5,
           "popularityPct": 0,
-          "ev": 0.67,
+          "ev": 0.7,
           "gameNotes": []
         }
       }
@@ -3811,7 +3811,7 @@
       "spread": 2.5,
       "popularityPct": 0,
       "ev": 0.66,
-      "futureValue": 0.65,
+      "futureValue": 0.64,
       "gameNotes": [],
       "future": [
         {
@@ -3915,7 +3915,7 @@
         },
         {
           "week": 12,
-          "winPct": 38,
+          "winPct": 37,
           "opp": "@TB",
           "bye": false,
           "result": null,
@@ -3924,7 +3924,7 @@
         },
         {
           "week": 13,
-          "winPct": 34,
+          "winPct": 33,
           "opp": "@MIN",
           "bye": false,
           "result": null,
@@ -3933,7 +3933,7 @@
         },
         {
           "week": 14,
-          "winPct": 60,
+          "winPct": 58,
           "opp": "NO",
           "bye": false,
           "result": null,
@@ -3951,7 +3951,7 @@
         },
         {
           "week": 16,
-          "winPct": 37,
+          "winPct": 36,
           "opp": "@PIT",
           "bye": false,
           "result": null,
@@ -4053,17 +4053,523 @@
       }
     },
     {
+      "team": "ATL",
+      "teamName": "Atlanta",
+      "opponent": "KC",
+      "home": true,
+      "matchupLabel": "vs. KC",
+      "pgWinPct": 44,
+      "marketWinPct": 39,
+      "moneyline": "+146",
+      "spread": 3,
+      "popularityPct": 0,
+      "ev": 0.63,
+      "futureValue": 0.55,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 39,
+          "opp": "@PIT",
+          "bye": false,
+          "result": "L",
+          "score": "13-20",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 28,
+          "opp": "CAR",
+          "bye": false,
+          "result": "L",
+          "score": "3-34",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 38,
+          "opp": "@GB",
+          "bye": false,
+          "result": "W",
+          "score": "35-14",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 48,
+          "opp": "@NO",
+          "bye": false,
+          "result": "W",
+          "score": "45-24",
+          "locked": true
+        },
+        {
+          "week": 5,
+          "winPct": 65,
+          "opp": "BAL",
+          "bye": false,
+          "result": "L",
+          "score": "23-30",
+          "locked": true
+        },
+        {
+          "week": 6,
+          "winPct": 52,
+          "opp": "CHI",
+          "bye": false,
+          "result": "L",
+          "score": "23-31",
+          "locked": true
+        },
+        {
+          "week": 7,
+          "winPct": 46,
+          "opp": "SF",
+          "bye": false,
+          "result": "W",
+          "score": "29-20",
+          "locked": true
+        },
+        {
+          "week": 8,
+          "winPct": 45,
+          "opp": "@TB",
+          "bye": false,
+          "result": "L",
+          "score": "0-16",
+          "locked": true
+        },
+        {
+          "week": 9,
+          "winPct": 42,
+          "opp": "CIN",
+          "bye": false,
+          "result": "L",
+          "score": "17-34",
+          "locked": true
+        },
+        {
+          "week": 10,
+          "winPct": 44,
+          "opp": "KC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 35,
+          "opp": "@MIN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 43,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 53,
+          "opp": "@CLE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 47,
+          "opp": "@WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 52,
+          "opp": "TB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 61,
+          "opp": "NO",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 61,
+          "opp": "@CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "NO",
+          "home": false,
+          "matchupLabel": "at NO",
+          "pgWinPct": 48,
+          "marketWinPct": 42,
+          "moneyline": "+127",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.72,
+          "gameNotes": []
+        },
+        "5": {
+          "opponent": "BAL",
+          "home": true,
+          "matchupLabel": "vs. BAL",
+          "pgWinPct": 65,
+          "marketWinPct": 62,
+          "moneyline": "-180",
+          "spread": -3.5,
+          "popularityPct": 2,
+          "ev": 0.96,
+          "gameNotes": []
+        },
+        "7": {
+          "opponent": "SF",
+          "home": true,
+          "matchupLabel": "vs. SF",
+          "pgWinPct": 46,
+          "marketWinPct": 43,
+          "moneyline": "+122",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.7,
+          "gameNotes": []
+        },
+        "8": {
+          "opponent": "TB",
+          "home": false,
+          "matchupLabel": "at TB",
+          "pgWinPct": 45,
+          "marketWinPct": 44,
+          "moneyline": "+115",
+          "spread": 2.5,
+          "popularityPct": 0,
+          "ev": 0.68,
+          "gameNotes": []
+        },
+        "9": {
+          "opponent": "CIN (N)",
+          "home": true,
+          "matchupLabel": "vs. CIN (N)",
+          "pgWinPct": 42,
+          "marketWinPct": 39,
+          "moneyline": "+143",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.58,
+          "gameNotes": []
+        },
+        "10": {
+          "opponent": "KC",
+          "home": true,
+          "matchupLabel": "vs. KC",
+          "pgWinPct": 44,
+          "marketWinPct": 39,
+          "moneyline": "+146",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.63,
+          "gameNotes": []
+        }
+      }
+    },
+    {
+      "team": "MIN",
+      "teamName": "Minnesota",
+      "opponent": "GB",
+      "home": false,
+      "matchupLabel": "at GB",
+      "pgWinPct": 42,
+      "marketWinPct": 41,
+      "moneyline": "+133",
+      "spread": 3,
+      "popularityPct": 0,
+      "ev": 0.61,
+      "futureValue": 0.6,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 61,
+          "opp": "GB",
+          "bye": false,
+          "result": "W",
+          "score": "39-22",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 49,
+          "opp": "@CHI",
+          "bye": false,
+          "result": "W",
+          "score": "9-3",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 80,
+          "opp": "@TB",
+          "bye": false,
+          "result": "W",
+          "score": "23-16",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 81,
+          "opp": "MIA",
+          "bye": false,
+          "result": "W",
+          "score": "15-10",
+          "locked": true
+        },
+        {
+          "week": 5,
+          "winPct": 53,
+          "opp": "@NO",
+          "bye": false,
+          "result": "W",
+          "score": "23-13",
+          "locked": true
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 71,
+          "opp": "IND",
+          "bye": false,
+          "result": "W",
+          "score": "16-10",
+          "locked": true
+        },
+        {
+          "week": 8,
+          "winPct": 35,
+          "opp": "@DET",
+          "bye": false,
+          "result": "L",
+          "score": "15-19",
+          "locked": true
+        },
+        {
+          "week": 9,
+          "winPct": 40,
+          "opp": "BUF",
+          "bye": false,
+          "result": "L",
+          "score": "6-23",
+          "locked": true
+        },
+        {
+          "week": 10,
+          "winPct": 42,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 35,
+          "opp": "@SF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 65,
+          "opp": "ATL",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 67,
+          "opp": "CAR",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 44,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 52,
+          "opp": "DET",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 67,
+          "opp": "WAS",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 62,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 62,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "MIA",
+          "home": true,
+          "matchupLabel": "vs. MIA",
+          "pgWinPct": 81,
+          "marketWinPct": 85,
+          "moneyline": "-649",
+          "spread": -10.5,
+          "popularityPct": 44,
+          "ev": 0.96,
+          "gameNotes": []
+        },
+        "5": {
+          "opponent": "NO",
+          "home": false,
+          "matchupLabel": "at NO",
+          "pgWinPct": 53,
+          "marketWinPct": 54,
+          "moneyline": "-129",
+          "spread": -2,
+          "popularityPct": 0,
+          "ev": 0.79,
+          "gameNotes": []
+        },
+        "7": {
+          "opponent": "IND",
+          "home": true,
+          "matchupLabel": "vs. IND",
+          "pgWinPct": 71,
+          "marketWinPct": 72,
+          "moneyline": "-287",
+          "spread": -6.5,
+          "popularityPct": 21,
+          "ev": 0.95,
+          "gameNotes": []
+        },
+        "8": {
+          "opponent": "DET",
+          "home": false,
+          "matchupLabel": "at DET",
+          "pgWinPct": 35,
+          "marketWinPct": 38,
+          "moneyline": "+149",
+          "spread": 3.5,
+          "popularityPct": 0,
+          "ev": 0.52,
+          "gameNotes": []
+        },
+        "9": {
+          "opponent": "BUF",
+          "home": true,
+          "matchupLabel": "vs. BUF",
+          "pgWinPct": 40,
+          "marketWinPct": 38,
+          "moneyline": "+147",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.56,
+          "gameNotes": []
+        },
+        "10": {
+          "opponent": "GB",
+          "home": false,
+          "matchupLabel": "at GB",
+          "pgWinPct": 42,
+          "marketWinPct": 41,
+          "moneyline": "+133",
+          "spread": 3,
+          "popularityPct": 0,
+          "ev": 0.61,
+          "gameNotes": []
+        }
+      }
+    },
+    {
       "team": "NE",
       "teamName": "New England",
       "opponent": "DET (N)",
       "home": true,
       "matchupLabel": "vs. DET (N)",
       "pgWinPct": 41,
-      "marketWinPct": 41,
-      "moneyline": "+130",
+      "marketWinPct": 42,
+      "moneyline": "+128",
       "spread": 3,
       "popularityPct": 0,
-      "ev": 0.58,
+      "ev": 0.59,
       "futureValue": 0.6,
       "gameNotes": [],
       "future": [
@@ -4204,7 +4710,7 @@
         },
         {
           "week": 16,
-          "winPct": 62,
+          "winPct": 61,
           "opp": "@NYJ",
           "bye": false,
           "result": null,
@@ -4296,517 +4802,11 @@
           "home": true,
           "matchupLabel": "vs. DET (N)",
           "pgWinPct": 41,
-          "marketWinPct": 41,
-          "moneyline": "+130",
-          "spread": 3,
-          "popularityPct": 0,
-          "ev": 0.58,
-          "gameNotes": []
-        }
-      }
-    },
-    {
-      "team": "ATL",
-      "teamName": "Atlanta",
-      "opponent": "KC",
-      "home": true,
-      "matchupLabel": "vs. KC",
-      "pgWinPct": 39,
-      "marketWinPct": 38,
-      "moneyline": "+152",
-      "spread": 3.5,
-      "popularityPct": 0,
-      "ev": 0.57,
-      "futureValue": 0.54,
-      "gameNotes": [],
-      "future": [
-        {
-          "week": 1,
-          "winPct": 39,
-          "opp": "@PIT",
-          "bye": false,
-          "result": "L",
-          "score": "13-20",
-          "locked": true
-        },
-        {
-          "week": 2,
-          "winPct": 28,
-          "opp": "CAR",
-          "bye": false,
-          "result": "L",
-          "score": "3-34",
-          "locked": true
-        },
-        {
-          "week": 3,
-          "winPct": 38,
-          "opp": "@GB",
-          "bye": false,
-          "result": "W",
-          "score": "35-14",
-          "locked": true
-        },
-        {
-          "week": 4,
-          "winPct": 48,
-          "opp": "@NO",
-          "bye": false,
-          "result": "W",
-          "score": "45-24",
-          "locked": true
-        },
-        {
-          "week": 5,
-          "winPct": 65,
-          "opp": "BAL",
-          "bye": false,
-          "result": "L",
-          "score": "23-30",
-          "locked": true
-        },
-        {
-          "week": 6,
-          "winPct": 52,
-          "opp": "CHI",
-          "bye": false,
-          "result": "L",
-          "score": "23-31",
-          "locked": true
-        },
-        {
-          "week": 7,
-          "winPct": 46,
-          "opp": "SF",
-          "bye": false,
-          "result": "W",
-          "score": "29-20",
-          "locked": true
-        },
-        {
-          "week": 8,
-          "winPct": 45,
-          "opp": "@TB",
-          "bye": false,
-          "result": "L",
-          "score": "0-16",
-          "locked": true
-        },
-        {
-          "week": 9,
-          "winPct": 42,
-          "opp": "CIN",
-          "bye": false,
-          "result": "L",
-          "score": "17-34",
-          "locked": true
-        },
-        {
-          "week": 10,
-          "winPct": 39,
-          "opp": "KC",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 11,
-          "winPct": null,
-          "opp": "BYE",
-          "bye": true,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 12,
-          "winPct": 35,
-          "opp": "@MIN",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 13,
-          "winPct": 43,
-          "opp": "DET",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 14,
-          "winPct": 53,
-          "opp": "@CLE",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 15,
-          "winPct": 47,
-          "opp": "@WAS",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 16,
-          "winPct": 52,
-          "opp": "TB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 17,
-          "winPct": 62,
-          "opp": "NO",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 18,
-          "winPct": 62,
-          "opp": "@CAR",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        }
-      ],
-      "weekBoards": {
-        "4": {
-          "opponent": "NO",
-          "home": false,
-          "matchupLabel": "at NO",
-          "pgWinPct": 48,
           "marketWinPct": 42,
-          "moneyline": "+127",
-          "spread": 2.5,
-          "popularityPct": 0,
-          "ev": 0.72,
-          "gameNotes": []
-        },
-        "5": {
-          "opponent": "BAL",
-          "home": true,
-          "matchupLabel": "vs. BAL",
-          "pgWinPct": 65,
-          "marketWinPct": 62,
-          "moneyline": "-180",
-          "spread": -3.5,
-          "popularityPct": 2,
-          "ev": 0.96,
-          "gameNotes": []
-        },
-        "7": {
-          "opponent": "SF",
-          "home": true,
-          "matchupLabel": "vs. SF",
-          "pgWinPct": 46,
-          "marketWinPct": 43,
-          "moneyline": "+122",
-          "spread": 2.5,
-          "popularityPct": 0,
-          "ev": 0.7,
-          "gameNotes": []
-        },
-        "8": {
-          "opponent": "TB",
-          "home": false,
-          "matchupLabel": "at TB",
-          "pgWinPct": 45,
-          "marketWinPct": 44,
-          "moneyline": "+115",
-          "spread": 2.5,
-          "popularityPct": 0,
-          "ev": 0.68,
-          "gameNotes": []
-        },
-        "9": {
-          "opponent": "CIN (N)",
-          "home": true,
-          "matchupLabel": "vs. CIN (N)",
-          "pgWinPct": 42,
-          "marketWinPct": 39,
-          "moneyline": "+143",
+          "moneyline": "+128",
           "spread": 3,
           "popularityPct": 0,
-          "ev": 0.58,
-          "gameNotes": []
-        },
-        "10": {
-          "opponent": "KC",
-          "home": true,
-          "matchupLabel": "vs. KC",
-          "pgWinPct": 39,
-          "marketWinPct": 38,
-          "moneyline": "+152",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.57,
-          "gameNotes": []
-        }
-      }
-    },
-    {
-      "team": "MIN",
-      "teamName": "Minnesota",
-      "opponent": "GB",
-      "home": false,
-      "matchupLabel": "at GB",
-      "pgWinPct": 37,
-      "marketWinPct": 39,
-      "moneyline": "+144",
-      "spread": 3.5,
-      "popularityPct": 0,
-      "ev": 0.54,
-      "futureValue": 0.57,
-      "gameNotes": [],
-      "future": [
-        {
-          "week": 1,
-          "winPct": 61,
-          "opp": "GB",
-          "bye": false,
-          "result": "W",
-          "score": "39-22",
-          "locked": true
-        },
-        {
-          "week": 2,
-          "winPct": 49,
-          "opp": "@CHI",
-          "bye": false,
-          "result": "W",
-          "score": "9-3",
-          "locked": true
-        },
-        {
-          "week": 3,
-          "winPct": 80,
-          "opp": "@TB",
-          "bye": false,
-          "result": "W",
-          "score": "23-16",
-          "locked": true
-        },
-        {
-          "week": 4,
-          "winPct": 81,
-          "opp": "MIA",
-          "bye": false,
-          "result": "W",
-          "score": "15-10",
-          "locked": true
-        },
-        {
-          "week": 5,
-          "winPct": 53,
-          "opp": "@NO",
-          "bye": false,
-          "result": "W",
-          "score": "23-13",
-          "locked": true
-        },
-        {
-          "week": 6,
-          "winPct": null,
-          "opp": "BYE",
-          "bye": true,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 7,
-          "winPct": 71,
-          "opp": "IND",
-          "bye": false,
-          "result": "W",
-          "score": "16-10",
-          "locked": true
-        },
-        {
-          "week": 8,
-          "winPct": 35,
-          "opp": "@DET",
-          "bye": false,
-          "result": "L",
-          "score": "15-19",
-          "locked": true
-        },
-        {
-          "week": 9,
-          "winPct": 40,
-          "opp": "BUF",
-          "bye": false,
-          "result": "L",
-          "score": "6-23",
-          "locked": true
-        },
-        {
-          "week": 10,
-          "winPct": 37,
-          "opp": "@GB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 11,
-          "winPct": 35,
-          "opp": "@SF",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 12,
-          "winPct": 65,
-          "opp": "ATL",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 13,
-          "winPct": 66,
-          "opp": "CAR",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 14,
-          "winPct": 44,
-          "opp": "@NE",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 15,
-          "winPct": 52,
-          "opp": "DET",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 16,
-          "winPct": 68,
-          "opp": "WAS",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 17,
-          "winPct": 63,
-          "opp": "@NYJ",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 18,
-          "winPct": 63,
-          "opp": "CHI",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        }
-      ],
-      "weekBoards": {
-        "4": {
-          "opponent": "MIA",
-          "home": true,
-          "matchupLabel": "vs. MIA",
-          "pgWinPct": 81,
-          "marketWinPct": 85,
-          "moneyline": "-649",
-          "spread": -10.5,
-          "popularityPct": 44,
-          "ev": 0.96,
-          "gameNotes": []
-        },
-        "5": {
-          "opponent": "NO",
-          "home": false,
-          "matchupLabel": "at NO",
-          "pgWinPct": 53,
-          "marketWinPct": 54,
-          "moneyline": "-129",
-          "spread": -2,
-          "popularityPct": 0,
-          "ev": 0.79,
-          "gameNotes": []
-        },
-        "7": {
-          "opponent": "IND",
-          "home": true,
-          "matchupLabel": "vs. IND",
-          "pgWinPct": 71,
-          "marketWinPct": 72,
-          "moneyline": "-287",
-          "spread": -6.5,
-          "popularityPct": 21,
-          "ev": 0.95,
-          "gameNotes": []
-        },
-        "8": {
-          "opponent": "DET",
-          "home": false,
-          "matchupLabel": "at DET",
-          "pgWinPct": 35,
-          "marketWinPct": 38,
-          "moneyline": "+149",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.52,
-          "gameNotes": []
-        },
-        "9": {
-          "opponent": "BUF",
-          "home": true,
-          "matchupLabel": "vs. BUF",
-          "pgWinPct": 40,
-          "marketWinPct": 38,
-          "moneyline": "+147",
-          "spread": 3,
-          "popularityPct": 0,
-          "ev": 0.56,
-          "gameNotes": []
-        },
-        "10": {
-          "opponent": "GB",
-          "home": false,
-          "matchupLabel": "at GB",
-          "pgWinPct": 37,
-          "marketWinPct": 39,
-          "moneyline": "+144",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.54,
+          "ev": 0.59,
           "gameNotes": []
         }
       }
@@ -4819,7 +4819,7 @@
       "matchupLabel": "at CIN",
       "pgWinPct": 36,
       "marketWinPct": 37,
-      "moneyline": "+155",
+      "moneyline": "+154",
       "spread": 3.5,
       "popularityPct": 0,
       "ev": 0.52,
@@ -4918,7 +4918,7 @@
         },
         {
           "week": 11,
-          "winPct": 63,
+          "winPct": 68,
           "opp": "@PHI",
           "bye": false,
           "result": null,
@@ -4954,7 +4954,7 @@
         },
         {
           "week": 15,
-          "winPct": 56,
+          "winPct": 61,
           "opp": "BAL",
           "bye": false,
           "result": null,
@@ -4963,7 +4963,7 @@
         },
         {
           "week": 16,
-          "winPct": 63,
+          "winPct": 64,
           "opp": "CAR",
           "bye": false,
           "result": null,
@@ -5056,263 +5056,10 @@
           "matchupLabel": "at CIN",
           "pgWinPct": 36,
           "marketWinPct": 37,
-          "moneyline": "+155",
+          "moneyline": "+154",
           "spread": 3.5,
           "popularityPct": 0,
           "ev": 0.52,
-          "gameNotes": []
-        }
-      }
-    },
-    {
-      "team": "MIA",
-      "teamName": "Miami",
-      "opponent": "IND",
-      "home": false,
-      "matchupLabel": "at IND",
-      "pgWinPct": 36,
-      "marketWinPct": 35,
-      "moneyline": "+166",
-      "spread": 3.5,
-      "popularityPct": 0,
-      "ev": 0.55,
-      "futureValue": 0.55,
-      "gameNotes": [],
-      "future": [
-        {
-          "week": 1,
-          "winPct": 15,
-          "opp": "@LV",
-          "bye": false,
-          "result": "L",
-          "score": "13-27",
-          "locked": true
-        },
-        {
-          "week": 2,
-          "winPct": 16,
-          "opp": "@SF",
-          "bye": false,
-          "result": "L",
-          "score": "13-35",
-          "locked": true
-        },
-        {
-          "week": 3,
-          "winPct": 20,
-          "opp": "KC",
-          "bye": false,
-          "result": "L",
-          "score": "10-24",
-          "locked": true
-        },
-        {
-          "week": 4,
-          "winPct": 19,
-          "opp": "@MIN",
-          "bye": false,
-          "result": "L",
-          "score": "10-15",
-          "locked": true
-        },
-        {
-          "week": 5,
-          "winPct": 24,
-          "opp": "CIN",
-          "bye": false,
-          "result": "L",
-          "score": "24-31",
-          "locked": true
-        },
-        {
-          "week": 6,
-          "winPct": null,
-          "opp": "BYE",
-          "bye": true,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 7,
-          "winPct": 32,
-          "opp": "@NYJ",
-          "bye": false,
-          "result": "W",
-          "score": "28-25",
-          "locked": true
-        },
-        {
-          "week": 8,
-          "winPct": 27,
-          "opp": "NE",
-          "bye": false,
-          "result": "L",
-          "score": "19-24",
-          "locked": true
-        },
-        {
-          "week": 9,
-          "winPct": 29,
-          "opp": "DET",
-          "bye": false,
-          "result": "L",
-          "score": "9-19",
-          "locked": true
-        },
-        {
-          "week": 10,
-          "winPct": 36,
-          "opp": "@IND",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 11,
-          "winPct": 9,
-          "opp": "@BUF",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 12,
-          "winPct": 46,
-          "opp": "NYJ",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 13,
-          "winPct": 17,
-          "opp": "@DEN",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 14,
-          "winPct": 21,
-          "opp": "CHI",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 15,
-          "winPct": 16,
-          "opp": "@GB",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 16,
-          "winPct": 49,
-          "opp": "LAC",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 17,
-          "winPct": 20,
-          "opp": "BUF",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        },
-        {
-          "week": 18,
-          "winPct": 20,
-          "opp": "@NE",
-          "bye": false,
-          "result": null,
-          "score": null,
-          "locked": false
-        }
-      ],
-      "weekBoards": {
-        "4": {
-          "opponent": "MIN",
-          "home": false,
-          "matchupLabel": "at MIN",
-          "pgWinPct": 19,
-          "marketWinPct": 15,
-          "moneyline": "+476",
-          "spread": 10.5,
-          "popularityPct": 0,
-          "ev": 0.53,
-          "gameNotes": []
-        },
-        "5": {
-          "opponent": "CIN",
-          "home": true,
-          "matchupLabel": "vs. CIN",
-          "pgWinPct": 24,
-          "marketWinPct": 23,
-          "moneyline": "+296",
-          "spread": 7.5,
-          "popularityPct": 0,
-          "ev": 0.48,
-          "gameNotes": []
-        },
-        "7": {
-          "opponent": "NYJ",
-          "home": false,
-          "matchupLabel": "at NYJ",
-          "pgWinPct": 32,
-          "marketWinPct": 33,
-          "moneyline": "+187",
-          "spread": 4.5,
-          "popularityPct": 0,
-          "ev": 0.58,
-          "gameNotes": []
-        },
-        "8": {
-          "opponent": "NE",
-          "home": true,
-          "matchupLabel": "vs. NE",
-          "pgWinPct": 27,
-          "marketWinPct": 25,
-          "moneyline": "+274",
-          "spread": 7,
-          "popularityPct": 0,
-          "ev": 0.52,
-          "gameNotes": []
-        },
-        "9": {
-          "opponent": "DET",
-          "home": true,
-          "matchupLabel": "vs. DET",
-          "pgWinPct": 29,
-          "marketWinPct": 26,
-          "moneyline": "+255",
-          "spread": 6.5,
-          "popularityPct": 0,
-          "ev": 0.48,
-          "gameNotes": []
-        },
-        "10": {
-          "opponent": "IND",
-          "home": false,
-          "matchupLabel": "at IND",
-          "pgWinPct": 36,
-          "marketWinPct": 35,
-          "moneyline": "+166",
-          "spread": 3.5,
-          "popularityPct": 0,
-          "ev": 0.55,
           "gameNotes": []
         }
       }
@@ -5460,7 +5207,7 @@
         },
         {
           "week": 15,
-          "winPct": 28,
+          "winPct": 27,
           "opp": "SF",
           "bye": false,
           "result": null,
@@ -5571,6 +5318,259 @@
       }
     },
     {
+      "team": "MIA",
+      "teamName": "Miami",
+      "opponent": "IND",
+      "home": false,
+      "matchupLabel": "at IND",
+      "pgWinPct": 34,
+      "marketWinPct": 35,
+      "moneyline": "+171",
+      "spread": 4,
+      "popularityPct": 0,
+      "ev": 0.54,
+      "futureValue": 0.54,
+      "gameNotes": [],
+      "future": [
+        {
+          "week": 1,
+          "winPct": 15,
+          "opp": "@LV",
+          "bye": false,
+          "result": "L",
+          "score": "13-27",
+          "locked": true
+        },
+        {
+          "week": 2,
+          "winPct": 16,
+          "opp": "@SF",
+          "bye": false,
+          "result": "L",
+          "score": "13-35",
+          "locked": true
+        },
+        {
+          "week": 3,
+          "winPct": 20,
+          "opp": "KC",
+          "bye": false,
+          "result": "L",
+          "score": "10-24",
+          "locked": true
+        },
+        {
+          "week": 4,
+          "winPct": 19,
+          "opp": "@MIN",
+          "bye": false,
+          "result": "L",
+          "score": "10-15",
+          "locked": true
+        },
+        {
+          "week": 5,
+          "winPct": 24,
+          "opp": "CIN",
+          "bye": false,
+          "result": "L",
+          "score": "24-31",
+          "locked": true
+        },
+        {
+          "week": 6,
+          "winPct": null,
+          "opp": "BYE",
+          "bye": true,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 7,
+          "winPct": 32,
+          "opp": "@NYJ",
+          "bye": false,
+          "result": "W",
+          "score": "28-25",
+          "locked": true
+        },
+        {
+          "week": 8,
+          "winPct": 27,
+          "opp": "NE",
+          "bye": false,
+          "result": "L",
+          "score": "19-24",
+          "locked": true
+        },
+        {
+          "week": 9,
+          "winPct": 29,
+          "opp": "DET",
+          "bye": false,
+          "result": "L",
+          "score": "9-19",
+          "locked": true
+        },
+        {
+          "week": 10,
+          "winPct": 34,
+          "opp": "@IND",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 11,
+          "winPct": 9,
+          "opp": "@BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 12,
+          "winPct": 45,
+          "opp": "NYJ",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 13,
+          "winPct": 17,
+          "opp": "@DEN",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 14,
+          "winPct": 21,
+          "opp": "CHI",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 15,
+          "winPct": 16,
+          "opp": "@GB",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 16,
+          "winPct": 49,
+          "opp": "LAC",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 17,
+          "winPct": 20,
+          "opp": "BUF",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        },
+        {
+          "week": 18,
+          "winPct": 20,
+          "opp": "@NE",
+          "bye": false,
+          "result": null,
+          "score": null,
+          "locked": false
+        }
+      ],
+      "weekBoards": {
+        "4": {
+          "opponent": "MIN",
+          "home": false,
+          "matchupLabel": "at MIN",
+          "pgWinPct": 19,
+          "marketWinPct": 15,
+          "moneyline": "+476",
+          "spread": 10.5,
+          "popularityPct": 0,
+          "ev": 0.53,
+          "gameNotes": []
+        },
+        "5": {
+          "opponent": "CIN",
+          "home": true,
+          "matchupLabel": "vs. CIN",
+          "pgWinPct": 24,
+          "marketWinPct": 23,
+          "moneyline": "+296",
+          "spread": 7.5,
+          "popularityPct": 0,
+          "ev": 0.48,
+          "gameNotes": []
+        },
+        "7": {
+          "opponent": "NYJ",
+          "home": false,
+          "matchupLabel": "at NYJ",
+          "pgWinPct": 32,
+          "marketWinPct": 33,
+          "moneyline": "+187",
+          "spread": 4.5,
+          "popularityPct": 0,
+          "ev": 0.58,
+          "gameNotes": []
+        },
+        "8": {
+          "opponent": "NE",
+          "home": true,
+          "matchupLabel": "vs. NE",
+          "pgWinPct": 27,
+          "marketWinPct": 25,
+          "moneyline": "+274",
+          "spread": 7,
+          "popularityPct": 0,
+          "ev": 0.52,
+          "gameNotes": []
+        },
+        "9": {
+          "opponent": "DET",
+          "home": true,
+          "matchupLabel": "vs. DET",
+          "pgWinPct": 29,
+          "marketWinPct": 26,
+          "moneyline": "+255",
+          "spread": 6.5,
+          "popularityPct": 0,
+          "ev": 0.48,
+          "gameNotes": []
+        },
+        "10": {
+          "opponent": "IND",
+          "home": false,
+          "matchupLabel": "at IND",
+          "pgWinPct": 34,
+          "marketWinPct": 35,
+          "moneyline": "+171",
+          "spread": 4,
+          "popularityPct": 0,
+          "ev": 0.54,
+          "gameNotes": []
+        }
+      }
+    },
+    {
       "team": "CLE",
       "teamName": "Cleveland",
       "opponent": "HOU",
@@ -5581,7 +5581,7 @@
       "moneyline": "+194",
       "spread": 4.5,
       "popularityPct": 0,
-      "ev": 0.5,
+      "ev": 0.51,
       "futureValue": 0.47,
       "gameNotes": [],
       "future": [
@@ -5722,7 +5722,7 @@
         },
         {
           "week": 16,
-          "winPct": 29,
+          "winPct": 30,
           "opp": "@BAL",
           "bye": false,
           "result": null,
@@ -5818,7 +5818,7 @@
           "moneyline": "+194",
           "spread": 4.5,
           "popularityPct": 0,
-          "ev": 0.5,
+          "ev": 0.51,
           "gameNotes": []
         }
       }
@@ -5829,13 +5829,13 @@
       "opponent": "SF",
       "home": true,
       "matchupLabel": "vs. SF",
-      "pgWinPct": 33,
+      "pgWinPct": 31,
       "marketWinPct": 34,
-      "moneyline": "+175",
-      "spread": 3.5,
+      "moneyline": "+178",
+      "spread": 4,
       "popularityPct": 0,
-      "ev": 0.48,
-      "futureValue": 0.5,
+      "ev": 0.46,
+      "futureValue": 0.49,
       "gameNotes": [],
       "future": [
         {
@@ -5921,7 +5921,7 @@
         },
         {
           "week": 10,
-          "winPct": 33,
+          "winPct": 31,
           "opp": "SF",
           "bye": false,
           "result": null,
@@ -6066,12 +6066,12 @@
           "opponent": "SF",
           "home": true,
           "matchupLabel": "vs. SF",
-          "pgWinPct": 33,
+          "pgWinPct": 31,
           "marketWinPct": 34,
-          "moneyline": "+175",
-          "spread": 3.5,
+          "moneyline": "+178",
+          "spread": 4,
           "popularityPct": 0,
-          "ev": 0.48,
+          "ev": 0.46,
           "gameNotes": []
         }
       }
@@ -6083,12 +6083,12 @@
       "home": true,
       "matchupLabel": "vs. SEA",
       "pgWinPct": 26,
-      "marketWinPct": 28,
-      "moneyline": "+239",
+      "marketWinPct": 27,
+      "moneyline": "+241",
       "spread": 6.5,
       "popularityPct": 0,
-      "ev": 0.41,
-      "futureValue": 0.44,
+      "ev": 0.42,
+      "futureValue": 0.43,
       "gameNotes": [],
       "future": [
         {
@@ -6183,7 +6183,7 @@
         },
         {
           "week": 11,
-          "winPct": 23,
+          "winPct": 22,
           "opp": "@DEN",
           "bye": false,
           "result": null,
@@ -6320,11 +6320,11 @@
           "home": true,
           "matchupLabel": "vs. SEA",
           "pgWinPct": 26,
-          "marketWinPct": 28,
-          "moneyline": "+239",
+          "marketWinPct": 27,
+          "moneyline": "+241",
           "spread": 6.5,
           "popularityPct": 0,
-          "ev": 0.41,
+          "ev": 0.42,
           "gameNotes": []
         }
       }
@@ -6340,8 +6340,8 @@
       "moneyline": "+340",
       "spread": 7.5,
       "popularityPct": 0,
-      "ev": 0.43,
-      "futureValue": 0.41,
+      "ev": 0.44,
+      "futureValue": 0.4,
       "gameNotes": [],
       "future": [
         {
@@ -6445,7 +6445,7 @@
         },
         {
           "week": 12,
-          "winPct": 54,
+          "winPct": 55,
           "opp": "@MIA",
           "bye": false,
           "result": null,
@@ -6463,7 +6463,7 @@
         },
         {
           "week": 14,
-          "winPct": 35,
+          "winPct": 37,
           "opp": "DEN",
           "bye": false,
           "result": null,
@@ -6472,7 +6472,7 @@
         },
         {
           "week": 15,
-          "winPct": 51,
+          "winPct": 52,
           "opp": "@ARI",
           "bye": false,
           "result": null,
@@ -6481,7 +6481,7 @@
         },
         {
           "week": 16,
-          "winPct": 38,
+          "winPct": 39,
           "opp": "NE",
           "bye": false,
           "result": null,
@@ -6490,7 +6490,7 @@
         },
         {
           "week": 17,
-          "winPct": 37,
+          "winPct": 38,
           "opp": "MIN",
           "bye": false,
           "result": null,
@@ -6499,7 +6499,7 @@
         },
         {
           "week": 18,
-          "winPct": 37,
+          "winPct": 38,
           "opp": "@BUF",
           "bye": false,
           "result": null,
@@ -6577,7 +6577,7 @@
           "moneyline": "+340",
           "spread": 7.5,
           "popularityPct": 0,
-          "ev": 0.43,
+          "ev": 0.44,
           "gameNotes": []
         }
       }
@@ -6589,12 +6589,12 @@
       "home": true,
       "matchupLabel": "vs. JAC",
       "pgWinPct": 19,
-      "marketWinPct": 17,
-      "moneyline": "+414",
+      "marketWinPct": 15,
+      "moneyline": "+479",
       "spread": 10.5,
       "popularityPct": 0,
-      "ev": 0.32,
-      "futureValue": 0.3,
+      "ev": 0.33,
+      "futureValue": 0.27,
       "gameNotes": [],
       "future": [
         {
@@ -6826,11 +6826,11 @@
           "home": true,
           "matchupLabel": "vs. JAC",
           "pgWinPct": 19,
-          "marketWinPct": 17,
-          "moneyline": "+414",
+          "marketWinPct": 15,
+          "moneyline": "+479",
           "spread": 10.5,
           "popularityPct": 0,
-          "ev": 0.32,
+          "ev": 0.33,
           "gameNotes": []
         }
       }
@@ -6841,13 +6841,13 @@
       "opponent": "LA",
       "home": true,
       "matchupLabel": "vs. LA",
-      "pgWinPct": 17,
-      "marketWinPct": 20,
-      "moneyline": "+347",
+      "pgWinPct": 18,
+      "marketWinPct": 19,
+      "moneyline": "+371",
       "spread": 9.5,
       "popularityPct": 0,
-      "ev": 0.42,
-      "futureValue": 0.48,
+      "ev": 0.43,
+      "futureValue": 0.45,
       "gameNotes": [],
       "future": [
         {
@@ -6933,7 +6933,7 @@
         },
         {
           "week": 10,
-          "winPct": 17,
+          "winPct": 18,
           "opp": "LA",
           "bye": false,
           "result": null,
@@ -6942,7 +6942,7 @@
         },
         {
           "week": 11,
-          "winPct": 11,
+          "winPct": 10,
           "opp": "@KC",
           "bye": false,
           "result": null,
@@ -6951,7 +6951,7 @@
         },
         {
           "week": 12,
-          "winPct": 42,
+          "winPct": 41,
           "opp": "WAS",
           "bye": false,
           "result": null,
@@ -6978,7 +6978,7 @@
         },
         {
           "week": 15,
-          "winPct": 49,
+          "winPct": 48,
           "opp": "NYJ",
           "bye": false,
           "result": null,
@@ -6987,7 +6987,7 @@
         },
         {
           "week": 16,
-          "winPct": 32,
+          "winPct": 31,
           "opp": "@NO",
           "bye": false,
           "result": null,
@@ -7078,12 +7078,12 @@
           "opponent": "LA",
           "home": true,
           "matchupLabel": "vs. LA",
-          "pgWinPct": 17,
-          "marketWinPct": 20,
-          "moneyline": "+347",
+          "pgWinPct": 18,
+          "marketWinPct": 19,
+          "moneyline": "+371",
           "spread": 9.5,
           "popularityPct": 0,
-          "ev": 0.42,
+          "ev": 0.43,
           "gameNotes": []
         }
       }
@@ -7448,7 +7448,7 @@
         },
         {
           "week": 11,
-          "winPct": 36,
+          "winPct": 37,
           "opp": "@DET",
           "bye": false,
           "result": null,
@@ -7457,7 +7457,7 @@
         },
         {
           "week": 12,
-          "winPct": 62,
+          "winPct": 63,
           "opp": "CAR",
           "bye": false,
           "result": null,
@@ -7475,7 +7475,7 @@
         },
         {
           "week": 14,
-          "winPct": 44,
+          "winPct": 48,
           "opp": "@BAL",
           "bye": false,
           "result": null,
@@ -7484,7 +7484,7 @@
         },
         {
           "week": 15,
-          "winPct": 66,
+          "winPct": 65,
           "opp": "NO",
           "bye": false,
           "result": null,
@@ -7701,7 +7701,7 @@
         },
         {
           "week": 11,
-          "winPct": 37,
+          "winPct": 32,
           "opp": "PIT",
           "bye": false,
           "result": null,
@@ -7954,7 +7954,7 @@
         },
         {
           "week": 11,
-          "winPct": 77,
+          "winPct": 78,
           "opp": "LV",
           "bye": false,
           "result": null,
@@ -7981,7 +7981,7 @@
         },
         {
           "week": 14,
-          "winPct": 65,
+          "winPct": 63,
           "opp": "@NYJ",
           "bye": false,
           "result": null,

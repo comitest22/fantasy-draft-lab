@@ -1,5 +1,5 @@
 {
-  "pulledAt": "2026-11-11T18:17:19.415Z",
+  "pulledAt": "2026-11-13T21:05:07.443Z",
   "season": 2026,
   "currentWeek": 10,
   "teams": {
@@ -128,7 +128,7 @@
       "roadGames": 26
     },
     "WAS": {
-      "roadWinPct": 0.32,
+      "roadWinPct": 0.36,
       "roadGames": 25
     }
   },
@@ -147,39 +147,39 @@
     },
     "10:BAL": {
       "outdoor": true,
-      "tempF": 54.4,
+      "tempF": 56.5,
       "precipIn": 0,
-      "windMph": 5.4
+      "windMph": 4.8
     },
     "10:LAC": {
       "outdoor": true,
-      "tempF": 54.4,
+      "tempF": 56.5,
       "precipIn": 0,
-      "windMph": 5.4
+      "windMph": 4.8
     },
     "10:CIN": {
       "outdoor": true,
-      "tempF": 51,
+      "tempF": 52.8,
       "precipIn": 0,
-      "windMph": 5.2
+      "windMph": 2.9
     },
     "10:PIT": {
       "outdoor": true,
-      "tempF": 51,
+      "tempF": 52.8,
       "precipIn": 0,
-      "windMph": 5.2
+      "windMph": 2.9
     },
     "10:CLE": {
       "outdoor": true,
-      "tempF": 46.2,
-      "precipIn": 0.047,
-      "windMph": 12.7
+      "tempF": 46.7,
+      "precipIn": 0.037,
+      "windMph": 18.8
     },
     "10:HOU": {
       "outdoor": true,
-      "tempF": 46.2,
-      "precipIn": 0.047,
-      "windMph": 12.7
+      "tempF": 46.7,
+      "precipIn": 0.037,
+      "windMph": 18.8
     },
     "10:DAL": {
       "outdoor": false
@@ -195,15 +195,15 @@
     },
     "10:GB": {
       "outdoor": true,
-      "tempF": 43.9,
+      "tempF": 44.3,
       "precipIn": 0,
-      "windMph": 8.6
+      "windMph": 5.8
     },
     "10:MIN": {
       "outdoor": true,
-      "tempF": 43.9,
+      "tempF": 44.3,
       "precipIn": 0,
-      "windMph": 8.6
+      "windMph": 5.8
     },
     "10:IND": {
       "outdoor": false
@@ -225,39 +225,39 @@
     },
     "10:NYG": {
       "outdoor": true,
-      "tempF": 46.9,
-      "precipIn": 0.585,
-      "windMph": 15.1
+      "tempF": 47.8,
+      "precipIn": 0.421,
+      "windMph": 13.2
     },
     "10:WAS": {
       "outdoor": true,
-      "tempF": 46.9,
-      "precipIn": 0.585,
-      "windMph": 15.1
+      "tempF": 47.8,
+      "precipIn": 0.421,
+      "windMph": 13.2
     },
     "10:NYJ": {
       "outdoor": true,
-      "tempF": 48.5,
+      "tempF": 49.3,
       "precipIn": 0,
-      "windMph": 13.4
+      "windMph": 14.2
     },
     "10:BUF": {
       "outdoor": true,
-      "tempF": 48.5,
+      "tempF": 49.3,
       "precipIn": 0,
-      "windMph": 13.4
+      "windMph": 14.2
     },
     "10:TEN": {
       "outdoor": true,
-      "tempF": 53,
+      "tempF": 54.8,
       "precipIn": 0,
-      "windMph": 6.5
+      "windMph": 6.6
     },
     "10:JAX": {
       "outdoor": true,
-      "tempF": 53,
+      "tempF": 54.8,
       "precipIn": 0,
-      "windMph": 6.5
+      "windMph": 6.6
     }
   }
 }
