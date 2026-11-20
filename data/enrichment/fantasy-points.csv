@@ -6938,6 +6938,7 @@ Joe Burrow,2026,QB,CIN,232.3,9
 Josh Allen,2026,QB,BUF,223.1,9
 CeeDee Lamb,2026,WR,DAL,222,10
 Christian McCaffrey,2026,RB,SF,213,9
+C.J. Stroud,2026,QB,HOU,205,10
 Brock Purdy,2026,QB,SF,203.1,9
 Dak Prescott,2026,QB,DAL,201.8,10
 Bijan Robinson,2026,RB,ATL,197.7,10
@@ -6945,7 +6946,6 @@ Kenneth Walker III,2026,RB,KC,196.4,8
 Jordan Love,2026,QB,GB,195.9,10
 Ja'Marr Chase,2026,WR,CIN,193.8,9
 Kirk Cousins,2026,QB,MIN,187.6,10
-C.J. Stroud,2026,QB,HOU,184.5,9
 Christian Watson,2026,WR,GB,183.6,10
 Amon-Ra St. Brown,2026,WR,DET,183.4,9
 Drake Maye,2026,QB,NE,182.3,10
@@ -6954,12 +6954,12 @@ Patrick Mahomes,2026,QB,KC,177.3,9
 Matthew Golden,2026,WR,GB,175.9,10
 Trevor Lawrence,2026,QB,JAX,174,9
 Puka Nacua,2026,WR,LA,173.6,7
+Jonathan Taylor,2026,RB,IND,172.6,11
 Trey McBride,2026,TE,ARI,171.5,10
 Tee Higgins,2026,WR,CIN,171.4,9
 James Cook,2026,RB,BUF,170.1,9
 Jared Goff,2026,QB,DET,167.7,9
 Javonte Williams,2026,RB,DAL,167.3,10
-Jonathan Taylor,2026,RB,IND,165.9,10
 Kyren Williams,2026,RB,LA,164.3,10
 Matthew Stafford,2026,QB,LA,162.7,10
 Derrick Henry,2026,RB,BAL,161.3,10
@@ -6986,6 +6986,7 @@ Jayden Daniels,2026,QB,WAS,136.1,7
 Aaron Rodgers,2026,QB,PIT,132.8,9
 Tetairoa McMillan,2026,WR,CAR,131,9
 Bo Nix,2026,QB,DEN,130.9,9
+Nico Collins,2026,WR,HOU,130.8,8
 Chase Brown,2026,RB,CIN,129.7,9
 Garrett Wilson,2026,WR,NYJ,129.3,9
 George Kittle,2026,TE,SF,127.7,9
@@ -6993,7 +6994,6 @@ Jacoby Brissett,2026,QB,BAL,123,9
 Michael Wilson,2026,WR,ARI,120.7,9
 Cam Ward,2026,QB,TEN,119.6,9
 Harold Fannin Jr.,2026,TE,CLE,118.4,10
-Nico Collins,2026,WR,HOU,116,7
 Blake Corum,2026,RB,LA,115.5,10
 Rhamondre Stevenson,2026,RB,NE,115.2,10
 Jameson Williams,2026,WR,DET,114.7,9
@@ -7024,32 +7024,32 @@ Dalton Kincaid,2026,TE,BUF,92.7,9
 Sam Darnold,2026,QB,SEA,92.3,7
 Keenan Allen,2026,WR,SF,92.2,9
 Tyler Allgeier,2026,RB,ARI,92.1,10
+Daniel Jones,2026,QB,IND,90.8,11
 Pat Freiermuth,2026,TE,PIT,90.5,9
 Josh Downs,2026,WR,KC,90.4,10
 Alvin Kamara,2026,RB,NO,90.1,8
+Tyler Warren,2026,TE,IND,89.7,9
 Malik Washington,2026,WR,MIA,89.2,9
 Mike Evans,2026,WR,SF,89,6
 Rome Odunze,2026,WR,CHI,88.8,9
 Jalen Coker,2026,WR,CAR,88.3,8
-Daniel Jones,2026,QB,IND,86.7,10
-Tyler Warren,2026,TE,IND,86.5,8
 Deebo Samuel Sr.,2026,WR,SF,86.3,6
 T.J. Hockenson,2026,TE,MIN,85.8,8
 Omarion Hampton,2026,RB,LAC,85.7,9
 Michael Mayer,2026,TE,LV,85.6,10
+Xavier Hutchinson,2026,WR,HOU,85.4,10
 Hunter Henry,2026,TE,NE,84.3,10
 Juwan Johnson,2026,TE,NO,83.7,9
 Khalil Shakir,2026,WR,BUF,83.7,9
 Colston Loveland,2026,TE,CHI,83.3,9
 Mike Gesicki,2026,TE,CIN,82.1,8
-Xavier Hutchinson,2026,WR,HOU,82.1,9
 Jakobi Meyers,2026,WR,JAX,82,9
 Jaylen Waddle,2026,WR,DEN,82,9
+Dalton Schultz,2026,TE,HOU,81.6,10
 Darren Waller,2026,TE,CAR,81.3,9
 Wan'Dale Robinson,2026,WR,TEN,81.3,9
 Brenton Strange,2026,TE,JAX,80.5,9
 Jalen Hurts,2026,QB,PHI,80,5
-Dalton Schultz,2026,TE,HOU,79.5,9
 Rashee Rice,2026,WR,KC,79.4,6
 Lamar Jackson,2026,QB,BAL,79.1,5
 DJ Moore,2026,WR,BUF,78.9,7
@@ -7059,6 +7059,7 @@ Emeka Egbuka,2026,WR,TB,78,7
 Rachaad White,2026,RB,WAS,77.9,8
 Carnell Tate,2026,WR,TEN,77.3,7
 Mark Andrews,2026,TE,BAL,74.9,10
+Kayshon Boutte,2026,WR,HOU,74.9,10
 Emanuel Wilson,2026,RB,SEA,74.8,7
 Dallas Goedert,2026,TE,PHI,74,7
 Makai Lemon,2026,WR,PHI,73.7,9
@@ -7084,12 +7085,12 @@ Darnell Washington,2026,TE,PIT,63.9,9
 Courtland Sutton,2026,WR,DEN,63.6,9
 Kenny Gainwell,2026,RB,TB,63.6,9
 Malachi Fields,2026,WR,NYG,63,9
-Kayshon Boutte,2026,WR,HOU,62.9,9
 Jonah Coleman,2026,RB,DEN,62.9,5
 Rashod Bateman,2026,WR,BAL,62.6,10
 Omar Cooper Jr.,2026,WR,NYJ,62.6,4
 J.K. Dobbins,2026,RB,DEN,62.5,9
 Drew Lock,2026,QB,SEA,62.4,4
+David Montgomery,2026,RB,HOU,60.9,6
 Tre Harris,2026,WR,LAC,60.8,8
 Kyle Monangai,2026,RB,CHI,59.3,4
 Samaje Perine,2026,RB,CIN,58.8,9
@@ -7125,14 +7126,13 @@ Keaton Mitchell,2026,RB,LAC,50.5,9
 Rico Dowdle,2026,RB,PIT,50,6
 Isaiah Williams,2026,WR,NYJ,49.8,10
 Josh Cameron,2026,WR,JAX,49,9
-Laquon Treadwell,2026,WR,IND,48.9,10
+Laquon Treadwell,2026,WR,IND,48.9,11
 Jerry Jeudy,2026,WR,CLE,48.2,9
+Seth McGowan,2026,RB,IND,48.2,11
 Pat Bryant,2026,WR,DEN,47.5,5
 Quentin Johnston,2026,WR,LAC,47.4,8
 Kimani Vidal,2026,RB,LAC,47.2,8
-Seth McGowan,2026,RB,IND,46.4,10
 Terry McLaurin,2026,WR,WAS,46,5
-David Montgomery,2026,RB,HOU,45.5,5
 Jordan Watkins,2026,WR,SF,45.3,5
 Tyquan Thornton,2026,WR,KC,44.9,4
 Jacory Croskey-Merritt,2026,RB,WAS,44.9,5
@@ -7159,14 +7159,15 @@ Brian Thomas Jr.,2026,WR,JAX,39.6,8
 Dylan Sampson,2026,RB,CLE,39.1,5
 Colby Parkinson,2026,TE,LA,38.7,8
 Kendre Miller,2026,RB,NO,38.6,6
+Foster Moreau,2026,TE,HOU,38,7
 Kyle Williams,2026,WR,NE,38,10
 Nate Boerkircher,2026,TE,JAX,37.6,8
 Marvin Harrison Jr.,2026,WR,HOU,37.5,7
 Travis Etienne,2026,RB,NO,37.3,4
 Savion Williams,2026,WR,GB,37,5
 John Metchie III,2026,WR,CAR,36.8,8
+Tank Dell,2026,WR,HOU,36.8,4
 George Holani,2026,RB,SEA,36.5,9
-Foster Moreau,2026,TE,HOU,36.2,6
 Josh Cuevas,2026,TE,BAL,36.1,8
 Jalon Daniels,2026,QB,TB,35.1,5
 Corey Kiner,2026,RB,NE,34.5,10
@@ -7182,7 +7183,6 @@ Roschon Johnson,2026,RB,CHI,31.9,7
 Tyrone Tracy Jr.,2026,RB,NYG,31.9,7
 Brevyn Spann-Ford,2026,TE,DAL,31.6,10
 Kevin Coleman Jr.,2026,WR,MIA,31.4,8
-Tank Dell,2026,WR,HOU,31.1,3
 Tyjae Spears,2026,RB,TEN,30.9,7
 Austin Ekeler,2026,RB,WAS,30.3,6
 Tanner McKee,2026,QB,PHI,30.1,3
@@ -7193,6 +7193,7 @@ Chris Bell,2026,WR,MIA,29.2,8
 Nate Adkins,2026,TE,DEN,29,6
 Dawson Knox,2026,TE,BUF,28.6,9
 Drew Sample,2026,TE,CIN,28.3,5
+Ashton Dulin,2026,WR,IND,28,7
 Kyle Juszczyk,2026,RB,SF,28,6
 Charlie Kolar,2026,TE,LAC,27.8,7
 Josh Palmer,2026,WR,BUF,27.7,5
@@ -7214,7 +7215,6 @@ Austin Hooper,2026,TE,ATL,24.4,7
 Jordyn Tyson,2026,WR,NO,24,2
 Cyrus Allen,2026,WR,KC,23.9,7
 A.J. Brown,2026,WR,NE,23.8,4
-Ashton Dulin,2026,WR,IND,23,6
 Bryce Lance,2026,WR,NO,22.8,9
 Shedeur Sanders,2026,QB,CLE,22.8,3
 Carson Wentz,2026,QB,MIN,22.7,3
@@ -7258,9 +7258,11 @@ Ben Sinnott,2026,TE,WAS,15.8,4
 Jonnu Smith,2026,TE,GB,15.4,4
 Chris Moore,2026,WR,BAL,15.3,4
 Calvin Ridley,2026,WR,TEN,15.1,6
+Marlin Klein,2026,TE,HOU,15,2
 Andrew Armstrong,2026,WR,KC,14.9,5
 Blake Whiteheart,2026,TE,CLE,14.8,7
-Deion Burks,2026,WR,IND,14.1,8
+Anthony Gould,2026,WR,IND,14.2,8
+Deion Burks,2026,WR,IND,14.1,9
 Chris Brooks,2026,RB,GB,13.7,5
 Lan Larison,2026,RB,NE,13.6,4
 Erick All,2026,TE,CIN,13.6,3
@@ -7275,6 +7277,7 @@ Kyle McCord,2026,QB,MIA,12.8,1
 David Njoku,2026,TE,LAC,12.7,2
 Marquise Brown,2026,WR,PHI,12.5,4
 Olamide Zaccheaus,2026,WR,ATL,12.3,9
+Emari Demercado,2026,RB,HOU,12.3,5
 Alec Pierce,2026,WR,IND,12.2,2
 Ray Davis,2026,RB,BUF,12.2,8
 Tyson Bagent,2026,QB,CHI,12.2,3
@@ -7326,8 +7329,6 @@ John Bates,2026,TE,WAS,7.7,6
 Hayden Rucci,2026,TE,LAC,7.7,4
 Josh Oliver,2026,TE,MIN,7.6,3
 Jaylen Wright,2026,RB,MIA,7.6,7
-Emari Demercado,2026,RB,HOU,7.4,4
-Anthony Gould,2026,WR,IND,7.4,7
 Chris Blair,2026,WR,ATL,7.2,8
 Cade Stover,2026,TE,HOU,7.2,6
 Jahdae Walker,2026,WR,CHI,7.1,6
@@ -7335,6 +7336,7 @@ Tim Patrick,2026,WR,NYJ,7.1,2
 Ben Yurosek,2026,TE,MIN,7.1,4
 Tanner Koziol,2026,TE,JAX,7.1,3
 Brady Russell,2026,RB,SEA,7,7
+DJ Giddens,2026,RB,IND,6.9,2
 Malachi Corley,2026,WR,CLE,6.7,10
 Theo Wease Jr.,2026,WR,LAC,6.7,3
 AJ Dillon,2026,RB,CAR,6.6,4
@@ -7342,7 +7344,7 @@ Connor Heyward,2026,RB,LV,6.6,9
 Alec Ingold,2026,RB,LAC,6.5,3
 Jayden Reed,2026,WR,GB,6.4,2
 Luke Farrell,2026,TE,SF,6.3,8
-Andrew Ogletree,2026,TE,IND,6.1,7
+Andrew Ogletree,2026,TE,IND,6.1,8
 Lew Nichols III,2026,RB,PIT,6.1,6
 Xavier Restrepo,2026,WR,TEN,6.1,2
 Cade Klubnik,2026,QB,NYJ,6.1,1
@@ -7365,7 +7367,6 @@ Andrei Iosivas,2026,WR,CIN,4.9,2
 DJ Herman,2026,RB,MIA,4.8,3
 Jaylin Lane,2026,WR,WAS,4.5,4
 Mark Redman,2026,TE,GB,4.4,3
-DJ Giddens,2026,RB,IND,4.3,1
 Marquez Valdes-Scantling,2026,WR,LAC,4.2,3
 Jeshaun Jones,2026,WR,MIN,4.2,3
 Demond Claiborne,2026,RB,MIN,4.1,4
@@ -7374,6 +7375,7 @@ Thomas Fidone II,2026,TE,NYG,3.9,2
 Dare Ogunbowale,2026,RB,HOU,3.8,3
 David Moore,2026,WR,CAR,3.7,6
 Velus Jones Jr.,2026,RB,SEA,3.7,3
+Quez Watkins,2026,WR,IND,3.6,1
 Adam Prentice,2026,RB,DEN,3.5,8
 Jackson Hawes,2026,TE,BUF,3.5,6
 Sterling Shepard,2026,WR,NYJ,3.3,2
@@ -7386,7 +7388,6 @@ Reggie Gilliam,2026,RB,NE,3,2
 LeQuint Allen Jr.,2026,RB,JAX,3,8
 Colbie Young,2026,WR,CIN,2.9,2
 Elijah Arroyo,2026,TE,SEA,2.7,2
-Marlin Klein,2026,TE,HOU,2.6,1
 Salvon Ahmed,2026,RB,CHI,2.5,1
 Rasheen Ali,2026,RB,BAL,2.4,8
 Malik Benson,2026,WR,LV,2.4,7
@@ -7424,7 +7425,7 @@ Robert Tonyan,2026,TE,PIT,1.2,2
 Patrick Ricard,2026,RB,NYG,1.1,2
 Mason Rudolph,2026,QB,PIT,1.1,3
 Jacob Saylors,2026,RB,DET,0.9,8
-Anthony Richardson,2026,QB,IND,0.7,1
+Anthony Richardson,2026,QB,IND,0.9,2
 Nate Carter,2026,RB,KC,0.6,1
 Zamir White,2026,RB,NO,0.5,1
 Craig Reynolds,2026,RB,WAS,0.4,1
@@ -7442,7 +7443,7 @@ Chris Boswell,2026,K,PIT,0,9
 Cairo Santos,2026,K,CHI,0,9
 Jason Myers,2026,K,SEA,0,10
 Wil Lutz,2026,K,DEN,0,9
-Ka'imi Fairbairn,2026,K,HOU,0,9
+Ka'imi Fairbairn,2026,K,HOU,0,10
 Harrison Butker,2026,K,KC,0,9
 Jake Elliott,2026,K,PHI,0,9
 Daniel Carlson,2026,K,NO,0,7
@@ -7464,14 +7465,14 @@ Kaden Davis,2026,WR,CHI,0,1
 Brandon Aubrey,2026,K,DAL,0,10
 Andre Szmyt,2026,K,CLE,0,10
 Ben VanSumeren,2026,RB,KC,0,2
-Nikko Remigio,2026,WR,HOU,0,9
+Nikko Remigio,2026,WR,HOU,0,10
 Chad Ryland,2026,K,ARI,0,10
 Jake Bates,2026,K,DET,0,9
 Will Reichard,2026,K,MIN,0,9
 Cam Little,2026,K,JAX,0,9
 Harrison Mevis,2026,K,LA,0,5
 Treyton Welch,2026,TE,NO,0,2
-Spencer Shrader,2026,K,IND,0,10
+Spencer Shrader,2026,K,IND,0,11
 Tyler Loop,2026,K,BAL,0,8
 Andy Borregales,2026,K,NE,0,10
 Jimmy Horn Jr.,2026,WR,CAR,0,1

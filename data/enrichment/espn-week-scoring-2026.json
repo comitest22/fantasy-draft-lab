@@ -3,67 +3,67 @@
   "scoringPeriodId": 11,
   "leagueId": 1735901,
   "teamId": 6,
-  "fetchedAt": "2026-11-17T22:48:46.231Z",
+  "fetchedAt": "2026-11-20T22:02:16.491Z",
   "players": [
     {
-      "espnId": -16014,
-      "projectedPoints": 0,
-      "lastWeekPoints": 16,
-      "percentOwned": 94.1
+      "espnId": -16025,
+      "projectedPoints": 5.4,
+      "lastWeekPoints": -1,
+      "percentOwned": 46.8
+    },
+    {
+      "espnId": -16007,
+      "projectedPoints": 6.5,
+      "percentOwned": 83.4
     },
     {
       "espnId": 3126486,
       "projectedPoints": 10.3,
       "lastWeekPoints": 25.9,
-      "percentOwned": 80
+      "percentOwned": 83.3
     },
     {
       "espnId": 4241389,
       "projectedPoints": 22.5,
       "lastWeekPoints": 20.2,
-      "percentOwned": 99.8
+      "percentOwned": 99.9
     },
     {
       "espnId": 4361741,
       "projectedPoints": 17.6,
       "lastWeekPoints": 31.7,
-      "percentOwned": 98.8
+      "percentOwned": 98.7
     },
     {
       "espnId": 4366031,
       "projectedPoints": 10.4,
+      "weekScore": 5.7,
       "lastWeekPoints": 5.1,
-      "percentOwned": 61
+      "percentOwned": 60.8
     },
     {
       "espnId": 4426385,
       "projectedPoints": 0,
       "lastWeekPoints": 9.4,
-      "percentOwned": 84.8
+      "percentOwned": 81.4
     },
     {
       "espnId": 4427366,
-      "projectedPoints": 12.9,
+      "projectedPoints": 13.1,
       "lastWeekPoints": 14.8,
-      "percentOwned": 95.8
+      "percentOwned": 95.7
     },
     {
       "espnId": 4431452,
       "projectedPoints": 0,
       "lastWeekPoints": 3,
-      "percentOwned": 97.8
-    },
-    {
-      "espnId": 4431459,
-      "projectedPoints": 8.8,
-      "lastWeekPoints": 2.4,
-      "percentOwned": 96.4
+      "percentOwned": 86.2
     },
     {
       "espnId": 4567104,
       "projectedPoints": 10.1,
       "lastWeekPoints": 12,
-      "percentOwned": 88.2
+      "percentOwned": 90.4
     },
     {
       "espnId": 4569987,
@@ -75,18 +75,18 @@
       "espnId": 4711533,
       "projectedPoints": 13.8,
       "lastWeekPoints": 15.5,
-      "percentOwned": 90.3
+      "percentOwned": 89.9
     },
     {
       "espnId": 4723086,
       "projectedPoints": 12.6,
-      "percentOwned": 94.6
+      "percentOwned": 96.5
     },
     {
       "espnId": 4871023,
-      "projectedPoints": 13.2,
+      "projectedPoints": 13.1,
       "lastWeekPoints": 0,
-      "percentOwned": 82.5
+      "percentOwned": 85.2
     }
   ]
 }
